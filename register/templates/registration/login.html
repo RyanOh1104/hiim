@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'style_register.css' %}">
+{% endblock %}
+
+{%block title%} 로그인 {%endblock%}
+
+{% load crispy_forms_tags %}
+
+<!-- 로그인하고 어디로 redirect될지는 settings.py 가장 아래에 명시하면 된다! -->
+
+{% block content %}
+<div class="row">
+    <div class="col col-10">
+        <h1 class="page-title" id="login">😃다시 봐서 반가워요!</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-6">
+        <div class="highlight" id="highlight-login"></div>
+    </div>
+</div>
+
+<form method='post' class="form-group">
+    {% csrf_token %}
+    <div class="row shadow-sharp-theme all-blocks">
+        <div class="col col-6">
+            {{form.username|as_crispy_field}}
+        </div>
+        <div class="col col-6">
+            {{form.password|as_crispy_field}}
+        </div>            
+        <div class="col col-12">
+            <button type="submit" class="btn btn-primary">로그인</button>
+            <p class="helptext">계정이 없으신가요? <a href="/register">여기</a>서 만들어보세요!</p>
+        </div>
+    </div>
+    
+</form>
+{% endblock %}

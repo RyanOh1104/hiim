@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'history/history.css' %}">
+{% endblock %}
+
+{% block title %} 역사 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="block-spacing"></div>
+
+<div class="row">
+    <div class="col col-12">
+        <h1 class="detail-title">{{thisHistory.what}}</h1>
+    </div>
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    <div class="col col-3">
+        <div class="detail-created">{{thisHistory.start}}</div>
+    </div>
+    <div class="col col-6"></div>
+    <div class="col col-3">
+        <div class="detail-modified text-right">{{thisHistory.end}}</div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col col-12">
+        <div class="detail-timeline"></div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col col-12">
+        <div class="detail-contents">
+            {{thisHistory.desc}}
+        </div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+
+<form method='post' class="form-group">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <button type="button" class='btn btn-primary all-buttons'>수정하기</button>
+    </div>
+</form>
+
+<div class="block-spacing"></div>
+{% endblock %}

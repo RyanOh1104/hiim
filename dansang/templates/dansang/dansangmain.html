@@ -1,0 +1,84 @@
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
+{% endblock %}
+
+{% block title %} 단상 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-10 text-center">
+        <span class="archive-title">단상</span><span class="archive-icon">💬</span>
+    </div>
+    <div class="col col-12 text-center">
+        <div class="archive-subtitle">기록하지 않은 생각은 머릿속을 둥둥 떠다니다가 이내 휘발되고 만다!</div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+<!-- 
+<div class="row justify-content-center only-authuser">
+    <div class="col col-12 text-center">
+        <a href="#"><img src="C:\Users\user\hiim\mvp\static\mvp\images\add.png"></a>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col button-input">
+        <a href="#">
+            <button class="doyou-need-input all-buttons btn btn-primary">👀 인풋이 필요해요?</button>
+        </a>
+        <!-- <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>     -->
+    </div>
+</div>
+<br>
+<!-- <div class="border-line"> -->
+    {% with ''|center:how_many as range %}
+    {% for item in dansangs %}
+    {% with a=forloop.counter|mod:2 %}
+    {% if a != 0 %}
+    <div class="row justify-content-center">
+        <div class="col col-6">
+            <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 all-blocks block-dansang content-block">
+                    <h3 class="title">{{item.title}}</h3>
+                    <h5 class="first-sentence">{{item.subtitle}}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    {% elif a == 0 %}
+        <div class="col col-6">
+            <a href="{{item.url}}">
+            <div class="row justify-content-center">
+                <div class="col col-11 all-blocks block-dansang content-block">
+                    <h3 class="title">{{item.title}}</h3>
+                    <h5 class="first-sentence">{{item.subtitle}}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+    {% endwith %}
+<!-- </div> -->
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+{% endblock %}
+
+<!-- 필요한 JS 코드
+지금 로그인되어있는 사람이 
+if authuser == request.user (맞나?) 
+일때 추가 버튼(이미지)을 show or hidden-->
+

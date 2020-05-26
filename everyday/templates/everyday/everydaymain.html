@@ -1,0 +1,59 @@
+{% extends 'main/everyday-base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
+{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            defaultDate: '2020-05-14',
+            editable: true,
+            eventLimit: true, 
+            events: [
+                {% for i in events %}
+                {
+                    title: "{{ i.kw1|safe }}<br>{{ i.kw2|safe }}<br>{{ i.kw3|safe }}",
+                    start: "{{ i.when|date:'Y-m-d' }}",
+                    end: "{{ i.when|date:'Y-m-d' }}",
+                },
+                {% endfor %}
+                ]
+            });
+        });
+    $(document).ready(function() {
+        $('.fc-event').attr('unselectable', 'off');
+    }
+    );
+</script>
+{% endblock %}
+
+{% block title %} 모든 하루 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load fullcalendar_tags %}
+
+{% block content %}
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-10 text-center">
+        <span class="archive-title">모든 하루</span><span class="archive-icon">📅</span>
+    </div>
+    <div class="col col-12 text-center">
+        <div class="archive-subtitle">일상은 추억으로 남을 수도, 혹은 깜깜히 망각될 수도 있어요!   
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div style="height:800px; line-height:800px; width:800px; margin:0 auto;">
+        <div style="width:800px; display:inline-block; vertical-align:middle; line-height:normal;">
+            {% calendar %}
+        </div>
+    </div>
+</div> 
+{% endblock %}

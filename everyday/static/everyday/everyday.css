@@ -1,0 +1,45 @@
+#today {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.fc-event {
+    background: #f6f5f1 !important;
+    border: none !important;
+    width: 90px !important;
+    font-size: 15px !important;
+    color: black !important;
+    margin-left: 10px;
+}
+
+.fc-today {
+    background: #f6f5f1 !important;
+    /* border: #9300d3 solid 2px !important; */
+    box-shadow:  3px 3px 3px #bbbab7, 
+     -3px -3px 3px #ffffff !important;
+    border: none !important;
+    border-radius: 5px;
+}
+.fc-day-number {
+    padding-top: 5px !important;
+    padding-right: 5px !important;
+}
+.fc-day-content div{
+    height: 70px !important;
+    vertical-align: middle;
+    font-size: 40px;
+}
+.fc-day-content {
+    top: 50%;
+    vertical-align: middle;
+}
+.keywords {
+    width: 150px;
+}
+.emojis {
+    width: 45px;
+    padding-left: 10px;
+}
+#emoji-helptext {
+    margin-top : -15px;
+}

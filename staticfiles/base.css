@@ -1,0 +1,221 @@
+.ci {
+    width: 80px;
+    height: auto;
+}
+.nav-bar {
+    /* box-shadow: inset 5px 5px 5px #bbbab7, 
+    inset -5px -5px 5px #ffffff; */
+    border-bottom: 2px lightgray solid;
+}
+.page-title {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 29px;
+    font-weight: bold;
+}
+.block-title {
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 45px;
+}
+.block-subtitle {
+    font-size: 17px;
+}
+.form-group {
+    padding-top: 3px;
+}
+.all-blocks {
+    border-radius: 10px;
+    background: #f6f5f1;
+    box-shadow:  5px 5px 3px #bbbab7, 
+    -5px -5px 3px #ffffff;
+}
+
+/* .all-blocks:hover{
+    border-radius: 10px;
+    background: #f6f5f1;
+    box-shadow: inset 8px 8px 8px #bbbab7, 
+    inset -8px -8px 8px #ffffff;
+} */
+.top-block {
+    background-color: #f6f5f1;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    /* border: black solid 1px; */
+    box-shadow: inset 8px 8px 8px #bbbab7, 
+    inset -8px -8px 8px #ffffff;
+}
+/* .all-inputs {
+    background-color: #ffffff;
+    box-shadow:inset 0 1px 1px rgba(147, 0, 211,0.08),
+    inset 0 2px 2px rgba(147, 0, 211,0.12),
+    inset 0 2px 2px rgba(147, 0, 211,0.16),
+    inset 0 2px 2px rgba(147, 0, 211,0.15)
+} */
+.all-buttons {
+    box-shadow:0 1px 1px rgba(147,0,211,0.08),
+    0 3px 3px rgba(147,0,211,0.12),
+    0 3px 3px rgba(147,0,211,0.16),
+    0 5px 5px rgba(147,0,211,0.4)
+}
+
+.shadow-diffuse{
+    box-shadow:0 5px 5px rgba(0,0,0,0.08),
+    0 10px 10px rgba(0,0,0,0.12),
+    0 10px 10px rgba(0,0,0,0.16),
+    0 20px 20px rgba(0,0,0,0.2)
+}
+.shadow-sharp{
+    box-shadow:0 1px 1px rgba(0,0,0,0.25),
+    0 2px 2px rgba(0,0,0,0.2),
+    0 4px 4px rgba(0,0,0,0.15),
+    0 8px 8px rgba(0,0,0,0.1),
+    0 16px 16px rgba(0,0,0,0.05)
+}
+.shadow-sharp-theme{
+    box-shadow:0 1px 1px rgba(147,0, 211,0.25),
+    0 2px 2px rgba(147,0, 211,0.2),
+    0 4px 4px rgba(147,0, 211,0.15),
+    0 8px 8px rgba(147,0, 211,0.1),
+    0 16px 16px rgba(147,0, 211,0.05)
+}
+.shadow-diffuse-theme{
+    box-shadow:0 5px 5px rgba(147,0, 211,0.08),
+    0 10px 10px rgba(147,0, 211,0.12),
+    0 10px 10px rgba(147,0, 211,0.16),
+    0 20px 20px rgba(147,0, 211,0.2)
+}
+.shadow-dreamy{
+    box-shadow:0 1px 2px rgba(0,0,0,0.07),
+    0 2px 4px rgba(0,0,0,0.07),
+    0 4px 8px rgba(0,0,0,0.07),
+    0 8px 16px rgba(0,0,0,0.07),
+    0 16px 32px rgba(0,0,0,0.07),
+    0 32px 64px rgba(0,0,0,0.07)
+}
+.helptext {
+    font-size: 12px;
+}
+.footer {
+    height: 40px;
+    background-color: lightgrey;
+    margin : auto;
+}
+.block-spacing {
+    height: 30px;
+}
+/* Link-related stylings */
+.all-links {text-decoration: none !important;}
+a {color:black;}         
+a:visited {color:black;} 
+a:hover {
+    color:black;
+    text-decoration: none !important;
+}  
+a:active {color:black;}
+
+.my-archive {
+    font-size: 25px;
+    font-weight: bold;
+}
+/* Black shadow start
+.shadow-minexxx {
+    box-shadow: 5px 5px 10px rgb(147,0,211,0.4), -10px -10px 16px  rgba(255,255,255, 0.5);
+}
+.shadow-mine{
+    box-shadow:0 10px 10px rgba(211,211,211,0.9),
+    0 10px 10px rgba(211,211,211,0.9),
+    0 10px 10px rgba(211,211,211,0.9),
+    0 10px 10px rgba(211,211,211,0.9)
+}
+.shadow-4{
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+}
+.shadow-5{
+    box-shadow:0 1px 1px rgba(0,0,0,0.12),0 2px 2px rgba(0,0,0,0.12),0 4px 4px rgba(0,0,0,0.12),0 8px 8px rgba(0,0,0,0.12),0 16px 16px rgba(0,0,0,0.12)
+}
+.shadow-6{
+    box-shadow:0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 8px 8px rgba(0,0,0,0.11),0 16px 16px rgba(0,0,0,0.11),0 32px 32px rgba(0,0,0,0.11)
+}
+.shadow-shorter{
+    box-shadow:0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11)
+}
+.shadow-longer{
+    box-shadow:0 2px 1px rgba(0,0,0,0.09),0 4px 2px rgba(0,0,0,0.09),0 8px 4px rgba(0,0,0,0.09),0 16px 8px rgba(0,0,0,0.09),0 32px 16px rgba(0,0,0,0.09)
+}
+ Black shadow end */
+
+/* #9300d3 shadow start
+.shadow-4{
+    box-shadow:0 1px 1px rgba(147,0,211,0.15),0 2px 2px rgba(147,0,211,0.15),0 4px 4px rgba(147,0,211,0.15),0 8px 8px rgba(147,0,211,0.15)
+}
+.shadow-5{
+    box-shadow:0 1px 1px rgba(147,0,211,0.12),0 2px 2px rgba(147,0,211,0.12),0 4px 4px rgba(147,0,211,0.12),0 8px 8px rgba(147,0,211,0.12),0 16px 16px rgba(147,0,211,0.12)
+}
+.shadow-6{
+    box-shadow:0 1px 1px rgba(147,0,211,0.11),0 2px 2px rgba(147,0,211,0.11),0 4px 4px rgba(147,0,211,0.11),0 8px 8px rgba(147,0,211,0.11),0 16px 16px rgba(147,0,211,0.11),0 32px 32px rgba(147,0,211,0.11)
+}
+.shadow-sharp{
+    box-shadow:0 1px 1px rgba(147,0,211,0.25),0 2px 2px rgba(147,0,211,0.2),0 4px 4px rgba(147,0,211,0.15),0 8px 8px rgba(147,0,211,0.1),0 16px 16px rgba(147,0,211,0.05)
+}
+.shadow-diffuse{
+    box-shadow:0 1px 1px rgba(147,0,211,0.08),0 2px 2px rgba(147,0,211,0.12),0 4px 4px rgba(147,0,211,0.16),0 8px 8px rgba(147,0,211,0.2)
+}
+.shadow-dreamy{
+    box-shadow:0 1px 2px rgba(147,0,211,0.07),0 2px 4px rgba(147,0,211,0.07),0 4px 8px rgba(147,0,211,0.07),0 8px 16px rgba(147,0,211,0.07),0 16px 32px rgba(147,0,211,0.07),0 32px 64px rgba(147,0,211,0.07)
+}
+.shadow-shorter{
+    box-shadow:0 1px 1px rgba(147,0,211,0.11),0 2px 2px rgba(147,0,211,0.11),0 4px 4px rgba(147,0,211,0.11),0 6px 8px rgba(147,0,211,0.11),0 8px 16px rgba(147,0,211,0.11)
+}
+.shadow-longer{
+    box-shadow:0 2px 1px rgba(147,0,211,0.09),0 4px 2px rgba(147,0,211,0.09),0 8px 4px rgba(147,0,211,0.09),0 16px 8px rgba(147,0,211,0.09),0 32px 16px rgba(147,0,211,0.09)
+}
+ #9300d3 shadow end */
+
+/* Some other CSS settings */
+
+/* Archive_main settings */
+.archive-title {
+    /* padding-left: 20px; */
+    font-size: 47px;
+    font-weight: bold;
+}
+.archive-icon {
+    font-size: 20px;
+}
+.archive-subtitle {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.only-authuser {
+    margin-bottom: 30px;
+}
+
+/* Archive_detail settings */
+.detail-title {
+    font-size: 50px;
+    /* font-size: 45px; */
+    font-weight: bold;
+}
+.detail-subtitle {
+    font-size: 17px;
+}
+.detail-created {
+    font-size: 15px;
+}
+.detail-modified {
+    font-size: 15px;
+}
+.detail-contents {
+    font-size: 20px;
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+/* Archive_input Settings*/
+.form-control:focus {
+    border-color: none;
+    box-shadow: none;
+}

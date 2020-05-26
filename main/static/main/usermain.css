@@ -1,0 +1,73 @@
+/* .top-blockxxx {
+    background-color: #f6f5f1;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+} */
+
+.usermain-name {
+    margin: auto;
+    font-size: 76px;
+    letter-spacing: 10px;
+}
+.usermain-intro {
+    white-space: pre-line;
+    font-size: 18px;
+    /* white-space: pre-wrap; */
+}
+.usermain-emoji {
+    font-size: 80px;
+}
+.usermain-archive-content {
+    /* display: flex; */
+    align-items: center;
+}
+.usermain-archive-content:active{
+    box-shadow: inset 8px 8px 8px #bbbab7, 
+    inset -8px -8px 8px #ffffff;
+}
+.img-websites {
+    height: 30px;
+    width: 30px;
+}
+.img-add-archive {
+    height: 40px;
+    width: 40px;
+}
+.img-add-object {
+    height: 30px;
+    width: 30px;
+}
+.usermain-block {
+    /* height: 280px; */
+    height: 150px;
+}
+
+/* .archive-block {
+    border: 1px black solid;
+}
+.archive-block:hover {
+    border: none;
+    border-radius: 10px;
+    background: #f6f5f1;
+    box-shadow:  8px 8px 6px #bbbab7, 
+    -8px -8px 6px #ffffff;
+} */
+.usermain-archive-name {
+    font-weight: bolder;
+    font-size: 34px;
+}
+.usermain-archive-desc {
+    font-size: 13px;
+}
+.my-archive {
+    font-size: 21px;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* .for-authuser {
+    border: red 1px solid;
+} */

@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'history/history.css' %}">
+{% endblock %}
+
+{% block title %} 역사 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-10 text-center">
+        <span class="archive-title">역사</span><span class="archive-icon">📜</span>
+        <!-- <span class="archive-subtitle"> : 기록하지 않은 생각은 머릿속을 둥둥 떠다니다가 이내 휘발되고 만다.</span> -->
+    </div>
+    <div class="col col-12 text-center">
+        <div class="archive-subtitle">지금의 나는 내가 쌓아온 순간들의 합!</div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+
+<div class="row justify-content-center">
+    <div class="col text-center">
+        <img class="temp" src="{% static 'mvp/images/timeline.jpg' %}">
+    </div>
+</div>
+
+{% endblock %}

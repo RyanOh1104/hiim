@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
+<link rel="stylesheet" href="{% static 'dansang/summernote.css' %}">
+{% endblock %}
+
+{% block title %} 단상 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row">
+  <div class="col col-10">
+      <h1 class="page-title">📝무슨 생각을 했어요?</h1>
+  </div>
+</div>
+
+<form method="post" class="form-group">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col col-12"> <!--원래는 col-8-->
+      <div class="input-title">{{form.title|as_crispy_field}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12"> <!--원래는 col-6-->
+      <div class="input-subtitle">{{form.subtitle|as_crispy_field}}</div>
+    </div>
+  </div>
+
+  <div class="block-spacing"></div>
+  
+  {% autoescape off %}
+  <div class="row">
+    <div class="col col-12">
+      {{form.media}}
+      {{form.contents|as_crispy_field|safe}}
+    </div>
+  </div>
+  {% endautoescape %}
+  <!-- <div class="row">
+    <div class="col col-4">
+      {{form.keyword|as_crispy_field}}
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col col-8 input-source">
+      {{form.source|as_crispy_field}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button type='submit' class="btn btn-primary all-buttons">
+        생각 한 편 저장
+      </button>
+    </div>
+  </div>
+      
+</form>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+
+<script>
+    $(function () {
+      $("#datetimepicker1").datetimepicker();
+    });
+    $(".note-color-select div").html('/');
+  </script>
+  
+{% endblock %}

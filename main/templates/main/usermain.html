@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static '/main/usermain.css' %}">
+{% endblock %}
+
+{% block title %} Hi, I'm {{thisUser.name}}! {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-12 text-center">
+        <div class="usermain-name">{{thisUser.name}}</div>
+    </div>
+    <div class="col col-12 text-center">
+        <div class="usermain-intro">{{thisUser.introduction}}</div>
+    </div>
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    <div class="col col-4">
+        <div class="row justify-content-center">
+            <div class="col col-2">
+                <a href={{thisUser.insta}}><img class="img-websites" src="{% static 'mvp/images/insta.png' %}"></a>
+            </div>
+            <div class="col col-2">
+                <a href={{thisUser.facebook}}><img class="img-websites" src="{% static 'mvp/images/facebook.png' %}"></a>
+            </div>
+            <div class="col col-2">
+                <a href={{thisUser.linkedin}}><img class="img-websites" src="{% static 'mvp/images/linkedin.png' %}"></a>
+            </div>
+            <div class="col col-2">
+                <a href={{thisUser.youtube}}><img class="img-websites" src="{% static 'mvp/images/youtube.png' %}"></a>
+            </div>
+            <div class="col col-2">
+                <a href={{thisUser.blog}}><img class="img-websites" src="{% static 'mvp/images/blog.png' %}"></a>
+            </div>
+            <div class="col col-2">
+                <a href={{thisUser.others}}><img class="img-websites" src="{% static 'mvp/images/others.png' %}"></a>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    <div class="col my-archive text-center">기록장</div>
+</div>
+
+<br>
+
+<div class="row usermain-block">
+    <div class="col col-4">
+        <div class="row justify-content-center usermain-block">
+            <div class="col col-11 usermain-archive-content all-blocks">
+                <a href="/dansang/dansangmain" class="all-links">
+                    <div class="row usermain-block">
+                        <div class="col my-auto text-center">
+                            <span class="usermain-archive-name">단상<span class=usermain-archive-desc>💬</span><br></span>
+                            <span class="usermain-archive-desc">단편적인 생각들의 기록.</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-4">
+        <div class="row justify-content-center usermain-block">
+            <div class="col col-11 usermain-archive-content all-blocks">
+                <a href="/history/historymain" class="all-links">
+                    <div class="row usermain-block">
+                        <div class="col my-auto text-center">
+                            <!-- 📜📍👣📌 -->
+                            <span class="usermain-archive-name">역사<span class=usermain-archive-desc>📜</span><br></span>
+                            <span class="usermain-archive-desc">지금의 나는 내가 쌓아온 순간들의 합.</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-4">
+        <div class="row justify-content-center usermain-block">
+            <div class="col col-11 usermain-archive-content all-blocks">
+                <a href="/everyday/everydaymain" class="all-links">
+                    <div class="row usermain-block">
+                        <div class="col my-auto text-center">
+                            <span class="usermain-archive-name">모든 하루<span class=usermain-archive-desc>📅</span><br></span>
+                            <span class="usermain-archive-desc">일상은 추억이 될 수도, 깜깜히 망각될 수도 있다.</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col col-12">
+            <div class="row">
+                <div class="col col-12 text-center">
+                    <a href="#"><img class="img-add-archive for-authuser" src="{% static 'mvp/images/add.png' %}"></a>
+                </div>
+            </div>
+    </div>
+</div> -->
+
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+{% endblock %}

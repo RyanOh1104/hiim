@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="grid_index">
+        <div class="emptyBanner">
+            <h1 id="name">{{myUser.name}}</h1>
+            <h2 id="whatDoYouDo">{{myUser.background}}</h2>
+            <h4 id="myIntroduction">{{myUser.introduction}}</h4>
+            <h4>
+                {% for item in user.userinfo.all %}
+                    <p>{{item.name}}</p>
+                {% endfor %}
+            </h4>
+        </div>
+        <!-- <div class="background_img">
+            <img src = "..\Practice\img\myself_cropped.jpg" alt="myself"></div> -->
+        
+        <!-- ==================== Contact Points Start ==================== -->
+        <!-- <p>{{user.katalk}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.insta}}</p>
+        <p>{{user.facebook}}</p>
+        <p>{{user.linkedin}}</p>
+        <p>{{user.youtube}}</p>
+        <p>{{user.blog}}</p>
+        <p>{{user.brunch}}</p> -->
+
+        <div class="contactPoints">
+            <img id="email" src="C:\Users\user\mvp\hiimmvp\static\images\contacts\email.png">
+            <img id="phone" src="C:\Users\user\mvp\hiimmvp\static\images\contacts\phone.png">
+            <a href={{myUser.insta}}>
+                <img id="insta" src="C:\Users\user\mvp\hiimmvp\static\images\contacts\instagram.png">
+            </a>
+            <a href={{myUser.facebook}}>
+                <img id="facebook" src="C:\Users\user\mvp\hiimmvp\static\images\contacts\facebook.png">
+            </a>
+            <a href={{myUser.linkedin}}>
+                <img id="linkedin" src="C:\Users\user\mvp\hiimmvp\static\images\contacts\linkedin.png">
+            </a>
+        </div>
+        <!-- ==================== Contact Points End ==================== -->
+    
+        <!-- ==================== Archives Start ==================== -->
+        <div class="text_index">
+            <h1 id="text_Archives">Archives</h1>
+            <div class="bigHighlight"></div>
+            <h3 id="text_under_Archives">내가 기록하는 것이 곧 나의 브랜드!</h3>
+        </div>
+        
+        <div class="archive_dansang">
+            <a href="{% url 'dansang_input' %}">
+            <div class="archiveTitle">단상: 생각의 조각들</div>
+            <!-- 아니면 "단상: 언어화된 생각들" -->
+            <div class="archiveIntro">
+                내가 가지고 있는 가치관과 일상의 생각들
+            </div>
+            </a>
+        </div>
+        <div class="archive_history">
+            <a href="http://127.0.0.1:8000/history">
+            <div class="archiveTitle">경험과 경력</div>
+            <div class="archiveIntro">
+                내가 지금까지 경험하고 이뤄온 것들
+            </div>
+            </a>
+        </div>
+        <div class="archive_everyday">
+            <a href="http://127.0.0.1:8000/everyday">
+            <div class="archiveTitle">매일의 기록</div>
+            <div class="archiveIntro">
+                하루하루 꼭꼭 밟아나가기 
+            </div>
+            </a>
+        </div>
+        <!-- <div class="archive_books">
+            <a href="Books.html">
+            <div class="archiveTitle">읽은 책</div>
+            <div class="archiveIntro">
+                내가 지금까지 읽은 책들 
+            </div>
+            </a>
+        </div> -->
+    </div>
+    
+    <div class="footerContent">FOOTER</div>
+    <script>
+
+    </script>
+    <!-- ==================== Archives End ==================== -->
+
+</div>
+</body>
+</html>
+
+{% endblock %}
+<!-- ========== COMMENTS ========== -->
+<!-- Position을 전부 한번 손봐야 할 듯
+Refactoring 무지하게 많겠다. -->

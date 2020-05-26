@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
+    
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load bootstrap4 %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {% block extrahead %}
+    {% endblock %}
+
+    {% load fullcalendar_tags %}
+
+    {% fullcalendar_css %}
+    {% fullcalendar_print_css %}
+    {% fullcalendar_jquery %}
+    {% fullcalendar_jquery_ui %}
+    {% fullcalendar_javascript %}
+    
+    <!-- 달력이 두개 나오는 문제가 아래를 코멘트 처리 하니 해결되었다. -->
+    <!-- {% calendar_init calendar_config_options %} -->
+
+    {% block extra_style %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary nav-bar">
+        <a href="/main/usermain" class='navbar-brand'>
+            <img class="ci" src="{% static 'mvp/images/ci.png' %}">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"> <!--여기 navbarMenu는 임의로 설정-->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item"><a href="#" class="nav-link">Users</a></li>
+                <li class="navbar-item"><a href="#" class="nav-link">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-10">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div> 
+    </div>
+
+    <footer class="fixed-bottom">
+        <div class="row justify-content-center footer">
+            This is where the footer comes<br>
+            <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+            <p>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

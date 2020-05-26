@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'style_dansang.css' %}">
+{% endblock %}
+
+{% block title %} 단상 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="block-spacing"></div>
+
+<div class="row">
+    <div class="col col-12">
+        <h1 class="detail-title">{{thisDansang.title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-12">
+        <h3 class="detail-subtitle">{{thisDansang.subtitle}}</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col col-12 text-right">
+        <div class="detail-created">쓰여진 날짜: {{thisDansang.created}}</div>
+        <div class="detail-modified">마지막으로 수정된 날짜: {{thisDansang.modified}}</div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col col-12">
+        <div class="detail-contents">
+            {{thisDansang.contents}}
+        </div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+
+<form method='post' class="form-group">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <button type="button" class='btn btn-primary all-buttons'>수정하기</button>
+    </div>
+</form>
+
+<div class="block-spacing"></div>
+{% endblock %}

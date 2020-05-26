@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'history/history.css' %}">
+{% endblock %}
+
+{% block title %} 역사 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
+<div class="block-spacing"></div>
+<div class="row">
+    <div class="col col-10">
+        <h1 class="page-title">📝어떤 역사를 쌓아왔나요?</h1>
+
+    </div>
+</div>
+
+<form method="post" class="form-group">{% csrf_token %}
+<div class="row">
+    <div class="col col-11">
+        {{form.what|as_crispy_field}}
+    </div>
+</div>
+<div class="row" id="no-padding-bottom">
+    <div class="col col-10">
+        <div class="row">
+            <div class="col col-4">
+                {{form.start|as_crispy_field}}
+            </div>
+            <div class="col col-4">
+                {{form.end_date|as_crispy_field}}
+            </div>
+            <div class="col col-2 checkbox">
+                <input type="checkbox" class="" id="ing" >
+                <label for="ing" class="checkbox-text">-ing</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-10">
+        <div class="row">
+            <div class="col col-4 helptext">
+                언제 시작했나요?
+            </div>
+            <div class="col col-4 helptext">
+                언제 끝났나요?
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="history-desc">
+    <div class="col col-12">
+        {{form.desc|as_crispy_field}}
+    </div>
+</div>
+<button type='submit' class="btn btn-primary all-buttons">
+    역사 한 조각 저장
+  </button>
+</form>
+
+<div class="block-spacing"></div>
+
+
+
+<script>
+    $(document).ready(function(){
+        $('#ing').click(function(){
+            $("#id_end_date").prop("disabled", true);
+            });
+    });
+</script>
+{% endblock%}

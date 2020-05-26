@@ -1,0 +1,25 @@
+.checkbox {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.checkbox-text {
+    font-size: 18px;
+}
+#no-padding-bottom {
+    margin-bottom: -15px;
+}
+.helptext {
+    padding-left: 20px;
+}
+#history-desc {
+    padding-top: 20px;
+}
+
+/* Deatil page*/
+.detail-timeline {
+    margin: auto;
+    margin-top: 5px;
+    color: #9300d3;
+    border: 4px #9300d3 solid;
+    width: 100%
+}
