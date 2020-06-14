@@ -210,7 +210,7 @@ BOWER_INSTALLED_APPS = (
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
 
-LOGIN_REDIRECT_URL = "/main/usermain"
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login"
 
 # Media 추가할 때 이거 해줘야됨. Telusko 튜토리얼 2시간 18분부터 봐라

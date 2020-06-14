@@ -71,3 +71,7 @@
 /* .for-authuser {
     border: red 1px solid;
 } */
+.coming-soon {
+    border : rgb(124, 123, 123) 1px solid;
+    border-radius: 10px;
+}

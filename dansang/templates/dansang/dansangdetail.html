@@ -11,7 +11,9 @@
 
 {% block content %}
 <div class="block-spacing"></div>
+<div class="block-spacing">
 
+</div>
 <div class="row">
     <div class="col col-12">
         <h1 class="detail-title">{{thisDansang.title}}</h1>
@@ -19,7 +21,7 @@
 </div>
 <div class="row">
     <div class="col col-12">
-        <h3 class="detail-subtitle">{{thisDansang.subtitle}}</h3>
+        <h3 class="detail-subtitle">{{thisDansang.subtitle|safe}}</h3>
     </div>
 </div>
 <div class="row justify-content-center">
@@ -32,7 +34,7 @@
 <div class="row justify-content-center">
     <div class="col col-12">
         <div class="detail-contents">
-            {{thisDansang.contents}}
+            {{thisDansang.contents|safe}}
         </div>
     </div>
 </div>
@@ -42,7 +44,8 @@
 <form method='post' class="form-group">
     {% csrf_token %}
     <div class="row justify-content-center">
-        <button type="button" class='btn btn-primary all-buttons'>수정하기</button>
+        <button class='btn btn-primary all-buttons button-update'><a href="{% url 'update' thisDansang.authuser_id thisDansang.slug %}">수정하기</a></button>
+        <button class='btn btn-primary all-buttons button-delete'><a href="{% url 'delete' thisDansang.authuser_id thisDansang.slug %}">삭제하기</a></button>
     </div>
 </form>
 

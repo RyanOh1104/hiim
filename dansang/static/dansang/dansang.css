@@ -3,8 +3,19 @@
     /* border-radius: 5px; */
     /* border-left: 3px black solid; */
     /* border-right: 1px black solid; */
+    border: 1px lightgrey solid;
+    border-radius: 10px;
 }
-
+.block-dansang:hover {
+    box-shadow:  5px 5px 3px #bbbab7, 
+    -5px -5px 3px #ffffff;
+    border: none;
+}
+.block-dansang:active {
+    box-shadow: inset 5px 5px 3px #bbbab7, 
+    inset -5px -5px 3px #ffffff;
+    border: none;
+}
 .title {
     font-weight: bold;
     font-size: 21px;
@@ -44,5 +55,8 @@
 }
 .button-input {
     text-align: right;
+}
+.helptext {
+    margin-top: 3px;
 }
 

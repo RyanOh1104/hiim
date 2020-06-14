@@ -6,15 +6,18 @@ $input-btn-font-family: "NanumSquare" !default;
 
 // $body-bg: #E0E5EC;
 // $body-bg: #EBECF1;
-$body-bg: #f6f5f1;
 // $body-bg: #ffffff;
+// $body-bg: #f6f5f1;
+$body-bg: #f6f5f1;
 $body-color: #111;
 
-$primary: #9300d3;
-$secondary : #f6f5f1;
+$primary: purple;
+// $secondary : #f6f5f1;
+$secondary : white;
 
 $theme-colors: (
-  "primary": #9300d3,
+  // "primary": #9300d3,
+  "primary" : #f6f6f1,
   "danger": #ff4136
 );
 

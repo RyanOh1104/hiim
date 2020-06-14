@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .utils import events_to_json, calendar_options
-from .forms import EEverydayInputForm
-from .models import EverydayInput, NewEvent
+from .forms import EverydayInputForm
+from .models import NewEvent
 from main.models import UserInfo
-from datetime import date
+from datetime import date, datetime
 from django.utils import timezone
 from django_slugify_processor.text import slugify
 import json
@@ -13,46 +12,35 @@ import json
 # Create your views here.
 @login_required
 def everydayinput(request):
-    today = date.today()
+    today = datetime.today()
     # setting initial user as current logged in user
     # form = EverydayInputForm(initial={'authuser':request.user})
-    form = EEverydayInputForm(initial={'authuser':request.user})
+    form = EverydayInputForm(initial={'authuser':request.user})
 
     if request.method == 'POST':
         # form = EverydayInputForm(request.POST)
-        form = EEverydayInputForm(request.POST)
+        form = EverydayInputForm(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
-            # instance.when = today
-            # instance.kw1 = str(instance.kw1) + "<br>"
-            # instance.kw2 = str(instance.kw2) + "<br>"
             instance.when = str(instance.when)
-            instance.end = instance.when
-            # instance.slug = 
-            # instance.url = 
+
+            instance.slug = slugify(today)
+            instance.url = "127.0.0.1:8000/everyday/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/everyday/everydaymain')
 
     return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today})
 
 def everydaymain(request):
-    all_events = NewEvent.objects.all()
+    all_events = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
     if request.GET:  
         event_arr = []
         all_events = NewEvent.objects.all()
-        
-        for i in all_events:
-            event_sub_arr = {}
-            event_sub_arr['title'] = i.what
-            event_sub_arr['start'] = i.when
-            event_sub_arr['end'] = i.when
-            event_arr.append(event_sub_arr)
-        return HttpResponse(json.dumps(event_arr))
 
     context = {
-        "events":all_events,
+        "todays":all_events,
         'thisUser':thisUser
     }
     return render(request,'everyday/everydaymain.html', context)
@@ -62,38 +50,33 @@ def all_events(request):
     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
 
 def everydaydetail(request, authuser_id, slug):
-    pass
+    today = NewEvent.objects.get(slug=slug)
+    return render(request, 'everyday/everydaydetail.html', {'today' : today})
 
+def update(request, authuser_id, slug):
+    # thisDansang = DansangInput.objects.get(slug=slug)
+    # form = DansangInputForm(instance=thisDansang)
+    # return render(request, 'dansang/dansangmain.html', {'form':form})
+    getToday = NewEvent.objects.get(slug=slug)
+    today = datetime.today()
+    # 글을 수정사항을 입력하고 제출을 눌렀을 때
+    if request.method == "POST":
+        form = EverydayInputForm(request.POST) 
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.authuser = request.user
+            instance.slug = slugify(today)
+            instance.url = "127.0.0.1:8000/everyday/everydaydetail/" + str(authuser_id) + '/' + str(instance.slug)
+            getToday.delete()
+            instance.save()
+            return redirect('/everyday/everydaydetail/' + str(authuser_id) + '/' + str(instance.slug))
 
-# 아래 왜 주석처리 되어있는데 코드 변경하면 반영되지?
-OPTIONS = """{  timeFormat: "H:mm",
-                header: {
-                    left: 'prev,next',
-                    center: 'title',
-                    right: 'Nothing comes here',
-                },
-                allDaySlot: false,
-                firstDay: 0,
-                weekMode: 'liquid',
-                slotMinutes: 15,
-                defaultEventMinutes: 30,
-                minTime: 8,
-                maxTime: 20,
-                editable: true,
-            }"""
+    # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
+    else:
+        form = EverydayInputForm(instance = getToday)
+        return render(request, 'everyday/update.html', {'form':form})
 
-# header > center 아래에 원래 'right'도 있었음
-# right: 'month, agendaWeek, agendaDay'
-
-# dayClick: function(date, allDay, jsEvent, view) {
-#                     if (allDay) {       
-#                         $('#calendar').fullCalendar('gotoDate', date)      
-#                         $('#calendar').fullCalendar('changeView', 'agendaDay')
-#                     }
-#                 },
-#                 eventClick: function(event, jsEvent, view) {
-#                     if (view.name == 'month') {     
-#                         $('#calendar').fullCalendar('gotoDate', event.start)      
-#                         $('#calendar').fullCalendar('changeView', 'agendaDay')
-#                     }
-#                 },
+def delete(request, authuser_id, slug):
+    today = NewEvent.objects.get(slug=slug)
+    today.delete()
+    return redirect('/everyday/everydaymain')

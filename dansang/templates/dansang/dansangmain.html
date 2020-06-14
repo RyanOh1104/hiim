@@ -31,11 +31,16 @@
 </div> -->
 
 <div class="row">
-    <div class="col button-input">
-        <a href="#">
-            <button class="doyou-need-input all-buttons btn btn-primary">👀 인풋이 필요해요?</button>
+    <div class="col col-6 button-new">
+        <a href="http://127.0.0.1:8000/dansang/dansanginput">
+            <button class="all-buttons btn btn-primary">✒️ 생각 끄적이기</button>
         </a>
-        <!-- <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>     -->
+    </div>
+    <div class="col col-6 button-input">
+        <a href="http://127.0.0.1:8000/dansang/dailyinputs/{{today}}">
+            <button class="all-buttons btn btn-primary">👀 인풋이 필요해요?</button>
+        </a>
+        <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>    
     </div>
 </div>
 <br>
@@ -48,9 +53,9 @@
         <div class="col col-6">
             <a href="{{item.url}}" class="all-links">
             <div class="row justify-content-center">
-                <div class="col col-11 all-blocks block-dansang content-block">
+                <div class="col col-11 block-dansang content-block">
                     <h3 class="title">{{item.title}}</h3>
-                    <h5 class="first-sentence">{{item.subtitle}}</h5>
+                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
                 </div>
             </div>
             </a>
@@ -59,9 +64,9 @@
         <div class="col col-6">
             <a href="{{item.url}}">
             <div class="row justify-content-center">
-                <div class="col col-11 all-blocks block-dansang content-block">
+                <div class="col col-11 block-dansang content-block">
                     <h3 class="title">{{item.title}}</h3>
-                    <h5 class="first-sentence">{{item.subtitle}}</h5>
+                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
                 </div>
             </div>
             </a>
@@ -76,7 +81,6 @@
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 {% endblock %}
-
 <!-- 필요한 JS 코드
 지금 로그인되어있는 사람이 
 if authuser == request.user (맞나?) 

@@ -8,14 +8,15 @@ class NewEvent(models.Model):
     objects = models.Manager()
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'event', null=True, default=None)
     when = models.DateField(_('When'), auto_now_add=False)
-    end = models.DateField(_('End'), null=True)
-    all_day = models.BooleanField(_('All day'), default=True)
     what = models.CharField(_('What'), max_length = 5000, default="None")
 
     kw1 = models.CharField(max_length=100, default="")
     kw2 = models.CharField(max_length=100, default="")
     kw3 = models.CharField(max_length=100, default="")
     emoji = models.CharField(max_length = 10, default="")
+
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
+    url = models.URLField(max_length = 1000, blank=True)
     # models.DateTimeField(input_formats=["%d %b %Y %H:%M:%S %Z"])
     
     class Meta:
@@ -27,36 +28,11 @@ class NewEvent(models.Model):
     def __str__(self):
         return str(self.when)
 
-class EverydayInput(models.Model):
-    objects = models.Manager()
-    authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everydayxxx', null=True, default=None)
-    date = models.DateField(auto_now_add=True)
+    # objects = models.Manager()
+    # authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
+    # date = models.DateField(auto_now_add=True)
 
-    # slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
-    # url = models.URLField(max_length=10000, blank=True)
-
-    contents = models.CharField(max_length=10485759, default="How was your day")
     # format_simple = models.CharField(max_length=200)
     
-    def __str__(self):
-        return str(self.date)
-
-# class EverydayInputFree(models.Model):
-    objects = models.Manager()
-    authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
-    date = models.DateField(auto_now_add=True)
-
-    format_free = models.CharField(max_length=10485759)
-    
-    def __str__(self):
-        return str(self.date)
-
-# class EverydayInputiSimple(models.Model):
-    objects = models.Manager()
-    authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
-    date = models.DateField(auto_now_add=True)
-
-    format_simple = models.CharField(max_length=200)
-    
-    def __str__(self):
-        return str(self.date)
+    # def __str__(self):
+    #     return str(self.date)

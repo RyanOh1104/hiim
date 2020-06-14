@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block title %} Welcome! {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="block-spacing"></div>
+
+<div class="row justify-content-center">
+    <div class="col col-10">
+        나에 대한 모든 기록, HII'M
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col col-10">
+        <button class="btn btn-primary">
+            <a href="http://127.0.0.1:8000/login/">HII'M 시작하기</a>
+        </button>
+    </div>
+</div>
+{% endblock %}

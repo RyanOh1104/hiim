@@ -22,6 +22,10 @@
     /* display: flex; */
     align-items: center;
 }
+.usermain-archive-content:active{
+    box-shadow: inset 8px 8px 8px #bbbab7, 
+    inset -8px -8px 8px #ffffff;
+}
 .img-websites {
     height: 30px;
     width: 30px;
@@ -38,6 +42,7 @@
     /* height: 280px; */
     height: 150px;
 }
+
 /* .archive-block {
     border: 1px black solid;
 }
@@ -66,3 +71,7 @@
 /* .for-authuser {
     border: red 1px solid;
 } */
+.coming-soon {
+    border : rgb(124, 123, 123) 1px solid;
+    border-radius: 10px;
+}

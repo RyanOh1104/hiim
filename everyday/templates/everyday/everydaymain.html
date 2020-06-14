@@ -4,34 +4,14 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'base.css' %}">
 <link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
+
 {% endblock %}
 
 {% block extrahead %}
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#calendar').fullCalendar({
-            defaultDate: '2020-05-14',
-            editable: true,
-            eventLimit: true, 
-            events: [
-                {% for i in events %}
-                {
-                    title: "{{ i.kw1|safe }}<br>{{ i.kw2|safe }}<br>{{ i.kw3|safe }}",
-                    start: "{{ i.when|date:'Y-m-d' }}",
-                    end: "{{ i.when|date:'Y-m-d' }}",
-                },
-                {% endfor %}
-                ]
-            });
-        });
-    $(document).ready(function() {
-        $('.fc-event').attr('unselectable', 'off');
-    }
-    );
-</script>
+
 {% endblock %}
 
-{% block title %} 모든 하루 {% endblock %}
+{% block title %} 모든 오늘 {% endblock %}
 
 {% load crispy_forms_tags %}
 {% load fullcalendar_tags %}
@@ -41,7 +21,7 @@
 
 <div class="row justify-content-center top-block">
     <div class="col col-10 text-center">
-        <span class="archive-title">모든 하루</span><span class="archive-icon">📅</span>
+        <span class="archive-title">모든 오늘</span><span class="archive-icon">📅</span>
     </div>
     <div class="col col-12 text-center">
         <div class="archive-subtitle">일상은 추억으로 남을 수도, 혹은 깜깜히 망각될 수도 있어요!   
@@ -49,11 +29,46 @@
     </div>
 </div>
 
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+
 <div class="row justify-content-center">
-    <div style="height:800px; line-height:800px; width:800px; margin:0 auto;">
-        <div style="width:800px; display:inline-block; vertical-align:middle; line-height:normal;">
-            {% calendar %}
-        </div>
-    </div>
+
+        <div class="col col-12">
+            <table id="mycalendar" style="border-color:#3333FF ">
+                <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
+                    <td class="prevNext"><button class="btn btn-primary prevNextButtons" onclick="prevCalendar()">⬅</button></td>
+                    <td id="tbCalendarYM" colspan="5">
+                    yyyy년 m월</td>
+                    <td class="prevNext"><button class="btn btn-primary prevNextButtons" onclick="nextCalendar()">➡</button></td>
+                </tr>
+                <tr>
+                    <td class='sevenDays' id='sun'>일</td>
+                    <td class='sevenDays'>월</td>
+                    <td class='sevenDays'>화</td>
+                    <td class='sevenDays'>수</td>
+                    <td class='sevenDays'>목</td>
+                    <td class='sevenDays'>금</td>
+                    <td class='sevenDays' id='sat'>토</td>
+                </tr> 
+            </table>
+        </div>    
+
 </div> 
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+
+<script>
+    var events = [
+        {% for k in todays %}
+        {
+            keywords : `{{ k.kw1|safe }}<br>{{ k.kw2|safe }}<br>{{ k.kw3|safe }}`,
+            dates : "{{ k.when|date:'Y-m-d' }}",
+        },
+        {% endfor %}
+    ]
+    var userId = `{{thisUser.authuser_id}}`;
+</script>
+<script src="{% static '/everyday/everyday.js' %}"></script>
 {% endblock %}

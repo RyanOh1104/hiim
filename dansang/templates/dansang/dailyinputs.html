@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
+{% endblock %}
+
+{% block title %} 오늘의 인풋 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row block-spacing"></div>
+<div class="row">
+    <div class="col">
+        인풋은 하루에 하나만 제공됩니다!
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h1>인풋의 타이틀</h1>
+    </div>
+</div>
+{% endblock %}

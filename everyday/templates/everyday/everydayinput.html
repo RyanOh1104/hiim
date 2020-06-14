@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
 {% endblock %}
 
-{% block title %} 일상 {% endblock %}
+{% block title %} 모든 오늘 {% endblock %}
 
 {% load crispy_forms_tags %}
 {% load bootstrap4 %}
@@ -36,23 +36,16 @@
     <div class="row">
         <div class="col">
             <div class="helptext">
-                오늘 하루를 최대 세 개의 키워드로 표현해보세요!
+                오늘 하루를 최대 세 개의 짧은 키워드로 표현해보세요!
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col col-2 keywords">{{form.kw1|as_crispy_field}}</div>
-        <div class="col col-2 keywords">{{form.kw2|as_crispy_field}}</div>
-        <div class="col col-2 keywords">{{form.kw3|as_crispy_field}}</div>
+        <div class="col col-2 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+        <div class="col col-2 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+        <div class="col col-2 keywordInputs">{{form.kw3|as_crispy_field}}</div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="helptext">
-                귀.. 귀찮으면 이모지로라도..! 
-                {{form.emoji|as_crispy_field}}
-            </div>
-        </div>  
-    </div>
+
 
     <br>
     <button type='submit' class='btn btn-primary all-buttons'>오늘 하루 저장</button>

@@ -17,7 +17,7 @@ def register(response):
             newUser =  authenticate(response, username=username, password=password)
             if newUser:
                 login(response, newUser)
-                return redirect('/main/inputuserinfo')
+                return redirect('/inputuserinfo')
 
             # 여기에 새로 가입한 user의 id를 어떤 변수에 받아오고, 그걸 아래에 뒤에 <int:id>처럼 붙이면 어떨까? 바로 자기 페이지로 redirect되게.
     else:
