@@ -8,6 +8,6 @@ urlpatterns = [
     path('everydaymain', views.everydaymain, name="everydaymain"),
     path('all_events/', views.all_events, name='all_events'),
     path('everydaydetail/<int:authuser_id>/<str:slug>', views.everydaydetail, name='everydaydetail'),
-    path('delete/<int:authuser_id>/<str:slug>', views.delete, name='delete'),
-    path('update/<int:authuser_id>/<str:slug>', views.update, name='update'),
+    path('delete/<int:authuser_id>/<str:slug>', views.everydayDelete, name='delete'),
+    path('update/<int:authuser_id>/<str:slug>', views.everydayUpdate, name='update'),
 ]

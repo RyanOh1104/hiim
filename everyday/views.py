@@ -53,7 +53,7 @@ def everydaydetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
     return render(request, 'everyday/everydaydetail.html', {'today' : today})
 
-def update(request, authuser_id, slug):
+def everydayUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)
     # form = DansangInputForm(instance=thisDansang)
     # return render(request, 'dansang/dansangmain.html', {'form':form})
@@ -76,7 +76,7 @@ def update(request, authuser_id, slug):
         form = EverydayInputForm(instance = getToday)
         return render(request, 'everyday/update.html', {'form':form})
 
-def delete(request, authuser_id, slug):
+def everydayDelete(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
     today.delete()
     return redirect('/everyday/everydaymain')

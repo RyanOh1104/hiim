@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
 {% endblock %}
 
-{% block title %} 단상 {% endblock %}
+{% block title %} 끄적끄적 {% endblock %}
 
 {% load crispy_forms_tags %}
 
@@ -15,10 +15,10 @@
 
 <div class="row justify-content-center top-block">
     <div class="col col-10 text-center">
-        <span class="archive-title">단상</span><span class="archive-icon">💬</span>
+        <span class="archive-title">끄적끄적</span><span class="archive-icon">💬</span>
     </div>
     <div class="col col-12 text-center">
-        <div class="archive-subtitle">기록하지 않은 생각은 머릿속을 둥둥 떠다니다가 이내 휘발되고 만다!</div>
+        <div class="archive-subtitle">문득 떠오르는 생각들의 기록</div>
     </div>
 </div>
 
@@ -40,7 +40,7 @@
         <a href="http://127.0.0.1:8000/dansang/dailyinputs/{{today}}">
             <button class="all-buttons btn btn-primary">👀 인풋이 필요해요?</button>
         </a>
-        <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>    
+        <!-- <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>     -->
     </div>
 </div>
 <br>
@@ -77,6 +77,12 @@
     {% endwith %}
     {% endfor %}
     {% endwith %}
+
+<div class="manual">
+    <button class="btn manual-button" id="manual-dansang">
+        📋 사용법
+    </button>
+</div>
 <!-- </div> -->
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>

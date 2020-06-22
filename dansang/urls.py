@@ -7,8 +7,8 @@ urlpatterns = [
     path('dansanginput', views.dansanginput, name='dansanginput'),
     path('dansangmain', views.dansangmain, name='dansangmain'),
     path('dansangdetail/<int:authuser_id>/<str:slug>', views.dansangdetail, name='dansangdetail'),
-    path('delete/<int:authuser_id>/<str:slug>', views.delete, name='delete'),
-    path('update/<int:authuser_id>/<str:slug>', views.update, name='update'),
+    path('delete/<int:authuser_id>/<str:slug>', views.dansangDelete, name='dansangDelete'),
+    path('update/<int:authuser_id>/<str:slug>', views.dansangUpdate, name='dansangUpdate'),
     path('dailyinputs/<int:num>', views.dailyinputs, name='dailyinputs'),
 
 ]

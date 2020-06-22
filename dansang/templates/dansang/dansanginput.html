@@ -34,25 +34,15 @@
   
   {% autoescape off %}
   <div class="row">
-    <div class="col col-12">
+    <div class="col col-12 input-content">
       {{form.media}}
       {{form.contents|as_crispy_field|safe}}
     </div>
   </div>
   {% endautoescape %}
-  <!-- <div class="row">
-    <div class="col col-4">
-      {{form.keyword|as_crispy_field}}
-    </div>
-  </div> -->
-  <div class="row">
-    <div class="col col-8 input-source">
-      {{form.source|as_crispy_field}}
-    </div>
-  </div>
   <div class="row">
     <div class="col">
-      <button type='submit' class="btn btn-primary all-buttons">
+      <button type='submit' class="btn menial-buttons">
         생각 한 편 저장
       </button>
     </div>

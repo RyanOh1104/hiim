@@ -15,7 +15,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="block-spacing"></div>
 <div class="row">
     <div class="col col-10">
         <h1 class="page-title">📝오늘 무슨 일이 있었어요?</h1>
@@ -30,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <div id="what">{{form.what|as_crispy_field}}</div>
+            <div>{{form.what|as_crispy_field}}</div>
         </div>
     </div>
     <div class="row">
@@ -48,7 +47,7 @@
 
 
     <br>
-    <button type='submit' class='btn btn-primary all-buttons'>오늘 하루 저장</button>
+    <button type='submit' class='btn menial-buttons'>오늘 하루 저장</button>
 </form>
 
 {% endblock %}

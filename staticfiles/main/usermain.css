@@ -1,19 +1,71 @@
-/* .top-blockxxx {
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.main-first-page {
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px black solid;
+    /* background: url(mvp/images/4.jpg) no-repeat 50% 50%; */
+}
+.usermain-block {
     background-color: #f6f5f1;
-    border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-} */
-
+    /* height: 150px; */
+    display: inline-block;
+    vertical-align: middle;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.main-second-page {
+    width: 100%;
+    height: 100%;
+}
+.empty-row-lower {
+    height: 45%;
+}
+.usermain-ci {
+    width : 150px;
+}
+#usermain-ci {
+    padding-top: 10px;
+    text-align: right;
+}
 .usermain-name {
     margin: auto;
-    font-size: 76px;
-    letter-spacing: 10px;
+    font-size: 55px;
+    letter-spacing: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+.block {
+    border-radius: 10px;
+    border: #9300d3 2px solid;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 .usermain-intro {
     white-space: pre-line;
-    font-size: 18px;
+    font-size: 21px;
+    /* border: black 1px solid; */
     /* white-space: pre-wrap; */
+}
+.scroll-down-img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 아래부터 second page */
+.social-media {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px black solid;
+} 
+.my-archive {
+    font-size: 21px;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
 }
 .usermain-emoji {
     font-size: 80px;
@@ -38,21 +90,6 @@
     height: 30px;
     width: 30px;
 }
-.usermain-block {
-    /* height: 280px; */
-    height: 150px;
-}
-
-/* .archive-block {
-    border: 1px black solid;
-}
-.archive-block:hover {
-    border: none;
-    border-radius: 10px;
-    background: #f6f5f1;
-    box-shadow:  8px 8px 6px #bbbab7, 
-    -8px -8px 6px #ffffff;
-} */
 .usermain-archive-name {
     font-weight: bolder;
     font-size: 34px;
@@ -60,18 +97,19 @@
 .usermain-archive-desc {
     font-size: 13px;
 }
-.my-archive {
-    font-size: 21px;
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.archive-block {
+    height: 130px;
 }
-
-/* .for-authuser {
-    border: red 1px solid;
-} */
 .coming-soon {
-    border : rgb(124, 123, 123) 1px solid;
+    border : rgb(124, 123, 123) 1px dashed;
     border-radius: 10px;
+}
+/* Input */
+#in-addition {
+    font-weight: bold;
+    padding-top: 10px;
+}
+#in-addition-sub {
+    font-size: 17px;
+    padding-bottom: 20px;
 }

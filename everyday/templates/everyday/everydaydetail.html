@@ -32,8 +32,26 @@
 <form method='post' class="form-group">
     {% csrf_token %}
     <div class="row justify-content-center">
-        <button class='btn btn-primary all-buttons button-update'><a href="{% url 'update' today.authuser_id today.slug %}">수정하기</a></button>
-        <button class='btn btn-primary all-buttons button-delete'><a href="{% url 'delete' today.authuser_id today.slug %}">삭제하기</a></button>
+        <div class="col col-4">
+            <div class="row justify-content-center">
+                <div class="col col-5">
+                    <button class='btn menial-buttons button-update'>
+                        <span class="menial-btn-text"><a href="{% url 'update' today.authuser_id today.slug %}">
+                            수정하기
+                        </a></span>
+                    </button>
+                </div>
+                <div class="col col-5">
+                    <button class='btn menial-buttons button-delete'>
+                        <span class="menial-btn-text"><a href="{% url 'delete' today.authuser_id today.slug %}">
+                            삭제하기
+                        </a></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </form>
 

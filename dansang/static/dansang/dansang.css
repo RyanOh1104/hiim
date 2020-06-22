@@ -35,17 +35,23 @@
     margin-left: -15px;
     margin-right: -15px;
 }
-
 .input-title {
     background-color: #f6f5f1;
     border: none;
     height: 80px;
+
 }
 .input-subtitle {
     background-color: #f6f5f1;
     border: none;
     margin-bottom: -50px;
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
+}
+.input-content {
+    /* line-height: 1.2; */
+}
+.card-block {
+    font-size: 17px !important;
 }
 .doyou-need-input {
     font-size: 13px;
@@ -59,4 +65,5 @@
 .helptext {
     margin-top: 3px;
 }
+
 

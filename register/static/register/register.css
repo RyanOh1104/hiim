@@ -6,3 +6,13 @@
     opacity: .6;
     margin-left: 90px;
 }
+.login-block {
+    border-radius: 10px;
+    border: #9300d3 2px solid;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#register-here {
+    text-decoration: underline;
+    color: #9300d3;
+}

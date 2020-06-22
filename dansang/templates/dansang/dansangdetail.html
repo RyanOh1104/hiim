@@ -15,16 +15,21 @@
 
 </div>
 <div class="row">
-    <div class="col col-12">
-        <h1 class="detail-title">{{thisDansang.title}}</h1>
+    <div class="col detail-title">
+        <div class="row">
+            <div class="col col-12">
+                <h1 id="detail-title">{{thisDansang.title}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12">
+                <h3 id="detail-subtitle">{{thisDansang.subtitle|safe}}</h3>
+            </div>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col col-12">
-        <h3 class="detail-subtitle">{{thisDansang.subtitle|safe}}</h3>
-    </div>
-</div>
-<div class="row justify-content-center">
+
+<div class="row justify-content-center detail-dates">
     <div class="col col-12 text-right">
         <div class="detail-created">쓰여진 날짜: {{thisDansang.created}}</div>
         <div class="detail-modified">마지막으로 수정된 날짜: {{thisDansang.modified}}</div>
@@ -44,8 +49,22 @@
 <form method='post' class="form-group">
     {% csrf_token %}
     <div class="row justify-content-center">
-        <button class='btn btn-primary all-buttons button-update'><a href="{% url 'update' thisDansang.authuser_id thisDansang.slug %}">수정하기</a></button>
-        <button class='btn btn-primary all-buttons button-delete'><a href="{% url 'delete' thisDansang.authuser_id thisDansang.slug %}">삭제하기</a></button>
+        <div class="col col-4">
+            <div class="row justify-content-center">
+                <div class="col col-5">
+                    <button class='btn menial-buttons button-update'>
+                        <span class="menial-btn-text"><a href="{% url 'dansangUpdate' thisDansang.authuser_id thisDansang.slug %}">
+                        수정하기</a></span>
+                    </button>
+                </div>
+                <div class="col col-5">
+                    <button class='btn menial-buttons button-delete'>
+                        <span class="menial-btn-text"><a href="{% url 'dansangDelete' thisDansang.authuser_id thisDansang.slug %}">
+                        삭제하기</a></span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </form>
 

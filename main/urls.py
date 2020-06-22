@@ -9,7 +9,7 @@ urlpatterns = [
     # path('view/', views.view, name="view")
     path('inputuserinfo', views.inputuserinfo, name='inputuserinfo'),
     path('', views.usermain, name='usermain'),
-    path('landing', views.landing, name="landing"),
+    path('welcome', views.landing, name="landing"),
     path('tong', views.tong, name='tong'),
     path('update/<int:authuser_id>', views.update, name='update'),
 ]

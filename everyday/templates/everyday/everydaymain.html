@@ -24,7 +24,7 @@
         <span class="archive-title">모든 오늘</span><span class="archive-icon">📅</span>
     </div>
     <div class="col col-12 text-center">
-        <div class="archive-subtitle">일상은 추억으로 남을 수도, 혹은 깜깜히 망각될 수도 있어요!   
+        <div class="archive-subtitle">일상은 추억이 될 수도, 사라진 기억이 될 수도 있다.   
         </div>
     </div>
 </div>
@@ -37,10 +37,10 @@
         <div class="col col-12">
             <table id="mycalendar" style="border-color:#3333FF ">
                 <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-                    <td class="prevNext"><button class="btn btn-primary prevNextButtons" onclick="prevCalendar()">⬅</button></td>
+                    <td class="prevNext"><button class="btn prevNextButtons" onclick="prevCalendar()">⬅</button></td>
                     <td id="tbCalendarYM" colspan="5">
                     yyyy년 m월</td>
-                    <td class="prevNext"><button class="btn btn-primary prevNextButtons" onclick="nextCalendar()">➡</button></td>
+                    <td class="prevNext"><button class="btn prevNextButtons" onclick="nextCalendar()">➡</button></td>
                 </tr>
                 <tr>
                     <td class='sevenDays' id='sun'>일</td>
@@ -55,6 +55,13 @@
         </div>    
 
 </div> 
+
+<div class="manual">
+    <button class="btn manual-button" id="manual-dansang">
+        📋 사용법
+    </button>
+</div>
+
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
@@ -64,7 +71,8 @@
         {% for k in todays %}
         {
             keywords : `{{ k.kw1|safe }}<br>{{ k.kw2|safe }}<br>{{ k.kw3|safe }}`,
-            dates : "{{ k.when|date:'Y-m-d' }}",
+            dates : `{{ k.when|date:'Y-m-d' }}`,
+            slug : `{{k.slug}}`,
         },
         {% endfor %}
     ]

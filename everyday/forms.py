@@ -10,8 +10,9 @@ from emoji_picker.widgets import EmojiPickerTextInputAdmin
 class EverydayInputForm(forms.ModelForm):
     what = forms.CharField(required=False, 
     widget = forms.Textarea(attrs={
-        'placeholder': 'Tip1. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요? \nTip2. 단순히 하루 일과를 나열하는 것도 좋지만, 특히 기억할 만한 일 몇 가지를 기록해보는 건 어때요?',
-        'rows' : 8
+        'placeholder': 'Tip. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요?',
+        'rows' : 8,
+        'id' : 'what'
         }))
     kw1 = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
     'placeholder' : '하나', 'class' : 'keywords'

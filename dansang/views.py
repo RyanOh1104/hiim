@@ -28,14 +28,14 @@ def dansanginput(request):
             # Subtitle이 없다면 First Sentence로 대체
             if instance.subtitle == "":
                 instance.subtitle = instance.first_sentence
-            instance.slug = slugify(datetime.datetime.now())
+            instance.slug = slugify(datetime.now())
             # instance.slug = slugify(instance.title, allow_unicode=True)   이건 한글 제목일 때 불가능!
             # instance.save()   이거는 url의 마지막을 이 dansang의 id로 쓰고자 할 때 활성화. 
             instance.url = "127.0.0.1:8000/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/dansang/dansangmain')
 
-    return render(request,'dansang/dansanginput.html',{'form':form})
+    return render(request,'dansang/dansanginput.html', {'form':form})
 
 
 def dansangmain(request):
@@ -63,11 +63,10 @@ def dailyinputs(request, num):
     }
     return render(request, 'dansang/dailyinputs.html', context)
 
-def update(request, authuser_id, slug):
+def dansangUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)
     # form = DansangInputForm(instance=thisDansang)
     # return render(request, 'dansang/dansangmain.html', {'form':form})
-    
     thisDansang = DansangInput.objects.get(slug=slug)
     # 글을 수정사항을 입력하고 제출을 눌렀을 때
     if request.method == "POST":
@@ -75,7 +74,7 @@ def update(request, authuser_id, slug):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
-            instance.slug = slugify(datetime.datetime.now())
+            instance.slug = slugify(datetime.now())
             instance.url = "127.0.0.1:8000/dansang/dansangdetail/" + str(authuser_id) + '/' + str(instance.slug)
             thisDansang.delete()
             instance.save()
@@ -86,7 +85,7 @@ def update(request, authuser_id, slug):
         form = DansangInputForm(instance = thisDansang)
         return render(request, 'dansang/update.html', {'form':form})
 
-def delete(request, authuser_id, slug):
+def dansangDelete(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
     thisDansang.delete()
     return redirect('/dansang/dansangmain')

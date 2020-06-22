@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/usermain-base.html' %}
 
 {% load static %}
 {% block css %}
@@ -11,114 +11,139 @@
 
 {% block content %}
 
-<div class="row block-spacing"></div>
+<div class="main-first-page">
+    <div class="row h-25"></div>
 
-<div class="row justify-content-center top-block">
-    <div class="col col-12 text-center">
-        <div class="usermain-name">{{thisUser.name}}</div>
-    </div>
-    <div class="col col-12 text-center">
-        <div class="usermain-intro">{{thisUser.introduction}}</div>
-    </div>
-</div>
-
-<br>
-
-<div class="row justify-content-center">
-    <div class="col col-4">
-        <div class="row justify-content-center">
-            <div class="col col-2">
-                <a href="https://www.instagram.com/{{thisUser.insta}}"><img class="img-websites" src="{% static 'mvp/images/insta.png' %}"></a>
+    <div class="row h-25 justify-content-center">
+        <div class="col usermain-block">
+            <div class="row justify-content-center ci-and-name">
+                <div class="col col-3" id="usermain-ci">
+                    <img class = "usermain-ci" src="{% static 'mvp/images/ci.png' %}">
+                </div>
+                <div class="col col-3 text-center">
+                    <div class="usermain-name"><span class="highlight">{{thisUser.name}}</span></div>
+                </div>
             </div>
-            <div class="col col-2">
-                <a href="{{thisUser.facebook}}"><img class="img-websites" src="{% static 'mvp/images/facebook.png' %}"></a>
-            </div>
-            <div class="col col-2">
-                <a href="{{thisUser.linkedin}}"><img class="img-websites" src="{% static 'mvp/images/linkedin.png' %}"></a>
-            </div>
-            <div class="col col-2">
-                <a href="{{thisUser.youtube}}"><img class="img-websites" src="{% static 'mvp/images/youtube.png' %}"></a>
-            </div>
-            <div class="col col-2">
-                <a href="{{thisUser.blog}}"><img class="img-websites" src="{% static 'mvp/images/blog.png' %}"></a>
-            </div>
-            <div class="col col-2">
-                <a href="{{thisUser.others}}"><img class="img-websites" src="{% static 'mvp/images/others.png' %}"></a>
-            </div>
-        </div>
-    </div>  
-</div>
-
-<br>
-
-<div class="row justify-content-center">
-    <div class="col my-archive text-center">기록장</div>
-</div>
-
-<br>
-
-<div class="row usermain-block">
-    <div class="col col-4">
-        <div class="row justify-content-center usermain-block">
-            <div class="col col-11 usermain-archive-content all-blocks">
-                <a href="/dansang/dansangmain" class="all-links">
-                    <div class="row usermain-block">
-                        <div class="col my-auto text-center">
-                            <span class="usermain-archive-name">단상<span class=usermain-archive-desc>💬</span><br></span>
-                            <span class="usermain-archive-desc">단편적인 생각들의 기록.</span>
-                        </div>
-                    </div>
-                </a>
+            <div class="row justify-content-center">
+                <div class="col col-12 text-center">
+                    <div class="usermain-intro">{{thisUser.introduction}}</div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- <div class="col col-4">
-        <div class="row justify-content-center usermain-block">
-            <div class="col col-11 usermain-archive-content all-blocks">
-                <a href="/history/historymain" class="all-links">
-                    <div class="row usermain-block">
-                        <div class="col my-auto text-center">
-                            📜📍👣📌
-                            <span class="usermain-archive-name">역사<span class=usermain-archive-desc>📜</span><br></span>
-                            <span class="usermain-archive-desc">지금의 나는 내가 쌓아온 순간들의 합.</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div> -->
-    <div class="col col-4">
-        <div class="row justify-content-center usermain-block">
-            <div class="col col-11 usermain-archive-content all-blocks">
-                <a href="/everyday/everydaymain" class="all-links">
-                    <div class="row usermain-block">
-                        <div class="col my-auto text-center">
-                            <span class="usermain-archive-name">모든 오늘<span class=usermain-archive-desc>📅</span><br></span>
-                            <span class="usermain-archive-desc">일상은 추억이 될 수도, 깜깜히 망각될 수도 있다.</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col col-4">
-        <div class="row justify-content-center usermain-block">
-            <div class="col col-11 usermain-archive-content coming-soon">
-                    <div class="row usermain-block">
-                        <div class="col my-auto text-center">
-                            <span class="usermain-archive-name">Coming Soon<span class=usermain-archive-desc>🔨</span><br></span>
-                            <span class="usermain-archive-desc">조금만 기다려주세요!</span>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <button class='btn btn-primary all-buttons button-update'><a href="{% url 'update' thisUser.authuser_id %}">수정하기</a></button>
+    <div class="row h-25">
+        <div class="col text-center scroll-down">
+            <img class="scroll-down-img" src="{%static 'mvp/images/down.png' %}"
+            onclick="scrollWin(0,750)">
         </div>
     </div>
 </div>
+
+<div class="main-second-page container">
+    <div class="row justify-content-center">
+        <div class="col col-10">
+            <div class="row justify-content-center social-media">
+                <div class="col col-4">
+                    <div class="row justify-content-center">
+                        <div class="col col-2">
+                            <a href="https://www.instagram.com/{{thisUser.insta}}"><img class="img-websites" src="{% static 'mvp/images/insta.png' %}"></a>
+                        </div>
+                        <div class="col col-2">
+                            <a href="{{thisUser.facebook}}"><img class="img-websites" src="{% static 'mvp/images/facebook.png' %}"></a>
+                        </div>
+                        <div class="col col-2">
+                            <a href="{{thisUser.linkedin}}"><img class="img-websites" src="{% static 'mvp/images/linkedin.png' %}"></a>
+                        </div>
+                        <div class="col col-2">
+                            <a href="{{thisUser.youtube}}"><img class="img-websites" src="{% static 'mvp/images/youtube.png' %}"></a>
+                        </div>
+                        <div class="col col-2">
+                            <a href="{{thisUser.blog}}"><img class="img-websites" src="{% static 'mvp/images/blog.png' %}"></a>
+                        </div>
+                        <div class="col col-2">
+                            <a href="{{thisUser.others}}"><img class="img-websites" src="{% static 'mvp/images/others.png' %}"></a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            
+            <br>
+            
+            <!-- <div class="row justify-content-center">
+                <div class="col my-archive text-center">기록장</div>
+            </div> -->
+
+            <div class="row justify-content-center">
+                <div class="col col-4">
+                    <div class="row justify-content-center archive-block">
+                        <div class="col col-11 usermain-archive-content all-blocks">
+                            <a href="/dansang/dansangmain" class="all-links">
+                                <div class="row archive-block">
+                                    <div class="col my-auto text-center">
+                                        <span class="usermain-archive-name">끄적끄적<span class=usermain-archive-desc>💬</span><br></span>
+                                        <span class="usermain-archive-desc">문득 떠오르는 생각들의 기록</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-4">
+                    <div class="row justify-content-center archive-block">
+                        <div class="col col-11 usermain-archive-content all-blocks">
+                            <a href="/everyday/everydaymain" class="all-links">
+                                <div class="row archive-block">
+                                    <div class="col my-auto text-center">
+                                        <span class="usermain-archive-name">모든 오늘<span class=usermain-archive-desc>📅</span><br></span>
+                                        <span class="usermain-archive-desc">일상은 추억이 될 수도, 사라진 기억이 될 수도 있다</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-4">
+                    <div class="row justify-content-center archive-block">
+                        <div class="col col-11 usermain-archive-content coming-soon">
+                                <div class="row archive-block">
+                                    <div class="col my-auto text-center">
+                                        <span class="usermain-archive-name">Coming Soon<span class=usermain-archive-desc>🔨</span><br></span>
+                                        <span class="usermain-archive-desc">조금만 기다려주세요!</span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                        <!-- <div class="col col-4">
+                    <div class="row justify-content-center usermain-block">
+                        <div class="col col-11 usermain-archive-content all-blocks">
+                            <a href="/history/historymain" class="all-links">
+                                <div class="row usermain-block">
+                                    <div class="col my-auto text-center">
+                                        📜📍👣📌
+                                        <span class="usermain-archive-name">역사<span class=usermain-archive-desc>📜</span><br></span>
+                                        <span class="usermain-archive-desc">지금의 나는 내가 쌓아온 순간들의 합.</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row h-75"></div>
+            <div class="row h-25 justify-content-center">
+                <div class="col text-center">
+                    <!-- <button class='btn all-buttons button-update'><a href="{% url 'update' thisUser.authuser_id %}">수정하기</a></button> -->
+                    <button class='btn menial-buttons button-update' onclick="location.href=`{% url 'update' thisUser.authuser_id %}`">
+                        <span class="menial-btn-text">수정하기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- <div class="row">
     <div class="col col-12">
@@ -130,6 +155,10 @@
     </div>
 </div> -->
 
-<div class="block-spacing"></div>
-<div class="block-spacing"></div>
+<script>
+    function scrollWin(x, y) {
+        window.scrollBy(x, y);
+      }
+    
+</script>
 {% endblock %}

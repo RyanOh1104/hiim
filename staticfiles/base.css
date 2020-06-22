@@ -2,11 +2,23 @@
     width: 80px;
     height: auto;
 }
+html {
+    scroll-behavior: smooth;
+}
 .nav-bar {
 
 }
-.page-title {
+.top-block {
+    background-color: #f6f5f1;
     padding-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: black solid 2px;
+    /* border-radius: 10px; */
+    /* box-shadow: inset 8px 8px 8px #bbbab7, 
+    inset -8px -8px 8px #ffffff; */
+}
+.page-title {
+    padding-top: 50px;
     padding-bottom: 20px;
     font-size: 29px;
     font-weight: bold;
@@ -34,15 +46,11 @@
     box-shadow: inset 5px 5px 3px #bbbab7, 
     inset -5px -5px 3px #ffffff;
 }
-
-.top-block {
+.form-control {
     background-color: #f6f5f1;
-    border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    /* border: black solid 1px; */
-    box-shadow: inset 8px 8px 8px #bbbab7, 
-    inset -8px -8px 8px #ffffff;
+}
+.form-control:focus {
+    background-color: #f6f5f1;
 }
 /* .all-inputs {
     background-color: #ffffff;
@@ -59,19 +67,21 @@
 } */
 .all-buttons {
     border-radius: 3px;
-    background: purple;
+    background: #9300d3;
     box-shadow:  2px 2px 1px #bbbab7, 
     -2px -2px 1px #ffffff;
 }
 .all-buttons:active {
     border-radius: 3px;
-    background: #f6f5f1;
+    background: #9300d3;
     box-shadow:  inset 2px 2px 1px #bbbab7, 
     inset -2px -2px 1px #ffffff;
 }
-
+.btn-text {
+    color: #f6f5f1;
+}
 .helptext {
-    font-size: 12px;
+    font-size: 13px;
 }
 .footer {
     height: 40px;
@@ -118,25 +128,46 @@ a:active {color:black;}
 
 /* Archive_detail settings */
 .detail-title {
-    font-size: 50px;
+    font-size: 44px;
     /* font-size: 45px; */
     font-weight: bold;
+    border-bottom: 2px black solid;
+    padding-bottom: 10px;
 }
-.detail-subtitle {
+#detail-title {
+    font-weight: bold;
+}
+#detail-subtitle {
     font-size: 17px;
 }
+.detail-dates {
+    padding-top: 10px;
+}
 .detail-created {
-    font-size: 15px;
+    font-size: 13px;
 }
 .detail-modified {
-    font-size: 15px;
+    font-size: 13px;
 }
 .detail-contents {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.75;
     white-space: pre-line;
 }
-
+.menial-buttons {
+   border-radius: 3px;
+   background: #f6f5f1;
+   box-shadow:  2px 2px 1px #bbbab7, 
+   -2px -2px 1px #ffffff;
+}
+.menial-buttons:active {
+    border-radius: 3px;
+    box-shadow:  inset 2px 2px 1px #bbbab7, 
+    inset -2px -2px 1px #ffffff;
+}
+.menial-btn-text {
+    color: black;
+}
 /* Archive_input Settings*/
 .form-control:focus {
     border-color: none;
@@ -148,4 +179,38 @@ a:active {color:black;}
 .monthpickerinput:focus {
     border: #9300d3 solid 1px !important;
 }
+.manual {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.manual-button {
+    border-radius: 5px;
+    box-shadow:  2px 2px 1px #bbbab7, 
+    -2px -2px 1px #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+}
 
+.highlight {
+    background: #9300d3;
+    background: linear-gradient(
+        180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
+}
+
+/* Landing page */
+.welcome-title {
+    font-size: 55px;
+}
+.welcome-message {
+    font-size: 21px;
+}
+.strong {
+    font-weight: bold;
+    color: #9300d3;
+}
+#ci-landing {
+    height: 70px;
+    width: auto;
+    margin-top: -10px;
+}
