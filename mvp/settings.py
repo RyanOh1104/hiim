@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8z2y^ew%$yl_pfnq&8s5p9_v!o8s#s9xdn4c#cq8o5m6edh6!8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "http://www.hiim.kr",
+    ]
 
 
 # Application definition
