@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # "http://www.hiim.kr",
-    # "hiim-mvp.eba-csumhmge.ap-northeast-2.elasticbeanstalk.com"
+    "http://hiim-mvp.ap-northeast-2.elasticbeanstalk.com/",
     ]
 
 
@@ -93,7 +93,7 @@ import os
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ['RDS_DB_NAME'],
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],
