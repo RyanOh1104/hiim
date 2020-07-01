@@ -116,8 +116,8 @@ function buildCalendar(){//현재 달 달력 만들기
                 `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords'>
                 ${events[k].keywords}</div></a>`;
           } else {
-            // cell.innerHTML = `<div class="eachDate">${i}</div>`+
-            // `<a href='127.0.0.1:8000/everyday/everydayinput'><div class='empty'>It's<br>empty<br>here</div></a>`
+            cell.innerHTML = `<div class="eachDate">${i}</div>`+
+            `<a href='/everyday/everydayinput'><div class='empty'>It's<br>empty<br>here</div></a>`
           }
         }      
        }
