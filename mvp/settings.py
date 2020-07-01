@@ -26,7 +26,7 @@ SECRET_KEY = '8z2y^ew%$yl_pfnq&8s5p9_v!o8s#s9xdn4c#cq8o5m6edh6!8'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "mvp-env.eba-3axn9thg.ap-northeast-2.elasticbeanstalk.com",
+    
     ]
 
 

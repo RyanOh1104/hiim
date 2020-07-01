@@ -35,7 +35,7 @@ libsass==0.19.4
 mccabe==0.6.1
 pathspec==0.5.9
 Pillow==7.1.2
-# psycopg2==2.8.4
+psycopg2==2.8.4
 psycopg2-binary==2.8.5
 pyasn1==0.4.8
 pylint==2.4.4
