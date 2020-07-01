@@ -26,8 +26,7 @@ SECRET_KEY = '8z2y^ew%$yl_pfnq&8s5p9_v!o8s#s9xdn4c#cq8o5m6edh6!8'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # "http://www.hiim.kr",
-    "http://hiim-mvp.ap-northeast-2.elasticbeanstalk.com/",
+    "mvp-env.eba-3axn9thg.ap-northeast-2.elasticbeanstalk.com",
     ]
 
 
@@ -51,7 +50,6 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',  
     'bootstrap4',
     'django_summernote',
-    'fullcalendar',
     'emoji_picker',
  ]
 
@@ -94,11 +92,11 @@ if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
+            'NAME': os.environ['ebdb'],
+            'USER': os.environ['hiimmvp'],
+            'PASSWORD': os.environ['shris9494'],
+            'HOST': os.environ['aapnbprqgilubs.cazdqbj5oijd.ap-northeast-2.rds.amazonaws.com'],
+            'PORT': os.environ['5432'],
         }
     }
 else:   # 이게 원래 로컬에서의 기본값
@@ -144,14 +142,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-FULLCALENDAR = {
-    'css_url': '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css',
-    'print_css_url': '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.print.css',
-    'javascript_url': '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js',
-    'jquery_url': '//code.jquery.com/jquery-3.4.1.min.js',
-    'jquery_ui_url': '//code.jquery.com/ui/1.10.4/jquery-ui.js',
-}
 
 SUMMERNOTE_CONFIG = {
     'iframe': False,

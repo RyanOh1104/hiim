@@ -14,21 +14,11 @@
     <title>{% block title %}{% endblock %}</title>
 
     {% load bootstrap4 %}
-    {% bootstrap_javascript jquery='full' %}
 
     {% block extrahead %}
     {% endblock %}
-
-    {% load fullcalendar_tags %}
-
-    {% fullcalendar_css %}
-    {% fullcalendar_print_css %}
-    {% fullcalendar_jquery %}
-    {% fullcalendar_jquery_ui %}
-    {% fullcalendar_javascript %}
     
     <!-- 달력이 두개 나오는 문제가 아래를 코멘트 처리 하니 해결되었다. -->
-    <!-- {% calendar_init calendar_config_options %} -->
 
     {% block extra_style %}
     {% endblock %}
