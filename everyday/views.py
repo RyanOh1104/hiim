@@ -26,7 +26,7 @@ def everydayinput(request):
             instance.when = str(instance.when)
 
             instance.slug = slugify(today)
-            instance.url = "127.0.0.1:8000/everyday/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
+            instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/everyday/everydaymain')
 
@@ -66,7 +66,7 @@ def everydayUpdate(request, authuser_id, slug):
             instance = form.save(commit=False)
             instance.authuser = request.user
             instance.slug = slugify(today)
-            instance.url = "127.0.0.1:8000/everyday/everydaydetail/" + str(authuser_id) + '/' + str(instance.slug)
+            instance.url = "/everydaydetail/" + str(authuser_id) + '/' + str(instance.slug)
             getToday.delete()
             instance.save()
             return redirect('/everyday/everydaydetail/' + str(authuser_id) + '/' + str(instance.slug))
