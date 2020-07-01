@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # "ec2-13-209-41-169.ap-northeast-2.compute.amazonaws.com",
-    ".hiim.co.kr"
+    ".hiim.kr"
     ]
 
 
