@@ -54,13 +54,13 @@
     font-size: 17px !important;
 }
 .doyou-need-input {
-    font-size: 130px;
+    font-size: 13px;
     height: 25px;
     width: 140px;
     padding-bottom: 10px;
 }
 .button-input {
-    text-align: right;
+    text-align: center;
 }
 .helptext {
     margin-top: 3px;
