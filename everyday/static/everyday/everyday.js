@@ -71,7 +71,7 @@ function buildCalendar(){//현재 달 달력 만들기
           row.classList.add("eachRow");
           var dateString = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${i}일`;
           cell.innerHTML = `<div class="eachDate">${i}</div>`
-          + `<a href='http://127.0.0.1:8000/everyday/everydayinput'><div class='empty'>it's<br>empty<br>here</div></a>`;
+          + `<a href='/everyday/everydayinput'><div class='empty'>it's<br>empty<br>here</div></a>`;
           var dateStringyfied = `${today.getFullYear()}-${today.getMonth() < 10 ? `0${today.getMonth()+1}` : today.getMonth()+1}-${i < 10 ? `0${i}` : i}`
           cell.setAttribute('date', dateStringyfied);
 
@@ -81,7 +81,7 @@ function buildCalendar(){//현재 달 달력 만들기
             if (events[j].dates === dateStringyfied) {
                 var thisCell = document.querySelector(`[date='${dateStringyfied}']`);
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='http://127.0.0.1:8000/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords'>
+                `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords'>
                 ${events[j].keywords}</div></a>`;
             } else {
             }
@@ -113,7 +113,7 @@ function buildCalendar(){//현재 달 달력 만들기
         for (k in range(0, eventsLength-1)) { // 오늘 event가 등록되어 있으면 키워드를, 없으면 Add
           if (events[k].dates === dateStringyfied) {
             cell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='http://127.0.0.1:8000/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords'>
+                `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords'>
                 ${events[k].keywords}</div></a>`;
           } else {
             // cell.innerHTML = `<div class="eachDate">${i}</div>`+
