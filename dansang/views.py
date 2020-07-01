@@ -19,10 +19,8 @@ def dansanginput(request):
 
             if len(instance.title) >= 17:
                 instance.title = instance.title[0:17] + "..."
-
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
-
             if len(instance.contents) >= 35:
                 instance.first_sentence = instance.contents[0:35] + "..."
             # Subtitle이 없다면 First Sentence로 대체
