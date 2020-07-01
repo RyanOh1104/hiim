@@ -26,7 +26,7 @@ SECRET_KEY = '8z2y^ew%$yl_pfnq&8s5p9_v!o8s#s9xdn4c#cq8o5m6edh6!8'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".ap-northeast-2.compute.amazonaws.com",
+    "ec2-13-209-41-169.ap-northeast-2.compute.amazonaws.com",
     ".hiim.kr"
     ]
 
@@ -116,10 +116,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': os.path.join(BASE_DIR, 'hiim') -- 이렇게 하면 오류 뜬다!!!!
-        'NAME' : 'hiimmvp',
-        'USER' : 'postgres',
-        'PASSWORD' : 'shris9494',
-        'HOST' : 'localhost',
+        'NAME' : 'hiimDB',
+        'USER' : 'hiimManager',
+        'PASSWORD' : 'hiimxoxo',
+        'HOST' : 'hiim-db.cazdqbj5oijd.ap-northeast-2.rds.amazonaws.com',
         'PORT' : '5432',
     }
 }
