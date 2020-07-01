@@ -26,7 +26,8 @@ SECRET_KEY = '8z2y^ew%$yl_pfnq&8s5p9_v!o8s#s9xdn4c#cq8o5m6edh6!8'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "ec2-13-209-41-169.ap-northeast-2.compute.amazonaws.com",
+    # "ec2-13-209-41-169.ap-northeast-2.compute.amazonaws.com",
+    ".hiim.co.kr"
     ]
 
 
