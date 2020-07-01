@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'mvp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 import os
-
+'''
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
@@ -110,6 +110,15 @@ else:   # 이게 원래 로컬에서의 기본값
         'HOST' : 'localhost'
         }
     }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': os.path.join(BASE_DIR, 'hiim') -- 이렇게 하면 오류 뜬다!!!!
+        'NAME' : 'hiimmvp',
+        'USER' : 'postgres',
+        'PASSWORD' : 'shris9494',
+        'HOST' : 'localhost'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
