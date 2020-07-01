@@ -118,7 +118,8 @@ DATABASES = {
         'NAME' : 'hiimmvp',
         'USER' : 'postgres',
         'PASSWORD' : 'shris9494',
-        'HOST' : 'localhost'
+        'HOST' : 'localhost',
+        'PORT' : '5432',
     }
 }
 # Password validation
