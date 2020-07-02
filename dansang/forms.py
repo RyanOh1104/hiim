@@ -21,12 +21,12 @@ class DansangInputForm(forms.ModelForm):
     #     }))
     class Meta:
         model=DansangInput
-        fields=['title', 'subtitle', 'contents', 'keyword']
+        fields=['title', 'subtitle', 'contents']
         widgets = {
             'authuser':forms.HiddenInput(), 
             'first_sentence':forms.HiddenInput(),
             'url' : forms.HiddenInput(),
-            'slug' : forms.HiddnInput(),
+            'slug' : forms.HiddenInput(),
             'contents': SummernoteInplaceWidget()
         }
     
