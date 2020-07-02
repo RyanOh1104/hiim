@@ -92,7 +92,7 @@ from .local_settings import PG_HOST
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME' : 'hiimDB',
         'USER' : 'hiimManager',
         'PASSWORD' : 'hiimxoxo',
