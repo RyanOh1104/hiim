@@ -96,7 +96,8 @@ DATABASES = {
         'NAME' : 'hiimDB',
         'USER' : 'hiimManager',
         'PASSWORD' : 'hiimxoxo',
-        'HOST' : PG_HOST,
+        # 'HOST' : PG_HOST,
+        'HOST' : 'hiim-db.cazdqbj5oijd.ap-northeast-2.rds.amazonaws.com',
         'PORT' : '',
     }
 }
