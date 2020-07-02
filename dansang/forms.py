@@ -25,6 +25,8 @@ class DansangInputForm(forms.ModelForm):
         widgets = {
             'authuser':forms.HiddenInput(), 
             'first_sentence':forms.HiddenInput(),
+            'url' : forms.HiddenInput(),
+            'slug' : forms.HiddnInput(),
             'contents': SummernoteInplaceWidget()
         }
     
