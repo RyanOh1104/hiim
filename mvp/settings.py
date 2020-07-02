@@ -88,39 +88,16 @@ WSGI_APPLICATION = 'mvp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 import os
-'''
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['ebdb'],
-            'USER': os.environ['hiimmvp'],
-            'PASSWORD': os.environ['shris9494'],
-            'HOST': os.environ['aapnbprqgilubs.cazdqbj5oijd.ap-northeast-2.rds.amazonaws.com'],
-            'PORT': os.environ['5432'],
-        }
-    }
-else:   # 이게 원래 로컬에서의 기본값
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': os.path.join(BASE_DIR, 'hiim') -- 이렇게 하면 오류 뜬다!!!!
-        'NAME' : 'hiimmvp',
-        'USER' : 'postgres',
-        'PASSWORD' : 'shris9494',
-        'HOST' : 'localhost'
-        }
-    }
-'''
+from local_settings.py import PG_HOST
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': os.path.join(BASE_DIR, 'hiim') -- 이렇게 하면 오류 뜬다!!!!
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME' : 'hiimDB',
         'USER' : 'hiimManager',
         'PASSWORD' : 'hiimxoxo',
-        'HOST' : 'hiim-db.cazdqbj5oijd.ap-northeast-2.rds.amazonaws.com',
-        'PORT' : '5432',
+        'HOST' : PG_HOST,
+        'PORT' : '',
     }
 }
 # Password validation
