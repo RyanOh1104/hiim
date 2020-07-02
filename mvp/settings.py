@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'mvp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 import os
-from local_settings.py import PG_HOST
+from .local_settings import PG_HOST
 
 DATABASES = {
     'default': {
