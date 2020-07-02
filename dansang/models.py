@@ -19,7 +19,7 @@ class DansangInput(models.Model):
     first_sentence = models.CharField(max_length=100, blank=True)
 
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
-    url_ds = models.CharField(max_length=10000, blank=True)
+    url = models.CharField(max_length=10000, blank=True)
 
     def __str__(self):
         return self.title

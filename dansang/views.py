@@ -29,7 +29,7 @@ def dansanginput(request):
             instance.slug = slugify(datetime.now())
             # instance.slug = slugify(instance.title, allow_unicode=True)   이건 한글 제목일 때 불가능!
             # instance.save()   이거는 url의 마지막을 이 dansang의 id로 쓰고자 할 때 활성화. 
-            instance.url_ds = "/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
+            instance.url = "/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/dansang/dansangmain')
 
