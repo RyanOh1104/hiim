@@ -92,11 +92,12 @@ from .local_settings import PG_HOST
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME' : 'hiimDB',
         'USER' : 'hiimManager',
         'PASSWORD' : 'hiimxoxo',
-        'HOST' : PG_HOST,
+        # 'HOST' : PG_HOST,
+        'HOST' : "ec2-13-209-41-169.ap-northeast-2.compute.amazonaws.com",
         'PORT' : '',
     }
 }
