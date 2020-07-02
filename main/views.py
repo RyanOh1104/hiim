@@ -47,5 +47,9 @@ def landing(request):
     # return HttpResponseRedirect('/main/landing')
     return render(request, 'main/landing.html')
 
+def hiim(request):
+    # return HttpResponseRedirect('/main/landing')
+    return render(request, 'main/hiim.html')
+
 def tong(request):
     return render(request, 'main/tong.html')
