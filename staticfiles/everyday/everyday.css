@@ -99,4 +99,7 @@ td[date] {
 #what {
     font-size: 17px;
 }
-
+.calendar-img {
+    width: 50px;
+    height: auto;
+}
