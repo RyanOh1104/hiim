@@ -54,6 +54,7 @@ html, body {
 .scroll-down-img {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 /* 아래부터 second page */
