@@ -21,7 +21,7 @@
                     <img class = "usermain-ci" src="{% static 'mvp/images/ci.png' %}">
                 </div>
                 <div class="col col-3 text-center">
-                    <div class="usermain-name"><span class="highlight">{{thisUser.name}}</span></div>
+                    <div class="usermain-name"><span class="highlight" onclick="location.href=`{% url 'update' thisUser.authuser_id %}`">{{thisUser.name}}</span></div>
                 </div>
             </div>
             <div class="row justify-content-center">
