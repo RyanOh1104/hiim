@@ -82,7 +82,7 @@ function buildCalendar(){//현재 달 달력 만들기
                 var thisCell = document.querySelector(`[date='${dateStringyfied}']`);
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
                 `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords'>
-                ${events[j].keywords}</div></a>`;
+                ${events[j].keywords}&nbsp;</div></a>`;
             } else {
             }
           }
