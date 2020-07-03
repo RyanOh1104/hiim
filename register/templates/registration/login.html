@@ -21,6 +21,10 @@
 <form method='post' class="form-group">
     {% csrf_token %}
     <div class="row login-block">
+
+        <label for="{{ form.username.id_for_label }}">닉네임</label>
+    <input class="form-control" id="{{ form.username.id_for_label }}" maxlength="15" name="{{ form.username|as_crispy_field }}" type="text" />
+
         <div class="col col-6">
             {{form.username|as_crispy_field}}
         </div>
