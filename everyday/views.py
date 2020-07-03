@@ -25,6 +25,14 @@ def everydayinput(request):
             instance.authuser = request.user
             instance.when = str(instance.when)
 
+            # 빈 keywords에 공백 추가하기. 이렇게 주먹구구식으로 해도 되나?
+            if instance.kw1 == "":
+                instance.kw1 = "&nbsp;"
+            if instance.kw2 == "":
+                instance.kw2 = "&nbsp;"
+            if instance.kw3 == "":
+                instance.kw3 = "&nbsp;"
+
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()

@@ -10,9 +10,9 @@ class NewEvent(models.Model):
     when = models.DateField(_('When'), auto_now_add=False)
     what = models.CharField(_('What'), max_length = 5000, default="None")
 
-    kw1 = models.CharField(max_length=100, default="kw1_default")
-    kw2 = models.CharField(max_length=100, default="kw2_default")
-    kw3 = models.CharField(max_length=100, default="kw3_default")
+    kw1 = models.CharField(max_length=100, default="&nbsp;")
+    kw2 = models.CharField(max_length=100, default="&nbsp;")
+    kw3 = models.CharField(max_length=100, default="&nbsp;")
     emoji = models.CharField(max_length = 10, default="")
 
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
