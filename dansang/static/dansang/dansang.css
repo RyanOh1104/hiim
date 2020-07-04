@@ -67,6 +67,7 @@
 }
 .seed-row {
     border-bottom: 1px black solid;
+    padding-bottom : 10px;
 }
 .seed-intro {
     font-weight: bold;
