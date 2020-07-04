@@ -26,14 +26,12 @@
 <div class="block-spacing"></div>
 
 
-<br>
-
 {% for item in seed %}
 <div class="row seed-row">
-    <a href="{{seed.url}}" class="all-links">
+    <a href="{{item.url}}" class="all-links">
     <div class="col">
-        <div class="seed-title">FUCKING {{seed.title}}</div>
-        <div class="seed-subtitle">FUCKING {{seed.subtitle}}</div>
+        <div class="seed-title">FUCKING {{item.title}}</div>
+        <div class="seed-subtitle">FUCKING {{item.subtitle}}</div>
     </div>  
     </a>
 </div>
