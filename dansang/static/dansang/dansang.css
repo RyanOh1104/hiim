@@ -65,6 +65,9 @@
 .helptext {
     margin-top: 3px;
 }
+.seed-row {
+    border-bottom: 1px black solid;
+}
 .seed-intro {
     font-weight: bold;
     color: #9300d3;
