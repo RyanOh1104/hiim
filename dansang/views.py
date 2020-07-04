@@ -56,12 +56,12 @@ def dansangdetail(request, authuser_id, slug):
         thisDansang.modified = '' 
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
-def dailyinputs(request, num):
+def seed(reques):
     today = date.today()
     context = {
 
     }
-    return render(request, 'dansang/dailyinputs.html', context)
+    return render(request, 'dansang/seed.html', context)
 
 def dansangUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)

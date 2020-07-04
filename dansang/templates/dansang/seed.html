@@ -1,0 +1,89 @@
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
+{% endblock %}
+
+{% block title %} 생각의 씨앗 {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-10 text-center">
+        <span class="archive-title">끄적끄적</span><span class="archive-icon">💬</span>
+    </div>
+    <div class="col col-12 text-center">
+        <div class="archive-subtitle">문득 떠오르는 생각들의 기록</div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+<!-- 
+<div class="row justify-content-center only-authuser">
+    <div class="col col-12 text-center">
+        <a href="#"><img src="C:\Users\user\hiim\mvp\static\mvp\images\add.png"></a>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col col-6 button-new">
+        <a href="/dansang/dansanginput">
+            <button class="all-buttons btn btn-primary">✒️ 생각 끄적이기</button>
+        </a>
+    </div>
+    <div class="col col-6 button-input">
+        <a href="/dansang/dailyinputs/{{today}}">
+            <button class="all-buttons btn btn-primary">👀 인풋이 필요해요?</button>
+        </a>
+        <!-- <div class="helptext">인풋은 하루에 하나만 제공돼요!</div>     -->
+    </div>
+</div>
+<br>
+
+    <!-- {% with ''|center:how_many as range %}
+    {% for item in dansangs %}
+    {% with a=forloop.counter|mod:2 %}
+    {% if a != 0 %}
+    <div class="row justify-content-center">
+        <div class="col col-6">
+            <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang content-block">
+                    <h3 class="title">{{item.title}}</h3>
+                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    {% elif a == 0 %}
+        <div class="col col-6">
+            <a href="{{item.url}}">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang content-block">
+                    <h3 class="title">{{item.title}}</h3>
+                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+    {% endwith %} -->
+
+<div class="manual">
+    <button class="btn manual-button" id="manual-dansang">
+        📋 사용법
+    </button>
+</div>
+<!-- </div> -->
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+{% endblock %}
