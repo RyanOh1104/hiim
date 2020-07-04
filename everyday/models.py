@@ -20,13 +20,14 @@ class NewEvent(models.Model):
     # models.DateTimeField(input_formats=["%d %b %Y %H:%M:%S %Z"])
     
     class Meta:
-        verbose_name = _('Event')
-        verbose_name_plural = _('Events')
+        verbose_name = _('Everyday')
+        verbose_name_plural = _('Everydays')
         # ordering = ['-start']
 
     # 관리자 사이트에 표시될 객체 이름 설정 
     def __str__(self):
-        return str(self.when)
+        # return str(self.when)
+        return self.authuser
 
     # objects = models.Manager()
     # authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
