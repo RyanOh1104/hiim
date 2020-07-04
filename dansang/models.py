@@ -24,9 +24,10 @@ class DansangInput(models.Model):
     def __str__(self):
         return self.title
 
-class DansangSource(models.Model):
+class DansangSeed(models.Model):
     objects = models.Manager()
     title = models.CharField(max_length = 100)
+    subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
 
     def __str__(self):

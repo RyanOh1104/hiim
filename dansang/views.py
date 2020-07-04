@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import DansangInputForm
-from .models import DansangInput, DansangSource
+from .models import DansangInput, DansangSeed
 from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
@@ -57,9 +57,9 @@ def dansangdetail(request, authuser_id, slug):
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
 def seed(reques):
-    today = date.today()
+    seed = DansangSeed.objects.all()
     context = {
-
+        'seed':seed
     }
     return render(request, 'dansang/seed.html', context)
 
