@@ -22,7 +22,7 @@ class DansangInput(models.Model):
     url = models.CharField(max_length=10000, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.authuser
 
 class DansangSeed(models.Model):
     objects = models.Manager()
