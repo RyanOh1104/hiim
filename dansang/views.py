@@ -56,7 +56,7 @@ def dansangdetail(request, authuser_id, slug):
         thisDansang.modified = '' 
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
-def seed(reques):
+def seed(request):
     seed = DansangSeed.objects.all()
     context = {
         'seed':seed
