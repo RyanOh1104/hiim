@@ -19,7 +19,7 @@
     </div>
     <div class="col col-12 text-left">
         <div class="archive-subtitle">다채로운 생각과 관점을 갖기 위해서는 다양한 <span class="seed-intro">인풋(input)</span>이 필수라고 믿어요.<br>
-            이러한 자극들은 좋은 <span class="seed-intro">생각의 씨앗</span>이 되어 언젠가는 나만의 <span class="seed-intro">아웃풋(output)</span>으로 자라날 거예요! </div>
+            이러한 자극들은 좋은 <span class="seed-intro">생각의 씨앗</span>이 되어 언젠가는 나만의 <span class="seed-intro">아웃풋(output)</span>으로 자라납니다! </div>
     </div>
 </div>
 
@@ -28,6 +28,17 @@
 
 <br>
 {{seed.title}}
+
+{% for item in seed %}
+<div class="row">
+    <a href="{{seed.url}}" class="all-links">
+    <div class="col">
+        <div class="seed-title">{{seed.title|safe}}</div>
+        <div class="seed-subtitle">{{seed.subtitle|safe}}</div>
+    </div>  
+    </a>
+</div>
+{% endfor %}
 
 <div class="manual">
     <button class="btn manual-button" id="manual-dansang">
