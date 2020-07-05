@@ -207,6 +207,10 @@ a:active {color:black;}
     width: 150px;
     height: auto;
 }
+.welcome-row {
+    /* display: flex; 이건 디폴트 값 */
+    align-items: center;
+}
 .welcome-content {
     font-size: 34px;
     font-weight: bold;
