@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 
-@login_required(login_url="/login")
+# @login_required(login_url="/login")
 # Create your views here. 
 def inputuserinfo(response):
     if response.method == 'POST':
