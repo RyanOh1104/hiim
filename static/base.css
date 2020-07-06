@@ -224,3 +224,9 @@ a:active {color:black;}
     width: auto;
     margin-top: -10px;
 }
+
+@media (max-width: 768px) {
+    .pc-only {
+        display: none;
+    }
+}
