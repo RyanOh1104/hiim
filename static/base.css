@@ -196,7 +196,7 @@ a:active {color:black;}
         180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
 }
 
-/* Landing page */
+/* Welcome page */
 .welcome-title {
     font-size: 47px;
 }
@@ -225,8 +225,44 @@ a:active {color:black;}
     margin-top: -10px;
 }
 
+.mobile-only {
+    display: none;
+}
 @media (max-width: 768px) {
     .pc-only {
         display: none;
     }
+    .mobile-only {
+        display: inline;
+    }
+
+        /* Welcome page */
+    .welcome-title {
+        font-size: 8vw;
+    }
+    #ci-landing {
+        height: 14vw;
+        width: auto;
+        margin-bottom: -10px;
+    }
+    .welcome-message {
+        font-size: 21px;
+    }
+    .welcome-img {
+        width: 25vw;
+        height: auto;
+    }
+    .welcome-row {
+        /* display: flex; 이건 디폴트 값 */
+        align-items: center;
+    }
+    .welcome-content {
+        font-size: 6vw;
+        font-weight: bold;
+    }
+    .strong {
+        font-weight: bold;
+        color: #9300d3;
+    }
+
 }
