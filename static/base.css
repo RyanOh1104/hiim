@@ -236,7 +236,7 @@ a:active {color:black;}
         display: inline;
     }
 
-        /* Welcome page */
+    /* Welcome page */
     .welcome-title {
         font-size: 8vw;
     }
@@ -244,9 +244,6 @@ a:active {color:black;}
         height: 14vw;
         width: auto;
         margin-bottom: -10px;
-    }
-    .welcome-message {
-        font-size: 21px;
     }
     .welcome-img {
         width: 25vw;
@@ -263,6 +260,11 @@ a:active {color:black;}
     .strong {
         font-weight: bold;
         color: #9300d3;
+    }
+
+    /* Hi, I'm... page */
+    .welcome-message {
+        font-size: 21px;
     }
 
 }

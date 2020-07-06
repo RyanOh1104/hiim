@@ -46,7 +46,7 @@
 <br>
 <!-- <div class="border-line"> -->
     {% with ''|center:how_many as range %}
-    {% for item in dansangs %}
+    {% for item in dansangs reversed %}
     {% with a=forloop.counter|mod:2 %}
     {% if a != 0 %}
     <div class="row justify-content-center">
