@@ -16,14 +16,22 @@
 
     <div class="row h-25 justify-content-center">
         <div class="col usermain-block">
-            <div class="row justify-content-center ci-and-name">
+            <div class="row justify-content-center ci-and-name" style="align-items:  center;">
+                <div class="col col-8" id="usermain-ci">
+                    <img class="usermain-ci" src="/static/mvp/images/ci.png"><span class="usermain-name">     
+                        <span class="highlight">{{thisUser.name}}</span></span>
+                </div>
+            </div>
+            
+            <!-- ORIGINAL VERSION 
+                <div class="row justify-content-center ci-and-name">
                 <div class="col col-3" id="usermain-ci">
                     <img class = "usermain-ci" src="{% static 'mvp/images/ci.png' %}">
                 </div>
                 <div class="col col-3 text-center">
                     <div class="usermain-name"><span class="highlight" onclick="location.href=`{% url 'update' thisUser.authuser_id %}`">{{thisUser.name}}</span></div>
                 </div>
-            </div>
+            </div> -->
             <div class="row justify-content-center">
                 <div class="col col-12 text-center">
                     <div class="usermain-intro">{{thisUser.introduction}}</div>
@@ -74,7 +82,7 @@
             </div> -->
 
             <div class="row justify-content-center">
-                <div class="col col-4">
+                <div class="col-sm-10 col-lg-4 archive-outer-block">
                     <div class="row justify-content-center archive-block">
                         <div class="col col-11 usermain-archive-content all-blocks">
                             <a href="/dansang/dansangmain" class="all-links">
@@ -88,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-4">
+                <div class="col-sm-10 col-lg-4 archive-outer-block">
                     <div class="row justify-content-center archive-block">
                         <div class="col col-11 usermain-archive-content all-blocks">
                             <a href="/everyday/everydaymain" class="all-links">
@@ -102,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-4">
+                <div class="col-sm-10 col-lg-4 archive-outer-block">
                     <div class="row justify-content-center archive-block">
                         <div class="col col-11 usermain-archive-content coming-soon">
                                 <div class="row archive-block">
