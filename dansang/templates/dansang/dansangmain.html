@@ -79,7 +79,22 @@
     {% endwith %}
 </div>
 
-
+<div class="mobile-only">
+    {% for item in dansangs reversed%}
+    <div class="row justify-content-center">
+        <div class="col col-12">
+            <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang content-block">
+                    <h3 class="title">{{item.title}}</h3>
+                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
     
 <div class="manual">
