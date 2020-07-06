@@ -104,5 +104,11 @@ def dansangDelete(request, authuser_id, slug):
     thisDansang.delete()
     return redirect('/dansang/dansangmain')
 
+def error404(request):
+    return render(request, "404.html", status=404)
+
+def error500(request):
+    return render(request, "500.html", status=500)
+
 
 

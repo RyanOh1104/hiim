@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
+from django.conf.urls import url, handler404, handler500
+
+handler404 = "chatbot_app.views.error404"
+handler500 = "chatbot_app.views.error500"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
