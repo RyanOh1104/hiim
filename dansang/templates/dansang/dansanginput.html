@@ -42,7 +42,11 @@
   {% endautoescape %}
   <div class="row">
     <div class="col">
-      <button type='submit' class="btn menial-buttons">
+      <button type='submit' class="btn menial-buttons"
+      onclick="gtag('event', 'click', {
+        'event_category': '끄적끄적',
+        'event_label' : 'Post'
+      });">
         생각 한 편 저장
       </button>
     </div>
