@@ -106,8 +106,6 @@
     .input-title {
         background-color: #f6f5f1;
         border: none;
-        height: 80px;
-    
     }
     .input-subtitle {
         background-color: #f6f5f1;
@@ -139,7 +137,7 @@
     }
     #id_subtitle {
         font-size: 3.5vw;
-        
+
     }
     /* Seed page */
     .seed-row {
