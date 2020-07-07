@@ -23,10 +23,10 @@
 <div class="row">
     <div class="col col-12 detail-title">
         <div class="row">
-            <div class="col col-10">
+            <div class="col col-10" id="detail-title">
                 {{today.when}}
             </div>
-            <div class="col col-2 text-right">
+            <div class="col col-2 text-right go-to-main">
                 <a href="/everyday/everydaymain">📅</a>
             </div>
         </div>
@@ -46,7 +46,7 @@
 <form method='post' class="form-group">
     {% csrf_token %}
     <div class="row justify-content-center">
-        <div class="col col-4">
+        <div class="col-lg-4 col-sm-8">
             <div class="row justify-content-center">
                 <div class="col col-5">
                     <button class='btn menial-buttons button-update'>

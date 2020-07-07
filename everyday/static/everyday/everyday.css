@@ -152,6 +152,8 @@ td[date] {
     /* Input page END */
 
     /* Detail page START */
-
+    .detail-title {
+        font-size: 7vw;
+    }
     /* Detail page END */
 }
