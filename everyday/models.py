@@ -27,7 +27,7 @@ class NewEvent(models.Model):
     # 관리자 사이트에 표시될 객체 이름 설정 
     def __str__(self):
         # return str(self.when)
-        return str(self.authuser, self.when)
+        return (str(self.authuse)+str(self.when))
 
     # objects = models.Manager()
     # authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
