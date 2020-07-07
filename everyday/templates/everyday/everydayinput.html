@@ -23,7 +23,7 @@
 
 <form method="post" class="form-group">{% csrf_token %}
     <div class="row">
-        <div class="col col-5">
+        <div class="col-lg-5 col-sm-12">
             <div id='today'>{{form.when|as_crispy_field}}</div>
         </div>
     </div>
@@ -40,9 +40,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col col-2 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
-        <div class="col col-2 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
-        <div class="col col-2 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
     </div>
 
 

@@ -134,11 +134,20 @@ td[date] {
     /* Main page END */
 
     /* Input page START */
+    #div_id_when {
+        width: 50%;
+    }
+    #id_when {
+        font-size: 3.5vw;
+    }
     #what {
         font-size: 2.5vw;
     }
     .keywordInputs {
         width: 50%
+    }
+    .keywords {
+        font-size: 3.5vw;
     }
     /* Input page END */
 
