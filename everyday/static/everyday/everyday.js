@@ -81,8 +81,9 @@ function buildCalendar(){//현재 달 달력 만들기
             if (events[j].dates === dateStringyfied) {
                 var thisCell = document.querySelector(`[date='${dateStringyfied}']`);
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords pc-only'>
-                ${events[j].keywords}&nbsp;</div></a>`;
+                `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'>
+                <div class='keywords pc-only'>${events[j].keywords}</div>
+                <div class='empty mobile-only'>it's<br>empty<br>here</div></a>`;
             } else {
             }
           }
