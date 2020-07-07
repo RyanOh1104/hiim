@@ -106,7 +106,7 @@ a:active {color:black;}
 
 /* Some other CSS settings */
 
-/* Archive_main settings */
+/* Archive-main settings START */
 .archive-title {
     /* padding-left: 20px; */
     font-size: 47px;
@@ -119,6 +119,7 @@ a:active {color:black;}
     font-size: 18px;
     padding-bottom: 10px;
 }
+/* Archive-main settings END */
 
 .only-authuser {
     margin-bottom: 30px;
@@ -308,4 +309,20 @@ a:active {color:black;}
         white-space: pre-line;
     }
     /* Archive_detail settings END */ 
+
+    /* Archive-main settings START */
+    .archive-title {
+        /* padding-left: 20px; */
+        font-size: 7vw;
+        font-weight: bold;
+    }
+    .archive-icon {
+        font-size: 20px;
+    }
+    .archive-subtitle {
+        font-size: 17px;
+        font-size: 3.5vw;
+        padding-bottom: 10px;
+    }
+/* Archive-main settings END */
 }
