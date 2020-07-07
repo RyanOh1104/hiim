@@ -312,6 +312,9 @@ a:active {color:black;}
         line-height: 1.75;
         white-space: pre-line;
     }
+    .update-delete {
+        text-align: center
+    }
     /* Archive_detail settings END */ 
 
     /* Archive-main settings START */
