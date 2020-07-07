@@ -132,6 +132,16 @@
     .helptext {
         margin-top: 3px;
     }
+    /* Input page */ 
+    #id_title {
+        padding-bottom: 0px;
+        font-size: 8vw;
+    }
+    #id_subtitle {
+        font-size: 3.5vw;
+        
+    }
+    /* Seed page */
     .seed-row {
         border-bottom: 1px black solid;
         padding-bottom : 10px;
