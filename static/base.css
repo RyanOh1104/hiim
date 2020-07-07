@@ -291,6 +291,10 @@ a:active {color:black;}
         font-weight: bold;
         font-size: 6.5vw;
     }
+    .go-to-main {
+        display: flex;
+        align-items: center;
+    }
     #detail-subtitle {
         font-size: 3.5vw;
     }
