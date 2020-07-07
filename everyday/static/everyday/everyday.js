@@ -81,7 +81,7 @@ function buildCalendar(){//현재 달 달력 만들기
             if (events[j].dates === dateStringyfied) {
                 var thisCell = document.querySelector(`[date='${dateStringyfied}']`);
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords'>
+                `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'><div class='keywords pc-only'>
                 ${events[j].keywords}&nbsp;</div></a>`;
             } else {
             }
@@ -113,7 +113,7 @@ function buildCalendar(){//현재 달 달력 만들기
         for (k in range(0, eventsLength-1)) { // 오늘 event가 등록되어 있으면 키워드를, 없으면 Add
           if (events[k].dates === dateStringyfied) {
             cell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords'>
+                `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords pc-only'>
                 ${events[k].keywords}</div></a>`;
           } else {
             // cell.innerHTML = `<div class="eachDate">${i}</div>`+
