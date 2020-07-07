@@ -313,7 +313,7 @@ a:active {color:black;}
     /* Archive-main settings START */
     .archive-title {
         /* padding-left: 20px; */
-        font-size: 7vw;
+        font-size: 8vw;
         font-weight: bold;
     }
     .archive-icon {
@@ -321,7 +321,7 @@ a:active {color:black;}
     }
     .archive-subtitle {
         font-size: 17px;
-        font-size: 3.5vw;
+        font-size: 4vw;
         padding-bottom: 10px;
     }
 /* Archive-main settings END */
