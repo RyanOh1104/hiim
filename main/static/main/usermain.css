@@ -38,6 +38,7 @@ html, body {
     letter-spacing: 5px;
     text-align: left;
     font-weight: bold;
+    cursor: pointer;
 }
 .block {
     border-radius: 10px;
