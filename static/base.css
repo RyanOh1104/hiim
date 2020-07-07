@@ -236,6 +236,14 @@ a:active {color:black;}
         display: inline;
     }
 
+    /* Global */
+    .page-title {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 6.3vw;
+        font-weight: bold;
+    }
+
     /* Welcome page */
     .welcome-title {
         font-size: 8vw;
