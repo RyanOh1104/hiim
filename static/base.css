@@ -124,7 +124,7 @@ a:active {color:black;}
     margin-bottom: 30px;
 }
 
-/* Archive_detail settings */
+/* Archive-detail settings START */
 .detail-title {
     font-size: 44px;
     /* font-size: 45px; */
@@ -152,6 +152,8 @@ a:active {color:black;}
     line-height: 1.75;
     white-space: pre-line;
 }
+/* Archive_detail settings END */
+
 .menial-buttons {
    border-radius: 3px;
    background: #f6f5f1;
@@ -166,7 +168,7 @@ a:active {color:black;}
 .menial-btn-text {
     color: black;
 }
-/* Archive_input Settings*/
+/* Archive-input settings START */
 .form-control:focus {
     border-color: none;
     box-shadow: none;
@@ -177,6 +179,7 @@ a:active {color:black;}
 .monthpickerinput:focus {
     border: #9300d3 solid 1px !important;
 }
+/* Archive-input settings END */
 .manual {
     position: fixed;
     bottom: 20px;
@@ -275,4 +278,34 @@ a:active {color:black;}
         font-size: 21px;
     }
 
+    /* Archive-detail pages START */
+    .detail-title {
+        font-size: 5vw;
+        /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
+        font-weight: bold;
+        border-bottom: 2px black solid;
+        padding-bottom: 10px;
+    }
+    #detail-title {
+        font-weight: bold;
+        font-size: 6.5vw;
+    }
+    #detail-subtitle {
+        font-size: 3.5vw;
+    }
+    .detail-dates {
+        padding-top: 10px;
+    }
+    .detail-created {
+        font-size: 2.5vw;
+    }
+    .detail-modified {
+        font-size: 2.5vw;
+    }
+    .detail-contents {
+        font-size: 17px;
+        line-height: 1.75;
+        white-space: pre-line;
+    }
+    /* Archive_detail settings END */ 
 }
