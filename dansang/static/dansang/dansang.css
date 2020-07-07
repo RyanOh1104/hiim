@@ -103,18 +103,8 @@
         margin-left: -15px;
         margin-right: -15px;
     }
-    .input-title {
-        background-color: #f6f5f1;
-        border: none;
-    }
-    .input-subtitle {
-        background-color: #f6f5f1;
-        border: none;
-        margin-bottom: -50px;
-    }
-    .input-content {
-        /* line-height: 1.2; */
-    }
+
+
     .card-block {
         font-size: 17px !important;
     }
@@ -130,15 +120,29 @@
     .helptext {
         margin-top: 3px;
     }
+
     /* Input page */ 
     #id_title {
         padding-bottom: 0px;
-        font-size: 8vw;
+        font-size: 8vw !important;
+        /* 위에 font-size는 forms.py에서 이미 정해져있어서 변경이 무시되나봄. 그래서 필살기 발동 */
     }
     #id_subtitle {
-        font-size: 3.5vw;
-
+        font-size: 3.5vw !important;
     }
+    .input-title {
+        background-color: #f6f5f1;
+        border: none;
+    }
+    .input-subtitle {
+        background-color: #f6f5f1;
+        border: none;
+        margin-bottom: -50px;
+    }
+    .input-content {
+        /* line-height: 1.2; */
+    }
+
     /* Seed page */
     .seed-row {
         border-bottom: 1px black solid;
