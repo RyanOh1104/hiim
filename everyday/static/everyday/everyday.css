@@ -105,20 +105,41 @@ td[date] {
 }
 
 @media (max-width: 768px) {
-    /* Main page START */
-    .eachDate {
-        font-size: 2vw;
+    .mobile-only {
+        display: block
+        /*원래 base.css에서는 inline인데, 여기서는 inline으로 하면 이상해져서 block으로 */
     }
-    .keywords {
+
+    /* Main page START */
+    td{
+        text-align: center;
+        /* font-size: 21px; */
+        border:2px;
+        border-color:#3333FF;
+        border-radius: 8px;/*모서리 둥글게*/
+    }
+    .eachDate {
         font-size: 2.5vw;
     }
     .td[date] {
         width: 20vw;
     }
+    .sevenDays {
+        font-size: 3vw;
+    }
+    #tbCalendarYM {
+        width: 100px;
+        font-size: 6vw;
+    }
     /* Main page END */
 
     /* Input page START */
-
+    #what {
+        font-size: 2.5vw;
+    }
+    .keywordInputs {
+        width: 50%
+    }
     /* Input page END */
 
     /* Detail page START */
