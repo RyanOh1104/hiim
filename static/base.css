@@ -247,7 +247,10 @@ a:active {color:black;}
         font-size: 6vw;
         font-weight: bold;
     }
-
+    #navbar-toggler-custom-icon {
+        width: 30px;
+        height: auto;
+    }
     /* Welcome page */
     .welcome-title {
         font-size: 8vw;
