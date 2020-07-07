@@ -256,6 +256,7 @@ a:active {color:black;}
         height: 14vw;
         width: auto;
         margin-bottom: -10px;
+        margin-top: 10px;
     }
     .welcome-img {
         width: 25vw;
