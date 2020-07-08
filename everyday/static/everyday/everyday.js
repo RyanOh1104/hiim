@@ -71,7 +71,9 @@ function buildCalendar(){//현재 달 달력 만들기
           row.classList.add("eachRow");
           var dateString = `${today.getFullYear()}년 ${today.getMonth()+1}월 ${i}일`;
           cell.innerHTML = `<div class="eachDate">${i}</div>`
-          + `<a href='/everyday/everydayinput'><div class='empty'>it's<br>empty<br>here</div></a>`;
+          + `<a href='/everyday/everydayinput'>
+          <div class='empty pc-only'>it's<br>empty<br>here</div>
+          <div class='main-emoji mobile-only'>Hi</div></a>`;
           var dateStringyfied = `${today.getFullYear()}-${today.getMonth() < 10 ? `0${today.getMonth()+1}` : today.getMonth()+1}-${i < 10 ? `0${i}` : i}`
           cell.setAttribute('date', dateStringyfied);
 
