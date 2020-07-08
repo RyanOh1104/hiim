@@ -14,17 +14,17 @@ class EverydayInputForm(forms.ModelForm):
         'rows' : 8,
         'id' : 'what'
         }))
-    kw1 = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
+    kw1 = forms.CharField(required=False, widget=TextInput(attrs={
     'placeholder' : '하나', 'class' : 'keywords'
     }))
-    kw2 = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
+    kw2 = forms.CharField(required=False, widget=TextInput(attrs={
     'placeholder' : '둘', 'class' : 'keywords'
     }))
-    kw3 = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
+    kw3 = forms.CharField(required=False, widget=TextInput(attrs={
     'placeholder' : '셋', 'class' : 'keywords'
     }))
     emoji = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
-        'class' : 'emojis'
+    'placeholder' : '이모지로 오늘 하루를 표현한다면? (모바일용이에요!)', 'class' : 'emojis'
     }))
 
     def __init__(self, *args, **kwargs):
