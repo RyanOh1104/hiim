@@ -83,7 +83,7 @@ function buildCalendar(){//현재 달 달력 만들기
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
                 `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'>
                 <div class='keywords pc-only'>${events[j].keywords}</div>
-                <div class='empty mobile-only'>${events[j].emoji}</div></a>`;
+                <div class='main-emoji mobile-only'>${events[j].emoji}</div></a>`;
             } else {
             }
           }
@@ -116,7 +116,7 @@ function buildCalendar(){//현재 달 달력 만들기
             cell.innerHTML = `<div class = eachDate>${i}</div>` +
                 `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'>
                 <div class='keywords pc-only'>${events[k].keywords}</div>
-                <div class='empty mobile-only'>${events[j].emoji}</div></a>`;
+                <div class='main-emoji mobile-only'>${events[j].emoji}</div></a>`;
           } else {
             // cell.innerHTML = `<div class="eachDate">${i}</div>`+
             // `<a href='/everyday/everydayinput'><div class='empty'>It's<br>empty<br>here</div></a>`
