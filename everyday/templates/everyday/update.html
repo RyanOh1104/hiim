@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col">
             <div class="helptext">
-                오늘 하루를 최대 세 개의 짧은 키워드로 표현해보세요!
+                💻 오늘 하루를 최대 세 개의 짧은 키워드로 표현해보세요!
             </div>
         </div>
     </div>
@@ -45,10 +45,18 @@
         <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
     </div>
 
+    <div class="row">
+        <div class="col">
+            <div class="helptext">
+                📱 이모지 하나로 표현해보세요!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
+    </div>
 
     <br>
     <button type='submit' class='btn menial-buttons'>오늘 하루 저장</button>
 </form>
-
-{% endblock %}
 
