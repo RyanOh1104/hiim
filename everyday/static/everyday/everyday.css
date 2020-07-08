@@ -118,8 +118,12 @@ td[date] {
         border-color:#3333FF;
         border-radius: 8px;/*모서리 둥글게*/
     }
+    .eachRow {
+        height: 60px;
+    }
     .eachDate {
-        font-size: 2.5vw;
+        font-size: 3vw;
+        margin-top:10px;
     }
     .td[date] {
         width: 20vw;
