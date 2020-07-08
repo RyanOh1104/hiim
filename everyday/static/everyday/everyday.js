@@ -83,7 +83,7 @@ function buildCalendar(){//현재 달 달력 만들기
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
                 `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'>
                 <div class='keywords pc-only'>${events[j].keywords}</div>
-                <div class='empty mobile-only'>it's<br>empty<br>here</div></a>`;
+                <div class='empty mobile-only'>${events[j].emoji}</div></a>`;
             } else {
             }
           }
@@ -104,7 +104,7 @@ function buildCalendar(){//현재 달 달력 만들기
            row = mycalendar.insertRow();
            //토요일 다음에 올 셀을 추가
     }
-      /*오늘의 날짜에 노란색 칠하기*/
+      /* 오늘 */
     if (today.getFullYear() == date.getFullYear()
          && today.getMonth() == date.getMonth()
          && i == date.getDate()) {
@@ -114,8 +114,9 @@ function buildCalendar(){//현재 달 달력 만들기
         for (k in range(0, eventsLength-1)) { // 오늘 event가 등록되어 있으면 키워드를, 없으면 Add
           if (events[k].dates === dateStringyfied) {
             cell.innerHTML = `<div class = eachDate>${i}</div>` +
-                `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'><div class='keywords pc-only'>
-                ${events[k].keywords}</div></a>`;
+                `<a href='/everyday/everydaydetail/${userId}/${events[k].slug}'>
+                <div class='keywords pc-only'>${events[k].keywords}</div>
+                <div class='empty mobile-only'>${events[j].emoji}</div></a>`;
           } else {
             // cell.innerHTML = `<div class="eachDate">${i}</div>`+
             // `<a href='/everyday/everydayinput'><div class='empty'>It's<br>empty<br>here</div></a>`
