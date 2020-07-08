@@ -133,7 +133,6 @@ td[date] {
     }
     .prevNextButtons {
         font-size: 18px;
-        display: table-cell;
         vertical-align: middle;
     }
     .sevenDays {
