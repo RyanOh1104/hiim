@@ -29,17 +29,23 @@
 </div>
 
 <div class="block-spacing"></div>
-<div class="block-spacing"></div>
+<div class="block-spacing pc-only"></div>
 
 <div class="row justify-content-center">
 
         <div class="col col-12">
             <table id="mycalendar" style="border-color:#3333FF ">
                 <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-                    <td class="prevNext"><button class="btn prevNextButtons" onclick="prevCalendar()">⬅</button></td>
+                    <td class="prevNext">
+                        <button class="btn prevNextButtons pc-only" onclick="prevCalendar()">⬅</button>
+                        <div class="prevNextButtons mobile-only" onclick="prevCalendar()">⬅</div>
+                    </td>
                     <td id="tbCalendarYM" colspan="5">
                     yyyy년 m월</td>
-                    <td class="prevNext"><button class="btn prevNextButtons" onclick="nextCalendar()">➡</button></td>
+                    <td class="prevNext">
+                        <button class="btn prevNextButtons pc-only" onclick="nextCalendar()">➡</button>
+                        <div class="prevNextButtons mobile-only" onclick="prevCalendar()">➡</div>
+                    </td>
                 </tr>
                 <tr>
                     <td class='sevenDays' id='sun'>일</td>
