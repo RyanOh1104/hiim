@@ -15,6 +15,60 @@
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <div class="col col-10">
+        <h1 class="page-title">📝무슨 일이 있었어요?</h1>
+    </div>
+</div>    
+
+<form method="post" class="form-group">{% csrf_token %}
+    <div class="row">
+        <div class="col-lg-5 col-sm-12">
+            <div id='today'>{{form.when|as_crispy_field}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div>{{form.what|as_crispy_field}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="helptext">
+                오늘 하루를 최대 세 개의 짧은 키워드로 표현해보세요!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+    </div>
+
+
+    <br>
+    <button type='submit' class='btn menial-buttons'>오늘 하루 저장</button>
+</form>
+
+{% endblock %}
+
+<!-- {% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
+{% endblock %}
+
+{% block title %} 지나갈 오늘 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
 <div class="block-spacing"></div>
 <div class="row">
     <div class="col col-10">
@@ -52,4 +106,4 @@
 </form>
 
 {% endblock %}
-
+ -->
