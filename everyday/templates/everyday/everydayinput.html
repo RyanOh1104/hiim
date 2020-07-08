@@ -44,8 +44,16 @@
         <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
         <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
     </div>
+
     <div class="row">
-        <div class="col">{{form.emoji|as_crispy_field}}</div>
+        <div class="col">
+            <div class="helptext">
+                이모지로 오늘 하루를 표현한다면? (모바일용)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
     </div>
 
     <br>
