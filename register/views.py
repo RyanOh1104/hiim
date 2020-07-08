@@ -33,7 +33,7 @@ def register(response):
 
         c = form.fields['password1']
         c.label = "비밀번호"
-        c.help_text = "영문자+숫자 조합으로 8자 이상 입력해주세요!" 
+        c.help_text = "영문자+숫자 조합으로 8자 이상 입력해주세요!<br>아이디와 비슷하면 등록되지 않아요!" 
 
         d = form.fields['password2']
         d.label = "비밀번호 확인"
