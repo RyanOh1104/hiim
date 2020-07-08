@@ -126,6 +126,7 @@ td[date] {
     }
     .empty {
         height: 30px;
+        font-size: 1vw;
     }
     .eachDate {
         font-size: 3vw;
@@ -170,8 +171,8 @@ td[date] {
         font-size: 3vw;
     }
     .main-emoji {
-        font-size: 3vw;
-        height: 6vw; /*흠*/
+        font-size: 3.5vw;
+        height: 30px; /*흠*/
     }
     /* Input page END */
 
