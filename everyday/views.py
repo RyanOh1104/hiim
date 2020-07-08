@@ -32,7 +32,7 @@ def everydayinput(request):
                 instance.kw2 = "&nbsp;"
             if instance.kw3 == "":
                 instance.kw3 = "&nbsp;"
-            if instance.emoji = "":
+            if instance.emoji == "":
                 instance.emoji = "&nbsp;"
 
             instance.slug = slugify(today)
