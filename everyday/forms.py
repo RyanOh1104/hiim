@@ -14,13 +14,14 @@ class EverydayInputForm(forms.ModelForm):
         'rows' : 8,
         'id' : 'what'
         }))
-    kw1 = forms.CharField(required=False, widget=TextInput(attrs={
+
+    kw1 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '하나', 'class' : 'keywords'
     }))
-    kw2 = forms.CharField(required=False, widget=TextInput(attrs={
+    kw2 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '둘', 'class' : 'keywords'
     }))
-    kw3 = forms.CharField(required=False, widget=TextInput(attrs={
+    kw3 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '셋', 'class' : 'keywords'
     }))
     emoji = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
