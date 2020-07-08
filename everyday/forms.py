@@ -25,7 +25,7 @@ class EverydayInputForm(forms.ModelForm):
     'placeholder' : '셋', 'class' : 'keywords'
     }))
     emoji = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
-    'class' : 'emojis'
+    'class' : 'emoji'
     }))
 
     def __init__(self, *args, **kwargs):

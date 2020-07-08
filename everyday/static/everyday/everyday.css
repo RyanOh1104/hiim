@@ -14,12 +14,12 @@
 .kw12 {
     margin-right: 20px;
 }
-.emoji {
+/* .emoji {
     width: 70px;
-}
-#emoji-helptext {
+} */
+/* #emoji-helptext {
     margin-top : -15px;
-}
+} */
 .button-today {
     text-align: center;
 }
@@ -163,10 +163,11 @@ td[date] {
         width: 50%
     }
     .keywords {
-        font-size:3.5vw;
+        font-size:3vw;
     }
     .emoji {
-        width: 10%
+        width: 100%;
+        font-size: 3vw;
     }
     /* Input page END */
 
