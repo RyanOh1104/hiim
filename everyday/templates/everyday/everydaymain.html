@@ -76,7 +76,7 @@
         {% for k in todays %}
         {
             keywords : `{{ k.kw1|safe }}<br>{{ k.kw2|safe }}<br>{{ k.kw3|safe }}`,
-            emoji : `{{k.emoji}}`
+            emoji : `{{k.emoji}}`,
             dates : `{{ k.when|date:'Y-m-d' }}`,
             slug : `{{k.slug}}`,
         },
