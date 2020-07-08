@@ -33,7 +33,7 @@ def everydayinput(request):
             if instance.kw3 == "":
                 instance.kw3 = "&nbsp;"
             if instance.emoji == "":
-                instance.emoji = "&nbsp;"
+                instance.emoji = "&nbsp;<br>&nbsp;"
 
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
