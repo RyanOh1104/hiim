@@ -171,6 +171,7 @@ td[date] {
     }
     .main-emoji {
         font-size: 3vw;
+        height: 6vw; /*흠*/
     }
     /* Input page END */
 
