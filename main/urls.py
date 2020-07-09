@@ -12,5 +12,5 @@ urlpatterns = [
     path('welcome', views.landing, name="landing"),
     path('hiim', views.hiim, name="hiim"),
     path('tong', views.tong, name='tong'),
-    path('update/<int:authuser_id>', views.update, name='update'),
+    path('update/<int:authuser_id>', views.update, name='update-userinfo'),
 ]
