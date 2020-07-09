@@ -90,7 +90,7 @@ td[date] {
 .keywords {
     font-size: 14px;
     color: #9300d3;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .addBtn {
     color: #f6f5f1;
