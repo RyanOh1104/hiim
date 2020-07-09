@@ -160,20 +160,17 @@
       }
 
     function PopUp(hideOrshow) {
-        if (hideOrshow == 'hide') document.getElementById('tooltip-alert').style.display = "none";
-        else document.getElementById('tooltip-alert').removeAttribute('style');
+        if(localStorage.getItem("popupWasShown") == null) {
+            localStorage.setItem("popupWasShown",1);
+            document.getElementById('tooltip-alert').style.display = "none";
+        }
     }
     window.onload = function () {
-        setTimeout(function () {
-            if (document.cookie.indexOf("setted=true")!=-1){
-                PopUp('show');}
-        }, 0);
-    }
-
-    function hideNow(e) {
-        if (e.target.id == 'tooltip-alert') {
-            document.cookie = "setted=true";
-            document.getElementById('tooltip-alert').style.display = 'none';}
+        $('#tooltip-alert').tooltip('show');
+        //Hide tooltip after three seconds
+        setTimeout(function(){
+        $('#tooltip-alert').tooltip('dispose')
+        }, 2500)
     }
 </script>
 {% endblock %}
