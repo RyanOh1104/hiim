@@ -9,6 +9,7 @@ from django_slugify_processor.text import slugify
 @login_required
 def dansanginput(request):
     # setting initial user as current logged in user
+    today = datetime.today()
     form = DansangInputForm(initial={'authuser':request.user})
     if request.method == 'POST':
         form = DansangInputForm(request.POST)
@@ -16,6 +17,7 @@ def dansanginput(request):
             instance = form.save(commit=False)
             instance.authuser = request.user
             
+            instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
                 instance.title = instance.title[0:17] + "..."
