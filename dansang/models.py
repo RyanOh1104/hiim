@@ -13,7 +13,7 @@ class DansangInput(models.Model):
     title = models.CharField(max_length=100, blank=True)
     subtitle = models.CharField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=False)
-    modified = models.DateTimeField(auto_now=False)
+    modified = models.DateTimeField(auto_now=True)
     contents = models.CharField(max_length=100000)
     keyword = models.CharField(max_length=100, blank=True)
     first_sentence = models.CharField(max_length=100, blank=True)
