@@ -166,11 +166,16 @@
         }
     }
     window.onload = function () {
-        $('#tooltip-alert').tooltip('show');
-        //Hide tooltip after three seconds
-        setTimeout(function(){
-        $('#tooltip-alert').tooltip('dispose')
-        }, 2500)
+        if(localStorage.getItem("popupWasShown") == null) {
+            $('#tooltip-alert').tooltip('show');
+            //Hide tooltip after three seconds
+            setTimeout(function(){
+            $('#tooltip-alert').tooltip('dispose')
+            }, 2500)
+        } else {
+            localStorage.setItem("popupWasShown", 1);
+            $('#tooltip-alert').removeAttribute('data-toggle');
+        }
     }
 </script>
 {% endblock %}
