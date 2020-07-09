@@ -89,6 +89,7 @@ def dansangUpdate(request, authuser_id, slug):
             if instance.subtitle == "":
                 instance.subtitle = "&nbsp;"
 
+            instance.created = thisDansang.created
             instance.slug = slugify(datetime.now())
             instance.url = "/dansang/dansangdetail/" + str(authuser_id) + '/' + str(instance.slug)
             thisDansang.delete()
