@@ -160,13 +160,14 @@
       }
 
     window.onload = function () {
+        var loaded = 1;
         if(localStorage.getItem("popupWasShown") == null) {
             $('#tooltip-alert').tooltip('show');
             //Hide tooltip after three seconds
             setTimeout(function(){
             $('#tooltip-alert').tooltip('dispose')
             }, 5000)
-            var loaded = 1;
+            
             localStorage.setItem("popupWasShown", loaded)
             loaded = loaded + 1;
         } else if (localStorage.getItem("popupWasShown") != 0) {
