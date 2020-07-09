@@ -27,7 +27,7 @@ class NewEvent(models.Model):
     # 관리자 사이트에 표시될 객체 이름 설정 
     def __str__(self):
         # return str(self.when)
-        when-admin = str(self.when)[:15]
+        # when-admin = str(self.when)[:15]
         return (str(self.authuser)+"-----"+str(self.when))
 
     # objects = models.Manager()
