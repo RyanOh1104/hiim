@@ -28,7 +28,7 @@ class NewEvent(models.Model):
     def __str__(self):
         # return str(self.when)
         when-admin = str(self.when)[:15]
-        return (str(self.authuser)+"-----"+when-admin)
+        return (str(self.authuser)+"-----"+str(self.when))
 
     # objects = models.Manager()
     # authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
