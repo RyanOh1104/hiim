@@ -39,6 +39,7 @@ html, body {
     text-align: left;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 10px;
 }
 .block {
     border-radius: 10px;
@@ -151,7 +152,6 @@ html, body {
         text-align: left;
         font-weight: bold;
         cursor: pointer;
-        margin-left: 10px;
     }
     .usermain-intro {
         white-space: pre-line;
