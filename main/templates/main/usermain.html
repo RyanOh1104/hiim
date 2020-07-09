@@ -162,7 +162,7 @@
     function PopUp(hideOrshow) {
         if(localStorage.getItem("popupWasShown") == null) {
             localStorage.setItem("popupWasShown",1);
-            document.getElementById('tooltip-alert').style.display = "none";
+            document.getElementById('tooltip-alert').removeAttribute('data-toggle');
         }
     }
     window.onload = function () {
