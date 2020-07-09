@@ -159,7 +159,6 @@
         window.scrollBy(x, y);
       }
 
-    var loaded = 1;
     window.onload = function () {
         
         if(localStorage.getItem("popupWasShown") == null) {
@@ -169,9 +168,8 @@
             $('#tooltip-alert').tooltip('dispose')
             }, 5000)
 
-            localStorage.setItem("popupWasShown", loaded)
-            loaded = loaded + 1;
-        } else if (localStorage.getItem("popupWasShown") != 0) {
+            localStorage.setItem("popupWasShown", 1)
+        } else if (localStorage.getItem("popupWasShown", 1)) {
             $('#tooltip-alert').tooltip('hide');
         }
     }
