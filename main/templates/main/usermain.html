@@ -86,7 +86,7 @@
                     <div class="row justify-content-center archive-block">
                         <div class="col col-11 usermain-archive-content all-blocks">
                             <a href="/dansang/dansangmain" class="all-links">
-                                <div class="row archive-block" id="alert-newSeed" data-toggle="tooltip" data-placement="top" title="새로운 씨앗이 추가되었어요! '{{newSeed.title}}'">
+                                <div class="row archive-block" id="alert-newSeed" data-toggle="tooltip" data-placement="bottom" title="새로운 씨앗이 추가되었어요! '{{newSeed.title}}'">
                                     <div class="col my-auto text-center">
                                         <span class="usermain-archive-name">끄적끄적<span class=usermain-archive-desc>💬</span><br></span>
                                         <span class="usermain-archive-desc">떠오르는 아무 생각이나. 자유롭게.</span>
@@ -172,11 +172,9 @@
         } else if (localStorage.getItem("popupWasShown", 1)) {
             $('#tooltip-alert').tooltip('hide');
         }
-
         
         // newSeed alert
         $('#alert-newSeed').tooltip('show');
-        //Hide tooltip after three seconds
         setTimeout(function(){
         $('#alert-newSeed').tooltip('dispose')
         }, 7000)
