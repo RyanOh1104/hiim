@@ -27,5 +27,6 @@
     border: none !important;
 }
 span {
-    background-color: #f6f5f1;
+    background-color: #f6f5f1 !important;
+    font-size: 17px !important
 }
