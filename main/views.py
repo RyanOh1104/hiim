@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import InputUserForm
 from .models import UserInfo
+from dansang.models import DansangSeed
 # 아래 두개는 굳이 필요한 건지는 모르겠음
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm    
 from django.contrib.auth.decorators import login_required
-
+from datetime import date
 
 # @login_required(login_url="/login")
 # Create your views here. 
@@ -41,8 +42,15 @@ def update(response, authuser_id):
 @login_required(login_url="/welcome")
 def usermain(request):
     thisUser = UserInfo.objects.get(authuser=request.user)
+    
+    today = datetime.today()
+    newSeed = DansangSeed.objects.get(datePosted=today)
 
-    return render(request, 'main/usermain.html', {'thisUser' : thisUser}) # 여기 세번째 패라미터는 저 user를 template에 담아내기 위한 것.
+    context = {
+        'thisUser' : thisUser,
+        'newSeed' : newSeed
+    }
+    return render(request, 'main/usermain.html', context)
 
 def landing(request):
     # return HttpResponseRedirect('/main/landing')
