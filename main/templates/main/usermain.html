@@ -174,11 +174,16 @@
         }
         
         // newSeed alert
-        $('#alert-newSeed').tooltip('show');
-        setTimeout(function(){
-        $('#alert-newSeed').tooltip('dispose')
-        }, 7000)
-        
+        if(localStorage.getItem("newSeedAlerted") == null) {
+            $('#alert-newSeed').tooltip('show');
+            setTimeout(function(){
+            $('#alert-newSeed').tooltip('dispose')
+            }, 10000)
+
+            localStorage.setItem("newSeedAlerted", 1)
+        } else if (localStorage.getItem("newSeedAlerted", 1)) {
+            $('#alert-newSeed').tooltip('hide');
+        }
     }
 </script>
 {% endblock %}
