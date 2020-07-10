@@ -6,9 +6,9 @@ from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
 ### 아래는 씨앗 조회수 확인을 위해 ###
-from django.shortcuts import get_object_or_404
-from django.views.generic.base import RedirectView
-from .models import DansangSeed
+# from django.shortcuts import get_object_or_404
+# from django.views.generic.base import RedirectView
+# from .models import DansangSeed
 
 @login_required
 def dansanginput(request):
@@ -117,13 +117,13 @@ def error500(request):
     return render(request, "500.html", status=500)
 
 ### 씨앗 조회수 세기 ###
-class ArticleCounterRedirectView(RedirectView):
-    permanent = False
-    query_string = True
+# class ArticleCounterRedirectView(RedirectView):
+#     permanent = False
+#     query_string = True
 
-    def get_redirect_url(self, *args, **kwargs):
-        article = get_object_or_404(Article, pk=kwargs['pk'])
-        article.update_counter()
-        return article.url
+#     def get_redirect_url(self, *args, **kwargs):
+#         article = get_object_or_404(Article, pk=kwargs['pk'])
+#         article.update_counter()
+#         return article.url
 
 

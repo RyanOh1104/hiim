@@ -34,8 +34,7 @@
 
 {% for item in seed reversed%}
 <div class="row seed-row">
-    <a href="{% url 'article-counter' item.pk %}" class="all-articles" target="_blank" rel="noopener noreferrer"></a>
-    
+    <a href="{{item.url}}" class="all-links" target="_blank" rel="noopener noreferrer"></a>
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>

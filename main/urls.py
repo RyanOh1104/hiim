@@ -15,8 +15,8 @@ urlpatterns = [
     path('update/<int:authuser_id>', views.update, name='update'),
 ]
 
-from .views import ArticleCounterRedirectView, ArticleDetail
+# from .views import ArticleCounterRedirectView, ArticleDetail
 
-urlpatterns = [
-    path('counter/<int:pk>/', ArticleCounterRedirectView.as_view(), name='article-counter'),
-]
+# urlpatterns = [
+#     path('counter/<int:pk>/', ArticleCounterRedirectView.as_view(), name='article-counter'),
+# ]
