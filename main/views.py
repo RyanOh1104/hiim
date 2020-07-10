@@ -43,7 +43,7 @@ def update(response, authuser_id):
 def usermain(request):
     thisUser = UserInfo.objects.get(authuser=request.user)
     
-    today = datetime.today()
+    today = date.today()
     newSeed = DansangSeed.objects.get(datePosted=today)
 
     context = {
