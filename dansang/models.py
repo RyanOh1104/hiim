@@ -29,7 +29,7 @@ class DansangSeed(models.Model):
     title = models.CharField(max_length = 100)
     subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
-    datePosted = models.DateField(auto_now_add=False)
+    datePosted = models.DateField(auto_now_add=False, default="2020-07-19")
 
     def __str__(self):
         return self.title
