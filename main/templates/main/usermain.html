@@ -173,8 +173,9 @@
             $('#tooltip-alert').tooltip('hide');
         }
 
+        
         // newSeed alert
-        if(localStorage.getItem("newSeedAlertShown") == null) {
+        if(localStorage.getItem("newSeedAlertShown") == 1) {
             $('#alert-newSeed').tooltip('show');
             //Hide tooltip after three seconds
             setTimeout(function(){
@@ -182,9 +183,10 @@
             }, 7000)
 
             localStorage.setItem("newSeedAlertShown", 1)
-        } // else if (localStorage.getItem("newSeedAlertShown", 1)) {
-          //  $('#alert-newSeed').tooltip('hide');
+        } //else if (localStorage.getItem("newSeedAlertShown", 1)) {
+          // $('#alert-newSeed').tooltip('hide');
         }
+        
     }
 </script>
 {% endblock %}
