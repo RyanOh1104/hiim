@@ -6,5 +6,4 @@ class DansangAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(DansangInput)
-admin.site.register(DansangSeed)
-admin.site.register(DansangAdmin)
+admin.site.register(DansangSeed, DansangAdmin)
