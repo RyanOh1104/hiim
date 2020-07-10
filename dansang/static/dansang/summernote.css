@@ -26,8 +26,9 @@
 .note-frame {
     border: none !important;
 }
+
 .note-editable span {
-    background-color: #f6f5f1 !important;
-    font-size: 17px !important
+    /* background-color: #f6f5f1 !important;
+    font-size: 17px !important */
     /* 근데 이렇게 font-size를 고정시켜 버리면 안 되는데... */
 }
