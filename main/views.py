@@ -47,12 +47,8 @@ def usermain(request):
         current_user = request.user
         # thisUser = UserInfo.objects.get(authuser_id=current_user.id)
         # 가입은 했는데 userinfo를 입력하지 않았다면
-        if UserInfo.objects.get(authuser_id=current_user.id) == null:
-        # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:
-            return redirect('/inputuserinfo')
-        # 가입도 했고 userinfo도 있다면
-        else: 
-            
+        if UserInfo.objects.get(authuser_id=current_user.id).exists():
+        # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:   
             today = date.today()
             newSeed = DansangSeed.objects.get(datePosted=today)
 
@@ -61,6 +57,10 @@ def usermain(request):
                 'newSeed' : newSeed
             }
             return render(request, 'main/usermain.html', context)
+        # 가입도 했고 userinfo도 있다면
+        else: 
+            return redirect('/inputuserinfo')
+
     # 가입도 안되어 있을 때
     else:
         return redirect('/register')
