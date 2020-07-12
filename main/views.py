@@ -41,7 +41,17 @@ def update(response, authuser_id):
 
 # @login_required(login_url="/welcome")
 def usermain(request):
+    thisUser = UserInfo.objects.get(authuser=request.user)
+    
+    today = date.today()
+    newSeed = DansangSeed.objects.get(datePosted=today)
 
+    context = {
+        'thisUser' : thisUser,
+        'newSeed' : newSeed
+    }
+    return render(request, 'main/usermain.html', context)
+'''
     # 가입이 되어 있다면
     if request.user.is_authenticated:
         current_user = request.user
@@ -64,7 +74,7 @@ def usermain(request):
     # 가입도 안되어 있을 때
     else:
         return redirect('/register')
-
+'''
 def landing(request):
     # return HttpResponseRedirect('/main/landing')
     return render(request, 'main/landing.html')
