@@ -9,12 +9,12 @@ class UserInfo(models.Model):
     name = models.CharField(max_length=50)
     # background = models.CharField(max_length=40)
     introduction = models.TextField()
-    insta = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
-    facebook = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
-    linkedin = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
-    youtube = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
-    blog = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
-    others = models.CharField(max_length=1000, default="http://127.0.0.1:8000/tong")
+    insta = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
+    facebook = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
+    linkedin = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
+    youtube = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
+    blog = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
+    others = models.CharField(max_length=1000, blank=True, default="https://hiim.kr/tong")
 
     def __str__(self):
         return self.name
