@@ -46,7 +46,7 @@ def usermain(request):
     if request.user.is_authenticated():
         thisUser = UserInfo.objects.get(authuser=request.user)
         # 가입은 했는데 userinfo를 입력하지 않았다면
-        if thisUser.name__isnull = True or thisUser.introduction__isnull = True:
+        if thisUser.name__isnull == True or thisUser.introduction__isnull == True:
             return redirect('/inputuserinfo')
         # 가입도 했고 userinfo도 있다면
         else: 
