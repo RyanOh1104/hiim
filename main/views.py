@@ -39,18 +39,37 @@ def update(response, authuser_id):
         form = InputUserForm(instance = thisUser)
         return render(response, 'main/inputuserinfo.html', {'form':form})
 
-@login_required(login_url="/welcome")
+# @login_required(login_url="/welcome")
 def usermain(request):
-    thisUser = UserInfo.objects.get(authuser=request.user)
+    # thisUser = UserInfo.objects.get(authuser=request.user)
     
-    today = date.today()
-    newSeed = DansangSeed.objects.get(datePosted=today)
+    # today = date.today()
+    # newSeed = DansangSeed.objects.get(datePosted=today)
 
-    context = {
-        'thisUser' : thisUser,
-        'newSeed' : newSeed
-    }
-    return render(request, 'main/usermain.html', context)
+    # context = {
+    #     'thisUser' : thisUser,
+    #     'newSeed' : newSeed
+    # }
+    # return render(request, 'main/usermain.html', context)
+    # 가입이 되어 있다면
+    if request.user.is_authenticated():
+        thisUser = UserInfo.objects.get(authuser=request.user)
+        # 가입은 했는데 userinfo를 입력하지 않았다면
+        if thisUser.name__isnull = True or thisUser.introduction__isnull = True:
+            return redirect('/inputuserinfo')
+        # 가입도 했고 userinfo도 있다면
+        else: 
+            today = date.today()
+            newSeed = DansangSeed.objects.get(datePosted=today)
+
+            context = {
+                'thisUser' : thisUser,
+                'newSeed' : newSeed
+            }
+            return render(request, 'main/usermain.html', context)
+    # 가입도 안되어 있을 때
+    else:
+        return redirect('/register')
 
 def landing(request):
     # return HttpResponseRedirect('/main/landing')
