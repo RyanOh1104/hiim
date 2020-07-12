@@ -43,7 +43,7 @@ def update(response, authuser_id):
 def usermain(request):
 
     # 가입이 되어 있다면
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         
         # 가입은 했는데 userinfo를 입력하지 않았다면
         if thisUser.name__isnull == True or thisUser.introduction__isnull == True:
