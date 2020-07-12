@@ -47,7 +47,7 @@ def usermain(request):
         current_user = request.user
         # thisUser = UserInfo.objects.get(authuser_id=current_user.id)
         # 가입은 했는데 userinfo를 입력하지 않았다면
-        if UserInfo.objects.get(authuser_id=current_user.id)__isnull == True:
+        if UserInfo.objects.get(authuser_id=current_user.id) == null:
         # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:
             return redirect('/inputuserinfo')
         # 가입도 했고 userinfo도 있다면
