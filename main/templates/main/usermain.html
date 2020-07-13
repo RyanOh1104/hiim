@@ -159,6 +159,54 @@
         window.scrollBy(x, y);
       }
 
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    
+    function NewSeedAlert() {
+        // 오늘 날짜 가져오기
+        var todayDate = new Date();
+        var dd = String(todayDate.getDate()).padStart(2, '0');
+        var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = todayDate.getFullYear();
+        todayDate = mm + '/' + dd + '/' + yyyy;
+
+        var todayCookie = getCookie("todayCookie");
+        if (todayCookie == todayDate) {
+            pass;
+        } else if (todayCookie == "") {
+            setCookie(todayCookie, todayDate, 1);
+            
+            $('#alert-newSeed').tooltip('show');
+            setTimeout(function(){
+            $('#alert-newSeed').tooltip('dispose')
+            }, 10000)
+        }
+    }
+
+    var userCookie = document.cookie;
+    document.cookie = "";
+    // get today's date
+    
+
     window.onload = function () {
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {
@@ -172,22 +220,8 @@
         } else if (localStorage.getItem("popupWasShown", 1)) {
             $('#tooltip-alert').tooltip('hide');
         }
-        
-        // newSeed alert
-        $('#alert-newSeed').tooltip('show');
-        setTimeout(function(){
-        $('#alert-newSeed').tooltip('dispose')
-        }, 10000)
 
-        // var userCookie = document.cookie;
-        // document.cookie = "";
-        // get today's date
-        // var today = new Date();
-        // var dd = String(today.getDate()).padStart(2, '0');
-        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        // var yyyy = today.getFullYear();
-        // today = mm + '/' + dd + '/' + yyyy;
-
+        NewSeedAlert();
 }
 </script>
 {% endblock %}

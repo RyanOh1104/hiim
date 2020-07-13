@@ -46,7 +46,6 @@ def usermain(request):
     # 가입이 되어 있다면
     if request.user.is_authenticated:
         current_user = request.user
-        # thisUser = UserInfo.objects.get(authuser_id=current_user.id)
         # 가입은 했는데 userinfo를 입력하지 않았다면
         if UserInfo.objects.filter(authuser_id=current_user.id).exists():
         # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:   
