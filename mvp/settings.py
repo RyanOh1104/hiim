@@ -144,10 +144,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Summernote에서 이런 에러가 떴고, 찾아보니 아래와 같이 하면 된단다.
-# "Refused to apply style from 'https://hiim.kr/summernote.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
+
 
 SUMMERNOTE_CONFIG = {
     'iframe': False,
