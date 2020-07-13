@@ -223,7 +223,7 @@
             $('#alert-newSeed').tooltip('dispose')
             }, 10000);
 
-            todaySeedAlert = `'${todayDate}'`;
+            localStorage.setItem('newSeed', `'${todayDate}'`);
 
         } else if (todaySeedAlert == `'${todayDate}'`) {           
         }
