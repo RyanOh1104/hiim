@@ -183,9 +183,9 @@
         return "";
     }
     
+    setCookie('newSeed', '2020/07/01', 3650); // 처음 한번만 실행?
     function NewSeedAlert() {
         // 오늘 날짜 가져오기
-        setCookie('newSeed', '2020/07/01', 3650);
 
         var todayDate = new Date();
         var dd = String(todayDate.getDate()).padStart(2, '0');
@@ -194,9 +194,9 @@
         todayDate =  yyyy + '/' + mm + '/' + dd;;
 
         var todayCookie = getCookie("newSeed"); // 'newSeed'라는 이름을 가진 쿠키의 value 가져오기
-        if (todayCookie == todayDate) {
+        if (todayCookie == `'${todayDate}'`) {
             
-        } else if (todayCookie != todayDate) {           
+        } else if (todayCookie != `'${todayDate}'`) {           
             $('#alert-newSeed').tooltip('show');
             setTimeout(function(){
             $('#alert-newSeed').tooltip('dispose')
