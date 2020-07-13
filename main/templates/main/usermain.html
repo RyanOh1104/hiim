@@ -164,7 +164,7 @@
         var expireDay = String((expireDate.getDate())+1).padStart(2, '0');
         var expireMonth = String(expireDate.getMonth() + 1).padStart(2, '0'); //January is 0!
         var expireYear = expireDate.getFullYear();
-        expireDate = expireYear + '/' + expireMonth + '/' + expireDay;
+        expireDate = expireMonth + '/' + expireDay + '/' + expireYear;
         var expires = "expires="+ expireDate.toUTCString();
 
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
@@ -191,7 +191,7 @@
         var dd = String(todayDate.getDate()).padStart(2, '0');
         var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = todayDate.getFullYear();
-        todayDate = yyyy + '/' + mm + '/' + dd;
+        todayDate =  mm + '/' + dd+ '/' + yyyy;
 
         var todayCookie = getCookie("todayCookie");
         if (todayCookie == todayDate) {
