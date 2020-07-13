@@ -161,7 +161,7 @@ SUMMERNOTE_CONFIG = {
         ],
     },
     'js': (
-        '/static/summernote-ext-print.js',
+        '/mvp/static/summernote-ext-print.js',
     ),
     # 'js_for_inplace': (
     #     '/static/summernote-ext-print.js',
