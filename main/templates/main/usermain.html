@@ -159,55 +159,7 @@
         window.scrollBy(x, y);
       }
 
-    function setCookie(cname, cvalue, exdays) {
-        // Expiration 날짜 정하기
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
-    
-    setCookie('newSeed', '2020/07/01', 3650); // 처음 한번만 실행?
-    function NewSeedAlert() {
-        // 오늘 날짜 가져오기
-
-        var todayDate = new Date();
-        var dd = String(todayDate.getDate()).padStart(2, '0');
-        var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = todayDate.getFullYear();
-        todayDate =  yyyy + '/' + mm + '/' + dd;;
-
-        var todayCookie = getCookie("newSeed"); // 'newSeed'라는 이름을 가진 쿠키의 value 가져오기
-        if (todayCookie == `'${todayDate}'`) {
-            
-        } else if (todayCookie != `'${todayDate}'`) {           
-            $('#alert-newSeed').tooltip('show');
-            setTimeout(function(){
-            $('#alert-newSeed').tooltip('dispose')
-            }, 10000)
-
-            document.cookie = `newSeed = '${todayDate}'`
-
-        }
-    }  
-
-    function NewSeedAlerts() {
+    function NewSeedAlert() {   // 굳이 cookie로 할 필요 없음!
         // 오늘 날짜 가져오기
         var todayDate = new Date();
         var dd = String(todayDate.getDate()).padStart(2, '0');
@@ -243,7 +195,8 @@
             $('#tooltip-alert').tooltip('hide');
         }
 
-        NewSeedAlerts();
+        // New Seed Alert
+        NewSeedAlert();
 }
 </script>
 {% endblock %}
