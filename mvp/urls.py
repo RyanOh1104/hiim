@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
-# from django.conf.urls import url, handler404, handler500
-
+### DEBUG = True일 때 아래 필요 ###
+from django.conf import settings
+from django.conf.urls.static import static
+#############################################
 # handler404 = "chatbot_app.views.error404"
 # handler500 = "chatbot_app.views.error500"
 
@@ -31,3 +33,6 @@ urlpatterns = [
     path('history/', include('history.urls')),
     path('summernote/', include('django_summernote.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
