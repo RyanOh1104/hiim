@@ -207,6 +207,28 @@
         }
     }  
 
+    function NewSeedAlerts() {
+        // 오늘 날짜 가져오기
+        var todayDate = new Date();
+        var dd = String(todayDate.getDate()).padStart(2, '0');
+        var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = todayDate.getFullYear();
+        todayDate =  yyyy + '/' + mm + '/' + dd;;
+
+        var todaySeedAlert = localStorage.getItem("newSeed");
+        if (todaySeedAlert == null || todaySeedAlert != `'${todayDate}'`) {
+            $('#alert-newSeed').tooltip('show');
+            
+            setTimeout(function(){
+            $('#alert-newSeed').tooltip('dispose')
+            }, 10000);
+
+            todaySeedAlert = `'${todayDate}'`;
+
+        } else if (todaySeedAlert == `'${todayDate}'`) {           
+        }
+    }  
+
     window.onload = function () {
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {
@@ -221,7 +243,7 @@
             $('#tooltip-alert').tooltip('hide');
         }
 
-        NewSeedAlert();
+        NewSeedAlerts();
 }
 </script>
 {% endblock %}
