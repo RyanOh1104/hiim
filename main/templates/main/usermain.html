@@ -159,10 +159,14 @@
         window.scrollBy(x, y);
       }
 
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
+    function setCookie(cname, cvalue) {
+        var expireDate = new Date();
+        var expireDay = String((expireDate.getDate())+1).padStart(2, '0');
+        var expireMonth = String(expireDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var expireYear = expireDate.getFullYear();
+        expireDate = expireYear + '/' + expireMonth + '/' + expireDay;
+        var expires = "expires="+ expireDate.toUTCString();
+
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
@@ -187,13 +191,13 @@
         var dd = String(todayDate.getDate()).padStart(2, '0');
         var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = todayDate.getFullYear();
-        todayDate = mm + '/' + dd + '/' + yyyy;
+        todayDate = yyyy + '/' + mm + '/' + dd;
 
         var todayCookie = getCookie("todayCookie");
         if (todayCookie == todayDate) {
             pass;
         } else if (todayCookie == "") {
-            setCookie(todayCookie, todayDate, 1);
+            setCookie(todayCookie, todayDate);
             
             $('#alert-newSeed').tooltip('show');
             setTimeout(function(){
