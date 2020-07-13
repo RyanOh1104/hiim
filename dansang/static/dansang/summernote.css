@@ -26,10 +26,7 @@
 .note-frame {
     border: none !important;
 }
-
 .note-editable span {
     background-color: #f6f5f1 !important;
     font-size: 17px !important
-    /* 최대 맹점 : 이렇게 하면, 일단 font-size 변경이 안 된다. 변경하는 순간 <span> 태그에 감싸여지니까. 
-    또, background-color 변경이 안 된다. 그래서 이건 toolbar에서 제외했다. */
 }
