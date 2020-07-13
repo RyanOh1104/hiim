@@ -145,7 +145,7 @@ USE_L10N = True
 USE_TZ = True
 
 SUMMERNOTE_CONFIG = {
-    'iframe': True,
+    'iframe': False,
     'lang' : 'ko-KR',
     'summernote': {
         'width': '100%',
