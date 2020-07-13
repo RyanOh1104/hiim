@@ -159,13 +159,18 @@
         window.scrollBy(x, y);
       }
 
-    function setCookie(cname, cvalue) {
-        var expireDate = new Date();
-        var expireDay = String((expireDate.getDate())+1).padStart(2, '0');
-        var expireMonth = String(expireDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var expireYear = expireDate.getFullYear();
-        expireDate = expireMonth + '/' + expireDay + '/' + expireYear;
-        var expires = "expires="+ expireDate.toUTCString();
+    function setCookie(cname, cvalue, exdays) {
+        // Expiration 날짜 정하기
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+
+        // 오늘 날짜로 cvalue 값 매일 update. 
+        var cvalue = new Date();
+        var dd = String(cvalue.getDate()).padStart(2, '0');
+        var mm = String(cvalue.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = cvalue.getFullYear();
+        cvalue = yyyy + '/' + mm + '/' + dd;
 
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
@@ -187,29 +192,27 @@
     
     function NewSeedAlert() {
         // 오늘 날짜 가져오기
+        setCookie('newSeed', '2020/07/01', 3650);
+
         var todayDate = new Date();
         var dd = String(todayDate.getDate()).padStart(2, '0');
         var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = todayDate.getFullYear();
-        todayDate =  mm + '/' + dd+ '/' + yyyy;
+        todayDate =  yyyy + '/' + mm + '/' + dd;;
 
-        var todayCookie = getCookie("todayCookie");
+        var todayCookie = getCookie("newSeed"); // 'newSeed'라는 이름을 가진 쿠키의 value 가져오기
         if (todayCookie == todayDate) {
             pass;
-        } else if (todayCookie == "") {
-            setCookie(todayCookie, todayDate);
+        } else if (todayCookie != todayDate) {
+            document.cookie = `newSeed = '${todayDate}'`
             
             $('#alert-newSeed').tooltip('show');
             setTimeout(function(){
             $('#alert-newSeed').tooltip('dispose')
             }, 10000)
-        }
-    }
 
-    var userCookie = document.cookie;
-    document.cookie = "";
-    // get today's date
-    
+        }
+    }  
 
     window.onload = function () {
         // 개인정보 수정 alert
