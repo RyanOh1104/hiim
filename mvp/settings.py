@@ -144,6 +144,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Summernote에서 이런 에러가 떴고, 찾아보니 아래와 같이 하면 된단다.
+# "Refused to apply style from 'https://hiim.kr/summernote.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 SUMMERNOTE_CONFIG = {
     'iframe': False,
     'lang' : 'ko-KR',
@@ -201,7 +206,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'everyday/static'),
     os.path.join(BASE_DIR, 'history/static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
