@@ -66,7 +66,7 @@ def seed(request):
     seed = DansangSeed.objects.all()
     category = SeedCategory.objects.all()
     context = {
-        'seeds':seeds
+        'seeds':seeds,
         'categories' : categories
     }
     return render(request, 'dansang/seed.html', context)
