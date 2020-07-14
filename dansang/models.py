@@ -37,6 +37,7 @@ class SeedCategory(models.Model):
 class DansangSeed(models.Model):
     objects = models.Manager()
 
+    categoryEng = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'seedEng', null=True, default=None) 
     category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'seed', null=True, default=None)
     title = models.CharField(max_length = 100)
     subtitle = models.CharField(max_length = 100)
