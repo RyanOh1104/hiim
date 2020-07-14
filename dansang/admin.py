@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DansangInput, DansangSeed, SeedCategory
+from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
 
 class DansangAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
