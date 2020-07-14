@@ -63,8 +63,8 @@ def dansangdetail(request, authuser_id, slug):
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
 def seed(request):
-    seed = DansangSeed.objects.all()
-    category = SeedCategory.objects.all()
+    seeds = DansangSeed.objects.all()
+    categories = SeedCategory.objects.all()
     context = {
         'seeds':seeds,
         'categories' : categories
