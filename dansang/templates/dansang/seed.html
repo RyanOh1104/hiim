@@ -97,14 +97,14 @@
         // 각 카테고리 클릭했을 때
         $('.dropdown-item').click(function(event) {
             var thisCat = String(event.target.id);
+            console.log(thisCat)
             if (thisCat === 'seeAllCat') {
                 $('.allCat').show();
             } else {
                 $('.allCat').hide();
                 $('.eachCat').hide();
-                
-                var thisCat = String(event.target.id);
-                $(`.eachCat ${thisCat}`).show();
+        
+                $(`${thisCat}`).show();
             }
             
         })
