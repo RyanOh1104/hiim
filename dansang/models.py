@@ -25,10 +25,11 @@ class DansangInput(models.Model):
 
     def __str__(self):
         return (str(self.authuser)+"-----"+str(self.created)[:16])
-        
+
 class SeedCategory(models.Model):
     objects = models.Manager()
     category = models.CharField(max_length=10, default="책")
+    categoryEng = models.CharField(max_length=10, default="book")
 
     def __str__(self):
         return self.category
