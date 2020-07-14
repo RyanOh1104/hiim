@@ -94,7 +94,7 @@
         })
 
         // 각 카테고리 클릭했을 때
-        $('#{{cat.categoryEng}}').click(function(event) {
+        $('.dropdown-item').click(function(event) {
             $('.allCat').hide();
             $('.eachCat').hide();
             console.log(`event.target.id is ${event.target.id}`)
