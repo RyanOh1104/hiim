@@ -83,10 +83,9 @@
 
 <script>
     $(document).ready(function(){
-        $('.dropdown-toggle').click(function() {
-            $('.dropdown-menu').addClass('show');
-        })
         
+        $('.dropdown-toggle').dropdown();
+
         // '전체보기' 클릭했을 때
         $('.dropdown-item').children('#seeAllCat').click(function() {
             $('.eachCat').hide();
