@@ -8,3 +8,4 @@ class DansangAdmin(admin.ModelAdmin):
 admin.site.register(DansangInput)
 admin.site.register(DansangSeed, DansangAdmin)
 admin.site.register(SeedCategory)
+admin.site.register(SeedCategoryEng)
