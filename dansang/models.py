@@ -29,7 +29,7 @@ class DansangInput(models.Model):
 class DansangSeed(models.Model):
     objects = models.Manager()
 
-    category = models.ForeinKey(SeedCategory, on_delete=models.CASCADE, related_name = 'seed', null=True, default=None)
+    category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'seed', null=True, default=None)
     title = models.CharField(max_length = 100)
     subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
