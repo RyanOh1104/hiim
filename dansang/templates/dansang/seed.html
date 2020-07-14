@@ -42,7 +42,7 @@
               <button class="dropdown-item" id="seeAllCat">전체 보기</button>
               <div class="dropdown-divider"></div>
               {% for cat in categories %}
-              <button class="dropdown-item {{cat.categoryEng}}" id="{{cat.category}}">{{cat.category}}</button>
+              <button class="dropdown-item {{cat.categoryEng}}" id="{{cat.categoryEng}}">{{cat.category}}</button>
               {% endfor %}
             </div>
           </div>
@@ -104,7 +104,6 @@
             } else {
                 $('.allCat').hide();
                 $('.eachCat').hide();
-        
                 $(`.${thisCat}`).show();
             }
             

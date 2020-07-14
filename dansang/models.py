@@ -29,7 +29,7 @@ class DansangInput(models.Model):
 class SeedCategory(models.Model):
     objects = models.Manager()
     category = models.CharField(max_length=10, default="책")
-    categoryEng = models.CharField(max_length=10, default="book")
+    categoryE_eng = models.CharField(max_length=10, default="book")
 
     def __str__(self):
         return self.category
@@ -37,7 +37,8 @@ class SeedCategory(models.Model):
 class DansangSeed(models.Model):
     objects = models.Manager()
 
-    category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'seed', null=True, default=None)
+    category_eng = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'category_eng', null=True, default=None) 
+    category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'category', null=True, default=None)
     title = models.CharField(max_length = 100)
     subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
