@@ -42,7 +42,7 @@
               <button class="dropdown-item" id="seeAllCat">전체 보기</button>
               <div class="dropdown-divider"></div>
               {% for cat in categories %}
-              <button class="dropdown-item {{cat.categoryEng}}" id="{{cat.categoryEng}}" value="{{cat.category}}"></button>
+              <button class="dropdown-item {{cat.categoryEng}}" id="{{cat.categoryEng}}">{{cat.category}}</button>
               {% endfor %}
             </div>
           </div>
@@ -51,7 +51,7 @@
 
 
 {% for item in seeds reversed %}
-<div class="row seed-row-allCat {{item.category}}">
+<div class="row seed-row allCat {{item.category}}">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.category}} {{item.title}}</span><br class="mobile-only">
@@ -62,7 +62,7 @@
 {% endfor %}
 
 {% for item in seeds reversed %}
-<div class="row seed-row-eachCat {{item.category}}" style="display: none;">
+<div class="row seed-row eachCat {{item.category}}" style="display: none;">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.category}} {{item.title}}</span><br class="mobile-only">
@@ -89,20 +89,18 @@
         
         // '전체보기' 클릭했을 때
         $('.dropdown-item').children('#seeAllCat').click(function() {
-            $('.seed-row-eachCat').hide();
-            $('.seed-row-allCat').show();
+            $('.eachCat').hide();
+            $('.allCat').show();
         })
 
         // 각 카테고리 클릭했을 때
-        $("a").click(function(event) {
-            alert(event.target.id);
-        });
         $('#{{cat.categoryEng}}').click(function(event) {
-            $('.seed-row-allCat').hide();
-            $('.seed-row-eachCat').hide();
-
+            $('.allCat').hide();
+            $('.eachCat').hide();
+            console.log(`event.target.id is ${event.target.id}`)
             var thisCat = String(event.target.id);
-            $(`.seed-row-eachCat.'${thisCat}'`).show();
+            console.log(`thisCat is ${thisCat}`)
+            $(`.eachCat.'${thisCat}'`).show();
         })
     })
 </script>
