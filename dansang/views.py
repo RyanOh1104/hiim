@@ -45,7 +45,7 @@ def dansanginput(request):
 
 
 def dansangmain(request):
-    dansangs = DansangInput.objects.filter(authuser=request.user)
+    dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     today = date.today() # doen't work FUCK... 왜 2020년%206월%2011일??????
     context = {
