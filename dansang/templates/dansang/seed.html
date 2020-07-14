@@ -96,12 +96,17 @@
 
         // 각 카테고리 클릭했을 때
         $('.dropdown-item').click(function(event) {
-            $('.allCat').hide();
-            $('.eachCat').hide();
-            console.log(`event.target.id is ${event.target.id}`)
             var thisCat = String(event.target.id);
-            console.log(`thisCat is ${thisCat}`)
-            $(`.eachCat.${thisCat}`).show();
+            if (thisCat === '#seeAllCat') {
+                $('.allCat').show();
+            } else {
+                $('.allCat').hide();
+                $('.eachCat').hide();
+                
+                var thisCat = String(event.target.id);
+                $(`.eachCat.${thisCat}`).show();
+            }
+            
         })
     })
 </script>
