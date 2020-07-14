@@ -63,7 +63,7 @@ def dansangdetail(request, authuser_id, slug):
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
 def seed(request):
-    seeds = DansangSeed.objects.all().order_by('-DatePosted')
+    seeds = DansangSeed.objects.all().order_by('-datePosted')
     categories = SeedCategory.objects.all()
     categoriesInEng = SeedCategoryEng.objects.all()
     context = {
