@@ -24,15 +24,30 @@
     </div>
 </div>
 <br>
-<div class="row">
+<!-- <div class="row">
     <div class="col col-6 button-new">
         <a href="/dansang/dansanginput">
             <button class="all-buttons btn-lg btn-sm btn-primary">✒️ 생각 끄적이기</button>
         </a>
     </div>
+</div> -->
+
+<div class="row">
+    <div class="col col-6">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              [카테고리]
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              {% for cat in categories %}
+              <a class="dropdown-item" href="#">{{cat.category}}</a>
+            </div>
+          </div>
+    </div>
 </div>
 
-{% for item in seed reversed %}
+
+{% for item in seeds reversed %}
 <div class="row seed-row">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
