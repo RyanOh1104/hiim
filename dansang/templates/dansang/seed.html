@@ -62,7 +62,7 @@
 {% endfor %}
 
 {% for item in seeds reversed %}
-<div class="row seed-row eachCat {{item.category}}" style="display: none;">
+<div class="row seed-row eachCat {{item.category}}">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.category}} {{item.title}}</span><br class="mobile-only">
@@ -83,7 +83,9 @@
 
 <script>
     $(document).ready(function(){
-        
+        // 처음에 로드될 때는 숨김
+        $('.eachCat').hide();
+
         $('.dropdown-toggle').dropdown();
 
         // '전체보기' 클릭했을 때
