@@ -104,7 +104,7 @@
                 $('.eachCat').hide();
                 
                 var thisCat = String(event.target.id);
-                $(`.eachCat.${thisCat}`).show();
+                $(`.eachCat ${thisCat}`).show();
             }
             
         })
