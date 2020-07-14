@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import DansangInputForm
-from .models import DansangInput, DansangSeed, SeedCategory
+from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
 from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
@@ -65,9 +65,11 @@ def dansangdetail(request, authuser_id, slug):
 def seed(request):
     seeds = DansangSeed.objects.all()
     categories = SeedCategory.objects.all()
+    categoriesInEng = SeedCategoryEng.objects.all()
     context = {
         'seeds':seeds,
         'categories' : categories
+        'categoriesInEng':categoriesInEng
     }
     return render(request, 'dansang/seed.html', context)
 
