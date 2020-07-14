@@ -15,7 +15,7 @@ class NewEvent(models.Model):
     kw3 = models.CharField(max_length=100)
     emoji = models.CharField(max_length = 10, default="", blank=True)
 
-    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
+    slug = models.SlugField(max_length=255, allow_unicode=True, blank=True)
     url = models.URLField(max_length = 1000, blank=True)
     # models.DateTimeField(input_formats=["%d %b %Y %H:%M:%S %Z"])
     
