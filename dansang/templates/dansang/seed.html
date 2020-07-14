@@ -41,8 +41,8 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <button class="dropdown-item" id="seeAllCat">전체 보기</button>
               <div class="dropdown-divider"></div>
-              {% for cat in categories %}
-              <button class="dropdown-item {{cat.categoryEng}}" id="{{cat.categoryEng}}">{{cat.category}}</button>
+              {% for cat in categoriesInEng %}
+              <button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button>
               {% endfor %}
             </div>
           </div>
