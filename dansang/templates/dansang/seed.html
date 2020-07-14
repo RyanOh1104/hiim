@@ -98,6 +98,7 @@
         $('.dropdown-item').click(function(event) {
             var thisCat = String(event.target.id);
             console.log(thisCat)
+            console.log(`${thisCat}`)
             if (thisCat === 'seeAllCat') {
                 $('.allCat').show();
             } else {
