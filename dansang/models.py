@@ -37,8 +37,8 @@ class SeedCategory(models.Model):
 class DansangSeed(models.Model):
     objects = models.Manager()
 
-    category_eng = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'SeedCategory.category_eng', null=True, default=None) 
-    category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'SeedCategory.category', null=True, default=None)
+    category_eng = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'rel_cat_eng', null=True, default=None) 
+    category = models.ForeignKey(SeedCategory, on_delete=models.CASCADE, related_name = 'rel_cat_kor', null=True, default=None)
     title = models.CharField(max_length = 100)
     subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
