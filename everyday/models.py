@@ -13,7 +13,7 @@ class NewEvent(models.Model):
     kw1 = models.CharField(max_length=100)
     kw2 = models.CharField(max_length=100)
     kw3 = models.CharField(max_length=100)
-    emoji = models.CharField(max_length = 10, default="", blank=True)
+    emoji = models.CharField(max_length = 100, default="", blank=True)
 
     slug = models.SlugField(max_length=255, allow_unicode=True, blank=True)
     url = models.URLField(max_length = 1000, blank=True)
