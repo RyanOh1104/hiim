@@ -68,8 +68,8 @@ def seed(request):
     categoriesInEng = SeedCategoryEng.objects.all()
     context = {
         'seeds':seeds,
-        'categories' : categories
-        'categoriesInEng':categoriesInEng
+        'categories' : categories,
+        'categoriesInEng':categoriesInEng,
     }
     return render(request, 'dansang/seed.html', context)
 
