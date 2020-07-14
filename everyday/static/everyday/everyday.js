@@ -81,13 +81,19 @@ function buildCalendar(){//현재 달 달력 만들기
           for (j in range(0,eventsLength-1)) {
             if (events[j].dates === dateStringyfied) {
                 var thisCell = document.querySelector(`[date='${dateStringyfied}']`);
+                if (events[j].emoji === "") {
+                  thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
+                  `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'>
+                  <div class='keywords pc-only'>${events[j].keywords}</div>
+                  <div class='empty mobile-only'>its'<br>empty<br>here</div></a>`;
+                } else {
                 thisCell.innerHTML = `<div class = eachDate>${i}</div>` +
                 `<a href='/everyday/everydaydetail/${userId}/${events[j].slug}'>
                 <div class='keywords pc-only'>${events[j].keywords}</div>
                 <div class='main-emoji mobile-only'>${events[j].emoji}</div></a>`;
-            } else {
-            }
-          }
+                } 
+                }
+             }
           
           
           cnt = cnt + 1;//열의 갯수를 계속 다음으로 위치하게 해주는 역할
