@@ -50,7 +50,7 @@
 </div>
 
 
-{% for item in seeds reversed %}
+{% for item in seeds %}
 <div class="row seed-row allCat all-{{item.category_eng}}">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
@@ -61,7 +61,7 @@
 </div>
 {% endfor %}
 
-{% for item in seeds reversed %}
+{% for item in seeds %}
 <div class="row seed-row eachCat each-{{item.category_eng}}">
     <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
