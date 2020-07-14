@@ -43,4 +43,4 @@ class SeedCategory(models.Model):
     category = models.CharField(max_length=10, default="책")
 
     def __str__(self):
-    return self.category
+        return self.category
