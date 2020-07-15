@@ -70,7 +70,8 @@ def all_events(request):
 
 def everydaydetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
-    return render(request, 'everyday/everydaydetail.html', {'today' : today})
+    images = EverydayImage.objects.get(authuser_id = new_event.id)
+    return render(request, 'everyday/everydaydetail.html', {'today' : today, 'images':images})
 
 def everydayUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)

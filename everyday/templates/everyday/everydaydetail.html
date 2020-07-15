@@ -36,11 +36,9 @@
 <div class="row justify-content-center">
     <div class="col col-12">
         <div class="detail-contents">
-            {% if today.img %}
-            <img src="{{today.img.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
-            {% else %}
-            <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
-            {% endif %}
+            {% for i in images %}
+            <img src="{{i.image.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?">
+            {% endfor %}
             {{today.what|safe}}
         </div>
     </div>
