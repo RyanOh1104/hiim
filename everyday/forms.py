@@ -14,6 +14,7 @@ class EverydayInputForm(forms.ModelForm):
         'rows' : 8,
         'id' : 'what'
         }))
+    img = forms.ImageField(blank=True)
 
     kw1 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '하나', 'class' : 'keywords'
