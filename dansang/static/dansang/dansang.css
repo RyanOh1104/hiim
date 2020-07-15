@@ -170,4 +170,7 @@
     .seed-subtitle {
         font-size: 3.5vw;
     }
+    .seed-badge {
+        font-size: 60% !important;
+    }
 }
