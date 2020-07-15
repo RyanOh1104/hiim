@@ -17,7 +17,7 @@ def everydayinput(request):
     # setting initial user as current logged in user
     form = EverydayInputForm(initial={'authuser':request.user})
     ImageFormSet = modelformset_factory(EverydayImage, form=EverydayImageForm, extra=3)
-    formset = ImageFormSet(queryset=Image.objects.none())
+    formset = ImageFormSet(queryset=EverydayImage.objects.none())
     if request.method == 'POST':
         form = EverydayInputForm(request.POST, request.FILES)
         formset = ImageFormSet(request.POST, request.FILES, queryset=EverydayImage.objects.none())
