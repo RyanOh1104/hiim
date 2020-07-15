@@ -52,7 +52,7 @@
 
 {% for item in seeds %}
 <div class="row seed-row allCat all-{{item.category_eng}}">
-    <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
+    <a href="{{item.url}}" class="all-links" id="seed#{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>
@@ -63,7 +63,7 @@
 
 {% for item in seeds %}
 <div class="row seed-row eachCat each-{{item.category_eng}}">
-    <a href="{{item.url}}" class="all-links" id="seed#{{forloop.revcounter}}" target="_blank" rel="noopener noreferrer">
+    <a href="{{item.url}}" class="all-links" id="seed#{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>
@@ -88,6 +88,8 @@
 
         $('.dropdown-toggle').dropdown();
 
+        // 새로운 아이템에 뱃지 추가
+        $('#seed#1').append("<span class='badge badge-primary'>New!</span>");
         // '전체보기' 클릭했을 때
         $('#seeAllCat').click(function() {
             $('.eachCat').hide();
@@ -105,9 +107,9 @@
                 $('.allCat').hide();
                 $('.eachCat').hide();
                 $(`.each-${thisCat}`).show();
-            }
-            
+            } 
         })
+
     })
 </script>
 {% endblock %}
