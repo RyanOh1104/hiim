@@ -39,7 +39,7 @@
             {% if today.img %}
             <img src="{{today.img.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
             {% else %}
-            <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}">
+            <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
             {% endif %}
             {{today.what|safe}}
         </div>
