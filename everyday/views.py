@@ -29,7 +29,7 @@ def everydayinput(request):
             instance.img1= request.FILES.get('img1')
             instance.img2= request.FILES.get('img2')
             instance.img3= request.FILES.get('img3')
-            
+
             if instance.kw1 == "":
                 instance.kw1 = "&nbsp;"
             if instance.kw2 == "":
@@ -79,6 +79,7 @@ def everydayUpdate(request, authuser_id, slug):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
+
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(authuser_id) + '/' + str(instance.slug)
             getToday.delete()

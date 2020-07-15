@@ -21,10 +21,21 @@
     </div>
 </div>    
 
-<form method="post" class="form-group">{% csrf_token %}
+<form method="post" class="form-group" enctype="multipart/form-data">{% csrf_token %}
     <div class="row">
-        <div class="col-lg-5 col-sm-12">
+        <div class="col-lg-3 col-sm-12">
             <div id='today'>{{form.when|as_crispy_field}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="everyday-img-input" id="everday-img-input-1">{{form.img1|as_crispy_field}}</div>
+        </div>
+        <div class="col-lg-3">
+            <div class="everyday-img-input" id="everday-img-input-2">{{form.img2|as_crispy_field}}</div>
+        </div>
+        <div class="col-lg-3">
+            <div class="everyday-img-input" id="everday-img-input-3">{{form.img3|as_crispy_field}}</div>
         </div>
     </div>
     <div class="row">
@@ -59,4 +70,5 @@
     <br>
     <button type='submit' class='btn menial-buttons'>오늘 하루 저장</button>
 </form>
+
 {% endblock %}
