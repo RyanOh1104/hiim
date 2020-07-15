@@ -75,7 +75,10 @@
 .seed-subtitle {
     font-size:18px;
 }
-
+.seed-badge {
+    font-size: 40% !important;
+    vertical-align: top;
+}
 /* Summernote settings -- somehow doesn't work in summernote.css */
 .note-editable span {
     background-color: #f6f5f1 !important;
