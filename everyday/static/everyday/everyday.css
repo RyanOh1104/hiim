@@ -102,6 +102,12 @@ td[date] {
 #what {
     font-size: 17px;
 }
+.custom-file-label {
+    background-color: #f6f5f1 !important;
+}
+.custom-file-label::after {
+    content: "사진 넣기" !important;
+}
 .calendar-img {
     width: 50px;
     height: auto;
