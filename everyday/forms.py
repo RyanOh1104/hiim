@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm, formset_factory
-from .models import NewEvent, EverydayImage
+from .models import NewEvent
 from django.utils import timezone
 from crispy_forms.helper import FormHelper
 from bootstrap_datepicker_plus import DatePickerInput, MonthPickerInput
