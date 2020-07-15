@@ -32,7 +32,7 @@
         </div>
     </div>
 </div>
-
+<br>
 <div class="row justify-content-center">
     {% if today.img1 %}
     <div class="col col-4">
@@ -46,7 +46,7 @@
     {% else %}
         <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
     {% endif %}  
-    {% if today.im31 %}
+    {% if today.img3 %}
     <div class="col col-4">
         <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
     {% else %}

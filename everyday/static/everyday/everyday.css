@@ -112,6 +112,10 @@ td[date] {
 .everyday-default-img {
     display: none;
 } */
+.everyday-img {
+    width: 100%;
+    height: auto;
+}
 .calendar-img {
     width: 50px;
     height: auto;
