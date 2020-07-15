@@ -222,4 +222,4 @@ LOGOUT_REDIRECT_URL = "/welcome"
 
 # Media 추가할 때 이거 해줘야됨. Telusko 튜토리얼 2시간 18분부터 봐라
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
