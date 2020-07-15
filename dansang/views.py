@@ -130,6 +130,7 @@ def error500(request):
 #         article.update_counter()
 #         return article.url
 
+'''
 from django.http import (
     HttpResponseBadRequest,
     HttpResponseServerError,
@@ -192,4 +193,5 @@ def upload_attachment(request):
         })
     except IOError:
         return HttpResponseServerError(_('Failed to save attachment'))
+'''
 
