@@ -157,7 +157,7 @@ SUMMERNOTE_CONFIG = {
             ['color', ['forecolor', ]], # 'backcolor'
             ['para', ['ul', 'ol', 'height']],
             ['insert', ['link']],
-            ['misc', ['picture', 'fullscreen', 'print', 'help', ]], # 'codeview', ...
+            ['misc', ['fullscreen', 'print', 'help', ]], # 'codeview', 'picture' ...
         ],
     },
     'js': (
