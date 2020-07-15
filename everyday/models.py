@@ -9,7 +9,7 @@ class NewEvent(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'event', null=True, default=None)
     when = models.DateField(_('When'), auto_now_add=False)
     what = models.CharField(_('What'), max_length = 5000, default="None")
-    img = models.ImageField(null=True, blank=True, upload_to="everyday_img")
+    # img = models.ImageField(null=True, blank=True, upload_to="everyday_img")
 
     kw1 = models.CharField(max_length=100)
     kw2 = models.CharField(max_length=100)
