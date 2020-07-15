@@ -36,7 +36,7 @@
 <div class="row justify-content-center">
     <div class="col col-12">
         <div class="detail-contents">
-            <img src="{{today.img_url}}" alt="🤔이미지가 어디갔지?">
+            <img src="{{today.img_url|safe}}" alt="🤔이미지가 어디갔지?">
             {{today.what|safe}}
         </div>
     </div>
