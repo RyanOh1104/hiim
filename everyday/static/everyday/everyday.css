@@ -108,10 +108,9 @@ td[date] {
 .custom-file-label::after {
     content: "사진 넣기" !important;
 }
-/* 바로 아래 이거 왜 안되지
 .everyday-default-img {
     display: none;
-} */
+}
 .everyday-img {
     width: 100%;
     height: auto;
