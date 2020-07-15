@@ -27,23 +27,26 @@
 </div>
 <br>
 <div class="row justify-content-center">
-    <div class="col col-4 img-col text-center">
+    <div class="col-lg-4 col-sm-11 img-col text-center" style="padding:2.5px;">
     {% if today.img1 %}
-        <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+        <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"
+        style="width: 100%; height: auto;"><br>
     {% else %}
         <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
     {% endif %}
     </div>
-    <div class="col col-4 img-col text-center">
+    <div class="col-lg-4 col-sm-11 img-col text-center" style="padding:2.5px;">
         {% if today.img2 %}
-            <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+            <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"
+            style="width: 100%; height: auto;"><br>
         {% else %}
             <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
         {% endif %}
     </div>
-    <div class="col col-4 img-col text-center">
+    <div class="col-lg-4 col-sm-11 img-col text-center" style="padding:2.5px;">
         {% if today.img3 %}
-            <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+            <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"
+            style="width: 100%; height: auto;"><br>
         {% else %}
             <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
         {% endif %}
