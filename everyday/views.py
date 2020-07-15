@@ -25,7 +25,7 @@ def everydayinput(request):
             instance.authuser = request.user
             instance.when = str(instance.when)
 
-            everyday_img = request.FILES.get('img', None) # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
+            everyday_img = request.FILES.get('img', 'None') # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
             instance.img = everyday_img
             # 빈 keywords에 공백 추가하기. 이렇게 주먹구구식으로 해도 되나?
             if instance.kw1 == "":
