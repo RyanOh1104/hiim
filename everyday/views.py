@@ -19,7 +19,7 @@ def everydayinput(request):
 
     if request.method == 'POST':
         # form = EverydayInputForm(request.POST)
-        form = EverydayInputForm(request.POST)
+        form = EverydayInputForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
