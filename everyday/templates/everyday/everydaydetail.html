@@ -1,8 +1,8 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'base.css' %}">
-<link rel="stylesheet" href="{% static 'everyday.css' %}">
+<link rel="stylesheet" href="{% static '/base.css' %}">
+<link rel="stylesheet" href="{% static '/everyday.css' %}">
 {% endblock %}
 
 {% block title %} 지나갈 오늘 {% endblock %}
@@ -13,13 +13,6 @@
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 
-<!-- <div class="row">
-    <div class="col col-12">
-        <div class="detail-title">
-            {{today.when}}<a href="/everyday/everydaymain">📅</a>
-        </div>
-    </div>
-</div> -->
 <div class="row">
     <div class="col col-12 detail-title">
         <div class="row">
@@ -34,21 +27,21 @@
 </div>
 <br>
 <div class="row justify-content-center">
-    <div class="col col-4 text-center">
+    <div class="col col-4 img-col text-center">
     {% if today.img1 %}
         <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
     {% else %}
         <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
     {% endif %}
     </div>
-    <div class="col col-4 text-center">
+    <div class="col col-4 img-col text-center">
         {% if today.img2 %}
             <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
         {% else %}
             <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
         {% endif %}
     </div>
-    <div class="col col-4 text-center">
+    <div class="col col-4 img-col text-center">
         {% if today.img3 %}
             <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
         {% else %}
