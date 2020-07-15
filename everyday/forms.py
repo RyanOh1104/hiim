@@ -47,10 +47,5 @@ class EverydayInputForm(forms.ModelForm):
             )
         }
 
-class EverydayImageForm(forms.ModelForm):
-    image = forms.ImageField(label='')
-    class Meta:
-        model = EverydayImage
-        fields = ('image',)
 
 
