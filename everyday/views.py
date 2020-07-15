@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import EverydayInputForm
-from .models import NewEvent
+from .forms import EverydayInputForm, EverydayImageForm
+from .models import NewEvent, EverydayImage
 from main.models import UserInfo
+from django.forms import modelformset_factory
 from datetime import date, datetime
 from django.utils import timezone
 from django_slugify_processor.text import slugify
@@ -14,35 +15,41 @@ import json
 def everydayinput(request):
     today = datetime.today()
     # setting initial user as current logged in user
-    # form = EverydayInputForm(initial={'authuser':request.user})
     form = EverydayInputForm(initial={'authuser':request.user})
-
+    ImageFormSet = modelformset_factory(EverydayImage, form=EverydayImageForm, extra=3)
+    formset = ImageFormSet(queryset=Image.objects.none())
     if request.method == 'POST':
-        # form = EverydayInputForm(request.POST)
-        form = EverydayInputForm(request.POST)
-        if form.is_valid():
+        form = EverydayInputForm(request.POST, request.FILES)
+        formset = ImageFormSet(request.POST, request.FILES, queryset=EverydayImage.objects.none())
+        
+        if form.is_valid() and formset.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
             instance.when = str(instance.when)
 
             #everyday_img = request.FILES.get('img', None) # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
-            instance.img= request.FILES.get('img')
-            # 빈 keywords에 공백 추가하기. 이렇게 주먹구구식으로 해도 되나?
+            # instance.img= request.FILES.get('img')
             if instance.kw1 == "":
                 instance.kw1 = "&nbsp;"
             if instance.kw2 == "":
                 instance.kw2 = "&nbsp;"
             if instance.kw3 == "":
                 instance.kw3 = "&nbsp;"
-            # if instance.emoji == "":
-            #     instance.emoji = "&nbsp;<br>&nbsp;"
 
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
+
+            for img_form in formset.cleaned_data:
+            # 유저가 모든 이미지들을 업로드하지 않았을 경우 crash 방지
+                if img_form:
+                    image = img_form['image']
+                    photo = EverydayImage(other_contents=form, image=image)
+                    photo.save()
+
             return redirect('/everyday/everydaymain')
 
-    return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today})
+    return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today, 'formset':formset})
 
 def everydaymain(request):
     all_events = NewEvent.objects.filter(authuser=request.user)

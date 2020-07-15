@@ -9,7 +9,9 @@ class NewEvent(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'event', null=True, default=None)
     when = models.DateField(_('When'), auto_now_add=False)
     what = models.CharField(_('What'), max_length = 5000, default="None")
-    img = models.ImageField(null=True, blank=True, upload_to="everyday_img")
+    # img1 = models.ImageField(null=True, blank=True, upload_to="everyday_img")
+    # img2 = models.ImageField(null=True, blank=True, upload_to="everyday_img")
+    # img3 = models.ImageField(null=True, blank=True, upload_to="everyday_img")
 
     kw1 = models.CharField(max_length=100)
     kw2 = models.CharField(max_length=100)
@@ -31,11 +33,11 @@ class NewEvent(models.Model):
         # when-admin = str(self.when)[:15]
         return (str(self.authuser)+"-----"+str(self.when)[:15])
 
-    # objects = models.Manager()
-    # authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'everyday', null=True, default=None)
-    # date = models.DateField(auto_now_add=True)
+class EverydayImage(models.Model):
+    objects = models.Manager()
 
-    # format_simple = models.CharField(max_length=200)
+    new_event = models.ForeignKey(NewEvent, on_delete=models.CASCADE, related_name="images_everyday")
+    image = models.ImageField(upload_to='everyday_img')
     
-    # def __str__(self):
-    #     return str(self.date)
+    def __str__(self):
+        return self.new_event.authuser + " image"

@@ -28,11 +28,24 @@
         </div>
         <div class="col-lg-4"></div>
         <div class="col-lg-5 text-right">
-            <div id="everday-img-input">{{form.img|as_crispy_field}}</div>
+            {{ formset.management_form }}
+            {% for img in formset %}
+            {{ img }}
+            {% endfor %}
             <label class="helptext" for="everyay-img-input">⬆ 아직 사용이 불가능해요😭</label>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-3">
 
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <div>{{form.what|as_crispy_field}}</div>
