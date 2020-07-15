@@ -25,8 +25,11 @@ def everydayinput(request):
             instance.authuser = request.user
             instance.when = str(instance.when)
 
-            everyday_img = request.FILES['img']
-            instance.img = everyday_img
+            if request.FILES['img'] == None:
+                instance.img = None
+            else:
+                everyday_img = request.FILES['img']
+                instance.img = everyday_img
             # 빈 keywords에 공백 추가하기. 이렇게 주먹구구식으로 해도 되나?
             if instance.kw1 == "":
                 instance.kw1 = "&nbsp;"
