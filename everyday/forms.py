@@ -14,7 +14,9 @@ class EverydayInputForm(forms.ModelForm):
         'rows' : 8,
         'id' : 'what'
         }))
-    # img = forms.ImageField(required=False)
+    img1 = forms.ImageField(required=False)
+    img2 = forms.ImageField(required=False)
+    img3 = forms.ImageField(required=False)
 
     kw1 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '하나', 'class' : 'keywords'
@@ -37,7 +39,7 @@ class EverydayInputForm(forms.ModelForm):
     # when이 date picker인데 everydayinput에서 입력하면 데이터가 입력되지 않았다고 나온다!!!
     class Meta:
         model=NewEvent
-        fields=['when', 'what', 'kw1', 'kw2', 'kw3', 'emoji']
+        fields=['when', 'what', 'img1', 'img2', 'img3', 'kw1', 'kw2', 'kw3', 'emoji']
         widgets = {'authuser':forms.HiddenInput(),
         'all_day':forms.HiddenInput(),
         'when' : MonthPickerInput(

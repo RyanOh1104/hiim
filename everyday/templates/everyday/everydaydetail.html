@@ -34,11 +34,29 @@
 </div>
 
 <div class="row justify-content-center">
+    {% if today.img1 %}
+    <div class="col col-4">
+        <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+    {% else %}
+        <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
+    {% endif %}
+    {% if today.img2 %}
+    <div class="col col-4">
+        <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+    {% else %}
+        <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
+    {% endif %}  
+    {% if today.im31 %}
+    <div class="col col-4">
+        <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+    {% else %}
+        <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
+    {% endif %}      
+</div>
+
+<div class="row justify-content-center">
     <div class="col col-12">
         <div class="detail-contents">
-            {% for i in images %}
-            <img src="{{i.image.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?">
-            {% endfor %}
             {{today.what|safe}}
         </div>
     </div>

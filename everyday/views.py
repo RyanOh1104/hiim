@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import EverydayInputForm, EverydayImageForm
-from .models import NewEvent, EverydayImage
+from .forms import EverydayInputForm
+from .models import NewEvent
 from main.models import UserInfo
 from django.forms import modelformset_factory
 from datetime import date, datetime
@@ -16,19 +16,20 @@ def everydayinput(request):
     today = datetime.today()
     # setting initial user as current logged in user
     form = EverydayInputForm(initial={'authuser':request.user})
-    ImageFormSet = modelformset_factory(EverydayImage, form=EverydayImageForm, extra=3)
-    formset = ImageFormSet(queryset=EverydayImage.objects.none())
+    
     if request.method == 'POST':
         form = EverydayInputForm(request.POST, request.FILES)
-        formset = ImageFormSet(request.POST, request.FILES, queryset=EverydayImage.objects.none())
         
-        if form.is_valid() and formset.is_valid():
+        if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
             instance.when = str(instance.when)
 
             #everyday_img = request.FILES.get('img', None) # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
-            # instance.img= request.FILES.get('img')
+            instance.img1= request.FILES.get('img1')
+            instance.img2= request.FILES.get('img2')
+            instance.img3= request.FILES.get('img3')
+            
             if instance.kw1 == "":
                 instance.kw1 = "&nbsp;"
             if instance.kw2 == "":
@@ -40,16 +41,9 @@ def everydayinput(request):
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
 
-            for img_form in formset.cleaned_data:
-            # 유저가 모든 이미지들을 업로드하지 않았을 경우 crash 방지
-                if img_form:
-                    image = img_form['image']
-                    photo = EverydayImage(other_contents=form, image=image)
-                    photo.save()
-
             return redirect('/everyday/everydaymain')
 
-    return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today, 'formset':formset})
+    return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today})
 
 def everydaymain(request):
     all_events = NewEvent.objects.filter(authuser=request.user)
@@ -70,8 +64,8 @@ def all_events(request):
 
 def everydaydetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
-    images = EverydayImage.objects.get(authuser_id = new_event.id)
-    return render(request, 'everyday/everydaydetail.html', {'today' : today, 'images':images})
+   
+    return render(request, 'everyday/everydaydetail.html', {'today' : today})
 
 def everydayUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)
