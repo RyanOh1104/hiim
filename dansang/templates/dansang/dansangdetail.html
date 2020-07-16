@@ -83,4 +83,10 @@
 </form>
 
 <div class="block-spacing"></div>
+
+<script>
+    $(document).on('click', '.button-delete', function(){
+        return confirm('이 생각을 지울까요?');
+    })
+</script>
 {% endblock %}
