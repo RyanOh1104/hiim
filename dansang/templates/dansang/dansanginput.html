@@ -21,13 +21,16 @@
 <form method="post" class="form-group">
   {% csrf_token %}
   <div class="row">
-    <div class="col col-12"> <!--원래는 col-8-->
+    <div class="col col-12">
       <div class="input-title">{{form.title|as_crispy_field}}</div>
     </div>
   </div>
   <div class="row">
-    <div class="col col-12"> <!--원래는 col-6-->
+    <div class="col col-8">
       <div class="input-subtitle">{{form.subtitle|as_crispy_field}}</div>
+    </div>
+    <div class="col col-4">
+      <div class="input-img">{{form.img|as_crispy_field}}</div>
     </div>
   </div>
 

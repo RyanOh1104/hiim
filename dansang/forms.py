@@ -15,13 +15,11 @@ class DansangInputForm(forms.ModelForm):
         attrs={'style':'font-size: 17px; background-color: #f6f5f1; border: none;', 
         'placeholder':'부제목이 있으면 입력해주세요!'}))
     # contents = SummernoteTextField()
-    # source = forms.CharField(widget=forms.TextInput(
-    #     attrs={'style':'font-size: 13px; background-color: #f6f5f1; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.125);',
-    #     'placeholder':'무엇을 보고 이런 생각을 했는지 url을 공유해줄 수 있나요?'
-    #     }))
+    img = forms.ImageField(required=False)
+
     class Meta:
         model=DansangInput
-        fields=['title', 'subtitle', 'contents']
+        fields=['title', 'img', 'subtitle', 'contents']
         widgets = {
             'authuser':forms.HiddenInput(), 
             'first_sentence':forms.HiddenInput(),

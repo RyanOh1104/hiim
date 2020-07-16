@@ -14,11 +14,10 @@ class DansangInput(models.Model):
     subtitle = models.CharField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=False)
     modified = models.DateTimeField(auto_now=True)
+    img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
     keyword = models.CharField(max_length=100, blank=True)
     first_sentence = models.CharField(max_length=100, blank=True)
-
-    # image = models.ImageField(upload_to='')
 
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
     url = models.CharField(max_length=10000, blank=True)
