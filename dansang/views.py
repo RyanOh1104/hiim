@@ -21,7 +21,7 @@ def dansanginput(request):
             instance = form.save(commit=False)
             instance.authuser = request.user
             
-            instance.img = reqeust.FILES.get('img')
+            instance.img = request.FILES.get('img')
             instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
