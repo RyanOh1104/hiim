@@ -228,6 +228,17 @@ a:active {color:black;}
     width: auto;
     margin-top: -10px;
 }
+/* File Upload (Image) START */
+.custom-file-label {
+    background-color: #f6f5f1 !important;
+}
+.custom-file-label::after {
+    content: "사진 넣기" !important;
+}
+.default-img {
+    display: none;
+}
+/* File Upload (Image) END */
 
 .mobile-only {
     display: none;

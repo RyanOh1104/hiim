@@ -31,21 +31,21 @@
     {% if today.img1 %}
         <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
     {% else %}
-        <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}">
+        <img class="default-img" src="{% static 'mvp/images/ci.png' %}">
     {% endif %}
     </div>
     <div class="col-lg-4 col-sm-11 img-col text-center">
         {% if today.img2 %}
             <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
         {% else %}
-            <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
+            <img class="default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
         {% endif %}
     </div>
     <div class="col-lg-4 col-sm-11 img-col text-center">
         {% if today.img3 %}
             <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
         {% else %}
-            <img class="everyday-default-img" src="{% static 'mvp/images/ci.png' %}">
+            <img class="default-img" src="{% static 'mvp/images/ci.png' %}">
         {% endif %}
     </div>   
 </div>

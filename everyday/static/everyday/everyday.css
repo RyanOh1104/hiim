@@ -102,15 +102,6 @@ td[date] {
 #what {
     font-size: 17px;
 }
-.custom-file-label {
-    background-color: #f6f5f1 !important;
-}
-.custom-file-label::after {
-    content: "사진 넣기" !important;
-}
-.everyday-default-img {
-    display: none;
-}
 .everyday-img {
     width: 100%;
     height: auto;

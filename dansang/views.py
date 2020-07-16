@@ -16,11 +16,12 @@ def dansanginput(request):
     today = datetime.today()
     form = DansangInputForm(initial={'authuser':request.user})
     if request.method == 'POST':
-        form = DansangInputForm(request.POST)
+        form = DansangInputForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
             
+            instance.img = reqeust.FILES.get('img')
             instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
