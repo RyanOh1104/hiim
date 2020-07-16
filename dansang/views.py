@@ -12,16 +12,17 @@ from django_slugify_processor.text import slugify
 
 @login_required
 def dansanginput(request):
-    # setting initial user as current logged in user
     today = datetime.today()
+    # setting initial user as current logged in user
     form = DansangInputForm(initial={'authuser':request.user})
+
     if request.method == 'POST':
         form = DansangInputForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
             
-            instance.img = request.FILES.get('img')
+            instance.img= request.FILES.get('img')
             instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
