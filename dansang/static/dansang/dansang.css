@@ -94,6 +94,35 @@
     background-color: #f6f5f1 !important;
     font-size: 17px !important
 }
+.card-block {
+    border: #f6f5f1 1px solid;
+    font-size: 18px;
+    background-color: #f6f5f1;
+}
+.note-editable {
+    background-color: #f6f5f1 !important;
+    line-height: 1.2 !important;
+}
+.card-header {
+    /* padding-top: 40px !important; */
+    background-color: #f6f5f1 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
+}
+.show {
+    background-color: #f6f5f1;
+}
+.note-btn {
+    background-color: #f6f5f1 !important;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #bbbab7, 
+     -2px -2px 1px #ffffff;
+}
+.note-frame {
+    border: none !important;
+}
+/* Summernote settings END */
 
 @media (max-width: 768px) {
     /* Main page */
@@ -159,7 +188,7 @@
     .input-content {
         /* line-height: 1.2; */
     }
-    .custom-label {
+    .custom-file {
         width: 50%;
         margin-left: 10px;
     }
