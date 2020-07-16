@@ -159,6 +159,10 @@
     .input-content {
         /* line-height: 1.2; */
     }
+    .custom-label {
+        width: 50%;
+        margin-left: 10px;
+    }
 
     /* Detail page */
 
