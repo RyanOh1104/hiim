@@ -161,18 +161,16 @@ SUMMERNOTE_CONFIG = {
         ],
     },
     'js': (
-        'static/summernote-ext-print.js',
+        '/static/summernote-ext-print.js',
     ),
     'js_for_inplace': (
         '/static/summernote-ext-print.js',
     ),
     'css': (
         '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/base16-dark.min.css',
-        '/mvp/static/summernote.css',
     ),
     'css_for_inplace': (
         '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/base16-dark.min.css',
-        '/summernote.css',
     ),
     'codemirror': {
         'theme': 'base16-dark',
