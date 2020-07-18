@@ -5,7 +5,7 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171633126-1"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -15,31 +15,28 @@
   gtag('config', 'UA-171633126-1');
 </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'main.css' %}">
+<link rel="stylesheet" href="{% static 'base.css' %}">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-    {% block css %}
-    {% endblock %}
+{% block css %}
+{% endblock %}
 
-    <title> {% block title %}{% endblock %} </title>
-    
-    {% load bootstrap4 %}
-        <!-- {% bootstrap_css %} -->
-    {% bootstrap_javascript jquery='full' %}
+<title> {% block title %}{% endblock %} </title>
 
-    {% block extrahead %}
-    {% endblock %}
+
+{% block extrahead %}
+{% endblock %}
 </head>
 <body>
     <nav class="navbar navbar-default navbar-expand-lg navbar-secondary bg-secondary nav-bar">
