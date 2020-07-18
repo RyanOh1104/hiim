@@ -183,9 +183,9 @@ SUMMERNOTE_CONFIG = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# BOOTSTRAP4 = {
-#     'include_jquery': True,
-# }
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 SUMMERNOTE_THEME = 'bs4'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
