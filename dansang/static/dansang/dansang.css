@@ -85,7 +85,13 @@
     height: auto;
 }
 
-/* Summernote settings -- somehow doesn't work in summernote.css */
+/* Seed settings START */
+.seed-links:visited {
+    color: darkgrey;
+}
+/* Seed settings END */
+
+/* Summernote settings START -- somehow doesn't work in summernote.css */
 .note-editable span {
     background-color: #f6f5f1 !important;
     font-size: 17px !important
