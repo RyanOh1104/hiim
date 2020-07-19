@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'dansang.apps.DansangConfig',
     'everyday.apps.EverydayConfig',
     'history.apps.HistoryConfig',
+    'qanda.apps.QandaConfig',
     'crispy_forms',
     'dynamic_formsets',
     'mathfilters',

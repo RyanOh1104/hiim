@@ -45,7 +45,7 @@ def dansanginput(request):
 
     return render(request,'dansang/dansanginput.html', {'form':form})
 
-
+@login_required
 def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('created')
     how_many = dansangs.count()
