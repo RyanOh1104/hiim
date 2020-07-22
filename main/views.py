@@ -75,6 +75,8 @@ def hiim(request):
     if request.user.is_authenticated:
         current_user = request.user
         thisUser = UserInfo.objects.get(authuser_id=current_user.id)
+    else: 
+        redirect('/')
     
     return render(request, 'main/hiim.html', {'thisUser':thisUser})
 
