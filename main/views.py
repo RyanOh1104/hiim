@@ -75,10 +75,12 @@ def hiim(request):
     if request.user.is_authenticated:
         current_user = request.user
         thisUser = UserInfo.objects.get(authuser_id=current_user.id)
+        
+        return render(request, 'main/hiim.html', {'thisUser':thisUser})
     else: 
         redirect('/')
     
-    return render(request, 'main/hiim.html', {'thisUser':thisUser})
+    
 
 def tong(request):
     return render(request, 'main/tong.html')
