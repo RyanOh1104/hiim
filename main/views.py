@@ -78,7 +78,7 @@ def hiim(request):
         
         return render(request, 'main/hiim.html', {'thisUser':thisUser})
     else: 
-        redirect('/')
+        return redirect('/')
     
     
 
