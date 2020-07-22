@@ -72,7 +72,7 @@ def landing(request):
     return render(request, 'main/landing.html')
 
 def hiim(request):
-    thisUser = User.objects.get(authuser=request.user)
+    thisUser = User.objects.get(username=request.user)
     return render(request, 'main/hiim.html', {'thisUser':thisUser})
 
 def tong(request):

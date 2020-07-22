@@ -21,7 +21,7 @@
 <div class="row">
     <div class="col">
         <div class="welcome-message">
-            <p>안녕하세요, 다른 누구도 아닌 <span class="welcome-stress">{{thisUser}}</span>님! 반갑습니다.
+            <p>안녕하세요, 다른 누구도 아닌 <span class="welcome-stress">{{thisUser.first_name}}</span>님! 반갑습니다.
                 <br> 하이아임을 간단히 소개해드릴게요.</p>
             
             <p><span class="welcome-very-stress">왜?</span><br>
@@ -43,7 +43,7 @@
                 <span class="welcome-stress">무엇이든 상관없어요!</span>기록의 대상은 평소 내가 가진 <span class="welcome-stress">생각</span>일 수도 있고, 
                 고된 삶의 한 줄기 빛과 같은 <span class="welcome-stress">취미</span>일 수도 있고, 하루하루의 소소한 <span class="welcome-stress">일상</span> 수도 있어요. 
                 나에게 큰 충격을 준 <span class="welcome-stress">책</span>일 수도 있고, 도저히 잊혀지지 않는 <span class="welcome-stress">영화/span>s일 수도, 
-                혹은 오랫동안 품어온 <span class="welcome-stress">버킷리스트</span>일 수도 있고, ... 아, {{thisUser}}님에 대해 기록할 수 있는 건 정-말 많아요. <br>
+                혹은 오랫동안 품어온 <span class="welcome-stress">버킷리스트</span>일 수도 있고, ... 아, {{thisUser.first_name}}님에 대해 기록할 수 있는 건 정-말 많아요. <br>
                 그리고 이러한 것들은 <span class="welcome-stress">생생하게 기록</span>해두지 않으면 금세 사라지고 맙니다. 
             </p>
 
@@ -53,9 +53,9 @@
                 공감하시나요?
             </p>
 
-            <p>자 그럼, 세상에 단 하나밖에 없는 {{thisUser}}님이 어떤 사람인지 본격적으로 기록하고 이해해보죠!</p>
+            <p>자 그럼, 세상에 단 하나밖에 없는 {{thisUser.first_name}}님이 어떤 사람인지 본격적으로 기록하고 이해해보죠!</p>
             
-            <a href="/"><button class="btn btn-primary">Hi, I'm {{thisUser}}</button></a>
+            <a href="/"><button class="btn btn-primary">Hi, I'm {{thisUser.first_name}}</button></a>
         </div>
     </div>
 </div>
