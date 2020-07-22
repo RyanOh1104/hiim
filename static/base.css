@@ -305,8 +305,7 @@ a:active {color:black;}
 
     /* Hi, I'm... page */
     .welcome-message {
-        font-size: 21px;
-
+        font-size: 4vw;
     }
 
     /* Archive-detail pages START */
