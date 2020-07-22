@@ -269,7 +269,7 @@ a:active {color:black;}
     }
     /* Welcome page */
     .welcome-message {
-        line-height: 1.75;
+        line-height: 1.75 !important;
     }
     .welcome-title {
         font-size: 8vw;
