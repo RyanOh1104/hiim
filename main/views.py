@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import InputUserForm
+from django.contrib.auth.models import User
 from .models import UserInfo
 from dansang.models import DansangSeed
 # 아래 두개는 굳이 필요한 건지는 모르겠음
@@ -71,8 +72,8 @@ def landing(request):
     return render(request, 'main/landing.html')
 
 def hiim(request):
-    # return HttpResponseRedirect('/main/landing')
-    return render(request, 'main/hiim.html')
+    thisUser = User.objects.get(authuser=request.user)
+    return render(request, 'main/hiim.html', {'thisUser':thisUser})
 
 def tong(request):
     return render(request, 'main/tong.html')
