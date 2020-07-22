@@ -223,6 +223,8 @@ a:active {color:black;}
 .welcome-gomin {
     font-size: 29px;
     font-style: italic;
+    font-weight: bold;
+    color: #9300d3;
 }
 .welcome-stress {
     font-weight: bold;
