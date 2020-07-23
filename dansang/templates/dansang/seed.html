@@ -109,19 +109,21 @@
             } 
         })
 
+        // Seed 클릭수 세기
+        function add_one_click(seedId) {
+            $.ajax({
+                type: "GET",
+                url: '/ajax/add_click',
+                data: {
+                    'seedId': seedId,
+                },
+                //success: function() {
+                //    console.log("hit added to article");
+                //}
+            });
+        }
     })
 
-    function add_one_click(seedId) {
-        $.ajax({
-            type: "GET",
-            url: '/ajax/add_click',
-            data: {
-                'seedId': seedId,
-            },
-            //success: function() {
-            //    console.log("hit added to article");
-            //}
-        });
-    }
+
 </script>
 {% endblock %}
