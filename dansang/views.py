@@ -119,7 +119,7 @@ def add_click(request):
     thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
 
-    return HttpResponse()
+    return HttpResponse()   # 이건 솔직히 왜 해야하는지 모르겠음. 근데 아무것도 안해주면 it returned None instead라는 에러 뜸.
 
 def error404(request):
     return render(request, "404.html", status=404)
