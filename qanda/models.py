@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+'''
 class Question(models.Model):
     objects = models.Manager()
     
@@ -22,3 +23,4 @@ class Answer(models.Model):
 
     def __str__(self):
         return (str(self.questionTitle)+"--answered by--"+str(self.authuser)+"--on "+str(self.created))
+'''
