@@ -5,6 +5,7 @@ from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
 from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
+from django.db.models import F
 
 @login_required
 def dansanginput(request):
