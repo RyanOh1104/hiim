@@ -118,7 +118,7 @@ def dansangDelete(request, authuser_id, slug):
 
 def add_click(request):
     # allQuestions = Question.objects.all()
-    seedId = request.GET.get("id", None)
+    seedId = request.GET.get("pk", None)
     thisSeed = DansangSeed.objects.get(id=seedId)
     thisSeed.clicks = F('hits') + 1
     thisSeed.save()
