@@ -120,7 +120,7 @@ def add_click(request):
     # allQuestions = Question.objects.all()
     seedId = request.GET.get("pk", None)
     thisSeed = DansangSeed.objects.get(id=seedId)
-    thisSeed.clicks = F('hits') + 1
+    thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
 
     # return clicks
