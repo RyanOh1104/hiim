@@ -5,10 +5,6 @@ from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
 from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
-### 아래는 씨앗 조회수 확인을 위해 ###
-# from django.shortcuts import get_object_or_404
-# from django.views.generic.base import RedirectView
-# from .models import DansangSeed
 
 @login_required
 def dansanginput(request):
@@ -117,7 +113,7 @@ def dansangDelete(request, authuser_id, slug):
     return redirect('/dansang/dansangmain')
 
 def add_click(request):
-    thisId = request.GET.get("SeedId", None)
+    thisId = request.GET.get("seedId", None)
     thisSeed = DansangSeed.objects.get(pk=thisId)
     thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
