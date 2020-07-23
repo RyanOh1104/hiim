@@ -49,6 +49,7 @@ class DansangSeed(models.Model):
     subtitle = models.CharField(max_length = 100)
     url = models.URLField(max_length=10000)
     datePosted = models.DateField(auto_now_add=False)
+    clicks = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

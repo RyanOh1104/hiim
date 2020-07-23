@@ -116,21 +116,21 @@ def dansangDelete(request, authuser_id, slug):
     thisDansang.delete()
     return redirect('/dansang/dansangmain')
 
+def add_click(request):
+    # allQuestions = Question.objects.all()
+    seedId = request.GET.get("id", None)
+    thisSeed = DansangSeed.objects.get(id=seedId)
+    thisSeed.clicks = F('hits') + 1
+    thisSeed.save()
+
+    # return clicks
+
 def error404(request):
     return render(request, "404.html", status=404)
 
 def error500(request):
     return render(request, "500.html", status=500)
 
-### 씨앗 조회수 세기 ###
-# class ArticleCounterRedirectView(RedirectView):
-#     permanent = False
-#     query_string = True
-
-#     def get_redirect_url(self, *args, **kwargs):
-#         article = get_object_or_404(Article, pk=kwargs['pk'])
-#         article.update_counter()
-#         return article.url
 
 '''
 from django.http import (
