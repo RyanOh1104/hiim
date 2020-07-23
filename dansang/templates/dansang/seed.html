@@ -82,6 +82,20 @@
 
 <script>
     $(document).ready(function(){
+        // Seed 클릭수 세기
+        function add_one_click(seedId) {
+            $.ajax({
+                type: "GET",
+                url: '/ajax/add_click',
+                data: {
+                    'seedId': seedId,
+                },
+                success: function() {
+                    console.log("successful!!!");
+                }
+            });
+        }
+
         // 처음에 로드될 때는 숨김
         $('.eachCat').hide();
 
@@ -108,22 +122,6 @@
                 $(`.each-${thisCat}`).show();
             } 
         })
-
-        // Seed 클릭수 세기
-        function add_one_click(seedId) {
-            $.ajax({
-                type: "GET",
-                url: '/ajax/add_click',
-                data: {
-                    'seedId': seedId,
-                },
-                success: function() {
-                    console.log("successful!!!");
-                }
-            });
-        }
     })
-
-
 </script>
 {% endblock %}
