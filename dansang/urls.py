@@ -10,6 +10,6 @@ urlpatterns = [
     path('delete/<int:authuser_id>/<str:slug>', views.dansangDelete, name='dansangDelete'),
     path('update/<int:authuser_id>/<str:slug>', views.dansangUpdate, name='dansangUpdate'),
     path('seed', views.seed, name='seed'),
-    path('ajax/addle_click', views.add_click, name="add_click"),
+    path('ajax/add_click', views.add_click, name="add_click"),
 
 ]

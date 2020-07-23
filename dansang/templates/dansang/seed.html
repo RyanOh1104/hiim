@@ -85,7 +85,7 @@
     function add_one_click(seedId) {
         $.ajax({
             type: "GET",
-            url: '/ajax/add_click',
+            url: '{% url "add_click" %}', // '/ajax/add_click',
             data: {
                 'seedId': seedId,
             },
