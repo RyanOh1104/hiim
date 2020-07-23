@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import DansangInputForm
 from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
@@ -119,7 +119,7 @@ def add_click(request):
     thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
 
-    return thisId
+    return HttpResponse()
 
 def error404(request):
     return render(request, "404.html", status=404)
