@@ -12,5 +12,4 @@ urlpatterns = [
     path('seed', views.seed, name='seed'),
     path('ajax/add_click', views.add_click, name="add_click"),
 
-
 ]

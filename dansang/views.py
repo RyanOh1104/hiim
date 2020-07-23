@@ -117,9 +117,8 @@ def dansangDelete(request, authuser_id, slug):
     return redirect('/dansang/dansangmain')
 
 def add_click(request):
-    # allQuestions = Question.objects.all()
-    seedId = request.GET.get("pk", None)
-    thisSeed = DansangSeed.objects.get(pk=seedId)
+    thisId = request.GET.get("pk", None)
+    thisSeed = DansangSeed.objects.get(pk=thisId)
     thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
 
