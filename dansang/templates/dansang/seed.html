@@ -51,7 +51,7 @@
 
 {% for item in seeds %}
 <div class="row seed-row allCat all-{{item.category_eng}}">
-    <a href="{{item.url}}" onclick="add_one_click({{item.id}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
+    <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>
@@ -62,7 +62,7 @@
 
 {% for item in seeds %}
 <div class="row seed-row eachCat each-{{item.category_eng}}">
-    <a href="{{item.url}}" onclick="add_one_click({{item.id}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
+    <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>
@@ -117,9 +117,9 @@
                 data: {
                     'seedId': seedId,
                 },
-                //success: function() {
-                //    console.log("hit added to article");
-                //}
+                success: function() {
+                    console.log("successful!!!");
+                }
             });
         }
     })
