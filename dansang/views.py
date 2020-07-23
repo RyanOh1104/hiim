@@ -119,7 +119,7 @@ def add_click(request):
     thisSeed.clicks = F('clicks') + 1
     thisSeed.save()
 
-    # return clicks
+    return clicks
 
 def error404(request):
     return render(request, "404.html", status=404)
