@@ -18,7 +18,6 @@ def qandaInput(request):
         AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
         formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=1))
         todaysQuestion = Question.objects.get(number=1)
-        fuck = "This is the first question"
         if request.method == "POST":
             formset = AnswerFormSet(request.POST)
             if formset.is_valid():

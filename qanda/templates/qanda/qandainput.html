@@ -35,7 +35,7 @@
             <div class="col col-12 text-center">
                 <form method="POST">
                     {% csrf_token %}
-                    <div>{{formset.answer|as_crispy_field}}</div>
+                    <div>{{formset.as_p}</div>
                     <input class="btn menial-buttons" value = "즉답 완료" type="submit">
                 </form>
             </div>
