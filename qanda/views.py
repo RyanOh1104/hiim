@@ -88,8 +88,6 @@ def qandaInput(request):
     context = {
         'formset':formset,
         'todaysQuestion':todaysQuestion,
-        'name':request.user,
-        'fuck':fuck,
     }
     return render(request, 'qanda/qandainput.html', context)
 

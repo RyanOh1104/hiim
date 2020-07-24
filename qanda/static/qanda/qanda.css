@@ -3,6 +3,7 @@ label {
 }
 .questions {
     font-weight: bold;
+    line-height: 1.5;
 }
 .answerInput {
     border-radius:3px;

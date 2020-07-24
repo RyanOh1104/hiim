@@ -35,12 +35,15 @@
             <div class="col col-12 text-center">
                 <form method="POST">
                     {% csrf_token %}
-                    {{formset.as_crispy_field}}
+                    <div>{{formset.as_crispy_field}}</div>
                     <input class="btn menial-buttons" value = "즉답 완료" type="submit">
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
 
 {% endblock %}
