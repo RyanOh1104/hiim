@@ -11,22 +11,41 @@
 {% load bootstrap4 %}
 
 {% block content %}
+<div class="row block-spacing"></div>
+
+<div class="row justify-content-center top-block">
+    <div class="col col-10 text-center">
+        <span class="archive-title">즉<span style="color:#9300d3; font-weight: bold;">문</span>즉답</span><span class="archive-icon">❓</span>
+    </div>
+    <div class="col col-12 text-center">
+        <div class="archive-subtitle">하나의 질문 그리고 무수히 많은 답.   
+        </div>
+    </div>
+</div>
+
+<div class="block-spacing"></div>
+
 <div class="row justify-content-center">
     <div class="col col-10">
         <div class="row justify-content-center">
-            <div class="col col-12">
-                <h1>[오늘의 질문 페이지]</h1><br><br>
-                <h2>{{thisQuestion.number}}. {{thisQuestion.question}}</h2>
+            <div class="col col-12 text-center">
+                <h3 class="questions">{{thisQuestion.question|safe}}</h3>
             </div>
-            <div class="col col-12">
-                <form method="POST">
+            <div class="col col-12 text-center">
+                <form method="POST" class="form-group">
                     {% csrf_token %}
-                    {{formset.as_p}}
-                    <input type="submit" value="답변 추가하기">
-                    {{fuck}}
+                    <div class="answerInput">
+                        {% crispy formset %}
+                        <input type="submit" class="btn menial-buttons" value="즉답 완료">
+                    </div>
+                    
                 </form>
             </div>
         </div>
     </div>
 </div>
-    {% endblock %}
+
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+
+{% endblock %}
