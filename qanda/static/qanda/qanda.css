@@ -7,4 +7,7 @@ label {
 }
 .answerInput {
     border-radius:3px;
+    width:70%;
+    padding: 10px;
+    background-color: #f6f5f1;
 }

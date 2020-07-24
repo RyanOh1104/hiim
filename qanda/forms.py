@@ -7,7 +7,7 @@ from django.utils import timezone
 
 class AnswerForm(forms.ModelForm):
     answer = forms.CharField(widget=forms.Textarea(attrs={
-        'rows' : 4,
+        'rows' : 3,
         'class' : 'answerInput',
         }))
 
