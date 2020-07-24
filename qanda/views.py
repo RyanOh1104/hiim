@@ -78,7 +78,7 @@ def qandaInput(request):
                     return redirect('/qanda/qandamain')
 
         elif latestQuestionDate == today: # 즉, 아직 날짜가 지나지 않았을 때
-            return redirect('/qanda/qandamain')
+            return redirect('/qanda/no-more-for-today')
 
     ################### POTENTIAL ERROR ####################
     # 동일한 date에 답변 두개를 입력한다면?
