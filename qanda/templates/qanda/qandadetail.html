@@ -37,22 +37,25 @@
 
     <div class="block-spacing"></div>
 
-<div class="row justify-content-center">
-    <div class="col-lg-4 col-sm-8">
-        <div class="row justify-content-center">
-            <div class="col col-5">
-                <button class='btn menial-buttons'>
-                    <span class="menial-btn-text"><a href="qandamain">
-                    돌아가기</a></span>
-                </button>
-            </div>
-            <div class="col col-5">
-                <button class='btn menial-buttons update-delete'>
-                    <span class="menial-btn-text"><a href="{% url 'qandaUpdate' thisQuestion.number %}">
-                    수정/추가하기</a></span>
-                </button>
+<form method='post' class="form-group">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-sm-8">
+            <div class="row justify-content-center">
+                <div class="col col-5">
+                    <button class='btn menial-buttons'>
+                        <span class="menial-btn-text"><a href="qandamain">
+                        돌아가기</a></span>
+                    </button>
+                </div>
+                <div class="col col-5">
+                    <button class='btn menial-buttons update-delete'>
+                        <span class="menial-btn-text"><a href="{% url 'qandaUpdate' thisQuestion.number %}">
+                        수정/추가하기</a></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 {% endblock %}
