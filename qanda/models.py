@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Question(models.Model):
     number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20, default="")
-    question = models.CharField(max_length=100, default="")
+    question = models.CharField(max_length=1000, default="")
 
     def __str__(self):
         return (str(self.number)+"."+str(self.title))

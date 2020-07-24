@@ -11,11 +11,6 @@ class AnswerForm(forms.ModelForm):
         'class' : 'answerInput',
         }))
 
-    def __init__(self, *args, **kwargs):
-        super(AnswerForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_show_labels = False
-
     class Meta:
         model=Answer
         fields=['answer',]
