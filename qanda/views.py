@@ -26,7 +26,7 @@ def qandaInput(request):
                 instance[0].questionNumber = 1 # ForeignKey로 하지 않고 이렇게 하는 거 너무 비효율적인가? 나중에 문제가 생기려나?
                 instance[0].dateAnswered = str(today)
                 instance[0].save()
-                return redirect('/qandamain')
+                return redirect('/qanda/qandamain')
 
     else: # 처음 질문 이후 모두 해당
         # 가장 최근 질문의 가장 최근 답변일 가져오기!!
@@ -75,10 +75,10 @@ def qandaInput(request):
 
                     # save할 때 문제 생기면 아래 링크 참고 -- iteration해서 for loop으로 저장.
                     # https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/#saving-objects-in-the-formset
-                    return redirect('/qandamain')
+                    return redirect('/qanda/qandamain')
 
         elif latestQuestionDate == today: # 즉, 아직 날짜가 지나지 않았을 때
-            return redirect('/qandamain')
+            return redirect('/qanda/qandamain')
 
     ################### POTENTIAL ERROR ####################
     # 동일한 date에 답변 두개를 입력한다면?
@@ -142,7 +142,7 @@ def qandaDetail(request, questionNumber):
 
         return render(request, 'qanda/qandadetail.html', context)
     else: 
-        return redirect('/qandamain')
+        return redirect('/qanda/qandamain')
 
 def qandaUpdate(request, questionNumber):
     today = date.today()
@@ -170,7 +170,7 @@ def qandaUpdate(request, questionNumber):
                 instance[0].dateAnswered = str(today)
                 instance[0].save()
 
-                return redirect('/qandamain')
+                return redirect('/qanda/qandamain')
 
         context = {
             'thisQuestion' : thisQuestion,
@@ -180,7 +180,7 @@ def qandaUpdate(request, questionNumber):
         return render(request, 'qanda/update.html', context)
 
     else: 
-        return redirect('/qandamain')
+        return redirect('/qanda/qandamain')
 
 def noMoreForToday(request):
     return render(request, 'qanda/nomorefortoday.html')

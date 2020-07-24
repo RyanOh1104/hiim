@@ -35,8 +35,8 @@
             <div class="col col-12 text-center">
                 <form method="POST" class="form-group">
                     {% csrf_token %}
-                    <div class="answerInput">{% crispy formset %}</div>
-                    <input class="btn menial-buttons" value = "즉답 완료" type="submit">
+                    <div class="answerInput">{% crispy formset %}<input type="submit" class="btn menial-buttons" value="즉답 완료"></div>
+                    
                 </form>
             </div>
         </div>
