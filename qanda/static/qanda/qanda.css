@@ -24,6 +24,10 @@ label {
     box-shadow:  inset 4px 4px 3px #bbbab7, 
     inset -4px -4px 3px #ffffff;
 }
+.main-questions {
+    padding: 10px;
+    border-radius: 10px;
+}
 .main-questions:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
     -5px -5px 3px #ffffff;
