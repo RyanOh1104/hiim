@@ -90,11 +90,8 @@ def qandaInput(request):
         'todaysQuestion':todaysQuestion,
         'name':request.user,
         'fuck':fuck,
-
-
-        # 'latestDateAnswered':latestDateAnswered
     }
-    return render(request, 'formset/qandainput.html', context)
+    return render(request, 'qanda/qandainput.html', context)
 
 def qandaMain(request):
     thisQuestion = Question.objects.all()
@@ -119,7 +116,7 @@ def qandaMain(request):
         'latestQuestionNumber' : latestQuestionNumber
     }
 
-    return render(request, 'formset/qandamain.html', context)
+    return render(request, 'qanda/qandamain.html', context)
 
 def qandaDetail(request, questionNumber):
     thisQuestion = Question.objects.get(number=questionNumber)
@@ -146,7 +143,7 @@ def qandaDetail(request, questionNumber):
             'thisUser':thisUser
         }
 
-        return render(request, 'formset/qandadetail.html', context)
+        return render(request, 'qanda/qandadetail.html', context)
     else: 
         return redirect('/qandamain')
 
@@ -183,11 +180,11 @@ def qandaUpdate(request, questionNumber):
             'formset':formset,
         }
 
-        return render(request, 'formset/update.html', context)
+        return render(request, 'qanda/update.html', context)
 
     else: 
         return redirect('/qandamain')
 
 def noMoreForToday(request):
-    return render(request, 'formset/nomorefortoday.html')
+    return render(request, 'qanda/nomorefortoday.html')
 
