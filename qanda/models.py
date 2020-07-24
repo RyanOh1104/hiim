@@ -1,11 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
 
-'''
 class Question(models.Model):
-    objects = models.Manager()
-    
     number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20, default="")
     question = models.CharField(max_length=100, default="")
@@ -14,13 +10,14 @@ class Question(models.Model):
         return (str(self.number)+"."+str(self.title))
 
 class Answer(models.Model):
-    objects = models.Manager()
-
-    authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'qanda', null=True, default=None)
-    questionTitle = models.ForeignKey(Question, on_delete=models.CASCADE, related_name = 'question', null=True, default=None)
+    authuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=None)
+    
+    # 아래처럼 forein key로 하지 않아도 되나? 지금 views.py의 instance[0].questionNumber = todaysQuestion.number로 하는 건 너무 주먹구구식 아닌가?
+    # questionNumber = models.ForeignKey(Question, on_delete=models.CASCADE, null=True, default=None)
+    questionNumber = models.IntegerField(null=True, default=None)
+    
     answer = models.CharField(max_length=500)
-    dateAnswered = models.DateTimeField(auto_now_add=True)
+    dateAnswered = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return (str(self.questionTitle)+"--answered by--"+str(self.authuser)+"--on "+str(self.created))
-'''
+        return (str(self.questionNumber)+"--answered by--"+str(self.authuser)+"--on "+str(self.dateAnswered)[:11])

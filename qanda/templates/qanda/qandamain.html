@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
+{% endblock %}
+
+{% block title %} 즉문즉답 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col col-10">
+        <div class="row justify-content-center">
+            <div class="col text-center" style="background-color: #f6f5f1;"><br><br><br>
+                <h3>세상에 유일한 {{thisUser}}의 </h3>
+                <h1>즉문즉답</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <a href="question"><button class="btn btn-primary">오늘의 즉문</button></a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center"><br>
+                {% for q in thisQuestion %}
+                {% if q.number <= latestQuestionNumber %}
+                    <a href="/answer/{{q.number}}"><h2 class="questions" id="{{q.number}}">{{q.number}}. {{q.question}}</h2></a>
+                    <p>Views: {% get_hit_count for q %}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

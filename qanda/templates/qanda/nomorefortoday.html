@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
+{% endblock %}
+
+{% block title %} 즉문즉답 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <h1>오늘은 끝. 내일까지 기다려.</h1>
+{% endblock %}

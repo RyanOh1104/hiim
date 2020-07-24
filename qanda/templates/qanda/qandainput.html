@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
+{% endblock %}
+
+{% block title %} 즉문즉답 {% endblock %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col col-10">
+        <div class="row justify-content-center">
+            <div class="col col-12">
+                <h1>즉<span style="color:#9300d3; font-weight: bold;">문</span>즉답</h1><br><br>
+                <h2>{{todaysQuestion.number}}. {{todaysQuestion.question}}</h2>
+            </div>
+            <div class="col col-12">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{formset.as_p}}
+                    <input type="submit" value="답변 추가하기">
+                    {{fuck}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

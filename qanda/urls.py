@@ -2,9 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # path('qandainput', views.qandainput, name='qandainput'),
-    path('qandamain', views.qandamain, name='qandamain'),
-    # path('dansangdetail/<int:authuser_id>/<str:slug>', views.dansangdetail, name='dansangdetail'),
-    # path('delete/<int:authuser_id>/<str:slug>', views.dansangDelete, name='dansangDelete'),
-    # path('update/<int:authuser_id>/<str:slug>', views.dansangUpdate, name='dansangUpdate'),
+    path('question', views.qandaInput, name='qandaInput'),
+    path('qandamain', views.qandaMain, name='qandaMain'),
+    path('no-more-for-today', views.noMoreForToday, name='noMoreForToday'),
+    path('answer/<int:questionNumber>', views.qandaDetail, name='qandadetail'),
+    path('update/<int:questionNumber>', views.qandaUpdate, name='qandaUpdate'),
+
 ]
