@@ -27,14 +27,14 @@
 
 <div class="row justify-content-center">
     <div class="col col-12 text-center"><br>
-        <h3 class="questions">{{thisQuestion.question}}</h3>
+        <h3 class="questions">{{thisQuestion.question|safe}}</h3>
     </div>
     <div class="col col-12 text-center" style="font-size: 21px; color: #9300d3;">
         {% for a in thisAnswer %}
         <div>{{a.answer}}<span style="font-size: 13px;"> ({{a.dateAnswered}})</span></div>
         {% endfor %}
     </div>
-    </div>
+    <div class="block-spacing"></div>
     <div class="row">
         <div class="col text-center update-delete">
             <button class='btn menial-buttons button-update'>
