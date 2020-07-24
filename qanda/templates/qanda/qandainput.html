@@ -32,23 +32,11 @@
             <div class="col col-12 text-center">
                 <h3 class="questions">{{todaysQuestion.question|safe}}</h3>
             </div>
-
-            <div class="block-spacing"></div>
-
             <div class="col col-12 text-center">
-                <form method="POST">
+                <form method="POST" class="form-group">
                     {% csrf_token %}
-                    <div class="row">
-                        <div class="col">
-                            <div class="answerInput">{% crispy formset %}</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input class="btn menial-buttons" value = "즉답 완료" type="submit">
-                        </div>
-                    </div>
-                    
+                    <div class="answerInput">{% crispy formset %}</div>
+                    <input class="btn menial-buttons" value = "즉답 완료" type="submit">
                 </form>
             </div>
         </div>
