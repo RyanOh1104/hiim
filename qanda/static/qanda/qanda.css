@@ -1,3 +1,9 @@
 label {
     display: none;
 }
+.questions {
+    font-weight: bold;
+}
+.answerInput {
+    border-radius:3px;
+}
