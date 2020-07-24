@@ -24,6 +24,8 @@ label {
     box-shadow:  inset 4px 4px 3px #bbbab7, 
     inset -4px -4px 3px #ffffff;
 }
+
+/* Main Page Settings START */
 .main-questions {
     padding: 10px;
     border-radius: 10px;
@@ -31,4 +33,26 @@ label {
 .main-questions:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
     -5px -5px 3px #ffffff;
+}
+/* Main Page Settings END */
+
+/* Detail Page Settings START */
+.answer {
+    color : #9300d3;
+    font-size: 21px;
+}
+.qanda-date {
+    font-size: 13px;
+}
+/* Detail Page Settings END */
+
+@media (max-width: 768px) {
+/* Detail Page Settings START */
+.answer {
+    font-size: 4vw;
+}
+.qanda-date {
+    font-size: 2.5vw;
+}
+/* Detail Page Settings END */
 }
