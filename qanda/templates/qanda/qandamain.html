@@ -37,7 +37,7 @@
             <div class="col text-center">
                 {% for q in thisQuestion %}
                 {% if q.number <= latestQuestionNumber %}
-                    <a href="/answer/{{q.number}}"><h3 class="main-questions" id="{{q.number}}">{{q.number}}. {{q.question|safe}}</h3></a>
+                    <a href="qanda/answer/{{q.number}}"><h3 class="main-questions" id="{{q.number}}">{{q.number}}. {{q.question|safe}}</h3></a>
                 {% endif %}
                 <div class="block-spacing"></div>
                 {% endfor %}
