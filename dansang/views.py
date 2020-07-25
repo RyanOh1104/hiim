@@ -83,7 +83,7 @@ def seed(request):
     return render(request, 'dansang/seed.html', context)
 
 def seedByCat(request, category):
-    seeds = DansangSeed.objects.get(category_eng=category).order_by('-datePosted')
+    seeds = DansangSeed.objects.filter(category_eng=category).order_by('-datePosted')
     categories = SeedCategory.objects.all()
     categoriesInEng = SeedCategoryEng.objects.all()
 
