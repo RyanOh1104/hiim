@@ -5,6 +5,7 @@ from .models import DansangInput, DansangSeed, SeedCategory, SeedCategoryEng
 from django.utils import timezone
 from datetime import datetime, date
 from django_slugify_processor.text import slugify
+from django.core.paginator import Paginator
 from django.db.models import F
 
 @login_required
@@ -61,14 +62,22 @@ def dansangdetail(request, authuser_id, slug):
         thisDansang.modified = '' 
     return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
 
+# 이건 login_required 굳이 필요 없으려나?
 def seed(request):
     seeds = DansangSeed.objects.all().order_by('-datePosted')
     categories = SeedCategory.objects.all()
     categoriesInEng = SeedCategoryEng.objects.all()
+
+    # paginate 과정
+    seedPaginator = (seeds, 7)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+
     context = {
         'seeds':seeds,
         'categories' : categories,
         'categoriesInEng':categoriesInEng,
+        'posts':posts,
     }
     return render(request, 'dansang/seed.html', context)
 

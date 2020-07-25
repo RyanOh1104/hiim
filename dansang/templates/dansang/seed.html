@@ -49,7 +49,7 @@
 </div>
 
 
-{% for item in seeds %}
+{% for item in posts %}
 <div class="row seed-row allCat all-{{item.category_eng}}">
     <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
@@ -60,7 +60,7 @@
 </div>
 {% endfor %}
 
-{% for item in seeds %}
+{% for item in posts %}
 <div class="row seed-row eachCat each-{{item.category_eng}}">
     <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
@@ -70,6 +70,18 @@
     </a>
 </div>
 {% endfor %}
+
+{% if posts.has_previous %}
+<a href="?page=1">맨 앞으로</a>
+<a href="?page={{posts.previous_page_number}}">이전으로</a>
+{% endif %}
+<span>{{posts.number}}</span>
+<span>/</span>
+<span>{{posts.paginator.num_pages}}</span>
+{% if posts.has_next %}
+<a href="?page={{posts.next_page_number}}">다음으로</a>
+<a href="?page={{posts.paginator.num_pages}}">맨 뒤로</a>
+{% endif %}
 
 <div class="manual">
     <button class="btn manual-button" id="manual-dansang">
