@@ -82,6 +82,25 @@ def seed(request):
     }
     return render(request, 'dansang/seed.html', context)
 
+def seedByCat(request, category):
+    seeds = DansangSeed.objects.filter(category_eng=category).order_by('-datePosted')
+    categories = SeedCategory.objects.all()
+    categoriesInEng = SeedCategoryEng.objects.all()
+
+    # paginate 과정
+    seedPaginator = Paginator(seeds, 7)
+    page = request.GET.get('page')
+    posts = seedPaginator.get_page(page)
+
+    context = {
+        'seeds':seeds,
+        'categories' : categories,
+        'categoriesInEng':categoriesInEng,
+        'posts':posts,
+        # 'paginator':paginator,
+    }
+    return render(request, 'dansang/seed.html', context)
+
 def dansangUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)
     # form = DansangInputForm(instance=thisDansang)

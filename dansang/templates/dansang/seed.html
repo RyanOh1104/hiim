@@ -41,7 +41,7 @@
               <button class="dropdown-item" id="seeAllCat">전체 보기</button>
               <div class="dropdown-divider"></div>
               {% for cat in categoriesInEng %}
-              <button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button>
+              <a href="seed/{{cat.category_eng}}"><button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button></a>
               {% endfor %}
             </div>
           </div>
@@ -72,7 +72,7 @@
 {% endfor %}
 
 <br>
-<div class="row allCat">
+<div class="row">
     <div class="col text-center">
         {% if posts.has_previous %}
         <a href="?page=1">⏪</a>
@@ -94,12 +94,6 @@
     </div>
 </div>
 
-<div class="manual">
-    <button class="btn manual-button" id="manual-dansang">
-        📋 사용법
-    </button>
-</div>
-<!-- </div> -->
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 
@@ -124,6 +118,7 @@
 
         // 새로운 아이템에 뱃지 추가
         $('#seed-1').children('.col').children('.seed-title').append("<span class='badge badge-primary seed-badge'>New!</span>");
+/*        
         // '전체보기' 클릭했을 때
         $('#seeAllCat').click(function() {
             $('.eachCat').hide();
@@ -143,6 +138,7 @@
                 $(`.each-${thisCat}`).show();
             } 
         })
+        */
     })
 
 </script>
