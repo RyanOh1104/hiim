@@ -41,7 +41,7 @@ class EverydayInputForm(forms.ModelForm):
         model=NewEvent
         fields=['when', 'what', 'img1', 'img2', 'img3', 'kw1', 'kw2', 'kw3', 'emoji']
         widgets = {'authuser':forms.HiddenInput(),
-        'all_day':forms.HiddenInput(),
+        # 'all_day':forms.HiddenInput(),
         'when' : MonthPickerInput(
             options={'format':'YYYY-MM-DD', 'locale':'ko'}
             )
