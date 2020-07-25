@@ -252,6 +252,15 @@ a:active {color:black;}
 }
 /* File Upload (Image) END */
 
+.card {
+    background-color: #f6f5f1;
+    border-radius: 10px;
+}
+.card:hover {
+    box-shadow:  5px 5px 3px #bbbab7, 
+    -5px -5px 3px #ffffff;
+}
+
 .mobile-only {
     display: none;
 }
