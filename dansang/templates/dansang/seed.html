@@ -38,10 +38,14 @@
               <strong>씨앗 카테고리</strong>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button class="dropdown-item" id="seeAllCat">전체 보기</button>
+                <a href="https://hiim.kr/dansang/seed">
+                    <button class="dropdown-item" id="seeAllCat">전체 보기</button>
+                </a>
               <div class="dropdown-divider"></div>
               {% for cat in categoriesInEng %}
-              <a href="https://hiim.kr/dansang/seed/{{cat.id}}"><button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button></a>
+                <a href="https://hiim.kr/dansang/seed/{{cat.id}}">
+                    <button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button>
+                </a>
               {% endfor %}
             </div>
           </div>
