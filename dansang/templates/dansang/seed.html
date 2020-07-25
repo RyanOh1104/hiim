@@ -41,7 +41,7 @@
               <button class="dropdown-item" id="seeAllCat">전체 보기</button>
               <div class="dropdown-divider"></div>
               {% for cat in categoriesInEng %}
-              <a href="seed/{{cat.id}}"><button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button></a>
+              <a href="/{{cat.id}}"><button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button></a>
               {% endfor %}
             </div>
           </div>
@@ -118,13 +118,13 @@
 
         // 새로운 아이템에 뱃지 추가
         $('#seed-1').children('.col').children('.seed-title').append("<span class='badge badge-primary seed-badge'>New!</span>");
-/*        
+        
         // '전체보기' 클릭했을 때
         $('#seeAllCat').click(function() {
             $('.eachCat').hide();
             $('.allCat').show();
         })
-
+/*
         // 각 카테고리 클릭했을 때
         $('.dropdown-item').click(function(event) {
             var thisCat = String(event.target.id);
