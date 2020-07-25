@@ -24,7 +24,7 @@
 </div>
 
 <div class="block-spacing"></div>
-<!-- <div class="block-spacing pc-only"></div> -->
+<div class="block-spacing pc-only"></div>
 
 <div class="row justify-content-center">
     <div class="col col-12">
@@ -37,7 +37,25 @@
                     {% csrf_token %}
                     <div class="answerInput">
                         {% crispy formset %}
-                        <input type="submit" class="btn menial-buttons" value="즉답 완료">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-sm-8">
+                                <div class="row justify-content-center">
+                                    <div class="col col-5">
+                                        <button class='btn menial-buttons'>
+                                            <span class="menial-btn-text"><a href="/qanda/qandamain">
+                                            돌아가기</a></span>
+                                        </button>
+                                    </div>
+                                    <div class="col col-6">
+                                        <button class='btn btn-primary all-buttons'>
+                                            <a href="{% url 'qandaUpdate' thisQuestion.number %}"><span class="btn-text">
+                                            수정/추가하기</span></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <input type="submit" class="btn menial-buttons" value="즉답 완료"> -->
                     </div>
                     
                 </form>
