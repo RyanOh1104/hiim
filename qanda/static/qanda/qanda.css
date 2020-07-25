@@ -29,6 +29,7 @@ label {
 .main-questions {
     padding: 10px;
     border-radius: 10px;
+    margin-top: 10px;
 }
 .main-questions:hover {
     box-shadow:  5px 5px 3px #bbbab7, 

@@ -38,7 +38,7 @@
             <div class="col text-center">
                 {% for q in thisQuestion reversed %}
                 {% if q.number <= latestQuestionNumber %}
-                    <a href="answer/{{q.number}}"><h5 class="main-questions" id="{{q.number}}">{{q.number}}. {{q.question|safe}}</h5></a>
+                    <a href="answer/{{q.number}}" class="card"><h5 class="main-questions" id="{{q.number}}">{{q.number}}. {{q.question|safe}}</h5></a>
                 {% endif %}
                 <div class="block-spacing"></div>
                 {% endfor %}
