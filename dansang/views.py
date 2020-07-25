@@ -71,7 +71,7 @@ def seed(request):
     # paginate 과정
     seedPaginator = (seeds, 7)
     page = request.GET.get('page')
-    posts = Paginator.get_page(page)
+    posts = seedPaginator.get_page(page)
 
     context = {
         'seeds':seeds,
