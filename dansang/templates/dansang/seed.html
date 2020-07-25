@@ -64,17 +64,6 @@
 </div>
 {% endfor %}
 
-{% for item in posts %}
-<div class="row seed-row eachCat each-{{item.category_eng}}">
-    <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
-    <div class="col">
-        <span class="seed-title">{{item.title}}</span><br class="mobile-only">
-        <span class="seed-subtitle"> | {{item.subtitle}}</span>
-    </div>  
-    </a>
-</div>
-{% endfor %}
-
 <br>
 <div class="row">
     <div class="col text-center">
