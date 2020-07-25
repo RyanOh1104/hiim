@@ -71,14 +71,14 @@ def seed(request):
     # paginate 과정
     seedPaginator = (seeds, 7)
     page = request.GET.get('page')
-    posts = paginator.get_page(page)
+    posts = Paginator.get_page(page)
 
     context = {
         'seeds':seeds,
         'categories' : categories,
         'categoriesInEng':categoriesInEng,
         'posts':posts,
-        'paginator':paginator,
+        # 'paginator':paginator,
     }
     return render(request, 'dansang/seed.html', context)
 
