@@ -69,7 +69,7 @@ def seed(request):
     categoriesInEng = SeedCategoryEng.objects.all()
 
     # paginate 과정
-    seedPaginator = (seeds, 7)
+    seedPaginator = Paginator(seeds, 7)
     page = request.GET.get('page')
     posts = seedPaginator.get_page(page)
 
