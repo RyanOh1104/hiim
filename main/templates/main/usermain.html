@@ -161,34 +161,34 @@
         window.scrollBy(x, y);
     }
     
+    // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
+    function NewSeedAlert() {
+        console.log(`{{newSeed.datePosted}}`)
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
+        var datePosted = `{{newSeed.datePosted}}`;
+        var lsNewSeed = localStorage.getItem("newSeed");
+        
+        // 바깥 if는 알림을 한번만 보여주기 위해서
+        if (lsNewSeed == null || lsNewSeed != todayDate) {
+            console.log('it workds')
+            if (todayDate == datePosted) {
+                $('#alert-newSeed').tooltip('show');
+                
+                setTimeout(function(){
+                $('#alert-newSeed').tooltip('dispose')
+                }, 10000);
 
+                localStorage.setItem('newSeed', todayDate);
+            }
+        } else if (lsNewSeed == todayDate) {
+        }
+    }
 
     window.onload = function () {
-            // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
-        function NewSeedAlert() {
-            console.log(`{{newSeed.datePosted}}`)
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = today.getFullYear();
-            var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
-            var datePosted = `{{newSeed.datePosted}}`;
-            var lsNewSeed = localStorage.getItem("newSeed");
-            
-            // 바깥 if는 알림을 한번만 보여주기 위해서
-            if (lsNewSeed == null || lsNewSeed != todayDate) {
-                if (todayDate == datePosted) {
-                    $('#alert-newSeed').tooltip('show');
-                    
-                    setTimeout(function(){
-                    $('#alert-newSeed').tooltip('dispose')
-                    }, 10000);
-
-                    localStorage.setItem('newSeed', todayDate);
-                }
-            } else if (lsNewSeed == todayDate) {
-            }
-        }
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {
             $('#tooltip-alert').tooltip('show');
