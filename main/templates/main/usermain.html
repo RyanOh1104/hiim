@@ -175,7 +175,9 @@
         // 바깥 if는 알림을 한번만 보여주기 위해서
         if (lsNewSeed == null || lsNewSeed != todayDate) {
             console.log('it workds')
-            if (todayDate === datePosted) {
+            console.log(todayDate)
+            console.log(datePosted)
+            if (todayDate == datePosted) {
                 console.log('dddd')
                 $('#alert-newSeed').tooltip('show');
                 
