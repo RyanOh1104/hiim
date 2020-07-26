@@ -68,6 +68,18 @@ def seed(request):
     categories = SeedCategory.objects.all()
     categoriesInEng = SeedCategoryEng.objects.all()
 
+    # 'New' 딱지 붙일 씨앗 -- datePosted가 max인 것 찾기
+    latestDatePosted = Answer.objects.all().values('datePosted')
+    # allDates의 각 원소는 {'dateAnswered':datetime.date(2020, 07, 21)} 이런 포맷 (python dictionary view)
+    allDates = list(latestDatePosted.values('datePosted'))
+    # Date 중 최댓값, 즉 가장 최근의 질문의 날짜 가져오기 (바로 위와 정확히 동일)
+    datesList = []
+    datesListInFormat = []
+    for j in range(0, len(allDates)): # !!!!!! 대체 왜 len()-1이 아닌지 모르겠다!!!!!!
+        datesList.append(*allDates[j].values()) # 각 원소는 datetime.date(2020,07,21)의 포맷
+        datesListInFormat.append(datesList[j].strftime('%Y-%m-%d')) # datetime.date(2020,07,21) -> 2020-07-21로 변환
+    latest = max(datesList)
+
     # paginate 과정
     seedPaginator = Paginator(seeds, 7)
     page = request.GET.get('page')
@@ -78,6 +90,7 @@ def seed(request):
         'categories' : categories,
         'categoriesInEng':categoriesInEng,
         'posts':posts,
+        'latest', latest,
         # 'paginator':paginator,
     }
     return render(request, 'dansang/seed.html', context)
