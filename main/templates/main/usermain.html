@@ -163,6 +163,7 @@
     
     // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
     function NewSeedAlert() {
+        console.log(`{{newSeed}}`)
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
