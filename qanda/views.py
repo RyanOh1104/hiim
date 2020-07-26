@@ -84,9 +84,12 @@ def qandaInput(request):
     # 동일한 date에 답변 두개를 입력한다면?
     ########################################################
 
+    thisUser = User.objects.get(username=request.user)
+
     context = {
         'formset':formset,
         'todaysQuestion':todaysQuestion,
+        'thisUser':thisUser,
     }
     return render(request, 'qanda/qandainput.html', context)
 
@@ -150,6 +153,7 @@ def qandaUpdate(request, questionNumber):
     thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber)
     AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
     formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=questionNumber))
+    thisUser = User.objects.get(username=request.user)
 
     # 답변한 질문만 보이도록!!
     latestAnswers = Answer.objects.filter(authuser=request.user).values('questionNumber') # QuerySet
@@ -175,6 +179,7 @@ def qandaUpdate(request, questionNumber):
         context = {
             'thisQuestion' : thisQuestion,
             'formset':formset,
+            'thisUser': thisUser,
         }
 
         return render(request, 'qanda/update.html', context)
