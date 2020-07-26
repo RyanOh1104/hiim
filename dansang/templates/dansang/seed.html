@@ -55,7 +55,7 @@
 
 {% for item in posts %}
 <div class="row seed-row allCat all-{{item.category_eng}}">
-    <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}} date-{{item.datePosted}}" target="_blank" rel="noopener noreferrer">
+    <a href="{{item.url}}" onclick="add_one_click({{item.pk}})" class="all-links seed-links" id="seed-{{forloop.counter}}" target="_blank" rel="noopener noreferrer">
     <div class="col">
         <span class="seed-title">{{item.title}}</span><br class="mobile-only">
         <span class="seed-subtitle"> | {{item.subtitle}}</span>
@@ -106,6 +106,10 @@
     $(document).ready(function(){
         $('.dropdown-toggle').dropdown();
 
+        var postedDates = '{{item.datePosted}}';
+        var dateStringyfied = postedDates.toString("yyyy-MM-dd");
+        document.getElementsByClassName("seed-links").setAttribute("id", dateStrigyfied);
+        
         // 새로운 씨앗에 뱃지 추가
         $('.allCat').children('#date-{{latest}}').children('.col').children('.seed-title').append("<span class='badge badge-primary seed-badge'>New!</span>");
         
