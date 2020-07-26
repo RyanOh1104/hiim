@@ -163,12 +163,12 @@
     
     // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
     function NewSeedAlert() {
-        var todayDate = new Date();
-        var dd = String(todayDate.getDate()).padStart(2, '0');
-        var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = todayDate.getFullYear();
-        todayDate =  yyyy + '-' + mm + '-' + dd;;
-        datePosted = "{{newSeed.datePosted}}"
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        var todayDate =  yyyy + '-' + mm + '-' + dd;;
+        var datePosted = "{{newSeed.datePosted}}"
         if ( todayDate === datePosted) {
             $('#alert-newSeed').tooltip('show');
             
