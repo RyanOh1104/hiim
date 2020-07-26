@@ -168,39 +168,25 @@
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
-        var todayDate =  yyyy + '-' + mm + '-' + dd;;
-        var datePosted = `{{newSeed.datePosted}}`
-        if ( todayDate === datePosted) {
-            $('#alert-newSeed').tooltip('show');
-            
-            setTimeout(function(){
-            $('#alert-newSeed').tooltip('dispose')
-            }, 10000);
+        var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
+        var datePosted = `{{newSeed.datePosted}}`;
+        var lsNewSeed = localStorage.getItem("newSeed");
+        
+        // 바깥 if는 알림을 한번만 보여주기 위해서
+        if (lsNewSeed == null || lsNewSeed != `'${todayDate}'`) {
+            if ( todayDate === datePosted) {
+                $('#alert-newSeed').tooltip('show');
+                
+                setTimeout(function(){
+                $('#alert-newSeed').tooltip('dispose')
+                }, 10000);
+
+                localStorage.setItem('newSeed', `'${todayDate}'`);
+            }
+        } else if (lsNewSeed == `'${todayDate}'`) {
         }
     }
-/*
-    function NewSeedAlert() {   // 굳이 cookie로 할 필요 없음!
-        // 오늘 날짜 가져오기
-        var todayDate = new Date();
-        var dd = String(todayDate.getDate()).padStart(2, '0');
-        var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = todayDate.getFullYear();
-        todayDate =  yyyy + '/' + mm + '/' + dd;;
 
-        var todaySeedAlert = localStorage.getItem("newSeed");
-        if (todaySeedAlert == null || todaySeedAlert != `'${todayDate}'`) {
-            $('#alert-newSeed').tooltip('show');
-            
-            setTimeout(function(){
-            $('#alert-newSeed').tooltip('dispose')
-            }, 10000);
-
-            localStorage.setItem('newSeed', `'${todayDate}'`);
-
-        } else if (todaySeedAlert == `'${todayDate}'`) {           
-        }
-    }  
-*/
     window.onload = function () {
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {
