@@ -106,10 +106,10 @@
     $(document).ready(function(){
         $('.dropdown-toggle').dropdown();
 
-        var postedDates = '{{item.datePosted}}';
+        var postedDates = `{{item.datePosted}}`;
         var dateStringyfied = postedDates.toString("yyyy-MM-dd");
         console.log(dateStringyfied);
-        $('.seed-links').attr("id", dateStringyfied);
+        // $('.seed-links').attr("id", dateStringyfied);
 
         // 새로운 씨앗에 뱃지 추가
         $('.allCat').children('#date-{{latest}}').children('.col').children('.seed-title').append("<span class='badge badge-primary seed-badge'>New!</span>");
