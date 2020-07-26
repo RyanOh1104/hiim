@@ -90,7 +90,7 @@ def seed(request):
         'categories' : categories,
         'categoriesInEng':categoriesInEng,
         'posts':posts,
-        'latest', latest,
+        'latest' : latest,
         # 'paginator':paginator,
     }
     return render(request, 'dansang/seed.html', context)
