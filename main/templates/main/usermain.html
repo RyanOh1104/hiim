@@ -117,7 +117,7 @@
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
                                         <span class="usermain-archive-name">Coming Soon<span class=usermain-archive-desc>🔨</span><br></span>
-                                        <span class="usermain-archive-desc">조금만 기다려주세요!</span>
+                                        <span class="usermain-archive-desc">{{thisUser.name}} 조금만 기다려주세요!</span>
                                     </div>
                                 </div>
                             </a>
@@ -165,7 +165,8 @@
     function NewSeedAlert() {
         console.log(`{{newSeed.datePosted}}`)
         var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
+        // var dd = String(today.getDate()).padStart(2, '0'); 뒤에 padStart는 앞에 0 붙여주는 거
+        var dd = String(today.getDate());
         var mm = String(today.getMonth() + 1); //January is 0!
         var yyyy = today.getFullYear();
         var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
