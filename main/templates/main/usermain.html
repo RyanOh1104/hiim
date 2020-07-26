@@ -173,17 +173,17 @@
         var lsNewSeed = localStorage.getItem("newSeed");
         
         // 바깥 if는 알림을 한번만 보여주기 위해서
-        if (lsNewSeed == null || lsNewSeed != `'${todayDate}'`) {
-            if ( todayDate === datePosted) {
+        if (lsNewSeed == null || lsNewSeed != todayDate) {
+            if (todayDate == datePosted) {
                 $('#alert-newSeed').tooltip('show');
                 
                 setTimeout(function(){
                 $('#alert-newSeed').tooltip('dispose')
                 }, 10000);
 
-                localStorage.setItem('newSeed', `'${todayDate}'`);
+                localStorage.setItem('newSeed', todayDate);
             }
-        } else if (lsNewSeed == `'${todayDate}'`) {
+        } else if (lsNewSeed == todayDate) {
         }
     }
 
