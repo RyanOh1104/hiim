@@ -89,6 +89,9 @@
 .seed-links:visited {
     color: darkgrey;
 }
+#tooltip-seed {
+    border: none;
+}
 /* Seed settings END */
 
 /* Summernote settings START -- somehow doesn't work in summernote.css */

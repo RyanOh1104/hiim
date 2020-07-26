@@ -41,6 +41,11 @@ html, body {
     cursor: pointer;
     margin-left: 10px;
 }
+.new {
+    font-size: 40% !important;
+    vertical-align: text-top;
+    height: 12px;
+}
 .block {
     border-radius: 10px;
     border: #9300d3 2px solid;
