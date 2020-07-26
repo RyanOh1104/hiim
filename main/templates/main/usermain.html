@@ -168,7 +168,7 @@
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
         var todayDate =  yyyy + '-' + mm + '-' + dd;;
-        var datePosted = "{{newSeed.datePosted}}"
+        var datePosted = `{{newSeed.datePosted}}`
         if ( todayDate === datePosted) {
             $('#alert-newSeed').tooltip('show');
             
