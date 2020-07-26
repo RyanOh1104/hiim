@@ -69,7 +69,7 @@ def seed(request):
     categoriesInEng = SeedCategoryEng.objects.all()
 
     # 'New' 딱지 붙일 씨앗 -- datePosted가 max인 것 찾기
-    latestDatePosted = Answer.objects.all().values('datePosted')
+    latestDatePosted = DansangSeed.objects.all().values('datePosted')
     # allDates의 각 원소는 {'dateAnswered':datetime.date(2020, 07, 21)} 이런 포맷 (python dictionary view)
     allDates = list(latestDatePosted.values('datePosted'))
     # Date 중 최댓값, 즉 가장 최근의 질문의 날짜 가져오기 (바로 위와 정확히 동일)
