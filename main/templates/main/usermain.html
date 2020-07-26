@@ -166,7 +166,7 @@
         console.log(`{{newSeed.datePosted}}`)
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var mm = String(today.getMonth() + 1); //January is 0!
         var yyyy = today.getFullYear();
         var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
         var datePosted = `{{newSeed.datePosted}}`;
