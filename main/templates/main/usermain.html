@@ -159,8 +159,22 @@
 <script>
     function scrollWin(x, y) {
         window.scrollBy(x, y);
-      }
-
+    }
+    
+    // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
+    function NewSeedAlert() {
+        var today = new Date();
+        var todayStringyfied = `${today.getFullYear()}-${today.getMonth() < 10 ? `0${today.getMonth()+1}` : today.getMonth()+1}-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`;
+        var datePosted = ${newSeed.datePosted};
+        if ( todayStringyfied === datePosted) {
+            $('#alert-newSeed').tooltip('show');
+            
+            setTimeout(function(){
+            $('#alert-newSeed').tooltip('dispose')
+            }, 10000);
+        }
+    }
+/*
     function NewSeedAlert() {   // 굳이 cookie로 할 필요 없음!
         // 오늘 날짜 가져오기
         var todayDate = new Date();
@@ -182,7 +196,7 @@
         } else if (todaySeedAlert == `'${todayDate}'`) {           
         }
     }  
-
+*/
     window.onload = function () {
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {

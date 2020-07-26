@@ -42,8 +42,6 @@ def update(response, authuser_id):
 
 # @login_required(login_url="/welcome")
 def usermain(request):
-
-
     # 가입이 되어 있다면
     if request.user.is_authenticated:
         current_user = request.user
@@ -52,11 +50,11 @@ def usermain(request):
         # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:   
             thisUser = UserInfo.objects.get(authuser_id=current_user.id)
             today = date.today()
-            newSeed = DansangSeed.objects.get(datePosted=today)
+            newSeed = DansangSeed.objects.filter(datePosted=today).first() # 있으면 가져오고 없으면 none 가져오는 쿼리
 
             context = {
                 'thisUser' : thisUser,
-                'newSeed' : newSeed
+                'newSeed' : newSeed,
             }
             return render(request, 'main/usermain.html', context)
         # 가입도 했고 userinfo도 있다면

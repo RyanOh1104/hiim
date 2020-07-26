@@ -259,6 +259,7 @@ a:active {color:black;}
 .card:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
     -5px -5px 3px #ffffff;
+    border: none;
 }
 
 .mobile-only {
