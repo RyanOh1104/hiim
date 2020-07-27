@@ -22,7 +22,7 @@ def dansanginput(request):
             instance.authuser = request.user
             
             instance.img= request.FILES.get('img')
-            instance.created = str(today)
+            # instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
                 instance.title = instance.title[0:17] + "..."
