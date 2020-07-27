@@ -30,7 +30,7 @@
         <h3 class="questions">{{thisQuestion.question|safe}}</h3>
     </div>
     <div class="col col-12 text-center">
-        {% for a in thisAnswer reversed%}
+        {% for a in thisAnswer reversed %}
         <div class="detail-answer">{{a.answer}}<br><span class="qanda-date"> ({{a.dateAnswered}})</span></div><br>
         {% endfor %}
     </div>

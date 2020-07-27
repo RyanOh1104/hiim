@@ -120,7 +120,7 @@ def qandaMain(request):
 
 def qandaDetail(request, questionNumber):
     thisQuestion = Question.objects.get(number=questionNumber)
-    thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber)
+    thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber).order_by('dateAnswered')
     thisUser = User.objects.get(username=request.user)
 
     # 아직 답하지 않은 질문의 detail 페이지로 갔을 때(주소창에 직접 입력하여) 막는 기능이 필요하다.
