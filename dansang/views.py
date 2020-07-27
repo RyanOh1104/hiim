@@ -10,7 +10,8 @@ from django.db.models import F
 
 @login_required
 def dansanginput(request):
-    today = datetime.today()
+    # today = datetime.today()
+    today = timezone.now()
     # setting initial user as current logged in user
     form = DansangInputForm(initial={'authuser':request.user})
 
