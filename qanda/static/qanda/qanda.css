@@ -44,12 +44,21 @@ label {
 /* Detail Page Settings END */
 
 @media (max-width: 768px) {
-/* Detail Page Settings START */
-.answer {
-    font-size: 4vw;
-}
-.qanda-date {
-    font-size: 2.5vw;
-}
-/* Detail Page Settings END */
+    /* Detail Page Settings START */
+    .answer {
+        font-size: 4vw;
+    }
+    .qanda-date {
+        font-size: 2.5vw;
+    }
+    /* Detail Page Settings END */
+
+    /* Input Page Settings START */
+    .answerInput {
+        width: 90%;
+    }
+    .questions {
+        font-size: 1.5rem;
+    }
+    /* Input Page Settings END */
 }
