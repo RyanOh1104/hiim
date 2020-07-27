@@ -61,6 +61,21 @@
     {% endfor %}
 </div>
 
+{% for item in dansangs reversed %}
+<div class="row justify-content-center">
+    <div class="col">
+        <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang content-block">
+                    <span class="title">{{item.title}}</span><br class="mobile-only">
+                    <span class="first-sentence">{{item.subtitle|safe}}</span>
+                </div>
+            </div>
+        </a>
+    </div>  
+</div>
+{% endfor %}
+
 <div class="pc-only">
     {% with ''|center:how_many as range %}
     {% for item in dansangs reversed %}
@@ -95,9 +110,6 @@
     {% endfor %}
     {% endwith %}
 </div>
-
-
-
     
 <!-- <div class="manual">
     <button class="btn manual-button" id="manual-dansang">
@@ -113,8 +125,4 @@ $(function () {
   })
 </script>
 {% endblock %}
-<!-- 필요한 JS 코드
-지금 로그인되어있는 사람이 
-if authuser == request.user (맞나?) 
-일때 추가 버튼(이미지)을 show or hidden-->
 
