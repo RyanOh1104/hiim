@@ -1,12 +1,13 @@
 /* Main Page Settings START */
 .dansang-row {
-    border-bottom: 1px black solid;
     padding-bottom : 10px;
     padding-top: 25px;
 }
 .block-dansang {
     border: 1px lightgrey solid;
     border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .block-dansang:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
@@ -20,11 +21,11 @@
 }
 .title {
     font-weight: bold;
-    font-size: 21px;
+    font-size: 29px;
     padding-top: 10px;
 }
 .first-sentence {
-    font-size: 13px;
+    font-size: 18px;
 }
 .border-line {
     border-radius: 10px;

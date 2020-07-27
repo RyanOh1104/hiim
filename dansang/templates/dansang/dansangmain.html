@@ -62,11 +62,11 @@
 </div>
 
 {% for item in dansangs reversed %}
-<div class="row dansang-row">
+<div class="row dansang-row seed-row allCat">
     <a href="{{item.url}}" class="all-links">
-        <div class="col col-11 block-dansang content-block">
+        <div class="col col-11 block-dansang">
             <span class="title">{{item.title}}</span><br class="mobile-only">
-            <span class="first-sentence">{{item.subtitle|safe}}</span>
+            <span class="first-sentence">| {{item.subtitle|safe}}</span>
         </div>
     </a>
 </div>
