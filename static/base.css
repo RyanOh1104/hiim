@@ -50,19 +50,7 @@ html {
 .form-control:focus {
     background-color: #f6f5f1;
 }
-/* .all-inputs {
-    background-color: #ffffff;
-    box-shadow:inset 0 1px 1px rgba(147, 0, 211,0.08),
-    inset 0 2px 2px rgba(147, 0, 211,0.12),
-    inset 0 2px 2px rgba(147, 0, 211,0.16),
-    inset 0 2px 2px rgba(147, 0, 211,0.15)
-} */
-/* .all-buttons {
-    box-shadow:0 1px 1px rgba(147,0,211,0.08),
-    0 3px 3px rgba(147,0,211,0.12),
-    0 3px 3px rgba(147,0,211,0.16),
-    0 5px 5px rgba(147,0,211,0.4)
-} */
+
 .all-buttons {
     border-radius: 3px;
     background: #9300d3;
@@ -71,7 +59,7 @@ html {
 }
 .all-buttons:active {
     border-radius: 3px;
-    background: #9300d3;
+    /* background: #9300d3; */
     box-shadow:  inset 2px 2px 1px #bbbab7, 
     inset -2px -2px 1px #ffffff;
 }
