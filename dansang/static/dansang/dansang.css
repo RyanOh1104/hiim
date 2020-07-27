@@ -6,8 +6,8 @@
 .block-dansang {
     border: 1px lightgrey solid;
     border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .block-dansang:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
@@ -144,6 +144,8 @@
         border: 1px lightgrey solid;
         border-radius: 10px;
         margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .title {
         /* font-weight: bold; */
@@ -152,7 +154,8 @@
         margin-bottom: 5px;
     }
     .first-sentence {
-        font-size: 2.5vw;
+        /* font-size: 2.5vw; */
+        font-size: 3vw;
     }
     .border-line {
         border-radius: 10px;
