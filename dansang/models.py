@@ -12,7 +12,7 @@ class DansangInput(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'dansang', null=True, default=None)
     title = models.CharField(max_length=100, blank=True)
     subtitle = models.CharField(max_length=100, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=False)
     modified = models.DateTimeField(auto_now=True)
     img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
