@@ -45,7 +45,7 @@
 <br>
 
 <div class="mobile-only">
-    {% for item in dansangs %}
+{% for item in dansangs %}
     <div class="row justify-content-center">
         <div class="col col-12">
             <a href="{{item.url}}" class="all-links">
@@ -58,20 +58,25 @@
             </a>
         </div>
     </div>
-    {% endfor %}
+{% endfor %}
 </div>
 
+<div class="pc-only">
 {% for item in dansangs reversed %}
-<div class="row dansang-row seed-row allCat">
-    <a href="{{item.url}}" class="all-links">
-        <!-- <div class="col block-dansang"> -->
-        <div class="col">
-            <span class="title">{{item.title}}</span><br class="mobile-only">
-            <span class="first-sentence">| {{item.subtitle|safe}}</span>
+<div class="row justify-content-center">
+    <div class="col col-12">
+        <a href="{{item.url}}" class="all-links">
+        <div class="row justify-content-center">
+            <div class="col col-11 block-dansang content-block">
+                <h3 class="title">{{item.title}}</h3>
+                <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+            </div>
         </div>
-    </a>
+        </a>
+    </div>
 </div>
 {% endfor %}
+</div>
 
 <div class="pc-only">
     {% with ''|center:how_many as range %}
