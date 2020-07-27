@@ -62,17 +62,13 @@
 </div>
 
 {% for item in dansangs reversed %}
-<div class="row justify-content-center">
-    <div class="col">
-        <a href="{{item.url}}" class="all-links">
-            <div class="row justify-content-center">
-                <div class="col col-11 block-dansang content-block">
-                    <span class="title">{{item.title}}</span><br class="mobile-only">
-                    <span class="first-sentence">{{item.subtitle|safe}}</span>
-                </div>
-            </div>
-        </a>
-    </div>  
+<div class="row dansang-row justify-content-center">
+    <a href="{{item.url}}" class="all-links">
+        <div class="col col-11 block-dansang content-block">
+            <span class="title">{{item.title}}</span><br class="mobile-only">
+            <span class="first-sentence">{{item.subtitle|safe}}</span>
+        </div>
+    </a>
 </div>
 {% endfor %}
 
