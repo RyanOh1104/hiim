@@ -29,12 +29,10 @@ def dansanginput(request):
             # main에서 부제목 display -- subtitle OR first_sentence
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
-            # Subtitle이 없다면 First Sentence로 대체
-            # PROBLEM : 첫문장이 짧고, 그 다음에 줄바꿈을 하면 그 줄바꿈(tag)이 그대로 subtitle에 반영된다.
-            # 즉, subtitle이 없는 경우 contents의 첫 부분을 가져오는데 문제는 html tag가 모두 포함된다는 것.
-            if instance.subtitle == "":
-                instance.first_sentence = instance.contents[0:35] + "..."
-                instance.subtitle = instance.first_sentence
+            # Subtitle이 없다면 First Sentence로 대체 -- 하려고 했으나 그냥 없애자
+            # if instance.subtitle == "":
+            #     instance.first_sentence = instance.contents[0:35] + "..."
+            #     instance.subtitle = instance.first_sentence
 
             instance.slug = slugify(datetime.now())
             # instance.slug = slugify(instance.title, allow_unicode=True)   이건 한글 제목일 때 불가능!
