@@ -47,10 +47,17 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('created')
     how_many = dansangs.count()
     today = date.today() # doen't work FUCK... 왜 2020년%206월%2011일??????
+
+    # pagination
+    seedPaginator = Paginator(dansangs, 7)
+    page = request.GET.get('page')
+    posts = seedPaginator.get_page(page)
+
     context = {
         'dansangs': dansangs,
         'how_many': how_many,
-        'today': today
+        'today': today,
+        'posts':posts,
     }
 
     return render(request, 'dansang/dansangmain.html', context)
@@ -79,7 +86,7 @@ def seed(request):
         datesListInFormat.append(datesList[j].strftime('%Y-%m-%d')) # datetime.date(2020,07,21) -> 2020-07-21로 변환
     latest = max(datesList)
 
-    # paginate 과정
+    # pagination
     seedPaginator = Paginator(seeds, 7)
     page = request.GET.get('page')
     posts = seedPaginator.get_page(page)
@@ -90,7 +97,6 @@ def seed(request):
         'categoriesInEng':categoriesInEng,
         'posts':posts,
         'latest' : latest,
-        # 'paginator':paginator,
     }
     return render(request, 'dansang/seed.html', context)
 
