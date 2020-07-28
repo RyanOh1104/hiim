@@ -49,9 +49,9 @@ def dansangmain(request):
     today = date.today() # doen't work FUCK... 왜 2020년%206월%2011일??????
 
     # pagination
-    seedPaginator = Paginator(dansangs, 7)
+    dansangPaginator = Paginator(dansangs, 8)
     page = request.GET.get('page')
-    posts = seedPaginator.get_page(page)
+    posts = dansangPaginator.get_page(page)
 
     context = {
         'dansangs': dansangs,
