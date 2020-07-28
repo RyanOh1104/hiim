@@ -140,7 +140,7 @@ def qandaDetail(request, questionNumber):
         context = {
             'thisQuestion':thisQuestion,
             'thisAnswer':thisAnswer,
-            'thisUser':thisUser
+            'thisUser':thisUser,
         }
 
         return render(request, 'qanda/qandadetail.html', context)
