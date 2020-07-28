@@ -95,7 +95,7 @@ def qandaInput(request):
     return render(request, 'qanda/qandainput.html', context)
 
 def qandaMain(request):
-    thisQuestion = Question.objects.all()
+    thisQuestion = Question.objects.all().order_by('-number')
     thisAnswer = Answer.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser_id=request.user.id)
 
@@ -113,14 +113,14 @@ def qandaMain(request):
     # pagination
     qandaPaginator = Paginator(thisQuestion, 7)
     page = request.GET.get('page')
-    posts = qandaPaginator.get_page(page)
+    questions = qandaPaginator.get_page(page)
 
     context = {
         'thisQuestion':thisQuestion,
         'thisAnswer':thisAnswer,
         'thisUser':thisUser,
         'latestQuestionNumber' : latestQuestionNumber,
-        'posts':posts,
+        'questions':questions,
     }
 
     return render(request, 'qanda/qandamain.html', context)

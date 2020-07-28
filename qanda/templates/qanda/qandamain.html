@@ -31,7 +31,7 @@
 
         <div class="row justify-content-center">
             <div class="col text-center">
-                {% for q in thisQuestion reversed %}
+                {% for q in questions %}
                 {% if q.number <= latestQuestionNumber %}
                     <a href="answer/{{q.number}}" class="card"><h5 class="main-questions" id="{{q.number}}">{{q.number}}. {{q.question|safe}}</h5></a>
                 {% endif %}
