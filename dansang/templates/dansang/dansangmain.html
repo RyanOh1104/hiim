@@ -45,37 +45,37 @@
 <br>
 
 <div class="mobile-only">
-{% for item in posts %}
+    {% for item in posts %}
+        <div class="row justify-content-center">
+            <div class="col col-12">
+                <a href="{{item.url}}" class="all-links">
+                <div class="row justify-content-center">
+                    <div class="col col-11 block-dansang">
+                        <h3 class="title">{{item.title}}</h3>
+                        <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="pc-only">
+    {% for item in posts %}
     <div class="row justify-content-center">
         <div class="col col-12">
             <a href="{{item.url}}" class="all-links">
             <div class="row justify-content-center">
                 <div class="col col-11 block-dansang">
-                    <h3 class="title">{{item.title}}</h3>
-                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
+                    <span class="title">{{item.title}}</span>
+                    <span class="first-sentence"> | {{item.subtitle|safe}}</span>
                 </div>
             </div>
             </a>
         </div>
-    </div>
-{% endfor %}
-</div>
-
-<div class="pc-only">
-{% for item in posts %}
-<div class="row justify-content-center">
-    <div class="col col-12">
-        <a href="{{item.url}}" class="all-links">
-        <div class="row justify-content-center">
-            <div class="col col-11 block-dansang">
-                <span class="title">{{item.title}}</span>
-                <span class="first-sentence"> | {{item.subtitle|safe}}</span>
-            </div>
-        </div>
-        </a>
-    </div>
-</div><br>
-{% endfor %}
+    </div><br>
+    {% endfor %}
 </div>
 
 <br>
@@ -100,42 +100,7 @@
         {% endif %}
     </div>
 </div>
-
-<!-- <div class="pc-only">
-    {% with ''|center:how_many as range %}
-    {% for item in dansangs reversed %}
-    {% with a=forloop.counter|mod:2 %}
-    {% if a != 0 %}
-    <div class="row justify-content-center">
-        <div class="col col-6">
-            <a href="{{item.url}}" class="all-links">
-            <div class="row justify-content-center">
-                <div class="col col-11 block-dansang content-block">
-                    <h3 class="title">{{item.title}}</h3>
-                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
-                </div>
-            </div>
-            </a>
-        </div>
-    {% elif a == 0 %}
-        <div class="col col-6">
-            <a href="{{item.url}}">
-            <div class="row justify-content-center">
-                <div class="col col-11 block-dansang content-block">
-                    <h3 class="title">{{item.title}}</h3>
-                    <h5 class="first-sentence">{{item.subtitle|safe}}</h5>
-                </div>
-            </div>
-            </a>
-        </div>
-    </div>
-    <br>
-    {% endif %}
-    {% endwith %}
-    {% endfor %}
-    {% endwith %}
-</div> -->
-    
+  
 <!-- <div class="manual">
     <button class="btn manual-button" id="manual-dansang">
         📋 사용법
@@ -144,6 +109,7 @@
 
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
+
 <script>
 $(function () {
     $('#tooltip-seed').tooltip()
