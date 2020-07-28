@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Question, Answer
+from main.models import UserInfo
 from .forms import AnswerForm
 from django.forms import modelformset_factory, inlineformset_factory, formset_factory
 from django.utils import timezone
@@ -58,7 +59,6 @@ def qandaInput(request):
             todaysQuestionNumber = latestQuestionNumber + 1
             formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=todaysQuestionNumber))
             todaysQuestion = Question.objects.get(number=todaysQuestionNumber)
-            fuck = "This is today's question"
             if request.method == "POST":
                 formset = AnswerFormSet(request.POST)
                 if formset.is_valid():
@@ -84,7 +84,7 @@ def qandaInput(request):
     # 동일한 date에 답변 두개를 입력한다면?
     ########################################################
 
-    thisUser = User.objects.get(username=request.user)
+    thisUser = UserInfo.objects.get(authuser_id=current_user.id)
 
     context = {
         'formset':formset,
@@ -96,7 +96,7 @@ def qandaInput(request):
 def qandaMain(request):
     thisQuestion = Question.objects.all()
     thisAnswer = Answer.objects.filter(authuser=request.user)
-    thisUser = User.objects.get(username=request.user)
+    thisUser = UserInfo.objects.get(authuser_id=current_user.id)
 
     # 답한 질문만 보이도록 해야 한다.
     # 그러기 위해 input에서 쓴 latestQuestionNumber 변수를 가져오자.
@@ -121,7 +121,7 @@ def qandaMain(request):
 def qandaDetail(request, questionNumber):
     thisQuestion = Question.objects.get(number=questionNumber)
     thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber).order_by('dateAnswered')
-    thisUser = User.objects.get(username=request.user)
+    thisUser = UserInfo.objects.get(authuser_id=current_user.id)
 
     # 아직 답하지 않은 질문의 detail 페이지로 갔을 때(주소창에 직접 입력하여) 막는 기능이 필요하다.
     # 그러기 위해 input에서 쓴 latestQuestionNumber 변수를 가져오자.
@@ -153,7 +153,7 @@ def qandaUpdate(request, questionNumber):
     thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber)
     AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
     formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=questionNumber))
-    thisUser = User.objects.get(username=request.user)
+    thisUser = UserInfo.objects.get(authuser_id=current_user.id)
 
     # 답변한 질문만 보이도록!!
     latestAnswers = Answer.objects.filter(authuser=request.user).values('questionNumber') # QuerySet
