@@ -172,7 +172,8 @@
         var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
         var datePosted = `{{newSeed.datePosted}}`;
         var lsNewSeed = localStorage.getItem("newSeed");
-        console.log(datePosted, todayDate)
+        console.log('new seed on', datePosted)
+        console.log('today is', todayDate)
         // 바깥 if는 알림을 한번만 보여주기 위해서
         if (lsNewSeed == null || lsNewSeed != todayDate) {
             if (todayDate == datePosted) {
