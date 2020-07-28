@@ -171,7 +171,7 @@ def qandaUpdate(request, questionNumber):
                 instance = formset.save(commit=False)
                 instance[0].authuser = request.user
                 instance[0].questionNumber = questionNumber # ForeignKey로 하지 않고 이렇게 하는 거 너무 비효율적인가? 나중에 문제가 생기려나?
-                instance[0].dateAnswered = str(today)
+                # instance[0].dateAnswered = str(today)
                 instance[0].save()
 
                 return redirect('/qanda/qandamain')
