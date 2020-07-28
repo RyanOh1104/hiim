@@ -6,7 +6,7 @@ html, body {
     width: 100%;
 }
 .main-first-page {
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     border-bottom: 2px black solid;
     /* background: url(mvp/images/4.jpg) no-repeat 50% 50%; */
