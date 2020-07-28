@@ -30,6 +30,8 @@ def dansanginput(request):
             # main에서 제목 display
             if len(title_stripped) >= 17:
                 instance.title = title_stripped[0:17] + "..."
+                else:
+                    instance.title = title_stripped
             # main에서 부제목 display -- subtitle OR first_sentence
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
