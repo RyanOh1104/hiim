@@ -144,8 +144,8 @@
         border: 1px lightgrey solid;
         border-radius: 10px;
         margin-bottom: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .title {
         /* font-weight: bold; */
