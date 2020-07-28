@@ -27,20 +27,24 @@ def dansanginput(request):
 
             # strip tags
             title_stripped = strip_tags(instance.title)
+            subtitle_stripped = strip_tags(instance.subtitle)
+
             # main에서 제목 display
             if len(title_stripped) >= 17:
                 instance.title = title_stripped[0:17] + "..."
             else:
                 instance.title = title_stripped
-            # main에서 부제목 display -- subtitle OR first_sentence
-            if len(instance.subtitle) >= 35:
-                instance.subtitle = instance.subtitle[0:35] + "..."
+
+            # main에서 부제목 display
+            if len(subtitle_stripped) >= 35:
+                instance.subtitle = subtitle_stripped[0:35] + "..."
+            else:
+                instance.subtitle = subtitle_stripped
             # Subtitle이 없다면 First Sentence로 대체 -- 하려고 했으나 그냥 없애자
             if instance.subtitle == "":
                 instance.subtitle = "&nbsp;"
 
             instance.slug = slugify(datetime.now())
-            # instance.slug = slugify(instance.title, allow_unicode=True)   이건 한글 제목일 때 불가능!
             instance.url = "/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/dansang/dansangmain')
