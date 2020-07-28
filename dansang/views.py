@@ -44,12 +44,12 @@ def dansanginput(request):
 
 @login_required
 def dansangmain(request):
-    dansangs = DansangInput.objects.filter(authuser=request.user).order_by('created')
+    dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     today = date.today() # doen't work FUCK... 왜 2020년%206월%2011일??????
 
     # pagination
-    dansangPaginator = Paginator(dansangs, 8)
+    dansangPaginator = Paginator(dansangs, 7)
     page = request.GET.get('page')
     posts = dansangPaginator.get_page(page)
 
