@@ -24,10 +24,12 @@ def dansanginput(request):
             
             instance.img= request.FILES.get('img')
             instance.created = str(today)
+
+            # strip tags
+            title_stripped = strip_tags(instance.title)
             # main에서 제목 display
-            if len(instance.title) >= 17:
-                title_stripped = strip_tags(instance.title)
-                instance.title = instance.title_stripped[0:17] + "..."
+            if len(title_stripped) >= 17:
+                instance.title = title_stripped[0:17] + "..."
             # main에서 부제목 display -- subtitle OR first_sentence
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
