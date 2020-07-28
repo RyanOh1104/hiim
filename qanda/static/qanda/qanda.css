@@ -36,10 +36,12 @@ label {
 .detail-answer {
     color : #9300d3;
     font-size: 21px;
+    font-weight: bold;
     white-space: pre-line;
 }
 .qanda-date {
     font-size: 13px;
+    font-weight: normal;
 }
 /* Detail Page Settings END */
 
