@@ -8,6 +8,7 @@ from django.forms import modelformset_factory, inlineformset_factory, formset_fa
 from django.utils import timezone
 from datetime import datetime, date
 from time import strftime
+from django.core.paginator import Paginator
 
 ###### 중요!!! 유저가 가장 처음에 즉문즉답 기록장을 하면, main페이지가 아닌 첫번째 질문을 던져주자!!!! #####
 @login_required
@@ -109,11 +110,17 @@ def qandaMain(request):
         numbersList.append(*allNumbers[i].values()) # 여기 * operator는 python3 dictionary에 적용된 view?를 없애주는 것.
     latestQuestionNumber = max(numbersList)
 
+    # pagination
+    qandaPaginator = Paginator(thisQuestion, 7)
+    page = request.GET.get('page')
+    posts = qandaPaginator.get_page(page)
+
     context = {
         'thisQuestion':thisQuestion,
         'thisAnswer':thisAnswer,
         'thisUser':thisUser,
-        'latestQuestionNumber' : latestQuestionNumber
+        'latestQuestionNumber' : latestQuestionNumber,
+        'posts':posts,
     }
 
     return render(request, 'qanda/qandamain.html', context)
