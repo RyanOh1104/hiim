@@ -7,6 +7,7 @@ from datetime import datetime, date
 from django_slugify_processor.text import slugify
 from django.core.paginator import Paginator
 from django.db.models import F
+from django.utils.html import strip_tags
 
 @login_required
 def dansanginput(request):
@@ -25,14 +26,14 @@ def dansanginput(request):
             instance.created = str(today)
             # main에서 제목 display
             if len(instance.title) >= 17:
-                instance.title = instance.title[0:17] + "..."
+                title_stripped = strip_tags(instance.title)
+                instance.title = instance.title_stripped[0:17] + "..."
             # main에서 부제목 display -- subtitle OR first_sentence
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
             # Subtitle이 없다면 First Sentence로 대체 -- 하려고 했으나 그냥 없애자
-            # if instance.subtitle == "":
-            #     instance.first_sentence = instance.contents[0:35] + "..."
-            #     instance.subtitle = instance.first_sentence
+            if instance.subtitle == "":
+                instance.subtitle = "&nbsp;"
 
             instance.slug = slugify(datetime.now())
             # instance.slug = slugify(instance.title, allow_unicode=True)   이건 한글 제목일 때 불가능!
