@@ -76,17 +76,17 @@
       })
     
     $(document).ready(function() {
-        
-        var total = Object.keys({{countAnswer}}).length;
+        /*
+        var dictLength = Object.keys({{countAnswer}}).length;
         var i;
-        for (i = 1; i <= total; i++) {
+        for (i = 1; i <= dictLength; i++) {
             var thisCount = `{{countAnswer.i}}`
             console.log('일번', {{countAnswer.3}})
             console.log('이번', {{countAnswer.i}})
             console.log('삼번', thisCount)
             $('.main-questions').children(`#${i}`).children('.count-answer').html(`즉답 ${thisCount}개`);
         }
-        
+        */
     });
 </script>
 {% endblock %}
