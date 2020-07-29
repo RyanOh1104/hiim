@@ -80,8 +80,8 @@
         console.log('{{countAnswer.3}}');
         
         var total = Object.keys('{{countAnswer}}').length;
-        for (var i in _.range(1, total)) {
-            $('.main-questions').children(`#${i}`).children('.count-answer').html(`{{countAnswer.i}}`);
+        for (var i in range(1, total)) {
+            $('.main-questions').children(`#${i}`).children('.count-answer').html(`즉답 {{countAnswer.i}}개`);
         }
         
     });
