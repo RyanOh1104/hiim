@@ -80,7 +80,7 @@
         var total = Object.keys({{countAnswer}}).length;
         var i;
         for (i = 1; i <= total; i++) {
-            var thisCount = {{countAnswer.`${i}`}}
+            var thisCount = `{{countAnswer.${i}}}`
             console.log(thisCount)
             $('.main-questions').children(`#${i}`).children('.count-answer').html(`즉답 ${thisCount}개`);
         }
