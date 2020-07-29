@@ -81,7 +81,7 @@
         var i;
         for (i = 1; i <= total; i++) {
             var number = `${i}`
-            var thisCount = {{countAnswer.number}}
+            var thisCount = `{{countAnswer.number}}`
             console.log('이번', {{countAnswer.i}})
             console.log('삼번', thisCount)
             $('.main-questions').children(`#${i}`).children('.count-answer').html(`즉답 ${thisCount}개`);
