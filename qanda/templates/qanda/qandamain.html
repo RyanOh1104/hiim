@@ -81,6 +81,8 @@
         var i;
         for (i = 1; i <= total; i++) {
             var thisCount = {{countAnswer.i}}
+            console.log({{countAnswer.3}})
+            console.log({{countAnswer.i}})
             console.log(thisCount)
             $('.main-questions').children(`#${i}`).children('.count-answer').html(`즉답 ${thisCount}개`);
         }
