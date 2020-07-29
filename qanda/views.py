@@ -114,7 +114,7 @@ def qandaMain(request):
     countAnswer = {}
     for i in range(0, latestQuestionNumber):
         countThis = Answer.objects.filter(authuser=request.user, questionNumber=i+1).count()
-        countAnswer[i] = countThis
+        countAnswer[i+1] = countThis
 
     # pagination
     qandaPaginator = Paginator(thisQuestion, 7)
