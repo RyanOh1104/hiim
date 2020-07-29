@@ -81,7 +81,7 @@
         
         var total = Object.keys('{{countAnswer}}').length;
         for (var i in _.range(1, total)) {
-            $('.main-questions').children('#`${i}`').children('.count-answer').html('{{countAnswer.`${i}`}}');
+            $('.main-questions').children(`#${i}`).children('.count-answer').html(`{{countAnswer.${i}}}`);
         }
         
     });
