@@ -48,7 +48,7 @@ def everydaymain(request):
     todays = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
 
-    getToday = datetime.datetime.today()
+    getToday = datetime.today()
     getMonth = getToday.strftime('%m')
     # if thisMonth < 10:
     #     thisMonth = str('0'+thisMonth)
@@ -68,9 +68,9 @@ def everydaymain(request):
     }
     return render(request,'everyday/everydaymain.html', context)
 
-def all_events(request):
-    events = NewEvent.objects.all()
-    return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
+# def all_events(request):
+#     events = NewEvent.objects.all()
+#     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
 
 def everydaydetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
