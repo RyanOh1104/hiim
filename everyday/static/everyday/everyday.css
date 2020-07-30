@@ -64,6 +64,7 @@ td{
      -3px -3px 3px #ffffff;
     height: 35px;
     vertical-align: middle;
+    border-radius: 30px;
 }
 .eachRow {
     height: 120px;
@@ -148,6 +149,7 @@ td[date] {
         font-size: 18px;
         vertical-align: middle;
         box-shadow: none;
+        border-radius: 30px;
     }
     .sevenDays {
         font-size: 3vw;
