@@ -14,9 +14,12 @@
 .kw12 {
     margin-right: 20px;
 }
-#emoji-helptext {
+/* .emoji {
+    width: 70px;
+} */
+/* #emoji-helptext {
     margin-top : -15px;
-}
+} */
 .button-today {
     text-align: center;
 }
@@ -87,7 +90,7 @@ td[date] {
 .keywords {
     font-size: 14px;
     color: #9300d3;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .addBtn {
     color: #f6f5f1;
@@ -99,7 +102,87 @@ td[date] {
 #what {
     font-size: 17px;
 }
+.everyday-img {
+    width: 100%;
+    height: auto;
+}
+.img-col {
+    padding: 2.5px;
+}
 .calendar-img {
     width: 50px;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block
+        /*원래 base.css에서는 inline인데, 여기서는 inline으로 하면 이상해져서 block으로 */
+    }
+
+    /* Main page START */
+    td{
+        text-align: center;
+        /* font-size: 21px; */
+        border:2px;
+        border-color:#3333FF;
+        border-radius: 8px;/*모서리 둥글게*/
+    }
+    .eachRow {
+        height: 60px; /* For some reason 92.8px 아래로는 차이가 없음 */
+    }
+    .empty {
+        height: 20px;
+        font-size: 1vw;
+    }
+    .eachDate {
+        font-size: 3vw;
+    }
+    .td[date] {
+        width: 20vw;
+    }
+    .prevNextButtons {
+        font-size: 18px;
+        vertical-align: middle;
+        box-shadow: none;
+    }
+    .sevenDays {
+        font-size: 3vw;
+    }
+    #tbCalendarYM {
+        width: 100px;
+        font-size: 5vw;
+        font-weight: bold;
+    }
+    /* Main page END */
+
+    /* Input page START */
+    #div_id_when {
+        width: 50%;
+    }
+    #id_when {
+        font-size: 3.5vw;
+    }
+    #what {
+        font-size: 3.5vw;
+    }
+    .keywordInputs {
+        width: 50%
+    }
+    .keywords {
+        font-size:3vw;
+    }
+    .emoji {
+        width: 15%;
+        font-size: 3vw;
+    }
+    .main-emoji {
+        font-size: 4vw;
+        height: 20px; /*흠*/
+    }
+    /* Input page END */
+
+    /* Detail page START */
+
+    /* Detail page END */
 }

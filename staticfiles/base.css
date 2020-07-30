@@ -5,17 +5,18 @@
 html {
     scroll-behavior: smooth;
 }
-.nav-bar {
-
+.simply-stressed {
+    color: #9300d3;
+    font-weight: bold;
+}
+.enlarge-150 {
+    font-size: 150%;
 }
 .top-block {
     background-color: #f6f5f1;
     padding-top: 30px;
     padding-bottom: 20px;
     border-bottom: black solid 2px;
-    /* border-radius: 10px; */
-    /* box-shadow: inset 8px 8px 8px #bbbab7, 
-    inset -8px -8px 8px #ffffff; */
 }
 .page-title {
     padding-top: 50px;
@@ -52,19 +53,6 @@ html {
 .form-control:focus {
     background-color: #f6f5f1;
 }
-/* .all-inputs {
-    background-color: #ffffff;
-    box-shadow:inset 0 1px 1px rgba(147, 0, 211,0.08),
-    inset 0 2px 2px rgba(147, 0, 211,0.12),
-    inset 0 2px 2px rgba(147, 0, 211,0.16),
-    inset 0 2px 2px rgba(147, 0, 211,0.15)
-} */
-/* .all-buttons {
-    box-shadow:0 1px 1px rgba(147,0,211,0.08),
-    0 3px 3px rgba(147,0,211,0.12),
-    0 3px 3px rgba(147,0,211,0.16),
-    0 5px 5px rgba(147,0,211,0.4)
-} */
 .all-buttons {
     border-radius: 3px;
     background: #9300d3;
@@ -73,7 +61,7 @@ html {
 }
 .all-buttons:active {
     border-radius: 3px;
-    background: #9300d3;
+    /* background: #9300d3; */
     box-shadow:  inset 2px 2px 1px #bbbab7, 
     inset -2px -2px 1px #ffffff;
 }
@@ -108,7 +96,7 @@ a:active {color:black;}
 
 /* Some other CSS settings */
 
-/* Archive_main settings */
+/* Archive-main settings START */
 .archive-title {
     /* padding-left: 20px; */
     font-size: 47px;
@@ -121,11 +109,21 @@ a:active {color:black;}
     font-size: 18px;
     padding-bottom: 10px;
 }
+.pagination-buttons {
+    border-radius: 3px;
+    background: #f6f5f1;
+    box-shadow:  2px 2px 1px #bbbab7, 
+    -2px -2px 1px #ffffff;
+    margin: 3px;
+    padding: 3px;
+}
+/* Archive-main settings END */
+
 .only-authuser {
     margin-bottom: 30px;
 }
 
-/* Archive_detail settings */
+/* Archive-detail settings START */
 .detail-title {
     font-size: 44px;
     /* font-size: 45px; */
@@ -153,6 +151,21 @@ a:active {color:black;}
     line-height: 1.75;
     white-space: pre-line;
 }
+.go-to-main-button {
+    padding: 5px;
+    border-radius: 5px;
+}
+/* Archive_detail settings END */
+.notification {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: none;
+    color: white;
+    font-size: 20px;
+}
 .menial-buttons {
    border-radius: 3px;
    background: #f6f5f1;
@@ -167,7 +180,7 @@ a:active {color:black;}
 .menial-btn-text {
     color: black;
 }
-/* Archive_input Settings*/
+/* Archive-input settings START */
 .form-control:focus {
     border-color: none;
     box-shadow: none;
@@ -178,6 +191,7 @@ a:active {color:black;}
 .monthpickerinput:focus {
     border: #9300d3 solid 1px !important;
 }
+/* Archive-input settings END */
 .manual {
     position: fixed;
     bottom: 20px;
@@ -197,19 +211,178 @@ a:active {color:black;}
         180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
 }
 
-/* Landing page */
+/* Welcome page */
 .welcome-title {
-    font-size: 55px;
+    font-size: 47px;
 }
 .welcome-message {
     font-size: 21px;
+    line-height: 1.75;
 }
-.strong {
+.welcome-img {
+    width: 150px;
+    height: auto;
+}
+.welcome-row {
+    /* display: flex; 이건 디폴트 값 */
+    align-items: center;
+}
+.welcome-content {
+    font-size: 34px;
+    font-weight: bold;
+}
+.welcome-gomin {
+    font-size: 29px;
+    font-style: italic;
     font-weight: bold;
     color: #9300d3;
 }
+.welcome-stress {
+    font-weight: bold;
+    color: #9300d3;
+}
+.welcome-very-stress {
+    font-weight: bold;
+    color: #9300d3;
+    font-size: 29px;
+}
 #ci-landing {
-    height: 70px;
+    height: 65px;
     width: auto;
     margin-top: -10px;
+}
+/* File Upload (Image) START */
+.custom-file-label {
+    background-color: #f6f5f1 !important;
+}
+.custom-file-label::after {
+    content: "사진 넣기" !important;
+}
+.default-img {
+    display: none;
+}
+/* File Upload (Image) END */
+
+.card {
+    background-color: #f6f5f1;
+    border-radius: 10px;
+}
+.card:hover {
+    box-shadow:  5px 5px 3px #bbbab7, 
+    -5px -5px 3px #ffffff;
+    border: none;
+}
+
+.mobile-only {
+    display: none;
+}
+@media (max-width: 768px) {
+    .pc-only {
+        display: none;
+    }
+    .mobile-only {
+        display: inline;
+    }
+
+    /* Global */
+    .page-title {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 6vw;
+        font-weight: bold;
+    }
+    #navbar-toggler-custom-icon {
+        width: 30px;
+        height: auto;
+    }
+    /* Welcome page */
+    .welcome-title {
+        font-size: 8vw;
+    }
+    #ci-landing {
+        height: 14vw;
+        width: auto;
+        margin-bottom: -10px;
+        margin-top: 10px;
+    }
+    .welcome-img {
+        width: 25vw;
+        height: auto;
+    }
+    .welcome-row {
+        /* display: flex; 이건 디폴트 값 */
+        align-items: center;
+    }
+    .welcome-content {
+        font-size: 6vw;
+        font-weight: bold;
+    }
+    .welcome-very-stress {
+        font-size: 6vw;
+    }
+    .welcome-gomin {
+        font-size: 6vw;
+    }
+
+    /* Hi, I'm... page */
+    .welcome-message {
+        font-size: 4vw;
+    }
+
+    /* Archive-detail pages START */
+    .detail-title {
+        font-size: 5vw;
+        /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
+        font-weight: bold;
+        border-bottom: 2px black solid;
+        padding-bottom: 10px;
+    }
+    #detail-title {
+        font-weight: bold;
+        font-size: 6.5vw;
+    }
+    .go-to-main {
+        display: flex;
+        align-items: center;
+    }
+    .go-to-main-button {
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #detail-subtitle {
+        font-size: 3.5vw;
+    }
+    .detail-dates {
+        padding-top: 10px;
+    }
+    .detail-created {
+        font-size: 2.5vw;
+    }
+    .detail-modified {
+        font-size: 2.5vw;
+    }
+    .detail-contents {
+        font-size: 17px;
+        line-height: 1.75;
+        white-space: pre-line;
+    }
+    .update-delete {
+        text-align: center
+    }
+    /* Archive_detail settings END */ 
+
+    /* Archive-main settings START */
+    .archive-title {
+        /* padding-left: 20px; */
+        font-size: 8vw;
+        font-weight: bold;
+    }
+    .archive-icon {
+        font-size: 20px;
+    }
+    .archive-subtitle {
+        font-size: 3.5vw;
+        padding-bottom: 10px;
+    }
+/* Archive-main settings END */
 }
