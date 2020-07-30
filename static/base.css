@@ -165,13 +165,13 @@ a:active {color:black;}
     font-size: 20px;
 }
 .menial-buttons {
-   border-radius: 15px;
+   border-radius: 20px;
    background: #f6f5f1;
    box-shadow:  2px 2px 1px #bbbab7, 
    -2px -2px 1px #ffffff;
 }
 .menial-buttons:active {
-    border-radius: 3px;
+    border-radius: 20px;
     box-shadow:  inset 2px 2px 1px #bbbab7, 
     inset -2px -2px 1px #ffffff;
 }
