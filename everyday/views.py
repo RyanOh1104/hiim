@@ -86,7 +86,7 @@ def everydayUpdate(request, authuser_id, slug):
     today = datetime.today()
     # 글을 수정사항을 입력하고 제출을 눌렀을 때
     if request.method == "POST":
-        form = EverydayInputForm(request.POST) 
+        form = EverydayInputForm(request.POST, request.FILES) 
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
