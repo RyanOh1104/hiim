@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import InputUserForm
 from django.contrib.auth.models import User
 from .models import UserInfo
-from dansang.models import DansangSeed
+from dansang.models import DansangSeed, DansangInput
+from everyday.models import Everyday
+from qanda.models import Answer
 # 아래 두개는 굳이 필요한 건지는 모르겠음
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm    
@@ -45,19 +47,26 @@ def usermain(request):
     # 가입이 되어 있다면
     if request.user.is_authenticated:
         current_user = request.user
-        # 가입은 했는데 userinfo를 입력하지 않았다면
+        # 가입도 했고 userinfo도 입력했다면
         if UserInfo.objects.filter(authuser_id=current_user.id).exists():
         # if thisUser.name__isnull == True or thisUser.introduction__isnull == True:   
             thisUser = UserInfo.objects.get(authuser_id=current_user.id)
             today = date.today()
             newSeed = DansangSeed.objects.filter(datePosted=today).first() # 있으면 가져오고 없으면 none 가져오는 쿼리
 
+            # 각 유저의 각 모델의 기록 수 
+            thisUserDansang = DansangInput.objects.filter(authuser=request.user, None).count()
+            thisUserEveryday = Everyday.objects.filter(authuser=request.user, None).count()
+            thisUserQanda = Answer.objects.filter(authuser=request.user, None).count()
             context = {
                 'thisUser' : thisUser,
                 'newSeed' : newSeed,
+                'thisUserDansang' : thisUserDansang,
+                'thisUserEveryday' : thisUserEveryday,
+                'thisUserQanda' : thisUserQanda,
             }
             return render(request, 'main/usermain.html', context)
-        # 가입도 했고 userinfo도 있다면
+        # 가입은 했는데 userinfo를 입력하지 않았다면
         else: 
             return redirect('/inputuserinfo')
 

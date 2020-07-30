@@ -93,6 +93,10 @@ html, body {
     height: 30px;
     width: 30px;
 }
+.usermain-total {
+    font-weight: bold;
+    color: #9300d3;
+}
 .img-add-archive {
     height: 40px;
     width: 40px;
@@ -177,6 +181,9 @@ html, body {
     .img-websites {
         height: 7vw;
         width: auto;
+        box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
+        padding: 3px;
+        border-radius: 5px;
     }
     .archive-outer-block {
         padding-bottom: 20px;
@@ -192,8 +199,6 @@ html, body {
     .usermain-archive-desc {
         font-size: 3.5vw;
     }
-
-
 
     .empty-row-lower {
         height: 45%;
