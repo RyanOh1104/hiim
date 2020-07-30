@@ -30,9 +30,9 @@ function nextCalendar() {//다음 달
 function progressBar() {
   // 이번 달의 총 일수
   var lastDate = new Date(today.getFullYear(),today.getMonth()+1, 0);
-  var howManyThisMonth = thisMonth;
-  console.log('이 달에는 총', lastDate.getDate(), '타입은', typeof(lastDate.getDate()));
-  console.log('사용자는 이번달에 총', howManyThisMonth, '타입은', typeof(howManyThisMonth));
+  var howManyThisMonth = thisMonth.constructor;
+  console.log('이 달에는 총', lastDate.getDate());
+  console.log('사용자는 이번달에 총', howManyThisMonth);
   var progress = howManyThisMonth / lastDate;
   console.log('프로그레스바의 값은', progress);
   document.getElementsByClassName('progress')[0].setAttribute('aria-valuenow', progress);
