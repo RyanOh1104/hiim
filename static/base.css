@@ -9,6 +9,9 @@ html {
     color: #9300d3;
     font-weight: bold;
 }
+.enlarge-150 {
+    font-size: 150%;
+}
 .top-block {
     background-color: #f6f5f1;
     padding-top: 30px;
