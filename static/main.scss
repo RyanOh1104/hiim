@@ -25,4 +25,23 @@ $theme-colors: (
   "custom-color": #900
 );
 
+.btn {
+  border-radius: 30px; // 그냥 존나 크게
+}
+
+.progress {
+  background-color: #f6f5f1;
+  border-radius:10px;
+  align-items: center;
+  box-shadow: inset 3px 3px 3px #bbbab7, inset -3px -3px 3px #ffffff;
+}
+
+.progress-bar {
+  height: 100%;
+  border: 2px solid #bbbab7;
+  border-right: none;
+  background: linear-gradient(90deg, #d7a8eb, #9300d3);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #57007c, -3px -3px 3px #cf00ff;
+}
 @import "node_modules/bootstrap/scss/bootstrap.scss";
