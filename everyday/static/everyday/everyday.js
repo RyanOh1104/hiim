@@ -30,7 +30,7 @@ function nextCalendar() {//다음 달
 function progressBar() {
   // 이번 달의 총 일수
   var lastDate = new Date(today.getFullYear(),today.getMonth()+1, 0);
-  var howManyThisMonth = thisMonth.constructor;
+  var howManyThisMonth = parseInt(thisMonth); // 원래 string인 thisMonth를 integer로 바꿔줌
   console.log('이 달에는 총', lastDate.getDate());
   console.log('사용자는 이번달에 총', howManyThisMonth);
   var progress = howManyThisMonth / lastDate;
