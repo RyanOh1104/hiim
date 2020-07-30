@@ -64,7 +64,7 @@ def everydaymain(request):
     context = {
         "todays":todays,
         'thisUser':thisUser,
-        'thisMonth':thisMonth,
+        'getMonth':getMonth,
         'countThisMonth':countThisMonth,
     }
     return render(request,'everyday/everydaymain.html', context)
