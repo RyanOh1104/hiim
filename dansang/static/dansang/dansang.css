@@ -9,11 +9,13 @@
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 30px;
-    padding-right: 30px
+    padding-right: 30px;
+    box-shadow:  3px 3px 3px #bbbab7, 
+    -3px -3px 3px #ffffff;
 }
 .block-dansang:hover {
-    box-shadow:  5px 5px 3px #bbbab7, 
-    -5px -5px 3px #ffffff;
+    box-shadow:  6px 6px 3px #bbbab7, 
+    -6px -6px 3px #ffffff;
     border: none;
 }
 .block-dansang:active {

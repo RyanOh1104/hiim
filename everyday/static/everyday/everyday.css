@@ -75,11 +75,14 @@ td{
 }
 td[date] {
     width: 130px;
-    /* border: grey solid 1px; */
+    /* W4A */
+    /* box-shadow: 1px 1px 5px #bbbab7, -1px -1px 5px #ffffff */
 }
 .thisIsToday {
-    box-shadow:  2px 2px 1px #bbbab7, 
-    -2px -2px 1px #ffffff;
+    box-shadow:  3px 3px 3px #bbbab7, 
+    -3px -3px 3px #ffffff;
+    /* W4A */
+    /* box-shadow: 5px 5px 3px #bbbab7, -5px -5px 3px #ffffff !important */
 }
 #sun {
     /* color: red; */
