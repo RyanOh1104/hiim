@@ -8,7 +8,7 @@ from django.forms import modelformset_factory
 from datetime import date, datetime
 from django.utils import timezone
 from django_slugify_processor.text import slugify
-import json
+from time import strftime
 
 # Create your views here.
 @login_required
@@ -48,12 +48,13 @@ def everydaymain(request):
     todays = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
 
-    thisMonth = datetime.datetime.today().month
-    if thisMonth < 10:
-        thisMonth = str('0'+thisMonth)
-    else:
-        thisMonth = str(thisMonth)
-    countThisMonth = todays.filter(authuser=request.user, when__contains=thisMonth).count()
+    getToday = datetime.datetime.today()
+    getMonth = getToday.strftime('%m')
+    # if thisMonth < 10:
+    #     thisMonth = str('0'+thisMonth)
+    # else:
+    #     thisMonth = str(thisMonth)
+    countThisMonth = todays.filter(authuser=request.user, when__contains=getMonth).count()
     
     if request.GET:  
         event_arr = []
