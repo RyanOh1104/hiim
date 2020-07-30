@@ -37,6 +37,7 @@ function progressBar() {
   var progress = Math.ceil((howManyThisMonth / datesThisMonth)*100); // 소숫점 round up
   console.log('프로그레스바의 값은', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('aria-valuenow', progress);
+  document.getElementsByClassName('progress-bar')[0].setAttribute('style', `width: ${progress}%;`);
 }
 
 function buildCalendar(){//현재 달 달력 만들기
