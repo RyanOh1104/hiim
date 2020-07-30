@@ -45,14 +45,14 @@ def everydayinput(request):
     return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today})
 
 def everydaymain(request):
-    all_events = NewEvent.objects.filter(authuser=request.user)
+    todays = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
     if request.GET:  
         event_arr = []
         all_events = NewEvent.objects.all()
 
     context = {
-        "todays":all_events,
+        "todays":todays,
         'thisUser':thisUser
     }
     return render(request,'everyday/everydaymain.html', context)
