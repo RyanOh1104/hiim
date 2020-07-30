@@ -5,9 +5,11 @@
 }
 .block-dansang {
     border: 1px lightgrey solid;
-    border-radius: 10px;
+    border-radius: 100px;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px
 }
 .block-dansang:hover {
     box-shadow:  5px 5px 3px #bbbab7, 
@@ -142,7 +144,7 @@
     /* Main page */
     .block-dansang {
         border: 1px lightgrey solid;
-        border-radius: 10px;
+        border-radius: 100px;
         margin-bottom: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
