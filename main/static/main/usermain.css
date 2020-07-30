@@ -92,6 +92,9 @@ html, body {
 .img-websites {
     height: 30px;
     width: 30px;
+    box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
+    padding: 3px;
+    border-radius: 3px;
 }
 .img-add-archive {
     height: 40px;
@@ -179,7 +182,7 @@ html, body {
         width: auto;
         box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
         padding: 3px;
-        border-radius: 5px;
+        border-radius: 3px;
     }
     .archive-outer-block {
         padding-bottom: 20px;
