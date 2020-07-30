@@ -33,7 +33,7 @@ function progressBar() {
   var howManyThisMonth = parseInt(thisMonth); // 원래 string인 thisMonth를 integer로 바꿔줌
   console.log('이 달에는 총', lastDate.getDate());
   console.log('사용자는 이번달에 총', howManyThisMonth);
-  var progress = Math.ceil((howManyThisMonth / lastDate)*100); // 소숫점 round up
+  var progress = ceil((howManyThisMonth / lastDate)*100); // 소숫점 round up
   console.log('프로그레스바의 값은', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('aria-valuenow', progress);
 }
