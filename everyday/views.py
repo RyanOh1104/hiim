@@ -51,10 +51,6 @@ def everydaymain(request):
 
     getToday = datetime.today()
     getMonth = getToday.strftime('%m')
-    # if thisMonth < 10:
-    #     thisMonth = str('0'+thisMonth)
-    # else:
-    #     thisMonth = str(thisMonth)
     countThisMonth = todays.filter(authuser=request.user, when__contains=getMonth).count()
     
     if request.GET:  
