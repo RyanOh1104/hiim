@@ -9,6 +9,7 @@ from datetime import date, datetime
 from django.utils import timezone
 from django_slugify_processor.text import slugify
 from time import strftime
+import json
 
 # Create your views here.
 @login_required
@@ -68,9 +69,9 @@ def everydaymain(request):
     }
     return render(request,'everyday/everydaymain.html', context)
 
-# def all_events(request):
-#     events = NewEvent.objects.all()
-#     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
+def all_events(request):
+    events = NewEvent.objects.all()
+    return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
 
 def everydaydetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
