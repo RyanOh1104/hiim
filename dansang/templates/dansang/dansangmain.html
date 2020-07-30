@@ -51,14 +51,15 @@
         <a href="{{item.url}}" class="all-links">
         <div class="row justify-content-center">
             <div class="col col-11 block-dansang">
-                <span class="title">{{item.title}}</span>
+                <span class="title">{{item.title}}</span><br class='mobile-only'>
                 <span class="first-sentence"> | {{item.subtitle|safe}}</span>
             </div>
         </div>
         </a>
     </div>
 </div>
-<div class="block-spacing"></div>
+<br class='mobile-only'>
+<div class="block-spacing pc-only"></div>
 {% endfor %}
 
 <br>
