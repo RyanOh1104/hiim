@@ -45,6 +45,7 @@ function buildCalendar(){//현재 달 달력 만들기
     //new를 쓰지 않았을때 이번달을 받아오려면 +1을 해줘야한다. 
     //왜냐면 getMonth()는 0~11을 반환하기 때문
     var lastDate = new Date(today.getFullYear(),today.getMonth()+1, 0);
+    console.log('원래에서는 ', lastDate)
     //이번 달의 마지막 날
     //new를 써주면 정확한 월을 가져옴, getMonth()+1을 해주면 다음달로 넘어가는데
     //day를 1부터 시작하는게 아니라 0부터 시작하기 때문에 
