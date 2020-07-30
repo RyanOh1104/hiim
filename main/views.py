@@ -55,9 +55,9 @@ def usermain(request):
             newSeed = DansangSeed.objects.filter(datePosted=today).first() # 있으면 가져오고 없으면 none 가져오는 쿼리
 
             # 각 유저의 각 모델의 기록 수 
-            thisUserDansang = DansangInput.objects.filter(authuser=request.user, None).count()
-            thisUserEveryday = Everyday.objects.filter(authuser=request.user, None).count()
-            thisUserQanda = Answer.objects.filter(authuser=request.user, None).count()
+            thisUserDansang = DansangInput.objects.filter(authuser=request.user).count()
+            thisUserEveryday = Everyday.objects.filter(authuser=request.user).count()
+            thisUserQanda = Answer.objects.filter(authuser=request.user).count()
             context = {
                 'thisUser' : thisUser,
                 'newSeed' : newSeed,
