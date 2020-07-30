@@ -47,13 +47,23 @@ def everydayinput(request):
 def everydaymain(request):
     todays = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
+
+    thisMonth = datetime.datetime.today().month
+    if thisMonth < 10:
+        thisMonth = str('0'+thisMonth)
+    else:
+        thisMonth = str(thisMonth)
+    countThisMonth = todays.filter(authuser=request.user, when__contains=thisMonth).count()
+    
     if request.GET:  
         event_arr = []
         all_events = NewEvent.objects.all()
 
     context = {
         "todays":todays,
-        'thisUser':thisUser
+        'thisUser':thisUser,
+        'thisMonth':thisMonth,
+        'countThisMonth':countThisMonth,
     }
     return render(request,'everyday/everydaymain.html', context)
 

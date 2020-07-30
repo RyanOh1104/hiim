@@ -29,6 +29,16 @@
 </div>
 
 <div class="block-spacing"></div>
+<div class="row justify-content-center">
+    <div class="col">
+        <!-- <h5> 이번 달의 기록된 오늘 </h5> -->
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 60%;/* box-shadow: 5px 5px 7px #57007c, -5px -5px 7px #cf00ff; */">
+    <span class="sr-only">60% Complete</span>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="block-spacing pc-only"></div>
 
 <div class="row justify-content-center">
@@ -66,7 +76,8 @@
         📋 사용법
     </button>
 </div> -->
-
+<div>Query로 가져온 이번 달은 {{thisMonth}}월.</div>
+<div>이번 달에 기록한 일상의 수는 {{countThisMonth}}일.</div>
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
@@ -83,6 +94,7 @@
         {% endfor %}
     ]
     var userId = `{{thisUser.authuser_id}}`;
+    var thisMonth = `{{countThisMonth}}`
 </script>
 <script src="{% static '/everyday/everyday.js' %}"></script>
 {% endblock %}

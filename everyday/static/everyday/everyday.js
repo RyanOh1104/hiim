@@ -27,6 +27,17 @@ function nextCalendar() {//다음 달
      buildCalendar();//달력 cell 만들어 출력
 }
 
+function progressBar() {
+  // 이번 달의 총 일수
+  var lastDate = new Date(today.getFullYear(),today.getMonth()+1, 0);
+  var howManyThisMonth = thisMonth;
+  console.log('이 달에는 총', lastDate);
+  console.log('사용자는 이번달에 총', howManyThisMonth);
+  var progress = howManyThisMonth / lastDate;
+  console.log('프로그레스바의 값은', progress);
+  document.getElementsByClassName('progress').querySelector('.progress-bar').setAttribute('aria-valuenow', progress);
+}
+
 function buildCalendar(){//현재 달 달력 만들기
     var doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
     //이번 달의 첫째 날,
@@ -134,5 +145,6 @@ function buildCalendar(){//현재 달 달력 만들기
 }
 function init() {
     buildCalendar();
+    progressBar();
 }
 init();
