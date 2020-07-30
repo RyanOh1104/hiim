@@ -49,6 +49,9 @@ html, body {
     vertical-align: text-top;
     height: 12px;
 }
+.so-far {
+    font-size: 1.25rem
+}
 .block {
     border-radius: 10px;
     border: #9300d3 2px solid;
@@ -183,6 +186,9 @@ html, body {
         box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
         padding: 3px;
         border-radius: 5px;
+    }
+    .so-far {
+        font-size: 1rem
     }
     .archive-outer-block {
         padding-bottom: 20px;

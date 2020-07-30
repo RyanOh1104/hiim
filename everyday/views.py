@@ -26,9 +26,9 @@ def everydayinput(request):
             instance.when = str(instance.when)
 
             #everyday_img = request.FILES.get('img', None) # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
-            instance.img1= request.FILES.get('img1')
-            instance.img2= request.FILES.get('img2')
-            instance.img3= request.FILES.get('img3')
+            # instance.img1 = request.FILES.get('img1')
+            # instance.img2 = request.FILES.get('img2')
+            # instance.img3 = request.FILES.get('img3')
 
             if instance.kw1 == "":
                 instance.kw1 = "&nbsp;"
