@@ -80,7 +80,7 @@
     background-color: #f6f5f1 !important;
     border-radius: 10px !important;
     align-items: center;
-    box-shadow: inset 6px 6px 6px #bbbab7, inset -6px -6px 6px #ffffff;
+    box-shadow: inset 3px 3px 2px #bbbab7, inset -3px -3px 2px #ffffff;
   }
 
   .progress-bar {

@@ -80,14 +80,12 @@
             <div class="row justify-content-center">
                 <div class="col text-center">
                     <div class="so-far" style="line-height: 1.5"> 지금까지 [<span class="simply-stressed enlarge-150">{{thisUserDansang}}</span>개의 생각]과<br class="mobile-only"> 
-                        [<span class="simply-stressed enlarge-150">{{thisUserEveryday}}</span>일의 일상]으로
+                        [<span class="simply-stressed enlarge-150">{{thisUserEveryday}}</span>일의 일상]과<br class="mobile-only">
+                        [<span class="simply-stressed enlarge-150">{{thisUserQanda}}</span>개의 답변]으로
                         <br><span class="simply-stressed enlarge-150">{{thisUser.name}}</span>에 대해 기록했어요!</div>
                 </div>
             </div>
             <br>
-            <!-- <div class="row justify-content-center">
-                <div class="col my-archive text-center">기록장</div>
-            </div> -->
 
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
@@ -120,35 +118,40 @@
                 </div>
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
                     <div class="row justify-content-center archive-block">
-                        <div class="col col-11 usermain-archive-content coming-soon" id="block-qanda">
+                        <div class="col col-11 usermain-archive-content all-blocks" id="block-qanda">
                             <a href="/qanda/question" class="all-links">
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
-                                        <span class="usermain-archive-name">Coming Soon<span class=usermain-archive-desc>🔨</span><br></span>
-                                        <span class="usermain-archive-desc">조금만 기다려주세요!</span>
-                                        <!-- 하루에 하나씩 채우는 {{thisUser.name}}의 빈칸 -->
+                                        <span class="usermain-archive-name">즉문즉답<span class=usermain-archive-desc>❓</span><br></span>
+                                        <span class="usermain-archive-desc">하루에 하나씩 채우는 {{thisUser.name}}의 빈칸.</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-sm-10 col-lg-4 archive-outer-block">
+            </div>
+
+            <div class="block-spacing pc-only"></div>
+
+            <div class="row justify-content-left">
+                <div class="col-sm-10 col-lg-4 archive-outer-block">
                     <div class="row justify-content-center archive-block">
                         <div class="col col-11 usermain-archive-content coming-soon">
-                            <a href="/qanda/question" class="all-links">
+                            <a href="" class="">
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
-                                        <span class="usermain-archive-name">Coming Soon<span class=usermain-archive-desc>🔨</span><br></span>
+                                        <span class="usermain-archive-name">Coming Soon<span class="usermain-archive-desc">🔨</span><br></span>
                                         <span class="usermain-archive-desc">조금만 기다려주세요!</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
-            <div class="row h-75 pc-only"></div>
+
+            <!-- <div class="row h-75 pc-only"></div> -->
             <div class="row h-25 pc-only"></div>
         </div>
     </div>

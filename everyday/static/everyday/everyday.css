@@ -147,6 +147,10 @@ td[date] {
     .td[date] {
         width: 20vw;
     }
+    .thisIsToday {
+        box-shadow:  2px 2px 1px #bbbab7, 
+        -2px -2px 1px #ffffff;
+    }
     .prevNextButtons {
         font-size: 18px;
         vertical-align: middle;
