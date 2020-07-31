@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import UserInfo
 from dansang.models import DansangSeed, DansangInput
 from everyday.models import NewEvent
-from qanda.models import Answer
+# from qanda.models import Answer
 # 아래 두개는 굳이 필요한 건지는 모르겠음
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm    
@@ -57,13 +57,13 @@ def usermain(request):
             # 각 유저의 각 모델의 기록 수 
             thisUserDansang = DansangInput.objects.filter(authuser=request.user).count()
             thisUserEveryday = NewEvent.objects.filter(authuser=request.user).count()
-            thisUserQanda = Answer.objects.filter(authuser=request.user).count()
+            # thisUserQanda = Answer.objects.filter(authuser=request.user).count()
             context = {
                 'thisUser' : thisUser,
                 'newSeed' : newSeed,
                 'thisUserDansang' : thisUserDansang,
                 'thisUserEveryday' : thisUserEveryday,
-                'thisUserQanda' : thisUserQanda,
+                # 'thisUserQanda' : thisUserQanda,
             }
             return render(request, 'main/usermain.html', context)
         # 가입은 했는데 userinfo를 입력하지 않았다면
