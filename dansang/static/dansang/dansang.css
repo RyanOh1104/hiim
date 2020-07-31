@@ -49,6 +49,9 @@
     border: none;
     height: 80px;
 }
+#id_title, #id_subtitle {
+    box-shadow: none; /* form-control의 디폴트 설정인 inset shadow를 무력화 */ 
+}
 .input-subtitle {
     background-color: #f6f5f1;
     border: none;
@@ -58,9 +61,6 @@
     background-color: #f6f5f1;
 }
 /* Input settings END */
-.card-block {
-    font-size: 17px !important;
-}
 .doyou-need-input {
     font-size: 13px;
     height: 25px;
@@ -114,8 +114,15 @@
 }
 .card-block {
     border: #f6f5f1 1px solid;
-    font-size: 18px;
+    font-size: 17px;
     background-color: #f6f5f1;
+}
+.card-block:hover {
+    box-shadow: none; /* 아마 base.css의 card 설정의 영향을 받는듯. */
+}
+.card-block:focus { 
+    box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
+
 }
 .note-editable {
     background-color: #f6f5f1 !important;
