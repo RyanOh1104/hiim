@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-# from .models import Question, Answer
+from .models import Question, Answer
 from main.models import UserInfo
-# from .forms import AnswerForm
+from .forms import AnswerForm
 from django.forms import modelformset_factory, inlineformset_factory, formset_factory
 from django.utils import timezone
 from datetime import datetime, date
 from time import strftime
 from django.core.paginator import Paginator
-'''
+
 ###### 중요!!! 유저가 가장 처음에 즉문즉답 기록장을 하면, main페이지가 아닌 첫번째 질문을 던져주자!!!! #####
 @login_required
 def qandaInput(request): 
@@ -203,4 +203,3 @@ def qandaUpdate(request, questionNumber):
 
 def noMoreForToday(request):
     return render(request, 'qanda/nomorefortoday.html')
-'''
