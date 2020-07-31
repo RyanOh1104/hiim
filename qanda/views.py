@@ -95,7 +95,8 @@ def qandaInput(request):
     return render(request, 'qanda/qandainput.html', context)
 
 def qandaMain(request):
-    thisQuestion = Question.objects.all().order_by('-number')
+    # thisQuestion = Question.objects.all().order_by('-number')
+    allQuestions = Question.objects.all().order_by('-number')
     thisAnswer = Answer.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
 
@@ -110,6 +111,8 @@ def qandaMain(request):
         numbersList.append(*allNumbers[i].values()) # 여기 * operator는 python3 dictionary에 적용된 view?를 없애주는 것.
     latestQuestionNumber = max(numbersList)
 
+    # 가장 최근에 답한 질문까지만 가져오기
+    thisQuestion = Question.objects.filter(number__level__lte=latestQuestionNumber)
     # 가장 최근에 답변한 질문의 넘버로, 각 질문에 대한 답변의 개수 세기
     countAnswer = {}
     for i in range(0, latestQuestionNumber):
