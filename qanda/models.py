@@ -16,7 +16,7 @@ class Question(models.Model):
     category = models.CharField(max_length=10, default="")
 
     def __str__(self):
-        return ("["+str(self.category)"]"+" "+str(self.number)+". "+str(self.title))
+        return ("["+str(self.category)+"]"+" "+str(self.number)+". "+str(self.title))
 
 class Answer(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=None)
