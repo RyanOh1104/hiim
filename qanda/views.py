@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Question, Answer
+# from .models import Question, Answer
 from main.models import UserInfo
-from .forms import AnswerForm
+# from .forms import AnswerForm
 from django.forms import modelformset_factory, inlineformset_factory, formset_factory
 from django.utils import timezone
 from datetime import datetime, date
