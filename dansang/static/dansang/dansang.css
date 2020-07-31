@@ -60,9 +60,6 @@
 .input-img {
     background-color: #f6f5f1;
 }
-.input-content:hover {
-    box-shadow: none;
-}
 /* Input settings END */
 .doyou-need-input {
     font-size: 13px;
