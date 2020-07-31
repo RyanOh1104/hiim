@@ -31,11 +31,15 @@
         <div class="row justify-content-center">
             <div class="col col-12 text-center">
                 <span class="badge badge-primary question-category">#{{todaysQuestion.category}}</span>
-            </div>            
-            <div class="col"></div> <!-- 12짜리 column이 위아래로 있어서 사이를 띄워주려면 block-spacing으로 안됨 -->
+            </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col col-12 text-center">
                 <h3 class="questions">{{todaysQuestion.question|safe}}</h3>
             </div>
+        </div>            
+        <div class="row">
             <div class="col col-12 text-center">
                 <form method="POST" class="form-group">
                     {% csrf_token %}
