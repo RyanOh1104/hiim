@@ -4,13 +4,12 @@
 }
 .keywordInputs {
     width: 125px;
-    background-color: #f6f5f1;
+    /* background-color: #f6f5f1; */
     /* padding-left: 10px; */
 }
-.keywordInputs:focus{
+/* .keywordInputs:focus{
     background-color: #f6f5f1;
-    border: #9300d3 solid 1px;
-}
+} */
 .kw12 {
     margin-right: 20px;
 }

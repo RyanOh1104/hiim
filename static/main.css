@@ -54,6 +54,12 @@
   cursor: pointer;
 }
 
+.form-control:focus {
+  color: #495057;
+  border: none;
+  outline: 0;
+}
+
 .input-group-text {
   display: flex;
   align-items: center;
