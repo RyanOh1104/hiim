@@ -2,20 +2,20 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class QuestionCategory(models.Model):
-    category = models.CharField(max_length=20, default="", primary_key = True)
+    category_id = models.CharField(max_length=20, default="", primary_key = True)
     categoryEng = models.CharField(max_length=50, default="")
 
     def __str__(self):
-        return(str(self.category))
+        return(str(self.category_id))
 
 class Question(models.Model):
     number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20, default="")
     question = models.CharField(max_length=1000, default="")
-    category_id = models.ForeignKey(QuestionCategory, to_field='category', on_delete=models.CASCADE, null=True, default=None)
+    category = models.ForeignKey(QuestionCategory, to_field='category', on_delete=models.CASCADE, null=True, default=None)
 
     def __str__(self):
-        return (str(self.category_id)+" "+str(self.number)+". "+str(self.title))
+        return (str(self.category)+" "+str(self.number)+". "+str(self.title))
 
 class Answer(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=None)
