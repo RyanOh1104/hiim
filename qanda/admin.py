@@ -6,4 +6,4 @@ class AnswerAdmin(admin.ModelAdmin):
 
 admin.site.register(Question)
 admin.site.register(Answer, AnswerAdmin)
-admin.site.register(QuestionCategory)
+# admin.site.register(QuestionCategory)
