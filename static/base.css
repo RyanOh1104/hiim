@@ -49,7 +49,7 @@ html {
 }
 .form-control {
     background-color: #f6f5f1;
-    box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
+    /* box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff; */
 }
 .form-control:focus {
     background-color: #f6f5f1;
