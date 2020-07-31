@@ -40,6 +40,10 @@ label {
     -5px -5px 3px #ffffff;
     border: none;
 }
+.card:active {
+    box-shadow:  inset 5px 5px 3px #bbbab7, 
+    inset -5px -5px 3px #ffffff;
+}
 /* Main Page Settings END */
 
 /* Detail Page Settings START */
