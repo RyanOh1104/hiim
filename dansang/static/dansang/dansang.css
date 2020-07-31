@@ -117,12 +117,8 @@
     font-size: 17px;
     background-color: #f6f5f1;
 }
-.card-block:hover {
-    box-shadow: none; /* 아마 base.css의 card 설정의 영향을 받는듯. */
-}
 .card-block:focus { 
     box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
-
 }
 .note-editable {
     background-color: #f6f5f1 !important;
@@ -213,8 +209,8 @@
         border: none;
         margin-bottom: -50px;
     }
-    .input-content {
-        /* line-height: 1.2; */
+    .input-content:hover {
+        box-shadow: none;
     }
     .custom-file {
         width: 50%;
