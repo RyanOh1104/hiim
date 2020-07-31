@@ -47,11 +47,11 @@ $theme-colors: (
   margin-bottom: 0;
   vertical-align: top;
   border-radius: 3px;
-  // box-shadow:  inset 3px 3px 3px #bbbab7, 
-  // inset -3px -3px 3px #ffffff;
   background-color: #f6f5f1;
+  border: none;
 }
 .custom-control-label::after {
+  // cursor: pointer;
   position: relative;
   margin-bottom: 0;
   vertical-align: top;
@@ -59,10 +59,11 @@ $theme-colors: (
   box-shadow:  inset 2px 2px 1px #bbbab7, 
   inset -2px -2px 1px #ffffff;
   background-color: #f6f5f1 !important;
+  border: none;
 }
 .custom-file-label {
   border-radius: 10px;
-  box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
+  // box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
   border: none;
 }
 .custom-file-label::after {
@@ -70,6 +71,9 @@ $theme-colors: (
   border-radius: 10px;
   background-color: #f6f5f1 !important;
   border: none;
+}
+.custom-file-input {
+  cursor: pointer;
 }
 .input-group-text {
   display: flex;
