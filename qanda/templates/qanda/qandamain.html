@@ -32,7 +32,6 @@
         <div class="row justify-content-center">
             <div class="col text-center">
                 {% for q in questions %}
-                <h1>{{latestQuestionNumber}}, {{q.number}}</h1>
                 {% if q.number <= latestQuestionNumber %}
                     <a href="answer/{{q.number}}" class="card">
                         <h5 class="main-questions" id="{{q.number}}">{{q.number}} | {{q.question|safe}} <span class="badge badge-primary count-answer"></span></h5>
