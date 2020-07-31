@@ -11,9 +11,9 @@ from django.contrib.auth.models import User
 
 class Question(models.Model):
     number = models.IntegerField(primary_key=True)
-    title = models.CharField(max_length=20, default="질문 제목")
-    question = models.CharField(max_length=1000, default="")
-    category = models.CharField(max_length=10, default="")
+    title = models.CharField(max_length=20, default="질문의 제목")
+    question = models.CharField(max_length=1000, default="질문 내용")
+    category = models.CharField(max_length=10, default="카테고리")
 
     def __str__(self):
         return ("["+str(self.category)+"]"+" "+str(self.number)+". "+str(self.title))
