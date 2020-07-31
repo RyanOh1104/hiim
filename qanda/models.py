@@ -12,10 +12,10 @@ class Question(models.Model):
     number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20, default="")
     question = models.CharField(max_length=1000, default="")
-    questionCategory = models.ForeignKey(QuestionCategory, on_delete=models.CASCADE, null=True, default=None)
+    category = models.ForeignKey(QuestionCategory, db_column="category_id", on_delete=models.CASCADE, null=True, default=None)
 
     def __str__(self):
-        return (str(self.questionCategory)+" "+str(self.number)+". "+str(self.title))
+        return (str(self.category)+" "+str(self.number)+". "+str(self.title))
 
 class Answer(models.Model):
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True, default=None)
