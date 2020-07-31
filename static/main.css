@@ -17,20 +17,6 @@
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-  .progress {
-    background-color: #f6f5f1 !important;
-    border-radius: 10px !important;
-    align-items: center;
-    box-shadow: inset 6px 6px 6px #bbbab7, inset -6px -6px 6px #ffffff;
-  }
-
-  .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #d7a8eb, #9300d3);
-    border-radius: 10px;
-  }
-}
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
