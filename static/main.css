@@ -31,7 +31,7 @@
   vertical-align: top;
   border-radius: 3px;
   box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
 }
 
 .custom-file-label {
@@ -43,7 +43,7 @@
 .custom-file-label::after {
   box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
   border-radius: 10px;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
   border: none;
 }
 
@@ -57,7 +57,7 @@
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
   border: none;
   border-radius: 10px;
 }

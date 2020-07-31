@@ -58,7 +58,7 @@ $theme-colors: (
   border-radius: 3px;
   box-shadow:  inset 2px 2px 1px #bbbab7, 
   inset -2px -2px 1px #ffffff;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
 }
 .custom-file-label {
   border-radius: 10px;
@@ -68,7 +68,7 @@ $theme-colors: (
 .custom-file-label::after {
   box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
   border-radius: 10px;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
   border: none;
 }
 .input-group-text {
@@ -85,7 +85,7 @@ $theme-colors: (
   // background-color: #e9ecef;
   // border: 1px solid #ced4da;
   // border-radius: 0.25rem;
-  background-color: #f6f5f1;
+  background-color: #f6f5f1 !important;
   border: none;
   border-radius: 10px;
 }
