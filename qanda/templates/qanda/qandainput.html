@@ -32,7 +32,7 @@
             <div class="col col-12 text-center">
                 <span class="badge badge-primary question-category">#{{todaysQuestion.category}}</span>
             </div>            
-            <div class="block-spacing"></div>
+            <div class="col"></div> <!-- 12짜리 column이 위아래로 있어서 사이를 띄워주려면 block-spacing으로 안됨 -->
             <div class="col col-12 text-center">
                 <h3 class="questions">{{todaysQuestion.question|safe}}</h3>
             </div>

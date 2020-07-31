@@ -112,7 +112,7 @@ def qandaMain(request):
     latestQuestionNumber = max(numbersList)
 
     # 가장 최근에 답한 질문까지만 가져오기
-    thisQuestion = Question.objects.filter(number__lte=latestQuestionNumber)
+    thisQuestion = Question.objects.filter(number__lte=latestQuestionNumber).order_by('-number')
     # 가장 최근에 답변한 질문의 넘버로, 각 질문에 대한 답변의 개수 세기
     countAnswer = {}
     for i in range(0, latestQuestionNumber):
