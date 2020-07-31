@@ -25,11 +25,10 @@
 
 <div class="block-spacing"></div>
 
-<div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
     <div class="col col-12 text-center">
         <span class="badge badge-primary question-category">#{{thisQuestion.category}}</span>
     </div>
-    <div class="col"></div> <!-- 12짜리 column이 위아래로 있어서 사이를 띄워주려면 block-spacing으로 안됨 -->
     <div class="col col-12 text-center">
         <h3 class="questions">{{thisQuestion.question|safe}}</h3>
     </div>
@@ -38,6 +37,30 @@
         <div class="detail-answer">{{a.answer}}<br><span class="qanda-date"> ({{a.dateAnswered}})</span></div><br>
         {% endfor %}
     </div>
+</div> -->
+
+<div class="row justify-content-center">
+    <div class="col col-12 text-center">
+        <div class="row">
+            <div class="col">
+                <span class="badge badge-primary question-category">#{{thisQuestion.category}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="questions">{{thisQuestion.question|safe}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12 text-center">
+                {% for a in thisAnswer reversed %}
+                <div class="detail-answer">{{a.answer}}<br><span class="qanda-date"> ({{a.dateAnswered}})</span></div><br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+    
 </div>
 
 <div class="block-spacing"></div>
