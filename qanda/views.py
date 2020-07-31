@@ -9,7 +9,7 @@ from django.utils import timezone
 from datetime import datetime, date
 from time import strftime
 from django.core.paginator import Paginator
-
+'''
 ###### 중요!!! 유저가 가장 처음에 즉문즉답 기록장을 하면, main페이지가 아닌 첫번째 질문을 던져주자!!!! #####
 @login_required
 def qandaInput(request): 
@@ -203,4 +203,4 @@ def qandaUpdate(request, questionNumber):
 
 def noMoreForToday(request):
     return render(request, 'qanda/nomorefortoday.html')
-
+'''
