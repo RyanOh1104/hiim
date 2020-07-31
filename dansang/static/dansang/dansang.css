@@ -117,9 +117,6 @@
     font-size: 17px;
     background-color: #f6f5f1;
 }
-.card-block:focus { 
-    box-shadow: inset 2px 2px 1px #bbbab7, inset -2px -2px 1px #ffffff;
-}
 .note-editable {
     background-color: #f6f5f1 !important;
     line-height: 1.2 !important;
