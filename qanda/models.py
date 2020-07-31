@@ -9,7 +9,7 @@ class QuestionCategory(models.Model):
     def __str__(self):
         return(str(self.category))
 
-class AllQuestion(models.Model):
+class Question(models.Model):
     number = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=20, default="")
     question = models.CharField(max_length=1000, default="")

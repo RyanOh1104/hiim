@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-from .models import AllQuestion, Answer
+from .models import Question, Answer
 from crispy_forms.helper import FormHelper
 from django.utils import timezone
 

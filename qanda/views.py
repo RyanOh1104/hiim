@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import AllQuestion, Answer
+from .models import Question, Answer
 from main.models import UserInfo
 from .forms import AnswerForm
 from django.forms import modelformset_factory, inlineformset_factory, formset_factory
@@ -19,7 +19,7 @@ def qandaInput(request):
     if not Answer.objects.filter(authuser=request.user):
         AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
         formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=1))
-        todaysQuestion = AllQuestion.objects.get(number=1)
+        todaysQuestion = Question.objects.get(number=1)
         if request.method == "POST":
             formset = AnswerFormSet(request.POST)
             if formset.is_valid():
@@ -59,7 +59,7 @@ def qandaInput(request):
             # 다음 질문 가져오기 (정상적으로 진행)
             todaysQuestionNumber = latestQuestionNumber + 1
             formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=todaysQuestionNumber))
-            todaysQuestion = AllQuestion.objects.get(number=todaysQuestionNumber)
+            todaysQuestion = Question.objects.get(number=todaysQuestionNumber)
             if request.method == "POST":
                 formset = AnswerFormSet(request.POST)
                 if formset.is_valid():
@@ -95,7 +95,7 @@ def qandaInput(request):
     return render(request, 'qanda/qandainput.html', context)
 
 def qandaMain(request):
-    thisQuestion = AllQuestion.objects.all().order_by('-number')
+    thisQuestion = Question.objects.all().order_by('-number')
     thisAnswer = Answer.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
 
@@ -133,7 +133,7 @@ def qandaMain(request):
     return render(request, 'qanda/qandamain.html', context)
 
 def qandaDetail(request, questionNumber):
-    thisQuestion = AllQuestion.objects.get(number=questionNumber)
+    thisQuestion = Question.objects.get(number=questionNumber)
     thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber).order_by('dateAnswered')
     thisUser = UserInfo.objects.get(authuser=request.user)
 
@@ -163,7 +163,7 @@ def qandaDetail(request, questionNumber):
 
 def qandaUpdate(request, questionNumber):
     today = date.today()
-    thisQuestion = AllQuestion.objects.get(number=questionNumber)
+    thisQuestion = Question.objects.get(number=questionNumber)
     thisAnswer = Answer.objects.filter(authuser=request.user, questionNumber=questionNumber)
     AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
     formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=questionNumber))
