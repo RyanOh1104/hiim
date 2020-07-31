@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+'''
+class QuestionCategory(models.Model):
+    category = models.CharField(max_length=20, default="", primary_key = True)
+    categoryEng = models.CharField(max_length=50, default="")
 
-# class QuestionCategory(models.Model):
-#     category = models.CharField(max_length=20, default="", primary_key = True)
-#     categoryEng = models.CharField(max_length=50, default="")
-
-#     def __str__(self):
-#         return(str(self.category))
+    def __str__(self):
+        return(str(self.category))
+'''
 
 class Question(models.Model):
     number = models.IntegerField(primary_key=True)
