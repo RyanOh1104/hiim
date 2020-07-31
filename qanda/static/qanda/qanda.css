@@ -5,6 +5,10 @@ label {
     font-weight: bold;
     line-height: 1.5;
 }
+.question-category {
+    font-weight: normal;
+    font-size: 100%;
+}
 .answerInput {
     border-radius:3px;
     width: 80%;
