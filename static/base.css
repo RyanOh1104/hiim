@@ -152,8 +152,9 @@ a:active {color:black;}
     white-space: pre-line;
 }
 .go-to-main-button {
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
+    font-size: 29px;
 }
 /* Archive_detail settings END */
 .notification {
