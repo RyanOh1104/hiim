@@ -32,10 +32,7 @@ function progressBar() {
   var datesThisMonth = lastDate.getDate();
   
   var howManyThisMonth = parseInt(thisMonth); // 원래 string인 thisMonth를 integer로 바꿔줌
-  console.log('이 달에는 총', datesThisMonth);
-  console.log('사용자는 이번달에 총', howManyThisMonth);
   var progress = Math.ceil((howManyThisMonth / datesThisMonth)*100); // 소숫점 round up
-  console.log('프로그레스바의 값은', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('aria-valuenow', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('style', `width: ${progress}%;`);
 }
@@ -155,9 +152,8 @@ function randomPlaceholder() {
   ];
   const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
   
-  $(document).ready(function() {
-    $('#what').attr('placeholder', randomQuestion)
-  });
+  document.getElementById('what')[0].setAttribute('placeholder', randomQuestion);
+}
 
 function init() {
     buildCalendar();
