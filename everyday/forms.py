@@ -12,7 +12,9 @@ import random
 openingQuestions = [
     '기억 낚아올리기 : 오늘 먹었던 음식 중 뭐가 제일 기억에 남아요?',
     '기억 낚아올리기 : 오늘 하루 아쉬웠던 점이 있다면?',
-    # '기억 낚아올리기 : ',
+    '기억 낚아올리기 : aaa',
+    '기억 낚아올리기 : bbb',
+    '기억 낚아올리기 : ccc',
 ]
 randomPlaceholder = random.choice(openingQuestions)
 
