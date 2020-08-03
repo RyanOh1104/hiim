@@ -188,6 +188,8 @@ td[date] {
         font-size: 3vw;
     }
     .main-emoji {
+        color: #9300d3;
+        font-weight: bold;
         font-size: 4vw;
         height: 20px; /*흠*/
     }

@@ -145,9 +145,8 @@
 @media (max-width: 768px) {
     /* Main page */
     .block-dansang {
-        /* border: 1px lightgrey solid; */
         border-radius: 100px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         padding-top: 5px;
         padding-bottom: 5px;
     }
