@@ -9,7 +9,7 @@ function randomPlaceholder() {
     ];
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     console.log('random is: ', randomQuestion);
-    document.getElementById('what')[0].setAttribute('placeholder', randomQuestion);
+    document.getElementById('what').setAttribute('placeholder', randomQuestion);
   }
 
 function init() {
