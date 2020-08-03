@@ -153,8 +153,8 @@ function randomPlaceholder() {
     '기억 낚아올리기 : bbb',
     '기억 낚아올리기 : ccc',
   ];
-  const randomPlaceholder = questions[Math.floor(Math.random() * questions.length)];
-  $('#what').attr('placeholder', randomPlaceholder)
+  const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+  $('#what').attr('placeholder', randomQuestion)
 }
 
 function init() {
