@@ -157,8 +157,8 @@ function randomPlaceholder() {
 }
 
 function init() {
-    buildCalendar();
     progressBar();
     randomPlaceholder();
+    buildCalendar();
 }
 init();
