@@ -43,7 +43,7 @@ class EverydayInputForm(forms.ModelForm):
         widgets = {'authuser':forms.HiddenInput(),
         # 'all_day':forms.HiddenInput(),
         'when' : MonthPickerInput(
-            options={'format':'YYYY-MM-DD', 'locale':'ko'}
+            options={'format':'YYYY-MM-DD', 'locale':'ko', 'placeholder':'날짜 확인!'}
             )
         }
 
