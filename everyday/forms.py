@@ -20,7 +20,7 @@ class EverydayInputForm(forms.ModelForm):
     what = forms.CharField(required=False, 
     widget = forms.Textarea(attrs={
         # 'placeholder': 'Tip. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요?',
-        'placeholder': randomPlaceholder
+        'placeholder': randomPlaceholder,
         'rows' : 8,
         'id' : 'what'
         }))
