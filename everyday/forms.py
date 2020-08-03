@@ -6,23 +6,11 @@ from django.utils import timezone
 from crispy_forms.helper import FormHelper
 from bootstrap_datepicker_plus import DatePickerInput, MonthPickerInput
 from emoji_picker.widgets import EmojiPickerTextInputAdmin
-import random
-
-# 랜덤 질문 일곱개 정도?
-openingQuestions = [
-    '기억 낚아올리기 : 오늘 먹었던 음식 중 뭐가 제일 기억에 남아요?',
-    '기억 낚아올리기 : 오늘 하루 아쉬웠던 점이 있다면?',
-    '기억 낚아올리기 : aaa',
-    '기억 낚아올리기 : bbb',
-    '기억 낚아올리기 : ccc',
-]
-randomPlaceholder = random.choice(openingQuestions)
 
 class EverydayInputForm(forms.ModelForm):
     what = forms.CharField(required=False, 
     widget = forms.Textarea(attrs={
         # 'placeholder': 'Tip. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요?',
-        'placeholder': randomPlaceholder,
         'rows' : 8,
         'id' : 'what'
         }))
