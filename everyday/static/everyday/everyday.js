@@ -154,8 +154,10 @@ function randomPlaceholder() {
     '기억 낚아올리기 : ccc',
   ];
   const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-  $('#what').attr('placeholder', randomQuestion)
-}
+  
+  $(document).ready(function() {
+    $('#what').attr('placeholder', randomQuestion)
+  });
 
 function init() {
     buildCalendar();
