@@ -119,6 +119,9 @@ td[date] {
     width: 50px;
     height: auto;
 }
+.bootstrap-datetimepicker-widget {
+    background-color: #f6f5f1;
+}
 
 @media (max-width: 768px) {
     .mobile-only {
