@@ -27,7 +27,7 @@ class EverydayInputForm(forms.ModelForm):
     kw3 = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'placeholder' : '셋', 'class' : 'keywords'
     }))
-    emoji = forms.CharField(required=False, widget=EmojiPickerTextInputAdmin(attrs={
+    emoji = forms.CharField(required=False, widget=forms.TextInput(attrs={
     'class' : 'emoji'
     }))
 
