@@ -125,6 +125,9 @@ html, body {
     padding: 8px 5px;
     border-radius: 50%;
 }
+#new-question {
+    padding: 8px 8px;
+}
 .coming-soon {
     border : rgb(124, 123, 123) 1px dashed;
     border-radius: 10px;
