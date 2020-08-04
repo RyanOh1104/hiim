@@ -212,6 +212,7 @@
         if (lsNewQuestion == todayDate ){
             $('#new-question').attr('style', 'display: none;');
         } else if (lsNewQuestion == null || lsNewQuestion != todayDate) {
+            $('#new-question').attr('style', 'display: show;')
             localStorage.setItem('newQuestion', todayDate);
             }
         }
