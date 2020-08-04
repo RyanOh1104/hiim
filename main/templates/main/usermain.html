@@ -97,7 +97,7 @@
                                         <span class="usermain-archive-name">끄적끄적<span class=usermain-archive-desc>💬</span><br></span>
                                         <span class="usermain-archive-desc">떠오르는 아무 생각이나. 자유롭게.</span>
                                     </div>
-                                    <span class="badge badge-primary new-seed-alert">🌱</span>
+                                    <span class="badge badge-primary new-seed-alert" style="display: none;">🌱</span>
                                 </div>
                             </a>
                         </div>
@@ -189,11 +189,11 @@
         console.log('At local storage: ', localStorage.getItem('newSeed'))
         // 바깥 if는 알림을 한번만 보여주기 위해서
         if (lsNewSeed == todayDate ){
-            $('.new-seed-alert').hide();
+            $('.new-seed-alert').attr('style', 'display: none;');
         } else if (lsNewSeed == null || lsNewSeed != todayDate) {
             if (todayDate == datePosted) {
                 // $('#alert-newSeed').tooltip('show');
-                $('.new-seed-alert').show();
+                $('.new-seed-alert').attr('style', 'display: show;')
 
                 //setTimeout(function(){
                 //$('#alert-newSeed').tooltip('dispose')
