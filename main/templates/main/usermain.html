@@ -188,7 +188,9 @@
         console.log('today is :', todayDate)
         console.log('At local storage: ', localStorage.getItem('newSeed'))
         // 바깥 if는 알림을 한번만 보여주기 위해서
-        if (lsNewSeed == null || lsNewSeed != todayDate) {
+        if (lsNewSeed == todayDate ){
+            $('.new-seed-alert').hide();
+        } else if (lsNewSeed == null || lsNewSeed != todayDate) {
             if (todayDate == datePosted) {
                 // $('#alert-newSeed').tooltip('show');
                 $('.new-seed-alert').show();
@@ -199,8 +201,6 @@
 
                 localStorage.setItem('newSeed', todayDate);
             }
-        } else if (lsNewSeed == todayDate) {
-            $('.new-seed-alert').hide();
         }
     }
     
