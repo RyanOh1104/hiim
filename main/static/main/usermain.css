@@ -117,6 +117,14 @@ html, body {
 .archive-block {
     height: 130px;
 }
+.new-seed-alert {
+    position: absolute;
+    top: -10px;
+    font-size: 13px;
+    right: -10px;
+    padding: 8px 5px;
+    border-radius: 50%;
+}
 .coming-soon {
     border : rgb(124, 123, 123) 1px dashed;
     border-radius: 10px;
