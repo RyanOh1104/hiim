@@ -97,7 +97,7 @@
                                         <span class="usermain-archive-name">끄적끄적<span class=usermain-archive-desc>💬</span><br></span>
                                         <span class="usermain-archive-desc">떠오르는 아무 생각이나. 자유롭게.</span>
                                     </div>
-                                    <span href="dansang/seed" class="badge badge-primary new-seed-alert" style="display: none;">🌱</span>
+                                    <span href="dansang/seed" class="badge badge-primary new-sth-alert" id="new-seed" style="display: none;">🌱</span>
                                 </div>
                             </a>
                         </div>
@@ -126,6 +126,7 @@
                                         <span class="usermain-archive-name">즉문즉답<span class=usermain-archive-desc>❓</span><br></span>
                                         <span class="usermain-archive-desc">하루에 하나씩 채우는 {{thisUser.name}}의 빈칸.</span>
                                     </div>
+                                    <span href="" class="badge badge-primary new-sth-alert" id="new-question" style="display: none;">❔</span>
                                 </div>
                             </a>
                         </div>
@@ -184,25 +185,36 @@
         var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
         var datePosted = `{{newSeed.datePosted}}`;
         var lsNewSeed = localStorage.getItem("newSeed");
-        console.log('new seed uploaded on :', datePosted)
-        console.log('today is :', todayDate)
-        console.log('At local storage: ', localStorage.getItem('newSeed'))
+        //console.log('new seed uploaded on :', datePosted)
+        //console.log('today is :', todayDate)
+        //console.log('At local storage: ', localStorage.getItem('newSeed'))
         // 바깥 if는 알림을 한번만 보여주기 위해서
         if (lsNewSeed == todayDate ){
-            $('.new-seed-alert').attr('style', 'display: none;');
+            $('#new-seed').attr('style', 'display: none;');
         } else if (lsNewSeed == null || lsNewSeed != todayDate) {
             if (todayDate == datePosted) {
-                // $('#alert-newSeed').tooltip('show');
-                $('.new-seed-alert').attr('style', 'display: show;')
-
-                //setTimeout(function(){
-                //$('#alert-newSeed').tooltip('dispose')
-                //}, 10000);
+                $('#new-seed').attr('style', 'display: show;')
 
                 localStorage.setItem('newSeed', todayDate);
             }
         }
     }
+
+    function NewQuestionAlert() {
+        var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0'); 뒤에 padStart는 앞에 0 붙여주는 거
+        var dd = String(today.getDate());
+        var mm = String(today.getMonth() + 1); //January is 0!
+        var yyyy = today.getFullYear();
+        var todayDate =  yyyy + '년 ' + mm + '월 ' + dd + '일';
+        var lsNewQuestion = localStorage.getItem("newQuestion");
+        // 바깥 if는 알림을 한번만 보여주기 위해서
+        if (lsNewQuestion == todayDate ){
+            $('#new-question').attr('style', 'display: none;');
+        } else if (lsNewQuestion == null || lsNewQuestion != todayDate) {
+            localStorage.setItem('newQuestion', todayDate);
+            }
+        }
     
     /*
     .img-websites의 parent a태그의 href가 비어있으면, 그 parent col에 attribute 추가: style="display:none;"
@@ -221,8 +233,8 @@
             $('#tooltip-alert').tooltip('hide');
         }
 
-        // New Seed Alert
         NewSeedAlert();
+        NewQuestionAlert();
 }
 </script>
 {% endblock %}
