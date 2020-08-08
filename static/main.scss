@@ -31,15 +31,17 @@ $theme-colors: (
 
 .progress {
   background-color: #f6f5f1 !important;
-  border-radius:10px !important;
+  border-radius: 5px !important;
   align-items: center;
-  box-shadow: inset 6px 6px 6px #bbbab7, inset -6px -6px 6px #ffffff;
+  border: 2px lightgrey solid;
+  height: 1.5rem;
 }
 
 .progress-bar {
   height: 100%;
   background: linear-gradient(90deg, #d7a8eb, #9300d3);
-  border-radius: 10px;
+  border-radius: 5px;
+  border: #f6f5f1 2px solid;
 }
 
 .custom-control-label {
@@ -105,15 +107,17 @@ $theme-colors: (
 @media (max-width: 768px) {
   .progress {
     background-color: #f6f5f1 !important;
-    border-radius:10px !important;
+    border-radius: 5px !important;
     align-items: center;
-    box-shadow: inset 3px 3px 2px #bbbab7, inset -3px -3px 2px #ffffff;
+    border: 2px lightgrey solid;
+    height: 1.5rem;
   }
   
   .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, #d7a8eb, #9300d3);
-    border-radius: 10px;
+    border-radius: 5px;
+    border: #f6f5f1 2px solid;
   }
 }
 @import "node_modules/bootstrap/scss/bootstrap.scss";

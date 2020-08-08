@@ -16,6 +16,8 @@ class DansangInput(models.Model):
     modified = models.DateTimeField(auto_now=True)
     img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
+    category = models.CharField(max_length=100, default="미분류")
+
     keyword = models.CharField(max_length=100, blank=True)
     first_sentence = models.CharField(max_length=100, blank=True)
 

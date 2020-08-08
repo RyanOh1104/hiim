@@ -43,7 +43,27 @@
     </div>
 </div>
 <div class="block-spacing"></div>
-<!-- <div class="block-spacing pc-only"></div> -->
+
+<!-- <div class="row">
+    <div class="col col-6">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>씨앗 카테고리</strong>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="https://hiim.kr/dansang/seed">
+                    <button class="dropdown-item" id="seeAllCat">전체 보기</button>
+                </a>
+              <div class="dropdown-divider"></div>
+              {% for cat in categoriesInEng %}
+                <a href="https://hiim.kr/dansang/seed/{{cat.id}}">
+                    <button class="dropdown-item {{cat.category_eng}}" id="{{cat.category_eng}}">{{cat.in_kor}}</button>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+    </div>
+</div> -->
 
 {% for item in posts %}
 <div class="row justify-content-center">

@@ -16,10 +16,13 @@ class DansangInputForm(forms.ModelForm):
         'placeholder':'부제목이 있으면 입력해주세요!'}))
     # contents = SummernoteTextField()
     img = forms.ImageField(required=False)
-
+    category = forms.CharField(widget=forms.TextInput(
+        attrs={'style':'font-size: 17px; background-color: #f6f5f1; border: none;',
+        'placeholder':'카테고리'}))
+        
     class Meta:
         model=DansangInput
-        fields=['title', 'img', 'subtitle', 'contents']
+        fields=['title', 'img', 'subtitle', 'contents', 'category']
         widgets = {
             'authuser':forms.HiddenInput(), 
             'first_sentence':forms.HiddenInput(),

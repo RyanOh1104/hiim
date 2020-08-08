@@ -62,11 +62,13 @@ td{
 }
 .prevNextButtons {
     font-size: 18px;
-    box-shadow:  3px 3px 3px #bbbab7, 
-     -3px -3px 3px #ffffff;
     height: 35px;
     vertical-align: middle;
     border-radius: 30px;
+}
+.prevNextButtons:hover {
+    box-shadow:  3px 3px 2px #bbbab7, 
+     -3px -3px 2px #ffffff;
 }
 .eachRow {
     height: 120px;
@@ -82,8 +84,8 @@ td[date] {
     /* box-shadow: 1px 1px 5px #bbbab7, -1px -1px 5px #ffffff */
 }
 .thisIsToday {
-    box-shadow:  3px 3px 3px #bbbab7, 
-    -3px -3px 3px #ffffff;
+    box-shadow:  3px 3px 2px #bbbab7, 
+    -3px -3px 2px #ffffff;
     /* W4A */
     /* box-shadow: 5px 5px 3px #bbbab7, -5px -5px 3px #ffffff !important */
 }

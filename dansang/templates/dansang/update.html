@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<form method="post" class="form-group">
+<form method="post" class="form-group" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="row">
     <div class="col col-12"> <!--원래는 col-8-->
@@ -26,9 +26,19 @@
     <div class="col col-12"> <!--원래는 col-6-->
       <div class="input-subtitle">{{form.subtitle|as_crispy_field}}</div>
     </div>
+    <br class="mobile-only"><br class="mobile-only">
+    <div class="col-lg-4 col-sm-6">
+      <div class="input-img">{{form.img|as_crispy_field}}</div>
+    </div>
   </div>
 
-  <div class="block-spacing"></div>
+  <div class="row">
+    <div class="col-lg-2 col-sm-3">
+      <div class="input-category">{{form.category|as_crispy_field}}</div>
+    </div>
+  </div>
+
+  <!-- <div class="block-spacing"></div> -->
   
   {% autoescape off %}
   <div class="row">

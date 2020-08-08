@@ -36,13 +36,14 @@ label {
     font-weight: bold;
 }
 .card:hover {
-    box-shadow:  5px 5px 3px #bbbab7, 
-    -5px -5px 3px #ffffff;
+    box-shadow:  3px 3px 2px #bbbab7, 
+    -3px -3px 2px #ffffff;
     border: none;
 }
 .card:active {
-    box-shadow:  inset 5px 5px 3px #bbbab7, 
-    inset -5px -5px 3px #ffffff;
+    box-shadow:  inset 3px 3px 2px #bbbab7, 
+    inset -3px -3px 2px #ffffff;
+    border: none;
 }
 
 /* Main Page Settings END */
