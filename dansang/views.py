@@ -56,7 +56,7 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     
-    categories = DansangInput.objects.filter(authuser=request.user).only('category')
+    categories = DansangInput.objects.only('category')
 
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
