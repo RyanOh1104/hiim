@@ -66,7 +66,7 @@ def dansangmain(request):
     context = {
         'dansangs': dansangs,
         'how_many': how_many,
-        'today': today,
+        # 'today': today,
         'posts':posts,
     }
 
