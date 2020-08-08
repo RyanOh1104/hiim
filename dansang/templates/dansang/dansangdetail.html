@@ -45,9 +45,9 @@
     <div class="col col-6 text-center">
         {% if thisDansang.img %}
         <img src="{{thisDansang.img.url}}" class="dansang-img" alt="🤔이미지가 어디갔지?"><br>
-    {% else %}
+        {% else %}
         <img class="default-img" src="{% static 'mvp/images/ci.png' %}">
-    {% endif %}
+        {% endif %}
     </div>
 </div>
 
@@ -87,11 +87,7 @@
 
 <script>
     $(document).ready(function(){
-        //if (`{{thisDansang.img.url}}` === null) {
-        //    $('.img-row').hide();
-        //} else {
-        //    $('.img-row').show();
-        //}
+
     });
     $(document).on('click', '.button-delete', function(){
         return confirm('이 생각을 지울까요?');
