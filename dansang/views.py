@@ -59,6 +59,10 @@ def dansangmain(request):
     categoryList = list(DansangInput.objects.values_list('category', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
     
+    # indexList는 integer이기 때문에 모두 string으로 바꿔줘야 한다. 
+    for a in range(0, len(indexList)):
+        indexList[a] = str(indexList[a])
+
     # 이제 이걸 [{index, category}, {index, category}, {index, category}, ...]의 꼴로 만들어야 해
     categories = []
     for i in range(0,len(categoryList)):
