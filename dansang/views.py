@@ -56,7 +56,8 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     
-    # categories = DansangInput.objects.filter(authuser=request.user).
+    categories = DansangInput.objects.filter(authuser=request.user) \
+        .only('category')
 
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
@@ -68,7 +69,7 @@ def dansangmain(request):
         'how_many': how_many,
         # 'today': today,
         'posts':posts,
-        # 'categories':categories,
+        'categories':categories,
     }
 
     return render(request, 'dansang/dansangmain.html', context)
