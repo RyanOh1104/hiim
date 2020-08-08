@@ -79,7 +79,7 @@ def dansangmain(request):
         'categoryList':categoryList,
         'indexList': indexList,
         'categories':categories,
-        'len': len(categoryList),
+        'catLength': len(categoryList),
     }
 
     return render(request, 'dansang/dansangmain.html', context)
