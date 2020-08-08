@@ -63,7 +63,7 @@ def dansangmain(request):
     categories = []
     for i in range(0,len(categoryList)):
         catDict = {}
-        catDict[indexList[i]] = categoryList[i]
+        catDict[str(indexList[i])] = categoryList[i]
         categories.append(catDict)
 
     # pagination
