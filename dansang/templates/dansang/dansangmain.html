@@ -57,7 +57,6 @@
     </div> -->
 </div>
 <div class="block-spacing"></div>
-{{categories}}
 
 {% for item in posts %}
 <div class="row justify-content-center">
@@ -112,7 +111,7 @@
     $(function () {
         $('#tooltip-seed').tooltip()
     })
-
+console.log(`{{categoryList}} AAAAAA {{indexList}} AAAAAA {{categories}}`)
     $(document).ready(function(){
         $('.dropdown-toggle').dropdown();
     });

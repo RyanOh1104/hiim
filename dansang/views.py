@@ -61,7 +61,7 @@ def dansangmain(request):
     
     # 이제 이걸 [{index, category}, {index, category}, {index, category}, ...]의 꼴로 만들어야 해
     categories = []
-    for i in range(0,len(categoryList)-1):
+    for i in range(0,len(categoryList)):
         catDict = {}
         catDict[indexList[i]] = categoryList[i]
         categories.append(catDict)
