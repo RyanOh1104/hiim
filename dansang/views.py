@@ -68,7 +68,7 @@ def dansangmain(request):
         'how_many': how_many,
         # 'today': today,
         'posts':posts,
-        'categories':categories,
+        # 'categories':categories,
     }
 
     return render(request, 'dansang/dansangmain.html', context)
