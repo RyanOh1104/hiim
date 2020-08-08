@@ -39,14 +39,14 @@
     <div class="col col-6 text-right">
         <div class="dropdown">
             <button class="btn menial-buttons dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>카테고리</span>
+                <span>🗃 카테고리</span>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <button class="dropdown-item" id="seeAllCat">전체 보기</button>
                 <div class="dropdown-divider"></div>
-                {% for cat in categories %}
-                      <button class="dropdown-item {{cat}}" id="{{cat}}">{{cat}}</button>
-                {% endfor %}
+                <!-- {% for cat in categories %}
+                      <button class="dropdown-item cat-{{cat.index}}" id="cat-{{cat.index}}">{{cat.}}</button>
+                {% endfor %} -->
               </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
     </div> -->
 </div>
 <div class="block-spacing"></div>
-
+{{categories}}
 
 {% for item in posts %}
 <div class="row justify-content-center">
@@ -109,10 +109,13 @@
 <div class="block-spacing"></div>
 
 <script>
-$(function () {
-    $('#tooltip-seed').tooltip()
-  })
-console.log(`{{categories}}`);
+    $(function () {
+        $('#tooltip-seed').tooltip()
+    })
+
+    $(document).ready(function(){
+        $('.dropdown-toggle').dropdown();
+    });
 </script>
 {% endblock %}
 

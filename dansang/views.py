@@ -56,12 +56,15 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     
-    # categoryQuery = list(DansangInput.objects.filter(authuser=request.user).values('category'))
-    # categoryList = []
-    # for c in range(0,len(categoryQuery)):
-    #     categoryList.append(categoryQuery[c].values())
-    # categories = list(set(categoryList))
-    categories = list(DansangInput.objects.values_list('category', flat=True).distinct())
+    categoryList = list(DansangInput.objects.values_list('category', flat=True).distinct())
+    indexList = [*range(1, len(categories, 1))] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
+    
+    # 이제 이걸 [{index, category}, {index, category}, {index, category}, ...]의 꼴로 만들어야 해
+    categories = []
+    for i in range(0,len(categories)):
+        catDict = {}
+        catDict[indexList[i]] = categoryList[i]
+        categories.append(catDict)
 
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
@@ -73,7 +76,10 @@ def dansangmain(request):
         'how_many': how_many,
         # 'today': today,
         'posts':posts,
+        'categoryList':categoryList,
+        'indexList': indexList,
         'categories':categories,
+        
     }
 
     return render(request, 'dansang/dansangmain.html', context)
