@@ -88,8 +88,10 @@
 
 <script>
     $(document).ready(function(){
-        if ({{thisDansang.img.url}} === null) {
+        if (`{{thisDansang.img.url}}` === null) {
             $('.img-row').hide();
+        } else {
+            $('.img-row').show();
         }
     });
     $(document).on('click', '.button-delete', function(){
