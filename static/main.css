@@ -9,7 +9,7 @@
   border-radius: 5px !important;
   align-items: center;
   border: 2px lightgrey solid;
-  height: 1.5rem;
+  height: 1.5rem !important;
 }
 
 .progress-bar {
