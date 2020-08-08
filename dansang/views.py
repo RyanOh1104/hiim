@@ -56,11 +56,12 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     
-    categoryQuery = list(DansangInput.objects.filter(authuser=request.user).values('category'))
-    categoryList = []
-    for c in range(0,len(categoryQuery)):
-        categoryList.append(categoryQuery[c].values())
-    categories = list(set(categoryList))
+    # categoryQuery = list(DansangInput.objects.filter(authuser=request.user).values('category'))
+    # categoryList = []
+    # for c in range(0,len(categoryQuery)):
+    #     categoryList.append(categoryQuery[c].values())
+    # categories = list(set(categoryList))
+    categories = DansangInput.objects.values_list('category', flat=True).distinct()
 
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
