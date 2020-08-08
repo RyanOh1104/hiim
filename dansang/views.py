@@ -61,7 +61,7 @@ def dansangmain(request):
     # for c in range(0,len(categoryQuery)):
     #     categoryList.append(categoryQuery[c].values())
     # categories = list(set(categoryList))
-    categories = DansangInput.objects.values_list('category', flat=True).distinct()
+    categories = list(DansangInput.objects.values_list('category', flat=True).distinct())
 
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
