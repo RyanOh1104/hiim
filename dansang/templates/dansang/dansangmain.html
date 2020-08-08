@@ -45,9 +45,7 @@
                       <button class="dropdown-item" id="seeAllCat">전체 보기</button>
                 <div class="dropdown-divider"></div>
                 {% for int in indexList %}
-                {% for cat in categories %}
-                      <button class="dropdown-item cat-{{int}}" id="cat-{{int}}">{{cat.int}}</button>
-                {% endfor %}
+                      <button class="dropdown-item cat-{{int}}" id="cat-{{int}}">{{categories}}</button>
                 {% endfor %}
               </div>
         </div>
