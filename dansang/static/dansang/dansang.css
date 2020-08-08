@@ -49,7 +49,7 @@
     border: none;
     height: 80px;
 }
-#id_title, #id_subtitle {
+#id_titlexxx, #id_subtitlexxx {
     box-shadow: none; /* form-control의 디폴트 설정인 inset shadow를 무력화 */ 
 }
 .input-subtitle {

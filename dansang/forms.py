@@ -11,7 +11,7 @@ class DansangInputForm(forms.ModelForm):
     title = forms.CharField(widget=forms.TextInput(
         attrs={'style':'font-size: 44px; background-color: #f6f5f1; border: none;', 
         'placeholder':'제목'}))
-    subtitle = forms.CharField(widget=forms.TextInput(
+    subtitle = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'style':'font-size: 17px; background-color: #f6f5f1; border: none;', 
         'placeholder':'부제목이 있으면 입력해주세요!'}))
     # contents = SummernoteTextField()
@@ -35,4 +35,3 @@ class DansangInputForm(forms.ModelForm):
         super(DansangInputForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_show_labels = False
-        self.fields['subtitle'].required = False
