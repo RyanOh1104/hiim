@@ -48,6 +48,7 @@
 .custom-file-label::after {
   box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
   border-radius: 10px;
+  font-size: 15px;
   background-color: #f6f5f1 !important;
   border: none;
 }
@@ -78,6 +79,10 @@
 }
 
 @media (max-width: 768px) {
+  .custom-file-label::after {
+    font-size: 3.5vw;
+  }
+
   .progress {
     background-color: #f6f5f1 !important;
     border-radius: 5px !important;
