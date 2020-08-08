@@ -159,6 +159,9 @@ td[date] {
         box-shadow: none;
         border-radius: 30px;
     }
+    .prevNextButtons:hover {
+        box-shadow: none;
+    }
     .sevenDays {
         font-size: 3vw;
     }
@@ -184,6 +187,7 @@ td[date] {
     }
     .keywords {
         font-size:3vw;
+        width: 70%;
     }
     .emoji {
         width: 15%;

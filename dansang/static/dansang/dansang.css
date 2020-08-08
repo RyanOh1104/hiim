@@ -192,7 +192,7 @@
         font-size: 8vw !important;
         /* 위에 font-size는 forms.py에서 이미 정해져있어서 변경이 무시되나봄. 그래서 필살기 발동 */
     }
-    #id_subtitle {
+    #id_subtitle, #id_category {
         font-size: 3.5vw !important;
     }
     .input-title {

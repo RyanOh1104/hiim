@@ -73,6 +73,7 @@ $theme-colors: (
 .custom-file-label::after {
   box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
   border-radius: 10px;
+  font-size: 15px;
   background-color: #f6f5f1 !important;
   border: none;
 }
@@ -105,6 +106,9 @@ $theme-colors: (
 }
 
 @media (max-width: 768px) {
+  .custom-file-label::after {
+    font-size: 3.5vw;
+  }
   .progress {
     background-color: #f6f5f1 !important;
     border-radius: 5px !important;
@@ -112,7 +116,6 @@ $theme-colors: (
     border: 2px lightgrey solid;
     height: 1.5rem;
   }
-  
   .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, #d7a8eb, #9300d3);

@@ -251,7 +251,9 @@ html, body {
         box-shadow: inset 8px 8px 8px #bbbab7, 
         inset -8px -8px 8px #ffffff;
     }
-
+    #new-question {
+        padding: 8px 5px;
+    }
     .img-add-archive {
         height: 40px;
         width: 40px;
