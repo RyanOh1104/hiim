@@ -121,9 +121,6 @@ td[date] {
     width: 50px;
     height: auto;
 }
-.bootstrap-datetimepicker-widget {
-    
-}
 
 @media (max-width: 768px) {
     .mobile-only {
