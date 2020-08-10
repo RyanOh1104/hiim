@@ -90,6 +90,7 @@ def everydayUpdate(request, authuser_id, slug):
             instance = form.save(commit=False)
             instance.authuser = request.user
 
+            # 아래를 하지 않았더니, img 필드가 텅 빈채로 저장되는 에러(?)가 발생했었다!
             instance.img1 = request.FILES.get('img1')
             instance.img2 = request.FILES.get('img2')
             instance.img3 = request.FILES.get('img3')
