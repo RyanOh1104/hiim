@@ -35,12 +35,13 @@
   </div>
   
   <div class="row">
-    <div class="col-lg-2 col-sm-3">
+    <div class="col-lg-1 col-sm-1 cat-col">
       <span class="dropdown">
-        <button class="btn menial-buttons dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn dropdown-toggle" id="cat-dropdown-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>🔖 카테고리</span>
         </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <button class="dropdown-item" id="SeeAllCat">새 카테고리</button>
+                  <button class="dropdown-item" id="newCat">새 카테고리</button>
               <div class="dropdown-divider"></div>
               {% for category in categories %}
                   {% for cid, cname in category.items %}
@@ -50,7 +51,7 @@
           </div>
       </span>
     </div>
-    <div class="col-lg-2 col-sm-3">
+    <div class="col-lg-2 col-sm-3 cat-col">
       <div class="input-category">{{form.category|as_crispy_field}}</div>
     </div>
   </div>
@@ -80,5 +81,16 @@
 </form>
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
-  
+
+<script>
+  $(document).ready(function(){
+    $('.dropdown-toggle').dropdown();
+
+    /*
+    기본은 드롭다운. form은 일단 hide.
+    드롭다운에서 새 카테고리를 선택하면 옆에 form 생겨서 입력.
+    기존에 있던 카테고리를 선택하면 form에 그게 입력되도록? 어떻게 하지?
+    */
+});
+</script>
 {% endblock %}

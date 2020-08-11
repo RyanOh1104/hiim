@@ -60,6 +60,9 @@
 .input-img {
     background-color: #f6f5f1;
 }
+.cat-col {
+    padding-left: 0px;
+}
 /* Input settings END */
 .doyou-need-input {
     font-size: 13px;

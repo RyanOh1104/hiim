@@ -182,6 +182,16 @@ def dansangUpdate(request, authuser_id, slug):
     # form = DansangInputForm(instance=thisDansang)
     # return render(request, 'dansang/dansangmain.html', {'form':form})
     thisDansang = DansangInput.objects.get(slug=slug)
+
+    categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
+    indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
+    # 이제 이걸 [{index: category}, {index: category}, {index: category}, ...]의 꼴로 만들어야 해
+    categories = []
+    for i in range(0,len(categoryList)):
+        catDict = {}
+        catDict[indexList[i]] = categoryList[i]
+        categories.append(catDict)
+
     # 글을 수정사항을 입력하고 제출을 눌렀을 때
     if request.method == "POST":
         form = DansangInputForm(request.POST)
