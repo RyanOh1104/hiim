@@ -25,4 +25,5 @@ def trans(kor):
         finalName = oneName.lower()
         return finalName
     else:
-        print("Error Code:" + rescode)
+        unable = 'unable'
+        return rescode
