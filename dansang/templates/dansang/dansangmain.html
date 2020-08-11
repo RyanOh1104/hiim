@@ -42,9 +42,8 @@
                 <span>🔖 카테고리</span>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <button class="dropdown-item" id="seeAllCat">전체 보기</button>
+                      <button class="dropdown-item" id="SeeAllCat">전체 보기</button>
                 <div class="dropdown-divider"></div>
-
                 {% for category in categories %}
                     {% for cid, cname in category.items %}
                       <button class="dropdown-item cat-{{cid}}" id="cat-{{cid}}">{{cname}}</button>
@@ -61,22 +60,43 @@
 </div>
 <div class="block-spacing"></div>
 
-{% for item in posts %}
-<div class="row justify-content-center">
-    <div class="col col-12">
-        <a href="{{item.url}}" class="all-links">
-        <div class="row justify-content-center">
-            <div class="col col-11 block-dansang">
-                <span class="title">{{item.title}}</span><br class='mobile-only'>
-                <span class="first-sentence"> | {{item.subtitle|safe}}</span>
+<div class="allCat">
+    {% for item in posts %}
+    <div class="row justify-content-center">
+        <div class="col col-12">
+            <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang">
+                    <span class="title">{{item.title}}</span><br class='mobile-only'>
+                    <span class="first-sentence"> | {{item.subtitle|safe}}</span>
+                </div>
             </div>
+            </a>
         </div>
-        </a>
     </div>
+    <br class='mobile-only'>
+    <div class="block-spacing pc-only"></div>
+    {% endfor %}
 </div>
-<br class='mobile-only'>
-<div class="block-spacing pc-only"></div>
-{% endfor %}
+
+<div class="eachCat">
+    {% for item in posts %}
+    <div class="row justify-content-center {{item.category}}">
+        <div class="col col-12">
+            <a href="{{item.url}}" class="all-links">
+            <div class="row justify-content-center">
+                <div class="col col-11 block-dansang">
+                    <span class="title">{{item.title}}</span><br class='mobile-only'>
+                    <span class="first-sentence"> | {{item.subtitle|safe}}</span>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br class='mobile-only'>
+    <div class="block-spacing pc-only"></div>
+    {% endfor %}
+    </div>
 
 <br>
 <div class="row">
@@ -114,12 +134,22 @@
     $(function () {
         $('#tooltip-seed').tooltip()
     })
-console.log(`{{categoryList}} AAAAAA {{indexList}} AAAAAA {{categories}} AAAAAA {{indexLength}}`)
-console.log('Does this work?', '{{categories.1}}')
-console.log('Does this work?', '{{categoryList.1}}')
-console.log('Does this work?', '{{categories.2}}')
+
     $(document).ready(function(){
+        $('.eachCat').hide();
+
         $('.dropdown-toggle').dropdown();
+
+        $('#seeAllCat').click(function() {
+            $('.eachCat').hide();
+            $('.allCat').show();
+        })
+        
+        var thisCat
+        $(`${thisCat}`).click(function() {
+            $('.allCat').hide();
+            $('.eachCat').children(`${thisCat}`).show();
+        })
     });
 </script>
 {% endblock %}
