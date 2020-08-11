@@ -14,7 +14,6 @@
       <h1 class="page-title">📝무슨 생각을 했어요?</h1>
   </div>
 </div>
-{{categoryList}}
 <form method="post" class="form-group" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="row">
@@ -37,6 +36,20 @@
   
   <div class="row">
     <div class="col-lg-2 col-sm-3">
+      <div class="dropdown">
+        <button class="btn menial-buttons dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span>🔖</span>
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button class="dropdown-item" id="SeeAllCat">전체 보기</button>
+              <div class="dropdown-divider"></div>
+              {% for category in categoryList %}
+                  {% for cid, cname in category.items %}
+                  <button class="dropdown-item" id="cat-{{cid}}">{{cname}}</button>
+                  {% endfor %}
+              {% endfor %}
+          </div>
+      </div>
       <div class="input-category">{{form.category|as_crispy_field}}</div>
     </div>
   </div>
