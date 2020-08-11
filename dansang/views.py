@@ -85,7 +85,6 @@ def dansangmain(request):
         'indexList': indexList,
         'categories':categories,
         'indexLengthRange':range(1, indexLength+1),
-        ''
     }
 
     return render(request, 'dansang/dansangmain.html', context)
