@@ -154,8 +154,10 @@ a:active {color:black;}
     padding: 5px;
     border-radius: 10px !important; /* menial button 속성 override */
     font-size: 29px;
-    border: 1px black solid;
     box-shadow: none !important; /* menial button 속성 override */
+}
+.go-to-main-button:hover {
+    box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
 }
 .go-back-img {
     width: 30%;
