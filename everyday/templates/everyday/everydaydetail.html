@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'everyday/everyday.css' %}">
 {% endblock %}
 
-{% block title %} 지나갈 오늘 {% endblock %}
+{% block title %} 하루하루 {% endblock %}
 
 {% load crispy_forms_tags %}
 
@@ -20,7 +20,9 @@
                 {{today.when}}
             </div>
             <div class="col col-2 text-right go-to-main">
-                <a href="/everyday/everydaymain" class="menial-buttons go-to-main-button">↩️</a>
+                <a href="/everyday/everydaymain" class="menial-buttons go-to-main-button">↩
+                    <img class="go-back-img" src="{% static 'mvp/images/backarrow.png' %}">
+                </a>
             </div>
         </div>
     </div>

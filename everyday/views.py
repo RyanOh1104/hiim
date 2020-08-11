@@ -31,7 +31,7 @@ def everydayinput(request):
             # instance.img3 = request.FILES.get('img3')
 
             if instance.kw1 == "":
-                instance.kw1 = "&nbsp;"
+                instance.kw1 = "✔️"
             if instance.kw2 == "":
                 instance.kw2 = "&nbsp;"
             if instance.kw3 == "":
