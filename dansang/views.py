@@ -8,6 +8,7 @@ from django_slugify_processor.text import slugify
 from django.core.paginator import Paginator
 from django.db.models import F
 from django.utils.html import strip_tags
+from mvp.korengtrans import trans
 
 @login_required
 def dansanginput(request):
@@ -76,6 +77,7 @@ def dansangmain(request):
     page = request.GET.get('page')
     posts = dansangPaginator.get_page(page)
 
+    hey = trans('안녕')
     context = {
         'dansangs': dansangs,
         'how_many': how_many,
@@ -86,6 +88,7 @@ def dansangmain(request):
         'categories':categories,
         'indexLengthRange':range(1, indexLength+1),
         'categoryList':categoryList,
+        'hey':hey,
     }
 
     return render(request, 'dansang/dansangmain.html', context)
