@@ -47,10 +47,10 @@
                 <!-- {% for int in indexLengthRange %}
                       <button class="dropdown-item cat-{{int}}" id="cat-{{int}}">{{categoryList.int}}.{{int}}</button>
                 {% endfor %} -->
+                {{categoryList.items}}
                 {% for cat in categoryList %}
-                {{cat.items}}
                     {% for cid, cname in cat.items %}
-                      <button class="dropdown-item cat-{{cid}}" id="cat-{{cid}}">{{cname}}hey</button>
+                      <button class="dropdown-item cat-{{cid}}" id="cat-{{cid}}">{{cname}}</button>
                     {% endfor %}
                 {% endfor %}
               </div>
