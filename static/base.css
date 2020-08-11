@@ -349,12 +349,12 @@ a:active {color:black;}
     .go-to-main-button {
         padding: 5px;
         border-radius: 5px;
-    }
+    } */
     .go-back-img {
-        width : 100%;
+        width : 80%;
         height: auto;
         vertical-align: text-top;
-    } */
+    }
     #detail-subtitle {
         font-size: 3.5vw;
     }
