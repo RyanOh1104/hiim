@@ -62,11 +62,7 @@ def dansangmain(request):
     how_many = dansangs.count()
 
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
-    categoryEngList = []
-    for num in range(0, len(categoryList)-1):
-        categoryEngList.append(trans(categoryList[num]))
-
-    # categoryEngList = list(DansangInput.objects.filter(authuser=request.user).values_list('categoryEng', flat=True).distinct())
+    categoryEngList = list(DansangInput.objects.filter(authuser=request.user).values_list('categoryEng', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
     
     
