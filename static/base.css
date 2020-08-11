@@ -50,7 +50,9 @@ html {
 .form-control {
     background-color: #f6f5f1;
 }
-
+.form-control:focus {
+    background-color: #f6f5f1;
+}
 .all-buttons {
     border-radius: 20px;
     background: #9300d3;
