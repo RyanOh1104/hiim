@@ -16,6 +16,7 @@ def dansanginput(request):
     today = timezone.now()
     # setting initial user as current logged in user
     form = DansangInputForm(initial={'authuser':request.user})
+    categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
 
     if request.method == 'POST':
         form = DansangInputForm(request.POST, request.FILES)
@@ -54,7 +55,7 @@ def dansanginput(request):
             instance.save()
             return redirect('/dansang/dansangmain')
 
-    return render(request,'dansang/dansanginput.html', {'form':form})
+    return render(request,'dansang/dansanginput.html', {'form':form, 'categoryList':categoryList})
 
 @login_required
 def dansangmain(request):
@@ -62,7 +63,8 @@ def dansangmain(request):
     how_many = dansangs.count()
 
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
-    #요 부분은 임시적으로! 태건이 끝나면 바로 버리자
+    
+    # 요 부분은 임시적으로! 태건이 끝나면 바로 제거
     categoryEngList = []
     for k in range(0,len(categoryList)):
         categoryEngList.append(trans(categoryList[k]))
