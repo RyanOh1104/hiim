@@ -146,9 +146,9 @@
         })
         
         var thisCat
-        $(`${thisCat}`).click(function() {
+        $(`#${thisCat}`).click(function() {
             $('.allCat').hide();
-            $('.eachCat').children(`${thisCat}`).show();
+            $('.eachCat').children(`.${thisCat}`).show();
         })
     });
 </script>
