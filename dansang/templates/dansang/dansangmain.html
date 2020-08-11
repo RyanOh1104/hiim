@@ -48,7 +48,7 @@
                       <button class="dropdown-item cat-{{int}}" id="cat-{{int}}">{{categoryList.int}}.{{int}}</button>
                 {% endfor %} -->
                 {% for category in categoryList %}
-                    {% for cid, cname in category.items %}
+                    {% for cid, cname in category %}
                       <button class="dropdown-item cat-{{cid}}" id="cat-{{cid}}">{{cname}}</button>
                     {% endfor %}
                 {% endfor %}
