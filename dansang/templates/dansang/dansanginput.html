@@ -35,7 +35,7 @@
   </div>
   
   <div class="row">
-    <div class="col-lg-2 col-sm-3 cat-dropdown">
+    <!-- <div class="col-lg-2 col-sm-3 cat-dropdown">
       <span class="dropdown">
         <button class="btn menial-buttons dropdown-toggle" id="cat-dropdown-input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span>🔖 카테고리</span>
@@ -50,7 +50,7 @@
               {% endfor %}
           </div>
       </span>
-    </div>
+    </div> -->
     <div class="col-lg-2 col-sm-3 cat-field">
       <div class="input-category">{{form.category|as_crispy_field}}</div>
     </div>
@@ -85,7 +85,6 @@
 <script>
   $(document).ready(function(){
     //$('.cat-field').hide();
-    $('.cat-dropdown').hide();
 
     $('.dropdown-toggle').dropdown();
 
