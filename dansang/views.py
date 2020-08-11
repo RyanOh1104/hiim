@@ -56,7 +56,7 @@ def dansangmain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
     
-    categoryList = list(DansangInput.objects.values_list('category', flat=True).distinct())
+    categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
     
     # indexList는 integer이기 때문에 모두 string으로 바꿔줘야 한다. 
