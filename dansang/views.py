@@ -79,7 +79,7 @@ def dansangmain(request):
         categories.append(catDict)
     '''
     categories = []
-    for i inrange(0, len(categoryList)):
+    for i in range(0, len(categoryList)):
         catDict = {}
         catDict[categoryEngList[i]] = categoryList[i]
         categories.append(catDict)
