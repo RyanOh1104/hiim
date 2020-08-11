@@ -135,10 +135,7 @@ a:active {color:black;}
 #detail-subtitle {
     font-size: 17px;
 }
-.go-back-img {
-    width: 100%;
-    height: auto;
-}
+
 .detail-dates {
     padding-top: 10px;
 }
@@ -154,9 +151,15 @@ a:active {color:black;}
     white-space: pre-line;
 }
 .go-to-main-button {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px;
+    border-radius: 10px !important; /* menial button 속성 override */
     font-size: 29px;
+    border: 1px black solid;
+    box-shadow: none !important; /* menial button 속성 override */
+}
+.go-back-img {
+    width: 30%;
+    height: auto;
 }
 /* Archive_detail settings END */
 .notification {
@@ -331,7 +334,6 @@ a:active {color:black;}
     .detail-title {
         font-size: 5vw;
         /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
-        font-weight: bold;
         border-bottom: 2px black solid;
         padding-bottom: 10px;
     }
@@ -339,7 +341,7 @@ a:active {color:black;}
         font-weight: bold;
         font-size: 6.5vw;
     }
-    .go-to-main {
+    /* .go-to-main {
         display: flex;
         align-items: center;
     }
@@ -347,6 +349,11 @@ a:active {color:black;}
         padding: 5px;
         border-radius: 5px;
     }
+    .go-back-img {
+        width : 100%;
+        height: auto;
+        vertical-align: text-top;
+    } */
     #detail-subtitle {
         font-size: 3.5vw;
     }
