@@ -91,6 +91,13 @@
     $('#newCat').click(function() {
       $('.cat-field').show();
     });
+
+    $('.dropdown-item').click(function() {
+      var thisCat = $(this).text();
+      $('#id_category').html(thisCat);
+    });
+    
+
     /*
     기본은 드롭다운. form은 일단 hide.
     드롭다운에서 새 카테고리를 선택하면 옆에 form 생겨서 입력.
