@@ -25,5 +25,4 @@ def trans(kor):
         finalName = oneName.lower()
         return finalName
     else:
-        unable = 'unable'
         return rescode
