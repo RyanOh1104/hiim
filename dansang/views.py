@@ -45,6 +45,9 @@ def dansanginput(request):
             if instance.subtitle == "":
                 instance.subtitle = "&nbsp;"
 
+            # 카테고리 영문으로 변경
+            catByUser = instance.category
+            instance.categoryEng = trans(catByUser)
 
             instance.slug = slugify(datetime.now())
             instance.url = "/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
@@ -72,7 +75,7 @@ def dansangmain(request):
         catDict = {}
         catDict[indexList[i]] = categoryList[i]
         categories.append(catDict)
-    hey = trans('미분류')
+    
     # pagination
     dansangPaginator = Paginator(dansangs, 7)
     page = request.GET.get('page')
@@ -88,7 +91,6 @@ def dansangmain(request):
         'categories':categories,
         'indexLengthRange':range(1, indexLength+1),
         'categoryList':categoryList,
-        'hey':hey
     }
 
     return render(request, 'dansang/dansangmain.html', context)

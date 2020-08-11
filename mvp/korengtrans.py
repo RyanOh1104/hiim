@@ -23,6 +23,6 @@ def trans(kor):
 
         oneName = names[0].replace(' ', '')
         finalName = oneName.lower()
-        return oneName
+        return finalName
     else:
         print("Error Code:" + rescode)

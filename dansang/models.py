@@ -17,6 +17,7 @@ class DansangInput(models.Model):
     img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
     category = models.CharField(max_length=100, default="미분류", null=True, blank=True)
+    categoryEng = models.CharField(max_length=100, default="mibunryu", null=True, blank=True)
 
     keyword = models.CharField(max_length=100, blank=True)
     first_sentence = models.CharField(max_length=100, blank=True)
