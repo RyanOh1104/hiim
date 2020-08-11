@@ -88,24 +88,20 @@
 
     $('.dropdown-toggle').dropdown();
 
+    // 새 카테고리 선택시
     $('#newCat').click(function() {
       $('.cat-field').show();
     });
 
+    // 기존 카테고리 선택시
     $('.original-cat').click(function() {
       var thisCat = $(this).text();
       console.log(thisCat);
-      //$.escapeSelector('#id_category').html(thisCat);
+      $.escapeSelector('#id_category').html(thisCat);
       //$('#id_category').html(thisCat);
 
     });
-    
 
-    /*
-    기본은 드롭다운. form은 일단 hide.
-    드롭다운에서 새 카테고리를 선택하면 옆에 form 생겨서 입력.
-    기존에 있던 카테고리를 선택하면 form에 그게 입력되도록? 어떻게 하지?
-    */
 });
 </script>
 {% endblock %}
