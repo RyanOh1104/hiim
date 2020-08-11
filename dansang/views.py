@@ -59,8 +59,9 @@ def dansangmain(request):
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
     
+    indexLength - len(indexList)
     # indexList는 integer이기 때문에 모두 string으로 바꿔줘야 한다. 
-    for a in range(0, len(indexList)):
+    for a in range(0, indexLength):
         indexList[a] = str(indexList[a])
 
     # 이제 이걸 [{index, category}, {index, category}, {index, category}, ...]의 꼴로 만들어야 해
@@ -83,6 +84,8 @@ def dansangmain(request):
         'categoryList':categoryList,
         'indexList': indexList,
         'categories':categories,
+        'indexLengthRange':range(1, indexLength+1),
+        ''
     }
 
     return render(request, 'dansang/dansangmain.html', context)
