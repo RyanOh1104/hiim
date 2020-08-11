@@ -20,7 +20,9 @@ def trans(kor):
         result = json_dict['aResult'][0]
         name_items = result['aItems']
         names = [name_item['name'] for name_item in name_items]
-        oneName = names[0]
+
+        oneName = names[0].replace(' ', '')
+        finalName = oneName.lower()
         return oneName
     else:
         print("Error Code:" + rescode)
