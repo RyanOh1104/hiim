@@ -63,7 +63,7 @@ def dansangmain(request):
 
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
     categoryEngList = []
-    for num in range(0, len(categoryList)):
+    for num in range(0, len(categoryList)-1):
         categoryEngList.append(trans(categoryList[num]))
 
     # categoryEngList = list(DansangInput.objects.filter(authuser=request.user).values_list('categoryEng', flat=True).distinct())
