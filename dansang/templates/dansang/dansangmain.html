@@ -45,7 +45,7 @@
                       <button class="dropdown-item" id="seeAllCat">전체 보기</button>
                 <div class="dropdown-divider"></div>
 
-                {% for category in categoryList %}
+                {% for category in categories %}
                     {% for cid, cname in category.items %}
                       <button class="dropdown-item cat-{{cid}}" id="cat-{{cid}}">{{cname}}</button>
                     {% endfor %}
