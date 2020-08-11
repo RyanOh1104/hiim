@@ -45,7 +45,7 @@
               <div class="dropdown-divider"></div>
               {% for category in categories %}
                   {% for cid, cname in category.items %}
-                  <button class="dropdown-item" id="cat-{{cid}}">{{cname}}</button>
+                  <button class="dropdown-item original-cat" id="cat-{{cid}}">{{cname}}</button>
                   {% endfor %}
               {% endfor %}
           </div>
@@ -92,7 +92,7 @@
       $('.cat-field').show();
     });
 
-    $('.dropdown-item').click(function() {
+    $('.original-cat').click(function() {
       var thisCat = $(this).text();
       console.log(thisCat);
       $.escapeSelector('#id_category').html(thisCat);
