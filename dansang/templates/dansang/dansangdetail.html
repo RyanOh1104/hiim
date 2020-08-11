@@ -20,12 +20,14 @@
                 <h1 id="detail-title">{{thisDansang.title}}</h1>
             </div>
             <div class="col col-2 text-right go-to-main">
-                <a href="/dansang/dansangmain" class="menial-buttons go-to-main-button">↩️</a>
+                <a href="/dansang/dansangmain" class="menial-buttons go-to-main-button">
+                    <img class="go-back-img" src="{% static 'mvp/images/backarrow.png' %}">
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="col col-12">
-                <h3 id="detail-subtitle">{{thisDansang.subtitle|safe}}</h3>
+                <div id="detail-subtitle">{{thisDansang.subtitle|safe}} | {{thisDansang.category|safe}}</div>
             </div>
         </div>
     </div>

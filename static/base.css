@@ -126,8 +126,6 @@ a:active {color:black;}
 /* Archive-detail settings START */
 .detail-title {
     font-size: 44px;
-    /* font-size: 45px; */
-    font-weight: bold;
     border-bottom: 2px black solid;
     padding-bottom: 10px;
 }
@@ -136,6 +134,10 @@ a:active {color:black;}
 }
 #detail-subtitle {
     font-size: 17px;
+}
+.go-back-img {
+    width: 100%;
+    height: auto;
 }
 .detail-dates {
     padding-top: 10px;
