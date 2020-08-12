@@ -55,8 +55,8 @@ def dansanginput(request):
                 instance.subtitle = "&nbsp;"
 
             # 카테고리 영문으로 변경
-            # catByUser = instance.category
-            # instance.categoryEng = trans(catByUser)
+            catByUser = instance.category
+            instance.categoryEng = trans(catByUser)
 
             instance.slug = slugify(datetime.now())
             instance.url = "/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
@@ -212,8 +212,8 @@ def dansangUpdate(request, authuser_id, slug):
                 instance.subtitle = "&nbsp;"
 
             # 카테고리 영문으로 변경
-            # catByUser = instance.category
-            # instance.categoryEng = trans(catByUser)
+            catByUser = instance.category
+            instance.categoryEng = trans(catByUser)
 
             instance.created = thisDansang.created
             instance.slug = slugify(datetime.now())
