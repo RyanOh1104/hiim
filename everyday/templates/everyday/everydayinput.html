@@ -17,14 +17,14 @@
 {% block content %}
 <div class="row">
     <div class="col col-10">
-        <h1 class="page-title">📝무슨 일이 있었어요?</h1>
+        <h1 class="page-title">📝오늘 무슨 일이 있었어요?</h1>
     </div>
 </div>    
 
 <form method="post" class="form-group" enctype="multipart/form-data">{% csrf_token %}
     <div class="row">
         <div class="col-lg-3 col-sm-12 ">
-            <div class="helptext">👀 날짜를 잘 확인해주세요!</div>
+            <div class="helptext">👀 <span class="highlight">날짜를 잘 확인해주세요!</span></div>
         </div>
     </div>
     <div class="row">
@@ -66,7 +66,7 @@
     <div class="row">
         <div class="col">
             <div class="helptext">
-                📱 오늘의 이모지<span class="pc-only"> (👀 "윈도우키 + .")</span>
+                📱 오늘의 이모지<span class="pc-only"> (👀 Windows "윈도우키 + ." / iOS "컨트롤 + 커맨드 + 스페이스바")</span>
             </div>
         </div>
     </div>
