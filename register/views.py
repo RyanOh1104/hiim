@@ -19,7 +19,8 @@ def register(response):
             newUser =  authenticate(response, username=username, password=password)
             if newUser:
                 login(response, newUser)
-                sleep(2)
+                print('logged in!')
+                sleep(3)
                 return redirect('/inputuserinfo')
             else:
                 return redirect('/register')
