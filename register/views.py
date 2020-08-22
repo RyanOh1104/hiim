@@ -3,7 +3,8 @@ from .forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User, auth     
+from django.contrib.auth.models import User, auth    
+from time import sleep 
 
 # Create your views here. 
 def register(response):
@@ -18,12 +19,11 @@ def register(response):
             newUser =  authenticate(response, username=username, password=password)
             if newUser:
                 login(response, newUser)
+                sleep(2)
                 return redirect('/inputuserinfo')
             else:
                 return redirect('/register')
 
-
-            # 여기에 새로 가입한 user의 id를 어떤 변수에 받아오고, 그걸 아래에 뒤에 <int:id>처럼 붙이면 어떨까? 바로 자기 페이지로 redirect되게.
     else:
         form = RegisterForm()
 
