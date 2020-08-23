@@ -30,6 +30,7 @@ html, body {
 }
 .usermain-ci {
     width : 150px;
+    margin-right: 10px;
 }
 #usermain-ci {
     padding-top: 10px;
@@ -40,7 +41,7 @@ html, body {
     font-size: 55px;
     letter-spacing: 5px;
     text-align: left;
-    font-weight: bold;
+    font-weight: 800;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -165,16 +166,11 @@ html, body {
     #usermain-ci {
         padding-top: 10px;
         align-items: center;
+        margin-right: 10px;
         display: flex;
     }
     .usermain-name {
-        margin: auto;
-        /* font-size: 55px; */
         font-size: 10vw;
-        letter-spacing: 5px;
-        text-align: left;
-        font-weight: bold;
-        cursor: pointer;
     }
     .usermain-intro {
         white-space: pre-line;
