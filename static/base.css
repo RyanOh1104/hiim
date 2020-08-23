@@ -214,7 +214,7 @@ a:active {color:black;}
 .highlight {
     background: #9300d3;
     background: linear-gradient(
-        180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
+        180deg,rgba(255,255,255,0) 65%, #9300d37f 35%);
 }
 
 /* Welcome page */
@@ -240,15 +240,11 @@ a:active {color:black;}
 .welcome-gomin {
     font-size: 29px;
     font-style: italic;
-    font-weight: 800;
-    background: linear-gradient(
-        180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
 }
 .welcome-stress {
     font-weight: 800;
-    /* background: #9300d3; */
     background: linear-gradient(
-        180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
+        180deg,rgba(255,255,255,0) 65%, #9300d37f 35%);
 }
 .welcome-very-stress {
     font-weight: bold;
