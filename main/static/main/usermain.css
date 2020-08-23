@@ -162,6 +162,7 @@ html, body {
     }
     .usermain-ci {
         width : 45%;
+        margin-right: 0px;
     }
     #usermain-ci {
         padding-top: 10px;
