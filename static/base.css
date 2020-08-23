@@ -210,7 +210,6 @@ a:active {color:black;}
     font-size: 13px;
     font-weight: bold;
 }
-
 .highlight {
     background: #9300d3;
     background: linear-gradient(
@@ -247,7 +246,7 @@ a:active {color:black;}
         180deg,rgba(255,255,255,0) 65%, #9300d37f 35%);
 }
 .welcome-very-stress {
-    font-weight: bold;
+    font-weight: 800;
     color: #9300d3;
     font-size: 29px;
 }
