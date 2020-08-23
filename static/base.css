@@ -244,8 +244,10 @@ a:active {color:black;}
     color: #9300d3;
 }
 .welcome-stress {
-    font-weight: bold;
-    color: #9300d3;
+    font-weight: 800;
+    background: #9300d3;
+    background: linear-gradient(
+        180deg,rgba(255,255,255,0) 55%, #9300d37f 45%);
 }
 .welcome-very-stress {
     font-weight: bold;
