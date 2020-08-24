@@ -66,7 +66,7 @@ def dansangCreate(request):
     return render(request,'dansang/dansang_create.html', {'form':form, 'categories':categories})
 
 @login_required
-def dansangmain(request):
+def dansangMain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
     how_many = dansangs.count()
 
@@ -118,7 +118,7 @@ def dansangmain(request):
 
     }
 
-    return render(request, 'dansang/dansangmain.html', context)
+    return render(request, 'dansang/dansang_main.html', context)
 
 def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
@@ -178,9 +178,6 @@ def seedByCat(request, category):
     return render(request, 'dansang/seed.html', context)
 
 def dansangUpdate(request, authuser_id, slug):
-    # thisDansang = DansangInput.objects.get(slug=slug)
-    # form = DansangInputForm(instance=thisDansang)
-    # return render(request, 'dansang/dansangmain.html', {'form':form})
     thisDansang = DansangInput.objects.get(slug=slug)
 
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
