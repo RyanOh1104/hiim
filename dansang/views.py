@@ -59,7 +59,7 @@ def dansanginput(request):
             instance.categoryEng = trans(catByUser)
 
             instance.slug = slugify(datetime.now())
-            instance.url = "/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
+            instance.url = "/dansang/detail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
             return redirect('/dansang/dansangmain')
 
@@ -120,11 +120,11 @@ def dansangmain(request):
 
     return render(request, 'dansang/dansangmain.html', context)
 
-def dansangdetail(request, authuser_id, slug):
+def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
     if thisDansang.created == thisDansang.modified:
         thisDansang.modified = '' 
-    return render(request, 'dansang/dansangdetail.html', {'thisDansang' : thisDansang})
+    return render(request, 'dansang/dansang_detail.html', {'thisDansang' : thisDansang})
 
 # 이건 login_required 굳이 필요 없으려나?
 def seed(request):
@@ -217,10 +217,10 @@ def dansangUpdate(request, authuser_id, slug):
 
             instance.created = thisDansang.created
             instance.slug = slugify(datetime.now())
-            instance.url = "/dansang/dansangdetail/" + str(authuser_id) + '/' + str(instance.slug)
+            instance.url = "/dansang/detail/" + str(authuser_id) + '/' + str(instance.slug)
             thisDansang.delete()
             instance.save()
-            return redirect('/dansang/dansangdetail/' + str(authuser_id) + '/' + str(instance.slug))
+            return redirect('/dansang/detail/' + str(authuser_id) + '/' + str(instance.slug))
 
     # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
     else:

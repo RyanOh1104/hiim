@@ -101,18 +101,7 @@ DATABASES = {
         'PORT' : '',
     }
 }
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'hiimmvp',  이거 뭐더라?
-        'USER' : 'hiimmvp',
-        'PASSWORD' : 'shris9494',
-        'HOST' : PG_HOST,
-        'PORT' : '',
-    }
-}
-'''
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
