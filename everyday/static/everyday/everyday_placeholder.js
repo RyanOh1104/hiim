@@ -1,5 +1,4 @@
 function randomPlaceholder() {
-    console.log('function called');
     var questions = [
       '[기억 낚아올리기] 오늘 먹었던 음식 중 뭐가 제일 기억에 남아요?',
       '[기억 낚아올리기] 오늘 하루 아쉬웠던 점이 있다면?',
@@ -11,7 +10,7 @@ function randomPlaceholder() {
       '[기억 낚아올리기] 오늘 있었던 장면 중 하나를 최대한 구체적으로 묘사해보세요!'
     ];
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-    console.log('random is: ', randomQuestion);
+    // console.log('random is: ', randomQuestion);
     document.getElementById('what').setAttribute('placeholder', randomQuestion);
   }
 

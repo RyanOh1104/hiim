@@ -13,7 +13,7 @@ import json
 
 # Create your views here.
 @login_required
-def everydayinput(request):
+def everydayCreate(request):
     today = datetime.today()
     # setting initial user as current logged in user
     form = EverydayInputForm(initial={'authuser':request.user})
@@ -46,7 +46,7 @@ def everydayinput(request):
 
             return redirect('/everyday/everydaymain')
 
-    return render(request,'everyday/everydayinput.html', {'form':form, 'today' : today})
+    return render(request,'everyday/everyday_create.html', {'form':form, 'today' : today})
 
 def everydaymain(request):
     todays = NewEvent.objects.filter(authuser=request.user)
@@ -72,10 +72,10 @@ def all_events(request):
     events = NewEvent.objects.all()
     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
 
-def everydaydetail(request, authuser_id, slug):
+def everydayDetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
    
-    return render(request, 'everyday/everydaydetail.html', {'today' : today})
+    return render(request, 'everyday/everyday_detail.html', {'today' : today})
 
 def everydayUpdate(request, authuser_id, slug):
     # thisDansang = DansangInput.objects.get(slug=slug)
