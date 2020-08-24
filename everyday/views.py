@@ -48,7 +48,7 @@ def everydayCreate(request):
 
     return render(request,'everyday/everyday_create.html', {'form':form, 'today' : today})
 
-def everydaymain(request):
+def everydayMain(request):
     todays = NewEvent.objects.filter(authuser=request.user)
     thisUser = UserInfo.objects.get(authuser=request.user)
 
@@ -66,7 +66,7 @@ def everydaymain(request):
         'getMonth':getMonth,
         'countThisMonth':countThisMonth,
     }
-    return render(request,'everyday/everydaymain.html', context)
+    return render(request,'everyday/everyday_main.html', context)
 
 def all_events(request):
     events = NewEvent.objects.all()
@@ -78,9 +78,6 @@ def everydayDetail(request, authuser_id, slug):
     return render(request, 'everyday/everyday_detail.html', {'today' : today})
 
 def everydayUpdate(request, authuser_id, slug):
-    # thisDansang = DansangInput.objects.get(slug=slug)
-    # form = DansangInputForm(instance=thisDansang)
-    # return render(request, 'dansang/dansangmain.html', {'form':form})
     getToday = NewEvent.objects.get(slug=slug)
     today = datetime.today()
     # 글을 수정사항을 입력하고 제출을 눌렀을 때
