@@ -11,7 +11,7 @@ from django.utils.html import strip_tags
 from mvp.korengtrans import trans
 
 @login_required
-def dansanginput(request):
+def dansangCreate(request):
     # today = datetime.today()
     today = timezone.now()
     # setting initial user as current logged in user
@@ -63,7 +63,7 @@ def dansanginput(request):
             instance.save()
             return redirect('/dansang/dansangmain')
 
-    return render(request,'dansang/dansanginput.html', {'form':form, 'categories':categories})
+    return render(request,'dansang/dansang_create.html', {'form':form, 'categories':categories})
 
 @login_required
 def dansangmain(request):
