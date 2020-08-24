@@ -12,7 +12,7 @@ from django.core.paginator import Paginator
 
 ###### 중요!!! 유저가 가장 처음에 즉문즉답 기록장을 하면, main페이지가 아닌 첫번째 질문을 던져주자!!!! #####
 @login_required
-def qandaInput(request): 
+def qandaCreate(request): 
     today = date.today()
 
     # 0. Very first 질문은 query를 하면 empty queryset이 나오므로 별도로 처리
@@ -92,7 +92,7 @@ def qandaInput(request):
         'todaysQuestion':todaysQuestion,
         'thisUser':thisUser,
     }
-    return render(request, 'qanda/qandainput.html', context)
+    return render(request, 'qanda/qanda_create.html', context)
 
 def qandaMain(request):
     # thisQuestion = Question.objects.all().order_by('-number')
@@ -133,7 +133,7 @@ def qandaMain(request):
         'countAnswer':countAnswer,
     }
 
-    return render(request, 'qanda/qandamain.html', context)
+    return render(request, 'qanda/qanda_main.html', context)
 
 def qandaDetail(request, questionNumber):
     thisQuestion = Question.objects.get(number=questionNumber)
@@ -160,7 +160,7 @@ def qandaDetail(request, questionNumber):
             'thisUser':thisUser,
         }
 
-        return render(request, 'qanda/qandadetail.html', context)
+        return render(request, 'qanda/qanda_detail.html', context)
     else: 
         return redirect('/qanda/qandamain')
 
@@ -203,6 +203,3 @@ def qandaUpdate(request, questionNumber):
 
     else: 
         return redirect('/qanda/qandamain')
-
-def noMoreForToday(request):
-    return render(request, 'qanda/nomorefortoday.html')

@@ -1,3 +1,5 @@
+# 한글을 영어로 (소리나는 대로) 변환해주는 네이버 API (Kor-Eng Translation)
+
 import json
 import urllib.request
 
