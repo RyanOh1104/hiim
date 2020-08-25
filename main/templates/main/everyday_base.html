@@ -2,18 +2,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ko">
 <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171633126-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-171633126-1');
-</script>
-
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <!-- <meta name="description" content=""> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <link rel="stylesheet" href="{% static 'base.css' %}">
@@ -28,15 +18,16 @@
     {% block extrahead %}
     {% endblock %}
     
-    {% block extra_style %}
-    {% endblock %}
+    <!-- {% block extra_style %}
+    {% endblock %} -->
 </head>
 <body>
+    <!-- 네비게이션 바 START -->
     <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary nav-bar">
         <a href="/" class='navbar-brand'>
             <img class="ci" src="{% static 'mvp/images/ci.png' %}">
         </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"> <!--여기 navbarMenu는 임의로 설정-->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"><img id="navbar-toggler-custom-icon" src="{% static 'mvp/images/others.png' %}"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMenu">
@@ -46,10 +37,11 @@
             </ul>
         </div>
     </nav>
+    <!-- 네비게이션 바 END -->
     
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col col-10">
+            <div class="col col-11">
                 {% block content %}
                 {% endblock %}
             </div>

@@ -1,50 +1,40 @@
 {% load static %}
 {% static 'images' as baseUrl %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171633126-1"></script>
-<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
 
-  gtag('config', 'UA-171633126-1');
-</script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{% static 'main.css' %}">
-<link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block css %}
+    <!-- 추가적인 css 파일을 위한 block -->
+    {% endblock %}
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> {% block title %}{% endblock %} </title>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    {% load bootstrap4%}
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-{% block css %}
-{% endblock %}
-
-<title> {% block title %}{% endblock %} </title>
-
-{% load bootstrap4%}
-
-{% block extrahead %}
-{% endblock %}
+    {% block extrahead %}
+    {% endblock %}
 </head>
 <body>
+    <!-- 네비게이션 바 START -->
     <nav class="navbar navbar-default navbar-expand-lg navbar-secondary bg-secondary nav-bar">
         <a href="/" class='navbar-brand'>
             <img class="ci" src="{% static 'mvp/images/ci.png' %}">
         </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"> <!--여기 navbarMenu는 임의로 설정-->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"><img id="navbar-toggler-custom-icon" src="{% static 'mvp/images/others.png' %}"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMenu">
@@ -54,10 +44,11 @@
             </ul>
         </div>
     </nav>
+    <!-- 네비게이션 바 END -->
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col col-10">
+            <div class="col-11">
                 {% block content %}
                 {% endblock %}
             </div>
