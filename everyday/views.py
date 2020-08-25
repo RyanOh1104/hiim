@@ -9,10 +9,10 @@ from datetime import date, datetime
 from django.utils import timezone
 from django_slugify_processor.text import slugify
 from time import strftime
-import json
+# import json
 
-# Create your views here.
 @login_required
+# 하루하루 기록장 Create page의 view입니다
 def everydayCreate(request):
     today = datetime.today()
     # setting initial user as current logged in user
@@ -25,11 +25,7 @@ def everydayCreate(request):
             instance.authuser = request.user
             instance.when = str(instance.when)
 
-            #everyday_img = request.FILES.get('img', None) # 원래는 request.FILES['img']인데, 이렇게 하면 파일을 추가하지 않았을 때 에러가 난다.
-            # instance.img1 = request.FILES.get('img1')
-            # instance.img2 = request.FILES.get('img2')
-            # instance.img3 = request.FILES.get('img3')
-
+            ########## 여기는 아무 키워드도 입력하지 않았을 때 Main page에 디폴트값을 주기 위한 부분입니다 ##########
             if instance.kw1 == "":
                 instance.kw1 = "✔️"
             if instance.kw2 == "":
@@ -39,7 +35,9 @@ def everydayCreate(request):
 
             if instance.emoji == "":
                 instance.emoji = "✔️"
-
+            ######################################################################################################
+            
+            # 각 날짜의 기록에 아래처럼 url을 부여합니다
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
@@ -48,17 +46,22 @@ def everydayCreate(request):
 
     return render(request,'everyday/everyday_create.html', {'form':form, 'today' : today})
 
+# 하루하루 기록장 Main page의 view입니다
 def everydayMain(request):
+    # 현재 로그인 되어있는 유저의 데이터만 query
     todays = NewEvent.objects.filter(authuser=request.user)
+    # 현재 로그인 되어있는 유저의 기본정보(UserInfo) query
     thisUser = UserInfo.objects.get(authuser=request.user)
 
+    # Main page 상단의 progress bar를 위한 부분입니다.
+    # everyday.js로 parsing할 데이터를 query하는 부분이에요.
     getToday = datetime.today()
     getMonth = getToday.strftime('%m')
     countThisMonth = todays.filter(authuser=request.user, when__contains=getMonth).count()
     
-    if request.GET:  
-        event_arr = []
-        all_events = NewEvent.objects.all()
+    # if request.GET:  
+    #     event_arr = []
+    #     all_events = NewEvent.objects.all()
 
     context = {
         "todays":todays,
@@ -68,9 +71,9 @@ def everydayMain(request):
     }
     return render(request,'everyday/everyday_main.html', context)
 
-def all_events(request):
-    events = NewEvent.objects.all()
-    return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
+# def all_events(request):
+#     events = NewEvent.objects.all()
+#     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
 
 def everydayDetail(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
