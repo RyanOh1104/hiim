@@ -37,7 +37,8 @@ def everydayCreate(request):
                 instance.emoji = "✔️"
             ######################################################################################################
             
-            # 각 날짜의 기록에 아래처럼 url을 부여합니다
+            # 각 날짜의 기록에 아래처럼 url을 부여합니다.
+            # 각 기록의 slug는 저장된 시점을 slugify해서 저장돼요.
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
             instance.save()
@@ -58,54 +59,57 @@ def everydayMain(request):
     getToday = datetime.today()
     getMonth = getToday.strftime('%m')
     countThisMonth = todays.filter(authuser=request.user, when__contains=getMonth).count()
-    
-    # if request.GET:  
-    #     event_arr = []
-    #     all_events = NewEvent.objects.all()
 
     context = {
-        "todays":todays,
-        'thisUser':thisUser,
-        'getMonth':getMonth,
-        'countThisMonth':countThisMonth,
+        'todays' : todays,
+        'thisUser' : thisUser,
+        'getMonth' : getMonth,
+        'countThisMonth' : countThisMonth,
     }
     return render(request,'everyday/everyday_main.html', context)
 
-# def all_events(request):
-#     events = NewEvent.objects.all()
-#     return HttpResponse(events_to_json(events), content_type='application/json; charset=utf-8')
-
+# 하루하루 Detail page의 view입니다.
 def everydayDetail(request, authuser_id, slug):
+    # 각 기록의 slug는 기록의 id처럼 씁니다.
     today = NewEvent.objects.get(slug=slug)
    
     return render(request, 'everyday/everyday_detail.html', {'today' : today})
 
+# 하루하루의 기록을 수정하는 view입니다.
 def everydayUpdate(request, authuser_id, slug):
+    # 해당 날짜의 기록을 query.
     getToday = NewEvent.objects.get(slug=slug)
+    # 새로운 slug(id)를 부여하기 위해 가져옵니다
     today = datetime.today()
-    # 글을 수정사항을 입력하고 제출을 눌렀을 때
+
+    # 수정사항을 입력하고 제출을 눌렀을 때
     if request.method == "POST":
         form = EverydayInputForm(request.POST, request.FILES) 
         if form.is_valid():
             instance = form.save(commit=False)
             instance.authuser = request.user
 
-            # 아래를 하지 않았더니, img 필드가 텅 빈채로 저장되는 에러(?)가 발생했었다!
+            ######### 아래를 하지 않았더니, img 필드가 텅 빈채로 저장되는 현상이 발생했었어요! 왜 그러지.. ##########
             instance.img1 = request.FILES.get('img1')
             instance.img2 = request.FILES.get('img2')
             instance.img3 = request.FILES.get('img3')
+            #####################################################################################################
 
             instance.slug = slugify(today)
             instance.url = "/everydaydetail/" + str(authuser_id) + '/' + str(instance.slug)
+
+            # 기존에 있던 건 지워버립니다.
             getToday.delete()
             instance.save()
             return redirect('/everyday/everydaydetail/' + str(authuser_id) + '/' + str(instance.slug))
 
     # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
     else:
+        # 해당 날짜에 해당하는 instance를 가져옵니다.
         form = EverydayInputForm(instance = getToday)
         return render(request, 'everyday/update.html', {'form':form})
 
+# 하루하루의 기록을 지우는 view입니다.
 def everydayDelete(request, authuser_id, slug):
     today = NewEvent.objects.get(slug=slug)
     today.delete()
