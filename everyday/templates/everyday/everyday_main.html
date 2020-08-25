@@ -5,22 +5,19 @@
 <!-- 추가적인 css 파일 -->
 {% endblock %}
 
-{% block extrahead %}
-
-{% endblock %}
-
 {% block title %} 하루하루 {% endblock %}
 
 {% load crispy_forms_tags %}
 
 {% block content %}
+<!-- block-spacing이라는 class는, 간격을 띄우기 위해 끼워넣는 빈 row입니다 -->
 <div class="row block-spacing"></div>
 
 <div class="row justify-content-center top-block">
-    <div class="col col-10 text-center">
+    <div class="col-10 text-center">
         <span class="archive-title">하루하루</span><span class="archive-icon">📅</span>
     </div>
-    <div class="col col-12 text-center">
+    <div class="col-12 text-center">
         <div class="archive-subtitle">일상은 추억이 되거나, 사라진 기억이 되거나.   
         </div>
     </div>
@@ -29,9 +26,9 @@
 <div class="block-spacing"></div>
 <div class="block-spacing pc-only"></div>
 
+<!-- 이번 달 '하루하루' 기록양을 나타내는 Progress bar START -->
 <div class="row justify-content-center">
     <div class="col">
-        <!-- <h5> 이번 달의 기록된 오늘 </h5> -->
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="">
     <span class="sr-only">60% Complete</span>
@@ -39,40 +36,41 @@
         </div>
     </div>
 </div>
+<!-- Progress bar END -->
 
 <div class="block-spacing"></div>
 <div class="block-spacing pc-only"></div>
 
+<!-- 달력 START -->
 <div class="row justify-content-center">
-
-        <div class="col col-12">
-            <table id="mycalendar" style="border-color:#3333FF ">
-                <tr><!-- label은 마우스로 클릭을 편하게 해줌 -->
-                    <td class="prevNext">
-                        <button class="btn prevNextButtons pc-only" onclick="prevCalendar()">⬅</button>
-                        <div class="prevNextButtons mobile-only" onclick="prevCalendar()">⬅</div>
-                    </td>
-                    <td id="tbCalendarYM" colspan="5">
-                    yyyy년 m월</td>
-                    <td class="prevNext">
-                        <button class="btn prevNextButtons pc-only" onclick="nextCalendar()">➡</button>
-                        <div class="prevNextButtons mobile-only" onclick="nextCalendar()">➡</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class='sevenDays' id='sun'>일</td>
-                    <td class='sevenDays'>월</td>
-                    <td class='sevenDays'>화</td>
-                    <td class='sevenDays'>수</td>
-                    <td class='sevenDays'>목</td>
-                    <td class='sevenDays'>금</td>
-                    <td class='sevenDays' id='sat'>토</td>
-                </tr> 
-            </table>
-        </div>    
-
+    <div class="col-12">
+        <table id="mycalendar">
+            <!-- 달력에서 yyyy년 mm월 표기하는 부분 -->
+            <tr>
+                <td class="prevNext">
+                    <div class="btn prevNextButtons" onclick="prevCalendar()">⬅</div>
+                </td>
+                <td id="yearMonth" colspan="5">yyyy년 m월</td>
+                <td class="prevNext">
+                    <div class="btn prevNextButtons" onclick="nextCalendar()">➡</div>
+                </td>
+            </tr>
+            <!-- 달력에서 요일 표기하는 부분 -->
+            <tr>
+                <td class='sevenDays' id='sun'>일</td>
+                <td class='sevenDays'>월</td>
+                <td class='sevenDays'>화</td>
+                <td class='sevenDays'>수</td>
+                <td class='sevenDays'>목</td>
+                <td class='sevenDays'>금</td>
+                <td class='sevenDays' id='sat'>토</td>
+            </tr> 
+        </table>
+    </div>    
 </div> 
+<!-- 달력 END -->
 
+<!-- 아래 사용법은 아직 구상중입니다! -->
 <!-- <div class="manual">
     <button class="btn manual-button" id="manual-dansang">
         📋 사용법

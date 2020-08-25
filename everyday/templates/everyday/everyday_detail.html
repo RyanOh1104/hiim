@@ -13,39 +13,43 @@
 <div class="block-spacing"></div>
 <div class="block-spacing"></div>
 
+<!-- 제목 (날짜) -->
 <div class="row">
-    <div class="col col-12 detail-title">
+    <div class="col-12 detail-title">
         <div class="row">
-            <div class="col col-10" id="detail-title">
-                {{today.when}}
-            </div>
-            <div class="col col-2 text-right go-to-main">
+            <div class="col-2 text-left go-to-main">
                 <a href="/everyday/everydaymain" class="go-to-main-button">
                     <img class="go-back-img" src="{% static 'mvp/images/backarrow.png' %}">
                 </a>
             </div>
+            <div class="col-10 text-right">
+                {{today.when}}
+            </div>
         </div>
     </div>
 </div>
+
 <br>
+
+<!-- 내용 -->
 <div class="row justify-content-center">
     <div class="col-lg-4 col-sm-11 img-col text-center">
     {% if today.img1 %}
-        <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+        <img src="{{today.img1.url}}" class="everyday-img" alt="🤔이미지가 어디 갔지?"><br>
     {% else %}
         <img class="default-img" src="{% static 'mvp/images/ci.png' %}">
     {% endif %}
     </div>
     <div class="col-lg-4 col-sm-11 img-col text-center">
         {% if today.img2 %}
-            <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+            <img src="{{today.img2.url}}" class="everyday-img" alt="🤔이미지가 어디 갔지?"><br>
         {% else %}
             <img class="default-img" src="{% static 'mvp/images/ci.png' %}" style="display: none;">
         {% endif %}
     </div>
     <div class="col-lg-4 col-sm-11 img-col text-center">
         {% if today.img3 %}
-            <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디갔지?"><br>
+            <img src="{{today.img3.url}}" class="everyday-img" alt="🤔이미지가 어디 갔지?"><br>
         {% else %}
             <img class="default-img" src="{% static 'mvp/images/ci.png' %}">
         {% endif %}

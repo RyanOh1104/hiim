@@ -5,6 +5,21 @@
 html {
     scroll-behavior: smooth;
 }
+.helptext {
+    font-size: 13px;
+}
+.highlight {
+    font-weight: bold;
+    background: #9300d3;
+    background: linear-gradient(
+        180deg,rgba(255,255,255,0) 65%, #9300d37f 35%);
+}
+.top-block {
+    background-color: #d4cfb9;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: black solid 2px;
+}
 .simply-stressed {
     color: #9300d3;
     font-weight: bold;
@@ -12,17 +27,11 @@ html {
 .enlarge-150 {
     font-size: 150%;
 }
-.top-block {
-    background-color: #f6f5f1;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    border-bottom: black solid 2px;
-}
+
 .page-title {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-size: 29px;
-    font-weight: bold;
+    font-size: 34px;
 }
 .block-title {
     padding-top: 20px;
@@ -66,9 +75,7 @@ html {
 .btn-text {
     color: #f6f5f1;
 }
-.helptext {
-    font-size: 13px;
-}
+
 .footer {
     height: 40px;
     background-color: lightgrey;
@@ -94,17 +101,16 @@ a:active {color:black;}
 
 /* Some other CSS settings */
 
-/* Archive-main settings START */
+/* Archive-main START */
 .archive-title {
-    /* padding-left: 20px; */
-    font-size: 47px;
-    font-weight: bold;
+    font-size: 55px;
+    font-weight: 800;
 }
 .archive-icon {
-    font-size: 20px;
+    font-size: 21px;
 }
 .archive-subtitle {
-    font-size: 18px;
+    font-size: 21px;
     padding-bottom: 10px;
 }
 .pagination-buttons {
@@ -121,37 +127,20 @@ a:active {color:black;}
     margin-bottom: 30px;
 }
 
-/* Archive-detail settings START */
+/* Detail page START */
 .detail-title {
     font-size: 44px;
     border-bottom: 2px black solid;
-    padding-bottom: 10px;
-}
-#detail-title {
-    font-weight: bold;
+    font-weight: 100;
+    /* font-weight: 800; */
 }
 #detail-subtitle {
     font-size: 17px;
 }
-
-.detail-dates {
-    padding-top: 10px;
-}
-.detail-created {
-    font-size: 13px;
-}
-.detail-modified {
-    font-size: 13px;
-}
-.detail-contents {
-    font-size: 17px;
-    line-height: 1.75;
-    white-space: pre-line;
-}
 .go-to-main-button {
     padding: 5px;
     border-radius: 10px;
-    font-size: 29px;
+    font-size: 34px;
 }
 .go-to-main-button:hover {
     box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
@@ -160,7 +149,19 @@ a:active {color:black;}
     width: 30%;
     height: auto;
 }
-/* Archive_detail settings END */
+.detail-dates {
+    padding-top: 10px;
+}
+.detail-created, .detail-modified {
+    font-size: 13px;
+}
+.detail-contents {
+    font-size: 17px;
+    line-height: 1.75;
+    white-space: pre-line;
+}
+/* Detail page END */
+
 .notification {
     position: absolute;
     top: -10px;
@@ -210,11 +211,7 @@ a:active {color:black;}
     font-size: 13px;
     font-weight: bold;
 }
-.highlight {
-    background: #9300d3;
-    background: linear-gradient(
-        180deg,rgba(255,255,255,0) 65%, #9300d37f 35%);
-}
+
 
 /* Welcome page */
 .welcome-title {
@@ -284,10 +281,10 @@ a:active {color:black;}
 
     /* Global */
     .page-title {
-        padding-top: 50px;
-        padding-bottom: 20px;
-        font-size: 6vw;
-        font-weight: bold;
+        font-size: 5vw;
+    }
+    .helptext {
+        font-size: 2.5vw;
     }
     #navbar-toggler-custom-icon {
         width: 30px;
@@ -327,29 +324,14 @@ a:active {color:black;}
         font-size: 4vw;
     }
 
-    /* Archive-detail pages START */
+    /* Detail pages START */
     .detail-title {
         font-size: 5vw;
         /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
-        border-bottom: 2px black solid;
-        padding-bottom: 10px;
     }
-    #detail-title {
-        font-weight: bold;
-        font-size: 6.5vw;
-    }
-    /* .go-to-main {
-        display: flex;
-        align-items: center;
-    }
-    .go-to-main-button {
-        padding: 5px;
-        border-radius: 5px;
-    } */
     .go-back-img {
         width : 80%;
         height: auto;
-        vertical-align: text-top;
     }
     #detail-subtitle {
         font-size: 3.5vw;
@@ -371,20 +353,19 @@ a:active {color:black;}
     .update-delete {
         text-align: center
     }
-    /* Archive_detail settings END */ 
+    /* Archive_detail END */ 
 
-    /* Archive-main settings START */
+    /* Archive-main START */
     .archive-title {
-        /* padding-left: 20px; */
         font-size: 8vw;
         font-weight: bold;
     }
     .archive-icon {
-        font-size: 20px;
+        font-size: 4vw;
     }
     .archive-subtitle {
-        font-size: 3.5vw;
+        font-size: 4vw;
         padding-bottom: 10px;
     }
-/* Archive-main settings END */
+    /* Archive-main END */
 }

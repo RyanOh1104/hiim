@@ -50,11 +50,11 @@ function buildCalendar(){//현재 달 달력 만들기
     //대로 된 다음달 시작일(1일)은 못가져오고 1 전인 0, 즉 전달 마지막일 을 가져오게 된다
     var tbCalendar = document.getElementById("mycalendar");
     //날짜를 찍을 테이블 변수 만듬, 일 까지 다 찍힘
-    var tbCalendarYM = document.getElementById("tbCalendarYM");
+    var yearMonth = document.getElementById("yearMonth");
     //테이블에 정확한 날짜 찍는 변수
     //innerHTML : js 언어를 HTML의 권장 표준 언어로 바꾼다
     //new를 찍지 않아서 month는 +1을 더해줘야 한다. 
-     tbCalendarYM.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월"; 
+     yearMonth.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월"; 
 
      /*while은 이번달이 끝나면 다음달로 넘겨주는 역할*/
     while (tbCalendar.rows.length > 2) {
@@ -126,7 +126,7 @@ function buildCalendar(){//현재 달 달력 만들기
          && today.getMonth() == date.getMonth()
          && i == date.getDate()) {
           //달력에 있는 년,달과 내 컴퓨터의 로컬 년,달이 같고, 일이 오늘의 일과 같으면
-        cell.classList.add("thisIsToday")
+        cell.classList.add("todayCell")
 
         for (k in range(0, eventsLength-1)) { // 오늘 event가 등록되어 있으면 키워드를, 없으면 Add
           if (events[k].dates === dateStringyfied) {

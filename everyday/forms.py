@@ -12,7 +12,7 @@ class EverydayInputForm(forms.ModelForm):
     widget = forms.Textarea(attrs={
         # 'placeholder': 'Tip. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요?',
         'rows' : 8,
-        'id' : 'what'
+        'class' : 'detail-contents'
         }))
     img1 = forms.ImageField(required=False)
     img2 = forms.ImageField(required=False)
