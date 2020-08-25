@@ -8,6 +8,7 @@ from bootstrap_datepicker_plus import DatePickerInput, MonthPickerInput
 from emoji_picker.widgets import EmojiPickerTextInputAdmin
 
 class EverydayInputForm(forms.ModelForm):
+    when = forms.DateField()
     what = forms.CharField(required=False, 
     widget = forms.Textarea(attrs={
         # 'placeholder': 'Tip. 장문으로 쓰기가 부담스럽다면, 한 줄씩 써보는 건 어때요?',

@@ -11,7 +11,8 @@
 {% load crispy_forms_tags %}
 
 {% block extrahead %}
-{{ form.media }}
+<!-- datepicker를 위한 설정입니다. -->
+{{ form.media }} 
 {% endblock %}
 
 {% block content %}
@@ -64,7 +65,7 @@
 
     <!-- 내용 입력하는 부분 -->
     <div class="row">
-        <div class="col">
+        <div class="col" id="what">
             <div>{{form.what|as_crispy_field}}</div>
         </div>
     </div>
