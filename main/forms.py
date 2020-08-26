@@ -20,7 +20,7 @@ class InputUserForm(forms.ModelForm):
     introduction = forms.CharField(label = "저는,", max_length=60,
     widget=forms.Textarea(attrs={
         'placeholder': "'나'를 간략하게 표현해주세요!", 
-        'rows':2, 
+        'rows':1, 
         'class':'all-inputs'
         }))
 
