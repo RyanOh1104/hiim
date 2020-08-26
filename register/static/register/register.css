@@ -18,5 +18,7 @@
 }
 
 @media (max-width: 768px) {
-
+    .bangap {
+        font-size: 5vw;
+    }
 }
