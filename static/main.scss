@@ -25,6 +25,9 @@ $theme-colors: (
   "custom-color": #900
 );
 
+.btn {
+  border-radius: 100px;
+}
 .progress {
   background-color: #f6f5f1 !important;
   border-radius: 5px !important;
