@@ -32,7 +32,7 @@
                 {% for q in questions %}
                 {% if q.number <= latestQuestionNumber %}
                     <a href="answer/{{q.number}}" class="qanda-main-question">
-                        <div class="main-questions" id="{{q.number}}">{{q.number}} | {{q.question|safe}}</div>
+                        <div id="{{q.number}}">{{q.number}} | {{q.question|safe}}</div>
                     </a>
                 {% endif %}
                 <br>
