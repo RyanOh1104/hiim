@@ -10,41 +10,39 @@
 
 {% block content %}
 <div class="block-spacing"></div>
-<div class="block-spacing">
+<div class="block-spacing"></div>
 
-</div>
+<!-- 제목 부분 -->
 <div class="row">
     <div class="col detail-title">
         <div class="row">
-            <div class="col col-10">
-                <h1 id="detail-title">{{thisDansang.title}}</h1>
+            <div class="col-11">
+                <div>{{thisDansang.title}}</div>
             </div>
-            <div class="col col-2 text-right go-to-main">
+            <div class="col-1 text-right go-to-main">
                 <a href="/dansang/dansangmain" class="go-to-main-button">
                     <img class="go-back-img" src="{% static 'mvp/images/backarrow.png' %}">
                 </a>
             </div>
         </div>
         <div class="row">
-            <div class="col col-12">
-                <div id="detail-subtitle">{{thisDansang.subtitle|safe}} | #<span class="highlight" style="font-weight: bold;">{{thisDansang.category|safe}}</span></div>
+            <div class="col-12 detail-subtitle">
+                <div>{{thisDansang.subtitle|safe}} | #<span class="highlight" style="font-weight: bold;">{{thisDansang.category|safe}}</span></div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- 작성 날짜 부분 -->
 <div class="row justify-content-center detail-dates">
-    <div class="col col-12 text-right">
-        <!-- <div class="detail-created">쓰여진 날짜: {{thisDansang.created}}</div>
-        <div class="detail-modified">마지막으로 수정된 날짜: {{thisDansang.modified}}</div> -->
+    <div class="col-12 text-right">
         <div class="detail-created">{{thisDansang.created}}</div>
     </div>
 </div>
 
-<!-- <div class="block-spacing"></div> -->
-
+<!-- 내용 부분 -->
 <div class="row justify-content-center img-row">
-    <div class="col col-6 text-center">
+    <div class="col-6 text-center">
         {% if thisDansang.img %}
         <img src="{{thisDansang.img.url}}" class="dansang-img" alt="🤔이미지가 어디갔지?"><br>
         {% else %}
@@ -54,7 +52,7 @@
 </div>
 
 <div class="row justify-content-center">
-    <div class="col col-12">
+    <div class="col-12">
         <div class="detail-contents">
             {{thisDansang.contents|safe}}
         </div>
@@ -69,14 +67,14 @@
         <div class="col-lg-4 col-sm-8">
             <div class="row justify-content-center">
                 <div class="col col-5 update-delete">
-                    <button class='btn menial-buttons button-update'>
-                        <span class="menial-btn-text"><a href="{% url 'dansangUpdate' thisDansang.authuser_id thisDansang.slug %}">
+                    <button class='btn minor-button button-update'>
+                        <span><a href="{% url 'dansangUpdate' thisDansang.authuser_id thisDansang.slug %}">
                         수정하기</a></span>
                     </button>
                 </div>
-                <div class="col col-5 update-delete">
-                    <button class='btn menial-buttons button-delete'>
-                        <span class="menial-btn-text"><a href="{% url 'dansangDelete' thisDansang.authuser_id thisDansang.slug %}">
+                <div class="col-5 update-delete">
+                    <button class='btn minor-button button-delete'>
+                        <span><a href="{% url 'dansangDelete' thisDansang.authuser_id thisDansang.slug %}">
                         삭제하기</a></span>
                     </button>
                 </div>

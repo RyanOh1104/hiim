@@ -9,16 +9,19 @@ from django_summernote.fields import SummernoteTextFormField, SummernoteTextFiel
 
 class DansangInputForm(forms.ModelForm):
     title = forms.CharField(widget=forms.TextInput(
-        attrs={'style':'font-size: 44px; background-color: #f6f5f1; border: none;', 
-        'placeholder':'제목'}))
+        attrs={
+            'style':'font-size: 44px; border: none;', 
+            'placeholder':'제목'}))
     subtitle = forms.CharField(required=False, widget=forms.TextInput(
-        attrs={'style':'font-size: 17px; background-color: #f6f5f1; border: none;', 
-        'placeholder':'부제목이 있으면 입력해주세요!'}))
+        attrs={
+            'style':'font-size: 17px; border: none;', 
+            'placeholder':'부제목이 있으면 입력해주세요!'}))
     # contents = SummernoteTextField()
     img = forms.ImageField(required=False)
     category = forms.CharField(required=False, widget=forms.TextInput(
-        attrs={'style':'font-size: 17px; background-color: #f6f5f1; border: none;',
-        'placeholder':'#새 카테고리'}))
+        attrs={
+            'style':'font-size: 17px; border: none;',
+            'placeholder':'#새 카테고리'}))
 
     class Meta:
         model=DansangInput

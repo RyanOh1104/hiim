@@ -22,6 +22,8 @@ td{
     font-size: 21px;
     vertical-align: middle;
     border-radius: 30px;
+    /* .btn 기본 설정이 shadow를 주는 건데, 이건 그렇게 하면 안 예뻐서 예외처리! */
+    box-shadow : none; 
 }
 .prevNextButtons:hover {
     box-shadow:  2px 2px 1px #bbbab7, 

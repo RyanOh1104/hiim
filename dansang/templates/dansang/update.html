@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="row">
-  <div class="col col-10">
+  <div class="col-10">
       <h1 class="page-title">📝무슨 생각을 했어요?</h1>
   </div>
 </div>
@@ -18,19 +18,20 @@
 <form method="post" class="form-group" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="row">
-    <div class="col col-12"> <!--원래는 col-8-->
-      <div class="input-title">{{form.title|as_crispy_field}}</div>
+    <div class="col-12">
+      <div class="inputfield-title">{{form.title|as_crispy_field}}</div>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row row-subtitle">
     <div class="col-lg-8 col-sm-12">
-      <div class="input-subtitle">{{form.subtitle|as_crispy_field}}</div>
+      <div class="inputfield-subtitle">{{form.subtitle|as_crispy_field}}</div>
     </div>
 
     <br class="mobile-only"><br class="mobile-only">
 
     <div class="col-lg-4 col-sm-6">
-      <div class="input-img">{{form.img|as_crispy_field}}</div>
+      <div class="inputfield-img">{{form.img|as_crispy_field}}</div>
     </div>
   </div>
 
@@ -60,7 +61,7 @@
   
   {% autoescape off %}
   <div class="row">
-    <div class="col col-12 input-content">
+    <div class="col-12 inputfield-content">
       {{form.media}}
       {{form.contents|as_crispy_field|safe}}
     </div>
@@ -68,6 +69,7 @@
   {% endautoescape %}
   <div class="row">
     <div class="col">
+      <!-- onclick 부분은 GA 트래킹용 코드에요! -->
       <button type='submit' class="btn menial-buttons"
       onclick="gtag('event', 'Click', {
         'event_category': '끄적끄적',

@@ -41,35 +41,33 @@
 /* Main Page Settings END*/
 
 /* Create page settings START */
-.input-title {
-    background-color: #f6f5f1;
-    border: none;
+.inputfield-title {
     height: 80px;
-}
-#id_titlexxx, #id_subtitlexxx {
-    box-shadow: none; /* form-control의 디폴트 설정인 inset shadow를 무력화 */ 
 }
 .row-subtitle {
     margin-top: 10px;
 }
-.input-subtitle {
+/* .inputfield-subtitle {
     background-color: #f6f5f1;
     border: none;
     margin-bottom: -50px;
-}
-.input-img {
+} */
+/* .inputfield-img {
     background-color: #f6f5f1;
-}
+} */
 .cat-field {
     padding-left: 0px;
 }
 /* Create page settings END */
-.doyou-need-input {
-    font-size: 13px;
-    height: 25px;
-    width: 140px;
-    padding-bottom: 10px;
+
+/* Detail page settings START */
+.dansang-img, .default-img {
+    width: 100%;
+    height: auto;
 }
+/* Detail page settings END */
+
+/* Seed page settings START */
 .helptext {
     margin-top: 3px;
 }
@@ -97,8 +95,6 @@
     width: 100%;
     height: auto;
 }
-
-/* Seed settings START */
 .seed-links:visited {
     color: darkgrey;
 }
@@ -122,10 +118,8 @@
     line-height: 1.75 !important;
 }
 .card-header {
-    /* padding-top: 40px !important; */
     background-color: #f6f5f1 !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
 }
 .show {
     background-color: #f6f5f1;
@@ -183,14 +177,7 @@
         font-size: 3.5vw !important;
     }
     .input-title {
-        background-color: #f6f5f1;
-        border: none;
         height: 15vw;
-    }
-    .input-subtitle {
-        background-color: #f6f5f1;
-        border: none;
-        margin-bottom: -50px;
     }
     .custom-file {
         width: 50%;

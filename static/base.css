@@ -133,32 +133,29 @@ a:active {
     margin: 3px;
     padding: 5px;
 }
-/* Archive-main settings END */
+/* Main page settings END */
 
 .only-authuser {
     margin-bottom: 30px;
 }
 
-/* Detail page START */
+/* Detail page settings START */
 .detail-title {
     font-size: 44px;
     border-bottom: 2px black solid;
     font-weight: 100;
-    /* font-weight: 800; */
 }
-#detail-subtitle {
+.detail-subtitle {
     font-size: 17px;
+    padding-bottom: 10px;
 }
 .go-to-main-button {
     padding: 5px;
     border-radius: 10px;
     font-size: 34px;
 }
-.go-to-main-button:hover {
-    box-shadow: 2px 2px 1px #bbbab7, -2px -2px 1px #ffffff;
-}
 .go-back-img {
-    width: 30%;
+    width: 80%;
     height: auto;
 }
 .detail-dates {
@@ -172,7 +169,7 @@ a:active {
     line-height: 1.75;
     white-space: pre-line;
 }
-/* Detail page END */
+/* Detail page settings END */
 
 .notification {
     position: absolute;
@@ -323,38 +320,7 @@ a:active {
         font-size: 4vw;
     }
 
-    /* Detail pages START */
-    .detail-title {
-        font-size: 5vw;
-        /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
-    }
-    .go-back-img {
-        width : 80%;
-        height: auto;
-    }
-    #detail-subtitle {
-        font-size: 3.5vw;
-    }
-    .detail-dates {
-        padding-top: 10px;
-    }
-    .detail-created {
-        font-size: 2.5vw;
-    }
-    .detail-modified {
-        font-size: 2.5vw;
-    }
-    .detail-contents {
-        font-size: 17px;
-        line-height: 1.75;
-        white-space: pre-line;
-    }
-    .update-delete {
-        text-align: center
-    }
-    /* Archive_detail END */ 
-
-    /* Archive-main START */
+    /* Main page settings START */
     .archive-title {
         font-size: 8vw;
         font-weight: bold;
@@ -366,5 +332,26 @@ a:active {
         font-size: 4vw;
         padding-bottom: 10px;
     }
-    /* Archive-main END */
+    /* Main page settings END */
+
+    /* Detail page settings START */
+    .detail-title {
+        font-size: 5vw;
+        /* 여기 font-size는 main으로 돌아가기 아이콘 사이즈 */
+    }
+    .detail-subtitle {
+        font-size: 3.5vw;
+    }
+    .detail-created, .detail-modified {
+        font-size: 2.5vw;
+    }
+    .detail-contents {
+        font-size: 3.5vw;
+    }
+    .update-delete {
+        text-align: center
+    }
+    /* Detail page settings END */ 
+
+
 }
