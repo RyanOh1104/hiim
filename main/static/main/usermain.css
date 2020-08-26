@@ -59,13 +59,13 @@ html, body {
 .so-far {
     font-size: 21px;
 }
-.usermain-archive-content {
-    /* align-items: center; */
+/* .usermain-archive-content {
+    align-items: center;
 }
 .usermain-archive-content:active{
-    /* box-shadow: inset 5px 5px 3px #bbbab7, 
-    inset -5px -5px 3px #ffffff; */
-}
+    box-shadow: inset 5px 5px 3px #bbbab7, 
+    inset -5px -5px 3px #ffffff;
+} */
 .archive-block {
     height: 130px;
 }
