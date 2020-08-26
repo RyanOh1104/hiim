@@ -22,29 +22,21 @@
         </div>
         <form method="post" class="form-group">{% csrf_token %}
             <div class="row">
-                <div class="col-11">
+                <div class="col-6">
                     {{form.username|as_crispy_field}}
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        {{form.email|as_crispy_field}}
-                    </div>
+                <div class="col-11">
+                    {{form.email|as_crispy_field}}
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        {{form.password1|as_crispy_field}}
-                    </div>
+                <div class="col-6">
+                    {{form.password1|as_crispy_field}}
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        {{form.password2|as_crispy_field}}
-                    </div>
+                <div class="col-6">
+                    {{form.password2|as_crispy_field}}
                 </div>
-                <div class="row">
-                    <div class="text-center">
-                        <button type="submit" class="btn menial-buttons">시작하기</button>
-                        <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
-                    </div>
+                <div class="col text-center">
+                    <button type="submit" class="btn menial-buttons">시작하기</button>
+                    <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
                 </div>
             </div> 
         </form>
