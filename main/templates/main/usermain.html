@@ -47,22 +47,22 @@
                 <div class="col-lg-4 col-sm-10">
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <a href="https://www.instagram.com/{{thisUser.insta}}"><img class="img-websites" src="{% static 'mvp/images/insta.png' %}"></a>
+                            <a href="https://www.instagram.com/{{thisUser.insta}}"><img class="img-social-media" src="{% static 'mvp/images/insta.png' %}"></a>
                         </div>
                         <div class="col-2">
-                            <a href="{{thisUser.facebook}}"><img class="img-websites" src="{% static 'mvp/images/facebook.png' %}"></a>
+                            <a href="{{thisUser.facebook}}"><img class="img-social-media" src="{% static 'mvp/images/facebook.png' %}"></a>
                         </div>
                         <div class="col-2">
-                            <a href="{{thisUser.linkedin}}"><img class="img-websites" src="{% static 'mvp/images/linkedin.png' %}"></a>
+                            <a href="{{thisUser.linkedin}}"><img class="img-social-media" src="{% static 'mvp/images/linkedin.png' %}"></a>
                         </div>
                         <div class="col-2">
-                            <a href="{{thisUser.youtube}}"><img class="img-websites" src="{% static 'mvp/images/youtube.png' %}"></a>
+                            <a href="{{thisUser.youtube}}"><img class="img-social-media" src="{% static 'mvp/images/youtube.png' %}"></a>
                         </div>
                         <div class="col-2">
-                            <a href="{{thisUser.blog}}"><img class="img-websites" src="{% static 'mvp/images/blog.png' %}"></a>
+                            <a href="{{thisUser.blog}}"><img class="img-social-media" src="{% static 'mvp/images/blog.png' %}"></a>
                         </div>
                         <div class="col-2">
-                            <a href="{{thisUser.others}}"><img class="img-websites" src="{% static 'mvp/images/website.png' %}"></a>
+                            <a href="{{thisUser.others}}"><img class="img-social-media" src="{% static 'mvp/images/website.png' %}"></a>
                         </div>
                     </div>
                 </div>  
@@ -201,7 +201,7 @@
         }
     
     /*
-    .img-websites의 parent a태그의 href가 비어있으면, 그 parent col에 attribute 추가: style="display:none;"
+    .img-social-media의 parent a태그의 href가 비어있으면, 그 parent col에 attribute 추가: style="display:none;"
     */
     window.onload = function () {
         // 개인정보 수정 alert
