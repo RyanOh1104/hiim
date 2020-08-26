@@ -19,7 +19,7 @@ html {
     padding-bottom: 20px;
     border-bottom: black solid 2px;
 }
-.simply-stressed {
+.color-stressed {
     color: #9300d3;
     font-weight: bold;
 }
@@ -83,7 +83,7 @@ html {
 .block-spacing {
     height: 30px;
 }
-/* Link-related stylings */
+/* 링크와 관련된 설정 */
 .all-links {text-decoration: none !important;}
 a {color:black;}         
 a:visited {color:black;} 

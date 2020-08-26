@@ -10,35 +10,26 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<div class="main-first-page">
+<!-- Usermain 페이지의 첫번째(위쪽) 화면입니다 -->
+<div class="usermain-first-page">
     <div class="row h-25"></div>
 
     <div class="row h-25 justify-content-center">
         <div class="col usermain-block">
             <div class="row justify-content-center ci-and-name">
-                <div class="col col-9" id="usermain-ci">
+                <div class="col-9 text-center">
                     <img class="usermain-ci" src="/static/mvp/images/ci.png">
                     <span class="usermain-name" id="tooltip-alert" data-toggle="tooltip" data-placement="top" title="내 정보를 수정/추가할 수 있어요!"><span class="highlight" onclick="location.href=`{% url 'update' thisUser.authuser_id %}`"> {{thisUser.name}}</span></span>
                 </div>
             </div>
-            
-            <!-- ORIGINAL VERSION 
-                <div class="row justify-content-center ci-and-name">
-                <div class="col col-3" id="usermain-ci">
-                    <img class = "usermain-ci" src="{% static 'mvp/images/ci.png' %}">
-                </div>
-                <div class="col col-3 text-center">
-                    <div class="usermain-name"><span class="highlight" onclick="location.href=`{% url 'update' thisUser.authuser_id %}`">{{thisUser.name}}</span></div>
-                </div>
-            </div> -->
             <div class="row justify-content-center">
-                <div class="col col-12 text-center">
+                <div class="col-12 text-center">
                     <div class="usermain-intro">{{thisUser.introduction}}</div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row h-25">
         <div class="col text-center scroll-down">
             <img class="scroll-down-img" src="{%static 'mvp/images/down.png' %}"
@@ -47,28 +38,30 @@
     </div>
 </div>
 
+<!-- Usermain 페이지의 두번째(아랫쪽) 화면입니다 -->
 <div class="main-second-page container">
     <div class="row justify-content-center">
-        <div class="col col-10">
+        <div class="col-10">
+            <!-- 소셜 미디어로 링크되는 버튼들이 나열되는 row입니다 -->
             <div class="row justify-content-center social-media">
-                <div class="col col-lg-4 col-sm-10">
+                <div class="col-lg-4 col-sm-10">
                     <div class="row justify-content-center">
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="https://www.instagram.com/{{thisUser.insta}}"><img class="img-websites" src="{% static 'mvp/images/insta.png' %}"></a>
                         </div>
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="{{thisUser.facebook}}"><img class="img-websites" src="{% static 'mvp/images/facebook.png' %}"></a>
                         </div>
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="{{thisUser.linkedin}}"><img class="img-websites" src="{% static 'mvp/images/linkedin.png' %}"></a>
                         </div>
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="{{thisUser.youtube}}"><img class="img-websites" src="{% static 'mvp/images/youtube.png' %}"></a>
                         </div>
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="{{thisUser.blog}}"><img class="img-websites" src="{% static 'mvp/images/blog.png' %}"></a>
                         </div>
-                        <div class="col col-2">
+                        <div class="col-2">
                             <a href="{{thisUser.others}}"><img class="img-websites" src="{% static 'mvp/images/website.png' %}"></a>
                         </div>
                     </div>
@@ -77,20 +70,22 @@
             
             <br>
             
+            <!-- 지금까지 각 기록장에 기록한 양을 보여주는 부분입니다 -->
             <div class="row justify-content-center">
                 <div class="col text-center">
-                    <div class="so-far" style="line-height: 1.5"> 지금까지 [<span class="simply-stressed enlarge-150">{{thisUserDansang}}</span>개의 생각]과<br class="mobile-only"> 
-                        [<span class="simply-stressed enlarge-150">{{thisUserEveryday}}</span>일의 일상]과<br class="mobile-only">
-                        [<span class="simply-stressed enlarge-150">{{thisUserQanda}}</span>개의 고민]으로
-                        <br><span class="simply-stressed enlarge-150">{{thisUser.name}}</span>에 대해 기록했어요!</div>
+                    <div class="so-far" style="line-height: 1.5"> 지금까지 [<span class="color-stressed enlarge-150">{{thisUserDansang}}</span>개의 생각]과<br class="mobile-only"> 
+                        [<span class="color-stressed enlarge-150">{{thisUserEveryday}}</span>일의 일상]과<br class="mobile-only">
+                        [<span class="color-stressed enlarge-150">{{thisUserQanda}}</span>개의 고민]으로
+                        <br><span class="color-stressed enlarge-150">{{thisUser.name}}</span>에 대해 기록했어요!</div>
                 </div>
             </div>
             <br>
-
+            
+            <!-- 기록장들을 나열하는 부분입니다 -->
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
-                    <div class="row justify-content-center archive-block">
-                        <div class="col col-11 usermain-archive-content all-blocks" id="dansang-block">
+                    <div class="row justify-content-center">
+                        <div class="col-11 usermain-archive-content all-blocks">
                             <a href="/dansang/dansangmain" class="all-links">
                                 <div class="row archive-block" id="alert-newSeed" data-toggle="tooltip" data-placement="bottom" title="새로운 씨앗이 추가되었어요! {{newSeed.category}} {{newSeed.title}}">
                                     <div class="col my-auto text-center">
@@ -104,13 +99,13 @@
                     </div>
                 </div>
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
-                    <div class="row justify-content-center archive-block">
-                        <div class="col col-11 usermain-archive-content all-blocks" id="block-everyday">
+                    <div class="row justify-content-center">
+                        <div class="col-11 usermain-archive-content all-blocks">
                             <a href="/everyday/everydaymain" class="all-links">
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
                                         <span class="usermain-archive-name">하루하루<span class=usermain-archive-desc>📅</span><br></span>
-                                        <span class="usermain-archive-desc">일상은 추억이 되거나, 사라진 기억이 되거나.</span>
+                                        <span class="usermain-archive-desc">세 개의 키워드로 기억하는 오늘.</span>
                                     </div>
                                 </div>
                             </a>
@@ -118,8 +113,8 @@
                     </div>
                 </div>
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
-                    <div class="row justify-content-center archive-block">
-                        <div class="col col-11 usermain-archive-content all-blocks" id="block-qanda">
+                    <div class="row justify-content-center">
+                        <div class="col-11 usermain-archive-content all-blocks">
                             <a href="/qanda/question" class="all-links">
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
@@ -138,8 +133,8 @@
 
             <div class="row justify-content-left">
                 <div class="col-sm-10 col-lg-4 archive-outer-block">
-                    <div class="row justify-content-center archive-block">
-                        <div class="col col-11 usermain-archive-content coming-soon">
+                    <div class="row justify-content-center">
+                        <div class="col-11 usermain-archive-content coming-soon">
                             <a href="" class="">
                                 <div class="row archive-block">
                                     <div class="col my-auto text-center">
@@ -153,27 +148,15 @@
                 </div>
             </div>
 
-            <!-- <div class="row h-75 pc-only"></div> -->
             <div class="row h-25 pc-only"></div>
         </div>
     </div>
 </div>
 
-<!-- <div class="row">
-    <div class="col col-12">
-            <div class="row">
-                <div class="col col-12 text-center">
-                    <a href="#"><img class="img-add-archive for-authuser" src="{% static 'mvp/images/add.png' %}"></a>
-                </div>
-            </div>
-    </div>
-</div> -->
-
 <script>
     function scrollWin(x, y) {
         window.scrollBy(x, y);
     }
-    
     
     // 새로운 씨앗 알림 - datePosted가 오늘 날짜와 같으면 알림
     function NewSeedAlert() {
@@ -224,7 +207,7 @@
         // 개인정보 수정 alert
         if(localStorage.getItem("popupWasShown") == null) {
             $('#tooltip-alert').tooltip('show');
-            //Hide tooltip after three seconds
+            // Hide tooltip after three seconds
             setTimeout(function(){
             $('#tooltip-alert').tooltip('dispose')
             }, 5000)

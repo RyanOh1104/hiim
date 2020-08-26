@@ -2,26 +2,21 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+/* First page : 첫부분 (윗쪽 페이지) */
 .h-25 {
     width: 100%;
 }
-.main-first-page {
-    /* width: 100vw; */
+.usermain-first-page {
     height: 100vh;
     border-bottom: 2px lightgrey solid;
-    /* background: url(mvp/images/4.jpg) no-repeat 50% 50%; */
 }
 .usermain-block {
-    background-color: #f6f5f1;
-    /* height: 150px; */
+    /* background-color: #f6f5f1;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: middle; */
 }
-.container {
-    width: 100%;
-    height: 100%;
-}
-.main-second-page {
+.usermain-second-page {
     width: 100vw;
     height: 100vh;
 }
@@ -32,37 +27,18 @@ html, body {
     width : 150px;
     margin-right: 10px;
 }
-#usermain-ci {
-    padding-top: 10px;
-    text-align: center;
-}
 .usermain-name {
-    margin: auto;
+    /* margin: auto; */
     font-size: 55px;
     letter-spacing: 5px;
-    text-align: left;
+    /* text-align: left; */
     font-weight: bold;
     cursor: pointer;
     margin-left: 10px;
 }
-.new {
-    font-size: 40% !important;
-    vertical-align: text-top;
-    height: 12px;
-}
-.so-far {
-    font-size: 1.25rem
-}
-.block {
-    border-radius: 10px;
-    border: #9300d3 2px solid;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
 .usermain-intro {
     white-space: pre-line;
     font-size: 21px;
-    /* white-space: pre-wrap; */
 }
 .scroll-down-img {
     width: 30px;
@@ -70,28 +46,12 @@ html, body {
     cursor: pointer;
 }
 
-/* 아래부터 second page */
+/* Second page : 뒷부분 (아랫쪽 페이지) */
 .social-media {
     padding-top: 30px;
     padding-bottom: 20px;
     border-bottom: 1px black solid;
 } 
-.my-archive {
-    font-size: 21px;
-    /* padding-top: 5px;
-    padding-bottom: 5px; */
-}
-.usermain-emoji {
-    font-size: 80px;
-}
-.usermain-archive-content {
-    /* display: flex; */
-    align-items: center;
-}
-.usermain-archive-content:active{
-    box-shadow: inset 8px 8px 8px #bbbab7, 
-    inset -8px -8px 8px #ffffff;
-}
 .img-websites {
     height: 30px;
     width: auto;
@@ -99,23 +59,30 @@ html, body {
     padding: 3px;
     border-radius: 5px;
 }
-.img-add-archive {
-    height: 40px;
-    width: 40px;
+.so-far {
+    /* font-size: 1.25rem; */
+    font-size: 21px;
 }
-.img-add-object {
-    height: 30px;
-    width: 30px;
+.usermain-archive-content {
+    /* align-items: center; */
+}
+.usermain-archive-content:active{
+    /* box-shadow: inset 5px 5px 3px #bbbab7, 
+    inset -5px -5px 3px #ffffff; */
+}
+.archive-block {
+    height: 130px;
 }
 .usermain-archive-name {
-    font-weight: bolder;
+    font-weight: 800;
     font-size: 34px;
 }
 .usermain-archive-desc {
     font-size: 13px;
 }
-.archive-block {
-    height: 130px;
+.coming-soon {
+    border : rgb(124, 123, 123) 1px dashed;
+    border-radius: 10px;
 }
 .new-sth-alert {
     position: absolute;
@@ -128,11 +95,37 @@ html, body {
 #new-question {
     padding: 8px 8px;
 }
-.coming-soon {
-    border : rgb(124, 123, 123) 1px dashed;
-    border-radius: 10px;
+
+
+/* 아래는 왜 했는지 기억이 안나는 부분.. */
+.new {
+    font-size: 40% !important;
+    vertical-align: text-top;
+    height: 12px;
 }
-/* Input */
+.block {
+    border-radius: 10px;
+    border: #9300d3 2px solid;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.my-archive {
+    font-size: 21px;
+}
+.usermain-emoji {
+    font-size: 80px;
+}
+.img-add-archive {
+    height: 40px;
+    width: 40px;
+}
+.img-add-object {
+    height: 30px;
+    width: 30px;
+}
+
+
+/* UserInfo Input Page */
 #in-addition {
     font-weight: bold;
     padding-top: 10px;
@@ -152,14 +145,9 @@ html, body {
         width: 100vw;
         height: 100vh;
     }
-    .usermain-block {
-        background-color: #f6f5f1;
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .ci-and-name {
+    /* .ci-and-name {
         align-items: center;
-    }
+    } */
     .usermain-ci {
         width : 45%;
         margin-right: 0px;
@@ -177,11 +165,7 @@ html, body {
         /* font-size: 21px; */
         font-size: 4vw; /* or 3vw */
     }
-    .container {
-        width: 100%;
-        height: 100%;
-    }
-    .main-second-page {
+    .usermain-second-page {
         width: 100vw;
         height: 100vh;
     }
@@ -198,18 +182,12 @@ html, body {
     .archive-outer-block {
         padding-bottom: 20px;
     }
-    .archive-block {
-        height: 130px;
-    }
     .usermain-archive-name {
-        font-weight: bolder;
         font-size: 8vw;
     }
-    
     .usermain-archive-desc {
         font-size: 3.5vw;
     }
-
     .empty-row-lower {
         height: 45%;
     }
@@ -240,12 +218,7 @@ html, body {
         font-size: 80px;
     }
     .usermain-archive-content {
-        /* display: flex; */
-        align-items: center;
-    }
-    .usermain-archive-content:active{
-        box-shadow: inset 8px 8px 8px #bbbab7, 
-        inset -8px -8px 8px #ffffff;
+        /* align-items: center; */
     }
     #new-question {
         padding: 8px 5px;

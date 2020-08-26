@@ -51,14 +51,18 @@ def everydayCreate(request):
 def everydayMain(request):
     # 현재 로그인 되어있는 유저의 데이터만 query
     todays = NewEvent.objects.filter(authuser=request.user)
+
     # 현재 로그인 되어있는 유저의 기본정보(UserInfo) query
     thisUser = UserInfo.objects.get(authuser=request.user)
 
-    # Main page 상단의 progress bar를 위한 부분입니다.
+    ########## Main page 상단의 progress bar를 위한 부분입니다. ##########
     # everyday.js로 parsing할 데이터를 query하는 부분이에요.
     getToday = datetime.today()
+    # 이번달의 '월'만 가져오는 부분이에요.
     getMonth = getToday.strftime('%m')
+    # 이건 뭐더라....
     countThisMonth = todays.filter(authuser=request.user, when__contains=getMonth).count()
+    #####################################################################
 
     context = {
         'todays' : todays,
@@ -89,7 +93,7 @@ def everydayUpdate(request, authuser_id, slug):
             instance = form.save(commit=False)
             instance.authuser = request.user
 
-            ######### 아래를 하지 않았더니, img 필드가 텅 빈채로 저장되는 현상이 발생했었어요! 왜 그러지.. ##########
+            ######### 아래를 하지 않았더니, img 필드가 빈 채로 저장되는 현상이 발생했었어요! 왜 그러지.. ##########
             instance.img1 = request.FILES.get('img1')
             instance.img2 = request.FILES.get('img2')
             instance.img3 = request.FILES.get('img3')
