@@ -11,10 +11,10 @@
 
 {% block content %}
 
-<div class="h-25"></div>
+<div class="h-10"></div>
 
 <div class="row justify-content-center">
-    <div class="col-6 all-blocks">
+    <div class="col-5 login-block">
         <div class="row">
             <div class="col text-left">
                 <div class="page-title">😃 <span class="highlight">반갑습니다!</span></div>
@@ -22,16 +22,16 @@
         </div>
         <form method="post" class="form-group">{% csrf_token %}
             <div class="row">
-                <div class="col-6">
+                <div class="col">
                     {{form.username|as_crispy_field}}
                 </div>
-                <div class="col-11">
+                <div class="col">
                     {{form.email|as_crispy_field}}
                 </div>
-                <div class="col-6">
+                <div class="col">
                     {{form.password1|as_crispy_field}}
                 </div>
-                <div class="col-6">
+                <div class="col">
                     {{form.password2|as_crispy_field}}
                 </div>
                 <div class="col text-center">
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-
+<div class="h-25"></div>
 
 {% endblock %}
 
