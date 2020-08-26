@@ -94,12 +94,11 @@ html, body {
 
 
 /* 아래는 왜 했는지 기억이 안나는 부분.. */
-.new {
+/* .new {
     font-size: 40% !important;
     vertical-align: text-top;
     height: 12px;
 }
-
 .my-archive {
     font-size: 21px;
 }
@@ -113,7 +112,7 @@ html, body {
 .img-add-object {
     height: 30px;
     width: 30px;
-}
+} */
 
 
 /* UserInfo Input Page */
