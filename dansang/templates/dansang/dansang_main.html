@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-{% load mathfilters %}
+<!-- {% load mathfilters %} -->
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'dansang/dansang.css' %}">
@@ -13,27 +13,20 @@
 <div class="row block-spacing"></div>
 
 <div class="row justify-content-center top-block">
-    <div class="col col-10 text-center">
+    <div class="col-10 text-center">
         <span class="archive-title">끄적끄적</span><span class="archive-icon">💬</span>
     </div>
-    <div class="col col-12 text-center">
-        <!-- <div class="archive-subtitle">문득 떠오르는 생각들의 기록</div> -->
+    <div class="col-12 text-center">
         <div class="archive-subtitle">떠오르는 아무 생각이나. 자유롭게.</div>
     </div>
 </div>
 
 <div class="block-spacing"></div>
-<!-- 
-<div class="row justify-content-center only-authuser">
-    <div class="col col-12 text-center">
-        <a href="#"><img src="C:\Users\user\hiim\mvp\static\mvp\images\add.png"></a>
-    </div>
-</div> -->
-{{hey}}
+
 <div class="row">
-    <div class="col col-6 button-new">
+    <div class="col-6">
         <a href="/dansang/dansangcreate">
-            <button class="all-buttons btn-lg btn-sm btn-primary">✒️ 생각 끄적이기</button>
+            <button class="btn major-button btn-sm">✒️ 생각 끄적이기</button>
         </a>
     </div>
     <!-- <div class="col col-6 text-right">
@@ -52,21 +45,22 @@
                 </div>
         </div>
     </div> -->
-    <div class="col col-6 button-input">
+    <div class="col-6 text-right">
         <a href="/dansang/seed">
-            <button class="all-buttons btn-lg btn-sm menial-buttons" id="tooltip-seed" data-toggle="tooltip" data-placement="right" title="다양한 인풋을 제공해드려요.">🌱 씨앗이 필요해요?</button>
+            <button class="btn minor-button btn-sm" id="tooltip-seed" data-toggle="tooltip" data-placement="right" title="다양한 인풋을 제공해드려요.">🌱 씨앗이 필요해요?</button>
         </a>
     </div>
 </div>
+
 <div class="block-spacing"></div>
 
 <div class="allCat">
     {% for item in posts %}
     <div class="row justify-content-center">
-        <div class="col col-12">
+        <div class="col-12">
             <a href="{{item.url}}" class="all-links">
             <div class="row justify-content-center">
-                <div class="col col-11 block-dansang">
+                <div class="col-11 block-dansang">
                     <span class="title">{{item.title}}</span><br class='mobile-only'>
                     <span class="first-sentence"> | {{item.subtitle|safe}}</span>
                 </div>
@@ -74,6 +68,7 @@
             </a>
         </div>
     </div>
+
     <br class='mobile-only'>
     <div class="block-spacing pc-only"></div>
     {% endfor %}
@@ -82,10 +77,10 @@
 <div class="eachCat">
     {% for item in posts %}
     <div class="row justify-content-center {{item.categoryEng}}">
-        <div class="col col-12">
+        <div class="col-12">
             <a href="{{item.url}}" class="all-links">
             <div class="row justify-content-center">
-                <div class="col col-11 block-dansang">
+                <div class="col-11 block-dansang">
                     <span class="title">{{item.title}}</span><br class='mobile-only'>
                     <span class="first-sentence"> | {{item.subtitle|safe}}</span>
                 </div>
@@ -105,8 +100,8 @@
         <a href="?page=1"><span class="pagination-buttons">처음</span></a>
         <a href="?page={{posts.previous_page_number}}"><span class="pagination-buttons"><</span></a>
         {% elif not posts.has_previous %}
-        <a href=""><span class="pagination-buttons">처음</span></a>
-        <a href=""><span class="pagination-buttons"><</span></a>
+        <a href=""><span class="btn pagination-buttons">처음</span></a>
+        <a href=""><span class="btn pagination-buttons"><</span></a>
         {% endif %}
         <span>{{posts.number}}</span>
         <span>/</span>
@@ -115,8 +110,8 @@
         <a href="?page={{posts.next_page_number}}"><span class="pagination-buttons">></span></a>
         <a href="?page={{posts.paginator.num_pages}}"><span class="pagination-buttons">끝</span></a>
         {% elif not posts.has_next %}
-        <a href=""><span class="pagination-buttons">></span></a>
-        <a href=""><span class="pagination-buttons">끝</span></a>
+        <a href=""><span class="btn pagination-buttons">></span></a>
+        <a href=""><span class="btn pagination-buttons">끝</span></a>
         {% endif %}
     </div>
 </div>
@@ -144,8 +139,8 @@
             $('.eachCat').hide();
             $('.allCat').show();
         })
-        console.log('영어로는', '{{categoryEngList}}')
-        console.log('한글로는', '{{categoryList}}')
+        console.log('카테고리 영어로는', '{{categoryEngList}}')
+        console.log('카테고리 한글로는', '{{categoryList}}')
         console.log('{{categories}}');
 
         var thisCat;

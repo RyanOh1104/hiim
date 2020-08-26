@@ -134,6 +134,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+# '끄적끄적' 기록장의 WYSIWYG 에디터에요!
 SUMMERNOTE_CONFIG = {
     'iframe': True,
     'lang' : 'ko-KR',
@@ -170,15 +171,12 @@ SUMMERNOTE_CONFIG = {
     'lazy': False,
 }
 
+SUMMERNOTE_THEME = 'bs4'
+# 아래는 Bootstrap4였나, Python 3.7이었나, 아무튼 특정 버전 이상을 사용할 때 적용해야 하는 옵션이라고 하더라구요..!
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-# BOOTSTRAP4 = {
-#     'include_jquery': True,
-# }
-
-SUMMERNOTE_THEME = 'bs4'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ 
@@ -193,9 +191,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 'djangobower.finders.BowerFinder'
 ]
 
+# 아래는 무엇 때문에 했는지 모르겠읍니다...
 BOWER_COMPONENTS_ROOT = '/PROJECT_ROOT/components/'
 BOWER_INSTALLED_APPS = (
     'jquery',
@@ -208,6 +206,6 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/welcome"
 
-# Media 추가할 때 이거 해줘야됨. Telusko 튜토리얼 2시간 18분부터 봐라
+# Media (사진, 파일 등) 추가할 때 필요한 부분입니다.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

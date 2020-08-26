@@ -1,3 +1,4 @@
+/* Global setting START */
 .ci {
     width: 80px;
     height: auto;
@@ -7,6 +8,9 @@ html {
 }
 .helptext {
     font-size: 13px;
+}
+.block-spacing {
+    height: 30px;
 }
 .highlight {
     font-weight: bold;
@@ -26,7 +30,6 @@ html {
 .enlarge-150 {
     font-size: 150%;
 }
-
 .page-title {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -61,46 +64,32 @@ html {
 .form-control:focus {
     background-color: #f6f5f1;
 }
-.all-buttons {
-    border-radius: 20px;
-    background: #9300d3;
-    box-shadow:  2px 2px 1px #bbbab7, 
-    -2px -2px 1px #ffffff;
+.major-button {
+    background-color: #9300d3;
+    color : #f6f5f1;
 }
-.all-buttons:active {
-    box-shadow:  inset 2px 2px 1px #bbbab7, 
-    inset -2px -2px 1px #ffffff;
-}
-.btn-text {
-    color: #f6f5f1;
-}
-
+.minor-button {
+    background-color: #f6f5f1;
+    color : black;
+ }
 .footer {
     height: 40px;
     background-color: lightgrey;
     margin : auto;
 }
-.block-spacing {
-    height: 30px;
-}
-/* 링크와 관련된 설정 */
-.all-links {text-decoration: none !important;}
-a {color:black;}         
-a:visited {color:black;} 
-a:hover {
-    color:black;
-    text-decoration: none !important;
-}  
-a:active {color:black;}
+
 
 .my-archive {
     font-size: 25px;
     font-weight: bold;
 }
+/* Global setting END */
 
-/* Some other CSS settings */
+.all-links {
+    text-decoration: none !important;
+}
 
-/* Archive-main START */
+/* Main page settings START */
 .archive-title {
     font-size: 55px;
     font-weight: 800;
@@ -114,9 +103,6 @@ a:active {color:black;}
 }
 .pagination-buttons {
     border-radius: 20px;
-    background: #f6f5f1;
-    box-shadow:  2px 2px 1px #bbbab7, 
-    -2px -2px 1px #ffffff;
     margin: 3px;
     padding: 5px;
 }
@@ -171,20 +157,7 @@ a:active {color:black;}
     color: white;
     font-size: 20px;
 }
-.menial-buttons {
-   border-radius: 20px;
-   background: #f6f5f1;
-   box-shadow:  2px 2px 1px #bbbab7, 
-   -2px -2px 1px #ffffff;
-}
-.menial-buttons:active {
-    border-radius: 20px;
-    box-shadow:  inset 2px 2px 1px #bbbab7, 
-    inset -2px -2px 1px #ffffff;
-}
-.menial-btn-text {
-    color: black;
-}
+
 /* Archive-input settings START */
 /* .form-control:focus {
     border-color: none;
