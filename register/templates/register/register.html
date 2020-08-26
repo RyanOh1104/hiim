@@ -20,25 +20,25 @@
                 <div class="page-title">😃 <span class="highlight">반갑습니다!</span></div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <form method="post" class="form-group">{% csrf_token %}
                 <div class="row justify-content-center">
-                    <div class="col-11">
+                    <div class="col-11 text-center">
                         {{form.username|as_crispy_field}}
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11">
+                    <div class="col-11 text-center">
                         {{form.email|as_crispy_field}}
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11">
+                    <div class="col-11 text-center">
                         {{form.password1|as_crispy_field}}
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11">
+                    <div class="col-11 text-center">
                         {{form.password2|as_crispy_field}}
                     </div>
                 </div>
