@@ -20,23 +20,23 @@
                 <div class="page-title">😃 <span class="highlight">반갑습니다!</span></div>
             </div>
         </div>
-        <div class="row">
-            <form method="post" class="form-group">{% csrf_token %}
-                <div class="col-11 text-center">
+        <form method="post" class="form-group">{% csrf_token %}
+            <div class="row">
+                <div class="col-11">
                     {{form.username|as_crispy_field}}
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11 text-center">
+                    <div class="col-11">
                         {{form.email|as_crispy_field}}
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11 text-center">
+                    <div class="col-11">
                         {{form.password1|as_crispy_field}}
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-11 text-center">
+                    <div class="col-11">
                         {{form.password2|as_crispy_field}}
                     </div>
                 </div>
@@ -46,8 +46,8 @@
                         <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
                     </div>
                 </div>
-            </form> 
-        </div>
+            </div> 
+        </form>
     </div>
 </div>
 
