@@ -66,11 +66,11 @@ html {
 }
 .btn {
     border-radius: 30px;
-    box-shadow:  2px 2px 1px #bbbab7, 
+    box-shadow: 2px 2px 1px #bbbab7, 
     -2px -2px 1px #ffffff;
 }
 .btn:active {
-    box-shadow:  inset 2px 2px 1px #bbbab7, 
+    box-shadow: inset 2px 2px 1px #bbbab7, 
     inset -2px -2px 1px #ffffff;
 }
 .major-button {
