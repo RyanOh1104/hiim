@@ -13,6 +13,10 @@
     text-decoration: underline;
     color: #9300d3;
 }
-#usernmae-means-id {
+#username-means-id {
     margin-top: -15px;
+}
+
+@media (max-width: 768px) {
+
 }

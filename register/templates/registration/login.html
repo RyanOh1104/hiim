@@ -18,7 +18,7 @@
     <div class="col-5 login-block">
         <div class="row">
             <div class="col text-center">
-                <div class="bangap"> 😃 <span class="highlight">또 봐서 반가워요!</span></div>
+                <div class="bangap"><span class="highlight">또 봐서 반가워요!</span>😃</div>
             </div>
         </div>
         <form method="post" class="form-group">{% csrf_token %}
@@ -27,6 +27,7 @@
                     {{form.username|as_crispy_field}}
                     <div class="helptext" id="username-means-id">가입할 때 입력한 '아이디'를 입력해주세요!</div>
                 </div>
+                <br>
                 <div class="col-11">
                     {{form.password|as_crispy_field}}
                 </div>
