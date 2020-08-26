@@ -11,43 +11,51 @@
 
 {% block content %}
 
+
+<div class="block-spacing"></div>
 <div class="row">
-    <div class="col col-7">
-        <h1 class="page-title">😃 <span class="highlight">반갑습니다!</span></h1>
+    <div class="col-6 all-blocks">
+        <div class="row">
+            <div class="col text-left">
+                <div class="page-title">😃 <span class="highlight">반갑습니다!</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <form method="post" class="form-group">{% csrf_token %}
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-11">
+                                {{form.username|as_crispy_field}}
+                            </div>
+                        <div class="row">
+                            <div class="col-11">
+                                {{form.email|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-11">
+                                {{form.password1|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-11">
+                                {{form.password2|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-center">
+                                <button type="submit" class="btn menial-buttons">시작하기</button>
+                                <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+        </div>
     </div>
 </div>
 
-<form method="post" class="form-group">{% csrf_token %}
-    <div class="row all-blocks">
-        <div class="col-6">
-            <div class="row">
-                <div class="col-11">
-                    {{form.username|as_crispy_field}}
-                </div>
-            <div class="row">
-                <div class="col-11">
-                    {{form.email|as_crispy_field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-11">
-                    {{form.password1|as_crispy_field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-11">
-                    {{form.password2|as_crispy_field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-center">
-                    <button type="submit" class="btn menial-buttons">시작하기</button>
-                    <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form> 
 
 
 {% endblock %}
