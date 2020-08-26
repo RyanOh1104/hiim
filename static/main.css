@@ -12,23 +12,6 @@
 
 /* Button settings END */
 /* Link settings START */
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: black;
-  text-decoration: none !important;
-}
-
-a:active {
-  color: black;
-}
-
 /* Link settings END */
 .progress {
   background-color: #f6f5f1 !important;

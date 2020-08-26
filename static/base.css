@@ -85,9 +85,24 @@ html {
 }
 /* Global setting END */
 
+/* 링크 관련 START */
 .all-links {
     text-decoration: none !important;
 }
+a {
+    color:black;
+  }         
+a:visited {
+    color:black;
+} 
+a:hover {
+    color:black;
+    text-decoration: none !important;
+}  
+a:active {
+    color:black;
+}
+/* 링크 관련 END */
 
 /* Main page settings START */
 .archive-title {
