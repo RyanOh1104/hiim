@@ -10,7 +10,7 @@ class InputUserForm(forms.ModelForm):
 
     name = forms.CharField(label="이름", max_length=30, 
     widget=forms.TextInput(attrs={
-        'placeholder': '실명을 입력해주세요!',
+        'placeholder': '반드시 실명!',
         'class':'all-inputs'
         }))
     

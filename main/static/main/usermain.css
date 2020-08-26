@@ -92,29 +92,6 @@ html, body {
     padding: 8px 8px;
 }
 
-
-/* 아래는 왜 했는지 기억이 안나는 부분.. */
-/* .new {
-    font-size: 40% !important;
-    vertical-align: text-top;
-    height: 12px;
-}
-.my-archive {
-    font-size: 21px;
-}
-.usermain-emoji {
-    font-size: 80px;
-}
-.img-add-archive {
-    height: 40px;
-    width: 40px;
-}
-.img-add-object {
-    height: 30px;
-    width: 30px;
-} */
-
-
 /* UserInfo Input Page */
 .block-input {
     border-radius: 10px;
@@ -128,6 +105,7 @@ html, body {
 .in-addition-sub {
     font-size: 13px;
 }
+
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     html, body {
@@ -170,34 +148,17 @@ html, body {
     .usermain-archive-desc {
         font-size: 3.5vw;
     }
-    
-
-    .my-archive {
-        font-size: 21px;
-        /* padding-top: 5px;
-        padding-bottom: 5px; */
-    }
-    .usermain-emoji {
-        font-size: 80px;
-    }
     #new-question {
         padding: 8px 5px;
     }
-    .img-add-archive {
-        height: 40px;
-        width: 40px;
-    }
-    .img-add-object {
-        height: 30px;
-        width: 30px;
-    }
+    
     /* Input */
-    #in-addition {
-        font-weight: bold;
+    .in-addition {
+        font-size: 5vw;
         padding-top: 10px;
     }
-    #in-addition-sub {
-        font-size: 17px;
+    .in-addition-sub {
+        font-size: 2.5vw;
         padding-bottom: 20px;
     }
 }
