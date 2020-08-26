@@ -1,14 +1,6 @@
-#highlight-bangap {
-    border: 10px solid #9300d3;
-    background-color: #9300d3;
-    position: relative;
-    top: -50px;
-    opacity: .6;
-    margin-left: 90px;
-}
 .login-block {
     border-radius: 10px;
-    border: #9300d3 2px solid;
+    border: lightgrey 2px solid;
     padding-top: 10px;
     padding-bottom: 20px;
 }

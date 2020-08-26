@@ -4,26 +4,19 @@ $font-family-sans-serif: "NanumSquare", -apple-system, BlinkMacSystemFont, "Sego
 $headings-font-family: "NanumSquare" !default;
 $input-btn-font-family: "NanumSquare" !default;
 
-// $body-bg: #E0E5EC;
-// $body-bg: #EBECF1;
-// $body-bg: #ffffff;
-// $body-bg: #f6f5f1;
 $body-bg: #f6f5f1;
 $body-color: #111;
 
 $primary: #9300d3;
-// $secondary : #f6f5f1;
 $secondary : white;
 
-$theme-colors: (
-  // "primary": #9300d3,
-  "primary" : #f6f6f1,
-  "danger": #ff4136
-);
+// $theme-colors: (
+//   "primary" : #f6f6f1,
+// );
 
-$theme-colors: (
-  "custom-color": #900
-);
+// $theme-colors: (
+//   "custom-color": #900
+// );
 
 .progress {
   background-color: #f6f5f1 !important;
