@@ -4,6 +4,11 @@
     box-shadow:  5px 5px 3px #bbbab7, 
     -5px -5px 3px #ffffff;
 }
+.bangap {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 34px;
+}
 #register-here {
     text-decoration: underline;
     color: #9300d3;

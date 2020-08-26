@@ -11,13 +11,15 @@
 
 {% block content %}
 
-<div class="h-25"></div>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
 
 <div class="row justify-content-center">
     <div class="col-5 login-block">
         <div class="row">
-            <div class="col text-left">
-                <div class="page-title">😃 <span class="highlight">반갑습니다!</span></div>
+            <div class="col text-center">
+                <div class="bangap">😃 <span class="highlight">처음 뵙겠습니다!</span></div>
             </div>
         </div>
         <form method="post" class="form-group">{% csrf_token %}
@@ -35,7 +37,7 @@
                     {{form.password2|as_crispy_field}}
                 </div>
                 <div class="col-10 text-center">
-                    <button type="submit" class="btn menial-buttons">시작하기</button>
+                    <button type="submit" class="btn minor-button">시작하기</button>
                     <div class="helptext">계정이 있으세요? <a href="/login" id="register-here">로그인</a> 해주세요!</div>
                 </div>
             </div> 
@@ -43,7 +45,9 @@
     </div>
 </div>
 
-<div class="h-25"></div>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
+<div class="block-spacing"></div>
 
 {% endblock %}
 
