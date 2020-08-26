@@ -77,6 +77,9 @@ html {
     background-color: #9300d3;
     color : #f6f5f1;
 }
+.major-button-text {
+    color: #f6f5f1;
+}
 .major-button:hover {
     color: #f6f5f1;
 }
