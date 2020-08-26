@@ -121,7 +121,7 @@ function buildCalendar(){//현재 달 달력 만들기
            row = mycalendar.insertRow();
            //토요일 다음에 올 셀을 추가
     }
-      /* 오늘 */
+      /*  오늘  */
     if (today.getFullYear() == date.getFullYear()
          && today.getMonth() == date.getMonth()
          && i == date.getDate()) {
