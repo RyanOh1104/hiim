@@ -36,9 +36,10 @@
     font-size: 13px;
     font-weight: normal;
 }
-/* label {
+label {
+    /* input field의 label 안보이도록 */
     display: none;
-} */
+}
 
 /* Create page settings START */
 .inputfield-answer {
@@ -51,11 +52,11 @@
     margin-left: auto;
     margin-right: auto;
 }
-/* .answerInput.textarea {
-    box-shadow:  inset 4px 4px 3px #bbbab7, 
-    inset -4px -4px 3px #ffffff;
+.inputfield-answer.textarea {
+    box-shadow:  inset 3px 3px 2px #bbbab7, 
+    inset -3px -3px 2px #ffffff;
 }
-.answerInput.textarea:active {
+/* .answerInput.textarea:active {
     box-shadow:  inset 4px 4px 3px #bbbab7, 
     inset -4px -4px 3px #ffffff;
 } */
