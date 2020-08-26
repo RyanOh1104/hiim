@@ -1,15 +1,47 @@
-label {
-    display: none;
-}
-.questions {
+/* Main page settings START */
+.main-questions {
+    padding: 10px;
+    margin-top: 10px;
     font-weight: bold;
-    line-height: 1.5;
+    font-size: 21px;
 }
-.question-category {
+.qanda-main-question:hover {
+    box-shadow:  3px 3px 2px #bbbab7, 
+    -3px -3px 2px #ffffff;
+    border: none;
+}
+.qanda-main-question:hover {
+    box-shadow:  inset 3px 3px 2px #bbbab7, 
+    inset -3px -3px 2px #ffffff;
+    border: none;
+}
+/* Main page settings END */
+
+/* Detail page settings START */
+.qanda-question-category {
     font-weight: normal;
     font-size: 100%;
 }
-.answerInput {
+.qanda-question {
+    font-size: 34px;
+    line-height: 1.5;
+}
+.qanda-answer {
+    color : #9300d3;
+    font-size: 21px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+.detail-date {
+    font-size: 13px;
+    font-weight: normal;
+}
+/* label {
+    display: none;
+} */
+
+/* Create page settings START */
+.inputfield-answer {
     border-radius:3px;
     width: 80%;
     padding: 10px;
@@ -19,46 +51,17 @@ label {
     margin-left: auto;
     margin-right: auto;
 }
-.answerInput.textarea {
+/* .answerInput.textarea {
     box-shadow:  inset 4px 4px 3px #bbbab7, 
     inset -4px -4px 3px #ffffff;
 }
 .answerInput.textarea:active {
-    /* 동일하게 */
     box-shadow:  inset 4px 4px 3px #bbbab7, 
     inset -4px -4px 3px #ffffff;
-}
+} */
+/* Create page settings END */
 
-/* Main Page Settings START */
-.main-questions {
-    padding: 10px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-.card:hover {
-    box-shadow:  3px 3px 2px #bbbab7, 
-    -3px -3px 2px #ffffff;
-    border: none;
-}
-.card:active {
-    box-shadow:  inset 3px 3px 2px #bbbab7, 
-    inset -3px -3px 2px #ffffff;
-    border: none;
-}
-/* Main Page Settings END */
 
-/* Detail Page Settings START */
-.detail-answer {
-    color : #9300d3;
-    font-size: 21px;
-    font-weight: bold;
-    white-space: pre-line;
-}
-.qanda-date {
-    font-size: 13px;
-    font-weight: normal;
-}
-/* Detail Page Settings END */
 
 @media (max-width: 768px) {
     /* Detail Page Settings START */

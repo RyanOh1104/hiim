@@ -1,23 +1,22 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'base.css' %}">
 <link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
 {% endblock %}
 
 {% block title %} 즉문즉답 {% endblock %}
 
 {% load crispy_forms_tags %}
-{% load bootstrap4 %}
+<!-- {% load bootstrap4 %} -->
 
 {% block content %}
 <div class="row block-spacing"></div>
 
 <div class="row justify-content-center top-block">
-    <div class="col col-10 text-center">
+    <div class="col-10 text-center">
         <span class="archive-title">즉문즉답</span><span class="archive-icon">❓</span>
     </div>
-    <div class="col col-12 text-center">
+    <div class="col-12 text-center">
         <div class="archive-subtitle">하루에 하나씩 채우는 {{thisUser.name}}의 빈칸.   
         </div>
     </div>
@@ -26,15 +25,14 @@
 <div class="block-spacing"></div>
 
 <div class="row justify-content-center">
-    <div class="col col-12">
+    <div class="col-12">
         <div class="block-spacing pc-only"></div>
-
         <div class="row justify-content-center">
             <div class="col text-center">
                 {% for q in questions %}
                 {% if q.number <= latestQuestionNumber %}
-                    <a href="answer/{{q.number}}" class="card">
-                        <h5 class="main-questions" id="{{q.number}}">{{q.number}} | {{q.question|safe}} <span class="badge badge-primary count-answer"></span></h5>
+                    <a href="answer/{{q.number}}" class="qanda-main-question">
+                        <div class="main-questions" id="{{q.number}}">{{q.number}} | {{q.question|safe}}</div>
                     </a>
                 {% endif %}
                 <br>
@@ -51,8 +49,8 @@
         <a href="?page=1"><span class="pagination-buttons">처음</span></a>
         <a href="?page={{questions.previous_page_number}}"><span class="pagination-buttons"><</span></a>
         {% elif not questions.has_previous %}
-        <a href=""><span class="pagination-buttons">처음</span></a>
-        <a href=""><span class="pagination-buttons"><</span></a>
+        <a href=""><span class="btn pagination-buttons">처음</span></a>
+        <a href=""><span class="btn pagination-buttons"><</span></a>
         {% endif %}
         <span>{{questions.number}}</span>
         <span>/</span>
@@ -61,8 +59,8 @@
         <a href="?page={{questions.next_page_number}}"><span class="pagination-buttons">></span></a>
         <a href="?page={{questions.paginator.num_pages}}"><span class="pagination-buttons">끝</span></a>
         {% elif not questions.has_next %}
-        <a href=""><span class="pagination-buttons">></span></a>
-        <a href=""><span class="pagination-buttons">끝</span></a>
+        <a href=""><span class="btn pagination-buttons">></span></a>
+        <a href=""><span class="btn pagination-buttons">끝</span></a>
         {% endif %}
     </div>
 </div>

@@ -1,23 +1,22 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'base.css' %}">
 <link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
 {% endblock %}
 
 {% block title %} 즉문즉답 {% endblock %}
 
 {% load crispy_forms_tags %}
-{% load bootstrap4 %}
+<!-- {% load bootstrap4 %} -->
 
 {% block content %}
 <div class="row block-spacing"></div>
 
 <div class="row justify-content-center top-block">
-    <div class="col col-10 text-center">
+    <div class="col-10 text-center">
         <span class="archive-title">즉<span style="color:#9300d3; font-weight: bold;">문</span>즉답</span><span class="archive-icon">❓</span>
     </div>
-    <div class="col col-12 text-center">
+    <div class="col-12 text-center">
         <div class="archive-subtitle">하루에 하나씩 채우는 {{thisUser.name}}의 빈칸.   
         </div>
     </div>
@@ -27,30 +26,30 @@
 <div class="block-spacing pc-only"></div>
 
 <div class="row justify-content-center">
-    <div class="col col-12">
+    <div class="col-12">
         <div class="row justify-content-center">
-            <div class="col col-12 text-center">
-                <span class="badge badge-primary question-category">#{{todaysQuestion.category}}</span>
+            <div class="col-12 text-center">
+                <span class="badge badge-primary qanda-question-category">#{{todaysQuestion.category}}</span>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col col-12 text-center">
-                <h3 class="questions">{{todaysQuestion.question|safe}}</h3>
+            <div class="col-12 text-center">
+                <div class="qanda-question">{{todaysQuestion.question|safe}}</div>
             </div>
         </div>            
         <div class="row">
-            <div class="col col-12 text-center">
+            <div class="col-12 text-center">
                 <form method="POST" class="form-group">
                     {% csrf_token %}
-                    <div class="answerInput">
+                    <div class="inputfield-answer">
                         {% crispy formset %}
                         <div class="row justify-content-center">
                             <div class="col-lg-4 col-sm-8">
                                 <div class="row justify-content-center">
-                                    <div class="col col-6">
-                                        <button type='submit' class='btn menial-buttons all-buttons'>
-                                            <span class="menial-btn-text">즉답 완료</span>
+                                    <div class="col-6">
+                                        <button type='submit' class='btn minor-button'>
+                                            <span>즉답 완료</span>
                                         </button>
                                     </div>
                                 </div>

@@ -1,8 +1,4 @@
-/* Main Page START */
-/* .dansang-row {
-    padding-bottom : 10px;
-    padding-top: 25px;
-} */
+/* Main page settings START */
 .block-dansang {
     border-radius: 100px;
     padding-top: 15px;
@@ -28,17 +24,7 @@
 .first-sentence {
     font-size: 21px;
 }
-/* .border-line {
-    border-radius: 10px;
-    border: solid #9300d3 4px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-left: -15px;
-    margin-right: -15px;
-} */
-/* Main Page Settings END*/
+/* Main page Settings END*/
 
 /* Create page settings START */
 .inputfield-title {
@@ -47,14 +33,6 @@
 .row-subtitle {
     margin-top: 10px;
 }
-/* .inputfield-subtitle {
-    background-color: #f6f5f1;
-    border: none;
-    margin-bottom: -50px;
-} */
-/* .inputfield-img {
-    background-color: #f6f5f1;
-} */
 .cat-field {
     padding-left: 0px;
 }
@@ -101,9 +79,9 @@
 #tooltip-seed {
     border: none;
 }
-/* Seed settings END */
+/* Seed page settings END */
 
-/* Summernote settings START -- somehow doesn't work in summernote.css */
+/* Summernote (WYSIWYG editor) settings START */
 .note-editable span {
     background-color: #f6f5f1 !important;
     font-size: 17px !important
@@ -152,22 +130,10 @@
     }
     /* Main page settings END */
     .card-block {
-        font-size: 17px !important;
-    }
-    .doyou-need-input {
-        font-size: 13px;
-        height: 25px;
-        width: 140px;
-        padding-bottom: 10px;
-    }
-    .button-input {
-        text-align: right;
-    }
-    .helptext {
-        margin-top: 3px;
+        font-size: 3.5vw !important;
     }
 
-    /* Input page */ 
+    /* Create page settings START */ 
     #id_title {
         padding-bottom: 0px;
         font-size: 8vw !important;
@@ -176,15 +142,14 @@
     #id_subtitle, #id_category {
         font-size: 3.5vw !important;
     }
-    .input-title {
-        height: 15vw;
+    .inputfield-title {
+        height: 10vw;
     }
     .custom-file {
         width: 50%;
         margin-left: 10px;
     }
-
-    /* Detail page */
+    /* Create page settings END */
 
     /* Seed page */
     .seed-row {

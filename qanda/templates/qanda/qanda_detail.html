@@ -1,23 +1,22 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'base.css' %}">
 <link rel="stylesheet" href="{% static 'qanda/qanda.css' %}">
 {% endblock %}
 
 {% block title %} 즉문즉답 {% endblock %}
 
 {% load crispy_forms_tags %}
-{% load bootstrap4 %}
+<!-- {% load bootstrap4 %} -->
 
 {% block content %}
 <div class="row block-spacing"></div>
 
 <div class="row justify-content-center top-block">
-    <div class="col col-10 text-center">
+    <div class="col-10 text-center">
         <span class="archive-title">즉문즉<span style="color: #9300d3;">답</span></span><span class="archive-icon">❓</span>
     </div>
-    <div class="col col-12 text-center">
+    <div class="col-12 text-center">
         <div class="archive-subtitle">하루에 하나씩 채우는 {{thisUser.name}}의 빈칸.   
         </div>
     </div>
@@ -27,22 +26,23 @@
 <div class="block-spacing pc-only"></div>
 
 <div class="row justify-content-center">
-    <div class="col col-12 text-center">
+    <div class="col-12 text-center">
+        <!-- 질문의 카테고리를 보여주는 부분 (Bootstrap의 badge 형태) -->
         <div class="row">
             <div class="col">
-                <span class="badge badge-primary question-category">#{{thisQuestion.category}}</span>
+                <span class="badge badge-primary qanda-question-category">#{{thisQuestion.category}}</span>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col">
-                <h3 class="questions">{{thisQuestion.question|safe}}</h3>
+                <div class="qanda-question">{{thisQuestion.question|safe}}</div>
             </div>
         </div>
         <div class="row">
-            <div class="col col-12 text-center">
+            <div class="col-12 text-center">
                 {% for a in thisAnswer reversed %}
-                <div class="detail-answer">{{a.answer}}<br><span class="qanda-date"> ({{a.dateAnswered}})</span></div><br>
+                <div class="qanda-answer">{{a.answer}}<br><span class="qanda-date"> ({{a.dateAnswered}})</span></div><br>
                 {% endfor %}
             </div>
         </div>
@@ -56,15 +56,15 @@
 <div class="row justify-content-center">
     <div class="col-lg-4 col-sm-8">
         <div class="row justify-content-center">
-            <div class="col col-5 text-right">
-                <button class='btn menial-buttons'>
-                    <span class="menial-btn-text"><a href="/qanda/qandamain">
+            <div class="col-5 text-right">
+                <button class='btn minor-button'>
+                    <span><a href="/qanda/qandamain">
                     돌아가기</a></span>
                 </button>
             </div>
-            <div class="col col-6 text-left">
-                <button class='btn btn-primary all-buttons'>
-                    <a href="{% url 'qandaUpdate' thisQuestion.number %}"><span class="btn-text">
+            <div class="col-6 text-left">
+                <button class='btn major-button'>
+                    <a href="{% url 'qandaUpdate' thisQuestion.number %}"><span>
                     수정/추가하기</span></a>
                 </button>
             </div>
