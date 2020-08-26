@@ -20,7 +20,8 @@
 /* Detail page settings START */
 .qanda-question-category {
     font-weight: normal;
-    font-size: 100%;
+    font-size: 13px;
+    font-weight: 100;
 }
 .qanda-question {
     font-size: 34px;
@@ -32,7 +33,7 @@
     font-weight: bold;
     white-space: pre-line;
 }
-.detail-date {
+.qanda-date {
     font-size: 13px;
     font-weight: normal;
 }
@@ -65,31 +66,32 @@ label {
 
 
 @media (max-width: 768px) {
-    /* Detail Page Settings START */
-    .answer {
+    /* Main page settings START */
+    .main-questions {
+        font-size: 4vw;
+    }
+    /* Main page settings END */
+
+    /* Detail page settings START */
+    .qanda-question-category {
+        font-size: 2.5vw;
+    }
+    .qanda-question {
+        font-size: 5vw;
+    }
+    .qanda-answer {
         font-size: 4vw;
     }
     .qanda-date {
         font-size: 2.5vw;
     }
-    .detail-answer {
-        font-size: 4vw;
-    }
-    /* Detail Page Settings END */
+    /* Detail page settings END */
 
-    /* Input Page Settings START */
-    .answerInput {
+    /* Create page settings START */
+    .inputfield-answer {
         width: 90%;
     }
-    .questions {
-        font-size: 1.5rem;
-    }
-    /* Input Page Settings END */
+    /* Create page settings END */
 
-    /* Main Page Settings START */
-    .main-questions {
-        font-size: 1rem;
-        font-weight: bold;
-    }
-    /* Main Page Settings END */
+
 }
