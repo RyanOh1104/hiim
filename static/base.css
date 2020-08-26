@@ -64,6 +64,15 @@ html {
 .form-control:focus {
     background-color: #f6f5f1;
 }
+.btn {
+    border-radius: 30px;
+    box-shadow:  2px 2px 1px #bbbab7, 
+    -2px -2px 1px #ffffff;
+}
+.btn:active {
+    box-shadow:  inset 2px 2px 1px #bbbab7, 
+    inset -2px -2px 1px #ffffff;
+}
 .major-button {
     background-color: #9300d3;
     color : #f6f5f1;

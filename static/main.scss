@@ -25,21 +25,6 @@ $theme-colors: (
   "custom-color": #900
 );
 
-/* Button settings START */
-.btn {
-  border-radius: 30px; // 그냥 존나 크게
-  box-shadow:  2px 2px 1px #bbbab7, 
-  -2px -2px 1px #ffffff;
-}
-.btn:active {
-  box-shadow:  inset 2px 2px 1px #bbbab7, 
-  inset -2px -2px 1px #ffffff;
-}
-/* Button settings END */
-
-/* Link settings START */
-
-/* Link settings END */
 
 .progress {
   background-color: #f6f5f1 !important;
