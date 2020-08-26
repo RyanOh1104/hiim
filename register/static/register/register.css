@@ -1,8 +1,8 @@
 .login-block {
     border-radius: 10px;
-    border: lightgrey 2px solid;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    background: #f6f5f1;
+    box-shadow:  5px 5px 3px #bbbab7, 
+    -5px -5px 3px #ffffff;
 }
 #register-here {
     text-decoration: underline;
