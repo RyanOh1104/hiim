@@ -133,16 +133,16 @@ td[date] {
     .main-emoji {
         font-size: 4vw;
     }
+    .keywords {
+        font-size:3vw;
+    }
     /* Main page END */
 
     /* Create page START */
     .kw-emoji-text {
         font-size: 4vw;
     }
-    .keywords {
-        font-size:3vw;
-        width: 75%;
-    }
+
     .emoji {
         width: 15%;
         font-size: 3vw;
