@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'base.css' %}">
@@ -8,20 +9,21 @@
 {% block title %} 하루하루 {% endblock %}
 
 {% load crispy_forms_tags %}
-{% load bootstrap4 %}
 
 {% block extrahead %}
+<!-- datepicker 설정 -->
 {{ form.media }}
 {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col col-10">
-        <h1 class="page-title">📝오늘 무슨 일이 있었어요?</h1>
+    <div class="col-11">
+        <div class="page-title">📝오늘 무슨 일이 있었어요?</div>
     </div>
 </div>    
 
 <form method="post" class="form-group" enctype="multipart/form-data">{% csrf_token %}
+    <!-- 날짜 선택하는 부분 -->
     <div class="row">
         <div class="col-lg-3 col-sm-12 ">
             <div class="helptext">👀 <span class="highlight">날짜를 잘 확인해주세요!</span></div>
@@ -29,9 +31,46 @@
     </div>
     <div class="row">
         <div class="col-lg-3 col-sm-12">
-            <div id='today'>{{form.when|as_crispy_field}}</div>
+            <div>
+                {{form.when|as_crispy_field}}
+            </div>
         </div>
     </div>
+
+    <!-- 오늘의 키워드 입력하는 부분 -->
+    <div class="row">
+        <div class="col">
+            <div class="">
+                💻 오늘 하루를 표현하는 키워드
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+        <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+    </div>
+
+    <!-- 오늘의 이모지 입력하는 부분 -->
+    <div class="row">
+        <div class="col">
+            <div class="">
+                📱 오늘의 이모지<span class="pc-only helptext"> (💡 Windows "윈도우키 + ." / iOS "컨트롤 + 커맨드 + 스페이스바")</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
+    </div>
+
+    <!-- 내용 입력하는 부분 -->
+    <div class="row">
+        <div class="col" id="what">
+            <div>{{form.what|as_crispy_field}}</div>
+        </div>
+    </div>
+    
+    <!-- 이미지 추가하는 부분 -->
     <div class="row">
         <div class="col-lg-3">
             <div class="everyday-img-input" id="everday-img-input-1">{{form.img1|as_crispy_field}}</div>
@@ -43,35 +82,7 @@
             <div class="everyday-img-input" id="everday-img-input-3">{{form.img3|as_crispy_field}}</div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div>{{form.what|as_crispy_field}}</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="helptext">
-                💻 오늘의 키워드
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
-        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
-        <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="helptext">
-                📱 오늘의 이모지<span class="pc-only"> (👀 "윈도우키 + .")</span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
-    </div>
-
+    
     <br>
     <button type='submit' class='btn menial-buttons'>오늘 하루 저장</button>
 </form>
