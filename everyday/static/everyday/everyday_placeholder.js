@@ -11,7 +11,7 @@ function randomPlaceholder() {
     ];
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     console.log('random question is :', randomQuestion);
-    document.getElementById('what').setAttribute('placeholder', randomQuestion);
+    document.getElementById('id_what').setAttribute('placeholder', randomQuestion);
   }
 
 function init() {
