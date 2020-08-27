@@ -64,12 +64,12 @@ td[date] {
 .keywordInputs {
     width: 125px;
 }
-.kw12 {
-    margin-right: 5px;
-}
 .d-flex {
     box-shadow: none;
     /* 원래 form-control에 inset shadow가 들어가서 그걸 해제하기 위한 설정. */
+}
+.kw-emoji-text {
+    font-size: 21px;
 }
 /* Create page END */
 
@@ -141,6 +141,9 @@ td[date] {
     /* Create page START */
     .keywordInputs {
         width: 50%
+    }
+    .kw-emoji-text {
+        font-size: 4vw;
     }
     .keywords {
         font-size:3vw;
