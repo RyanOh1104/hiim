@@ -44,9 +44,10 @@
                 <div>💻 오늘 하루를 표현하는 키워드</div>
             </div>
             <div class="row">
-                <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
-                <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
-                <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+                <!-- col-lg-2 col-sm-12 -->
+                <div class="col-4 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw3|as_crispy_field}}</div>
             </div>
         </div>
         <!-- 오늘의 키워드 입력하는 부분 -->
