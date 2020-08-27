@@ -37,8 +37,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <!-- 오늘의 키워드 입력하는 부분 -->
+    <!-- 피씨에서 키워드 및 이모지 입력하는 부분 -->
+    <div class="row pc-only">
+        <!-- 오늘의 키워드 -->
         <div class="col-6">
             <div class="row">
                 <div class="col">
@@ -46,12 +47,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-12 keywordInputs">{{form.kw1|as_crispy_field}}</div>
-                <div class="col-lg-4 col-sm-12 keywordInputs">{{form.kw2|as_crispy_field}}</div>
-                <div class="col-lg-4 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw1|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw2|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw3|as_crispy_field}}</div>
             </div>
         </div>
-        <!-- 오늘의 이모지 입력하는 부분 -->
+        <!-- 오늘의 이모지 -->
         <div class="col-6">
             <div class="row">
                 <div class="col">
@@ -59,7 +60,35 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-2 col-sm-2">{{form.emoji|as_crispy_field}}</div>
+                <div class="col-lg-2">{{form.emoji|as_crispy_field}}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모바일에서 키워드 및 이모지 입력하는 부분 -->
+    <div class="row mobile-only">
+        <!-- 오늘의 키워드 -->
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class='kw-emoji-text'>💻 오늘 하루의 키워드</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 keywordInputs">{{form.kw1|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw2|as_crispy_field}}</div>
+                <div class="col-4 keywordInputs">{{form.kw3|as_crispy_field}}</div>
+            </div>
+        </div>
+        <!-- 오늘의 이모지 -->
+        <div class="col-6">
+            <div class="row">
+                <div class="col-9">
+                    <div class='kw-emoji-text'>📱 오늘의 이모지<span class="pc-only helptext"> (💡 Windows "윈도우키 + ." / iOS "Ctrl + Cmd + Spacebar")</span></div>
+                </div>
+                <div class="col-3">
+                    <div>{{form.emoji|as_crispy_field}}</div>
+                </div>
             </div>
         </div>
     </div>
