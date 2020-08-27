@@ -65,7 +65,7 @@ td[date] {
     box-shadow: none;
     /* 원래 form-control에 inset shadow가 들어가서 그걸 해제하기 위한 설정. */
 }
-.kw-emoji-text {
+.guidance-text {
     font-size: 21px;
 }
 /* Create page END */
@@ -139,7 +139,7 @@ td[date] {
     /* Main page END */
 
     /* Create page START */
-    .kw-emoji-text {
+    .guidance-text {
         font-size: 4vw;
     }
 
