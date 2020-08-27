@@ -9,7 +9,6 @@ from time import sleep
 # Create your views here. 
 def register(response):
     if response.method == 'POST':
-        # form = UserCreationForm(response.POST)      # UserCreationForm 대신 내가 직접 만든 RegisterForm을 쓸 것이므로 지우기
         form = RegisterForm(response.POST)
         if form.is_valid:
             form.save()

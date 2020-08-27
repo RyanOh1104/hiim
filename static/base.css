@@ -212,7 +212,7 @@ a:active {
 }
 
 
-/* Welcome page */
+/* Welcome page START */
 .welcome-title {
     font-size: 47px;
 }
@@ -251,6 +251,8 @@ a:active {
     width: auto;
     margin-top: -10px;
 }
+/* Welcome page END */
+
 /* File Upload (Image) START */
 .custom-file-label {
     background-color: #f6f5f1 !important;
@@ -289,7 +291,8 @@ a:active {
         width: 30px;
         height: auto;
     }
-    /* Welcome page */
+
+    /* Welcome page START */
     .welcome-title {
         font-size: 8vw;
     }
@@ -303,13 +306,8 @@ a:active {
         width: 25vw;
         height: auto;
     }
-    .welcome-row {
-        /* display: flex; 이건 디폴트 값 */
-        align-items: center;
-    }
     .welcome-content {
         font-size: 6vw;
-        font-weight: bold;
     }
     .welcome-very-stress {
         font-size: 6vw;
@@ -318,10 +316,10 @@ a:active {
         font-size: 6vw;
     }
 
-    /* Hi, I'm... page */
     .welcome-message {
         font-size: 4vw;
     }
+    /* Welcome page END */
 
     /* Main page settings START */
     .archive-title {
@@ -355,6 +353,4 @@ a:active {
         text-align: center
     }
     /* Detail page settings END */ 
-
-
 }

@@ -12,7 +12,6 @@ class HistoryInput(models.Model):
     end_date = models.DateField(null=True, blank=True)
     end_ing = models.CharField(max_length=10, default="-ing")
     ing = models.BooleanField()
-    # howmajorwasit = 
     desc = models.CharField(max_length=1000)
 
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)

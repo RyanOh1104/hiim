@@ -20,16 +20,12 @@ class NewEvent(models.Model):
 
     slug = models.SlugField(max_length=255, allow_unicode=True, blank=True)
     url = models.URLField(max_length = 1000, blank=True)
-    # models.DateTimeField(input_formats=["%d %b %Y %H:%M:%S %Z"])
     
     class Meta:
         verbose_name = _('Everyday')
         verbose_name_plural = _('Everydays')
-        # ordering = ['-start']
 
     # 관리자 사이트에 표시될 객체 이름 설정 
     def __str__(self):
-        # return str(self.when)
-        # when-admin = str(self.when)[:15]
         return (str(self.authuser)+"-----"+str(self.when)[:15])
 

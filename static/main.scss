@@ -25,10 +25,8 @@ $secondary : white;
   border: 2px lightgrey solid;
   height: 1.5rem !important;
 }
-
 .progress-bar {
   height: 100%;
-  // background: linear-gradient(90deg, #d7a8eb, #9300d3);
   border-radius: 5px;
   border: #f6f5f1 2px solid;
 }
@@ -97,19 +95,6 @@ $secondary : white;
 @media (max-width: 768px) {
   .custom-file-label::after {
     font-size: 3.5vw;
-  }
-  .progress {
-    background-color: #f6f5f1 !important;
-    border-radius: 5px !important;
-    align-items: center;
-    border: 2px lightgrey solid;
-    height: 1.5rem;
-  }
-  .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #d7a8eb, #9300d3);
-    border-radius: 5px;
-    border: #f6f5f1 2px solid;
   }
 }
 @import "node_modules/bootstrap/scss/bootstrap.scss";

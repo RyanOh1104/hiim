@@ -115,6 +115,9 @@ td[date] {
         box-shadow:  2px 2px 1px #bbbab7, 
         -2px -2px 1px #ffffff;
     }
+    .prevNext {
+        width: auto;
+    }
     .prevNextButtons {
         font-size: 4vw;
         vertical-align: middle;
@@ -128,6 +131,7 @@ td[date] {
     }
     #yearMonth {
         font-size: 5vw;
+        width: 100%;
     }
     .main-emoji {
         font-size: 4vw;
