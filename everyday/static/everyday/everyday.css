@@ -142,10 +142,9 @@ td[date] {
     .guidance-text {
         font-size: 4vw;
     }
-
     .emoji {
-        width: 15%;
         font-size: 3vw;
+        width: 75%;
     }
     /* Create page END */
 
