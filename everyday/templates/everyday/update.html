@@ -37,30 +37,27 @@
         </div>
     </div>
 
-    <!-- 오늘의 키워드 입력하는 부분 -->
     <div class="row">
-        <div class="col">
-            <div class="">
-                💻 오늘 하루를 표현하는 키워드
+        <!-- 오늘의 키워드 입력하는 부분 -->
+        <div class="col-6">
+            <div class="row">
+                <div>💻 오늘 하루를 표현하는 키워드</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
+                <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
+                <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw1|as_crispy_field}}</div>
-        <div class="col-lg-2 col-sm-12 keywordInputs kw12">{{form.kw2|as_crispy_field}}</div>
-        <div class="col-lg-2 col-sm-12 keywordInputs">{{form.kw3|as_crispy_field}}</div>
-    </div>
-
-    <!-- 오늘의 이모지 입력하는 부분 -->
-    <div class="row">
-        <div class="col">
-            <div class="">
-                📱 오늘의 이모지<span class="pc-only helptext"> (💡 Windows "윈도우키 + ." / iOS "컨트롤 + 커맨드 + 스페이스바")</span>
+        <!-- 오늘의 키워드 입력하는 부분 -->
+        <div class="col-6">
+            <div class="row">
+                <div>📱 오늘의 이모지<span class="pc-only helptext"> (💡 Windows "윈도우키 + ." / iOS "컨트롤 + 커맨드 + 스페이스바")</span></div>
+            </div>
+            <div class="row">
+                <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col col-lg-1 col-sm-2">{{form.emoji|as_crispy_field}}</div>
     </div>
 
     <!-- 내용 입력하는 부분 -->
