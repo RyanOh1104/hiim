@@ -10,7 +10,6 @@ class DansangInput(models.Model):
     title = models.CharField(max_length=100, blank=True)
     subtitle = models.CharField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=False)
-    # modified = models.DateTimeField(auto_now=True)
     img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
     category = models.CharField(max_length=100, default="미분류", null=True, blank=True)
@@ -22,8 +21,13 @@ class DansangInput(models.Model):
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True)
     url = models.CharField(max_length=10000, blank=True)
 
+    # Django Admin에 어떻게 보여질지를 설정하는 부분입니다.
     def __str__(self):
         return (str(self.authuser)+"-----"+str(self.created)[:16])
+
+#############################################################################################################
+########## 여기서부터는 '씨앗'이라는 feature에 관한 부분입니다. 당장 중요치 않으니 일단은 무시해주세요! ##########
+#############################################################################################################
 
 class SeedCategory(models.Model):
     objects = models.Manager()

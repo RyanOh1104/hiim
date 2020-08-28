@@ -127,7 +127,7 @@ def dansangMain(request):
 
     return render(request, 'dansang/dansang_main.html', context)
 
-# '끄적끄적'의 Detail view입니다
+# '끄적끄적'의 Detail view입니다.
 @login_required
 def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
@@ -137,7 +137,62 @@ def dansangDetail(request, authuser_id, slug):
     }
     return render(request, 'dansang/dansang_detail.html', context)
 
-# 이건 login_required 굳이 필요 없으려나?
+# '끄적끄적'의 Update view입니다. Create view와 거의 비슷해요! 주석처리 한 부분만 다릅니다.
+@login_required
+def dansangUpdate(request, authuser_id, slug):
+    thisDansang = DansangInput.objects.get(slug=slug)
+
+    categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
+    indexList = [*range(1, len(categoryList)+1, 1)] 
+    categories = []
+    for i in range(0,len(categoryList)):
+        catDict = {}
+        catDict[indexList[i]] = categoryList[i]
+        categories.append(catDict)
+
+    if request.method == "POST":
+        form = DansangInputForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.authuser = request.user
+
+            if len(instance.title) >= 17:
+                instance.title = instance.title[0:17] + "..."
+            if len(instance.subtitle) >= 35:
+                instance.subtitle = instance.subtitle[0:35] + "..."
+
+            if instance.subtitle == "":
+                instance.subtitle = "&nbsp;"
+
+            catByUser = instance.category
+            instance.categoryEng = trans(catByUser)
+
+            # 처음 쓰여진 날짜는 그대로 유지해요.
+            instance.created = thisDansang.created
+            instance.slug = slugify(datetime.now())
+            instance.url = "/dansang/dansangdetail/" + str(authuser_id) + '/' + str(instance.slug)
+            
+            # 기존에 있던 아티클은 지워줍니다.
+            thisDansang.delete()
+            instance.save()
+            return redirect('/dansang/dansangdetail/' + str(authuser_id) + '/' + str(instance.slug))
+
+    # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
+    else:
+        form = DansangInputForm(instance = thisDansang)
+        return render(request, 'dansang/update.html', {'form':form})
+
+# '끄적끄적'의 글을 삭제하는 view입니다.
+def dansangDelete(request, authuser_id, slug):
+    thisDansang = DansangInput.objects.get(slug=slug)
+    thisDansang.delete()
+    return redirect('/dansang/dansangmain')
+
+#####################################################################################################################################################
+########## 여기부터는 끄적끄적의 '씨앗'이라는 feature와 관한 부분이에요. 이 부분은 전면적인 개선이 필요해서 당분간 보류이니, 신경쓰지 말아주세요! ##########
+#####################################################################################################################################################
+
+# 이건 login_required 굳이 필요 없을듯?
 def seed(request):
     seeds = DansangSeed.objects.all().order_by('-datePosted')
     categories = SeedCategory.objects.all()
@@ -188,59 +243,7 @@ def seedByCat(request, category):
     }
     return render(request, 'dansang/seed.html', context)
 
-def dansangUpdate(request, authuser_id, slug):
-    thisDansang = DansangInput.objects.get(slug=slug)
-
-    categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
-    indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
-    # 이제 이걸 [{index: category}, {index: category}, {index: category}, ...]의 꼴로 만들어야 해
-    categories = []
-    for i in range(0,len(categoryList)):
-        catDict = {}
-        catDict[indexList[i]] = categoryList[i]
-        categories.append(catDict)
-
-    # 글을 수정사항을 입력하고 제출을 눌렀을 때
-    if request.method == "POST":
-        form = DansangInputForm(request.POST)
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.authuser = request.user
-
-            # main에서 제목 display
-            if len(instance.title) >= 17:
-                instance.title = instance.title[0:17] + "..."
-            # main에서 부제목 display -- subtitle OR first_sentence
-            if len(instance.subtitle) >= 35:
-                instance.subtitle = instance.subtitle[0:35] + "..."
-            # Subtitle이 없다면 First Sentence로 대체하려 했으나...
-            # PROBLEM : 본문에서 첫문장이 짧고, 그 다음에 줄바꿈을 하면 그 줄바꿈(tag)이 그대로 subtitle에 반영된다.
-            # 즉, subtitle이 없는 경우 contents의 첫 부분을 가져오는데, 문제는 html tag가 모두 포함된다는 것.
-            if instance.subtitle == "":
-                instance.subtitle = "&nbsp;"
-
-            # 카테고리 영문으로 변경
-            catByUser = instance.category
-            instance.categoryEng = trans(catByUser)
-
-            instance.created = thisDansang.created
-            instance.slug = slugify(datetime.now())
-            instance.url = "/dansang/dansangdetail/" + str(authuser_id) + '/' + str(instance.slug)
-            thisDansang.delete()
-            instance.save()
-            return redirect('/dansang/dansangdetail/' + str(authuser_id) + '/' + str(instance.slug))
-
-    # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
-    else:
-        form = DansangInputForm(instance = thisDansang)
-        return render(request, 'dansang/update.html', {'form':form})
-
-def dansangDelete(request, authuser_id, slug):
-    thisDansang = DansangInput.objects.get(slug=slug)
-    thisDansang.delete()
-    return redirect('/dansang/dansangmain')
-
-# 각 '씨앗'의 클릭 수를 세는 view입니다. 지금은 중요하지 않아요!
+# 각 '씨앗'의 클릭 수를 세는 view
 def add_click(request):
     thisId = request.GET.get("seedId", None)
     thisSeed = DansangSeed.objects.get(pk=thisId)

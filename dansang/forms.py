@@ -16,7 +16,6 @@ class DansangInputForm(forms.ModelForm):
         attrs={
             'style':'font-size: 17px; border: none;', 
             'placeholder':'부제목이 있으면 입력해주세요!'}))
-    # contents = SummernoteTextField()
     img = forms.ImageField(required=False)
     category = forms.CharField(required=False, widget=forms.TextInput(
         attrs={
@@ -27,13 +26,10 @@ class DansangInputForm(forms.ModelForm):
         model=DansangInput
         fields=['title', 'img', 'subtitle', 'contents', 'category']
         widgets = {
-            'authuser':forms.HiddenInput(), 
-            'first_sentence':forms.HiddenInput(),
-            'url' : forms.HiddenInput(),
-            'slug' : forms.HiddenInput(),
             'contents': SummernoteInplaceWidget()
         }
     
+    # 각 필드의 레이블을 없애주는 부분입니다. 
     def __init__(self, *args, **kwargs):
         super(DansangInputForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()

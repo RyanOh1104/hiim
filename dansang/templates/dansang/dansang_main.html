@@ -96,8 +96,8 @@
 <div class="row">
     <div class="col text-center">
         {% if posts.has_previous %}
-        <a href="?page=1"><span class="pagination-buttons">처음</span></a>
-        <a href="?page={{posts.previous_page_number}}"><span class="pagination-buttons"><</span></a>
+        <a href="?page=1"><span class="btn pagination-buttons">처음</span></a>
+        <a href="?page={{posts.previous_page_number}}"><span class="btn pagination-buttons"><</span></a>
         {% elif not posts.has_previous %}
         <a href=""><span class="btn pagination-buttons">처음</span></a>
         <a href=""><span class="btn pagination-buttons"><</span></a>
@@ -106,8 +106,8 @@
         <span>/</span>
         <span>{{posts.paginator.num_pages}}</span>
         {% if posts.has_next %}
-        <a href="?page={{posts.next_page_number}}"><span class="pagination-buttons">></span></a>
-        <a href="?page={{posts.paginator.num_pages}}"><span class="pagination-buttons">끝</span></a>
+        <a href="?page={{posts.next_page_number}}"><span class="btn pagination-buttons">></span></a>
+        <a href="?page={{posts.paginator.num_pages}}"><span class="btn pagination-buttons">끝</span></a>
         {% elif not posts.has_next %}
         <a href=""><span class="btn pagination-buttons">></span></a>
         <a href=""><span class="btn pagination-buttons">끝</span></a>

@@ -45,8 +45,8 @@
 <div class="row">
     <div class="col text-center">
         {% if questions.has_previous %}
-        <a href="?page=1"><span class="pagination-buttons">처음</span></a>
-        <a href="?page={{questions.previous_page_number}}"><span class="pagination-buttons"><</span></a>
+        <a href="?page=1"><span class="btn pagination-buttons">처음</span></a>
+        <a href="?page={{questions.previous_page_number}}"><span class="btn pagination-buttons"><</span></a>
         {% elif not questions.has_previous %}
         <a href=""><span class="btn pagination-buttons">처음</span></a>
         <a href=""><span class="btn pagination-buttons"><</span></a>
@@ -55,8 +55,8 @@
         <span>/</span>
         <span>{{questions.paginator.num_pages}}</span>
         {% if questions.has_next %}
-        <a href="?page={{questions.next_page_number}}"><span class="pagination-buttons">></span></a>
-        <a href="?page={{questions.paginator.num_pages}}"><span class="pagination-buttons">끝</span></a>
+        <a href="?page={{questions.next_page_number}}"><span class="btn pagination-buttons">></span></a>
+        <a href="?page={{questions.paginator.num_pages}}"><span class="btn pagination-buttons">끝</span></a>
         {% elif not questions.has_next %}
         <a href=""><span class="btn pagination-buttons">></span></a>
         <a href=""><span class="btn pagination-buttons">끝</span></a>
