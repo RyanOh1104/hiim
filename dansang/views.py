@@ -10,36 +10,43 @@ from django.db.models import F
 from django.utils.html import strip_tags
 from mvp.korengtrans import trans
 
+# 끄적끄적의 Create view
 @login_required
 def dansangCreate(request):
-    # today = datetime.today()
     today = timezone.now()
     # setting initial user as current logged in user
     form = DansangInputForm(initial={'authuser':request.user})
 
+    ########## 각 글을 사용자가 카테고라이징을 할 수 있도록 하는 부분인데, 당장은 중요하지 않으니 패쓰! ##########
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
-    # 이제 이걸 [{index: category}, {index: category}, {index: category}, ...]의 꼴로 만들어야 해
+    # 이제 이걸 [{index: category}, {index: category}, {index: category}, ...]의 꼴로 만들어야 한다.
     categories = []
     for i in range(0,len(categoryList)):
         catDict = {}
         catDict[indexList[i]] = categoryList[i]
         categories.append(catDict)
+    ##########################################################################################################
 
+    # 사용자가 글을 저장할 때
     if request.method == 'POST':
         form = DansangInputForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
+
+            # authuser를 현재 로그인되어있는 사용자로
             instance.authuser = request.user
-            
+            # 사용자가 이미지를 첨부했을 때, 이미지 저장
             instance.img= request.FILES.get('img')
+            # 글을 쓴 날짜 = 오늘 날짜
             instance.created = str(today)
 
-            # strip tags
+            # strip tags - 제목과 부제목에 입혀진 html tag를 벗겨내는 부분이에요.
             title_stripped = strip_tags(instance.title)
             subtitle_stripped = strip_tags(instance.subtitle)
 
-            # main에서 제목 display
+            ########## Main page에서 제목과 부제목이 보여질텐데, 길이가 길면 다음줄로 넘어가기 때문에 적정선에서 잘라주는 부분입니다. ##########
+            # Main에서 제목 display
             if len(title_stripped) >= 17:
                 instance.title = title_stripped[0:17] + "..."
             else:
@@ -50,20 +57,33 @@ def dansangCreate(request):
                 instance.subtitle = subtitle_stripped[0:35] + "..."
             else:
                 instance.subtitle = subtitle_stripped
-            # Subtitle이 없다면 First Sentence로 대체 -- 하려고 했으나 그냥 없애자
-            if instance.subtitle == "":
-                instance.subtitle = "&nbsp;"
 
-            # 카테고리 영문으로 변경
+            # Subtitle이 없다면,
+            # 원래는 본문의 첫부분을 가져와 대체하려고 했는데, 일단 보류하고 공백으로 대체!
+            if instance.subtitle == "":
+                # contents_stripped = strip_tags(instance.contents)
+                # instance.subtitle = contents_stripped[0:30] + "..."
+                instance.subtitle = "&nbsp;"
+            ###############################################################################################################################
+
+            # 사용자가 입력한 카테고리를 영문으로 변경하는 부분입니다.
             catByUser = instance.category
             instance.categoryEng = trans(catByUser)
 
+            # Slug는 각 글의 id처럼 쓰입니다.
+            # 글이 쓰여진 날짜+시간을 slug 형태로 만들어 저장해요!
             instance.slug = slugify(datetime.now())
+            # 글의 주소인 url은 authuser_id와 url로 만들어 저장합니다.
             instance.url = "/dansang/dansangdetail/" + str(instance.authuser_id) + '/' + str(instance.slug)
+            # 최종적으로 저장해줍니다.
             instance.save()
             return redirect('/dansang/dansangmain')
 
-    return render(request,'dansang/dansang_create.html', {'form':form, 'categories':categories})
+    context = {
+        'form' : form,
+        'categories' : categories
+    }
+    return render(request,'dansang/dansang_create.html', context)
 
 @login_required
 def dansangMain(request):
