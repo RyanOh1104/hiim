@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm
 from .models import UserInfo
 # 아래 두개는 굳이 필요한 건지는 모르겠음
-from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 class InputUserForm(forms.ModelForm):
@@ -11,7 +10,7 @@ class InputUserForm(forms.ModelForm):
     name = forms.CharField(label="이름", max_length=30, 
     widget=forms.TextInput(attrs={
         'placeholder': '반드시 실명!',
-        'class':'all-inputs'
+        # 'class':'all-inputs'
         }))
     
     # background = forms.CharField(label = "현재 소속" , max_length=40, 
@@ -21,43 +20,43 @@ class InputUserForm(forms.ModelForm):
     widget=forms.Textarea(attrs={
         'placeholder': "'나'를 간략하게 표현해주세요!", 
         'rows':1, 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
         }))
 
     insta = forms.CharField(label = "인스타그램", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '계정을 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     facebook = forms.CharField(label = "페이스북", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '프로필 링크를 복사하여 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     linkedin = forms.CharField(label = "링크드인", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '프로필 링크를 복사하여 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     youtube = forms.CharField(label = "유튜브", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '채널 링크를 복사하여 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     blog = forms.CharField(label = "블로그/브런치", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '링크를 복사하여 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     others = forms.CharField(label = "+그 외", max_length=1000, required=False,
     widget=forms.TextInput(attrs={
         'placeholder': '링크를 복사하여 적어주세요!', 
-        'class':'all-inputs'
+        # 'class':'all-inputs'
     }))
 
     class Meta:
