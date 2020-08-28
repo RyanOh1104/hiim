@@ -61,7 +61,7 @@ def usermain(request):
 
         # 계정은 있는데 사용자정보(UserInfo)를 입력하지 않았다면
         else: 
-            return redirect('/inputUserinfo')
+            return redirect('/input-user-info')
 
     # 계정도 없을 때
     else:
