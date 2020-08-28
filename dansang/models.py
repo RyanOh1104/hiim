@@ -4,16 +4,13 @@ from django.utils import timezone
 
 # Create your models here.
 
-class DansangSet(models.Model):
-    objects = models.Manager()
-
 class DansangInput(models.Model):
     objects = models.Manager()
     authuser = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'dansang', null=True, default=None)
     title = models.CharField(max_length=100, blank=True)
     subtitle = models.CharField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=False)
-    modified = models.DateTimeField(auto_now=True)
+    # modified = models.DateTimeField(auto_now=True)
     img = models.ImageField(null=True, blank=True, upload_to="dansang_img")
     contents = models.CharField(max_length=100000)
     category = models.CharField(max_length=100, default="미분류", null=True, blank=True)

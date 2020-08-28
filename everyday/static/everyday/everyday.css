@@ -78,6 +78,11 @@ td[date] {
 .img-col {
     padding: 2.5px;
 }
+.detail-kw {
+    font-size: 21px;
+    color: #9300d3;
+    font-weight: bold;
+}
 /* Detail page END */
 
 
@@ -101,6 +106,7 @@ td[date] {
     .empty {
         height: 20px;
         font-size: 1vw;
+        opacity: 0;
     }
     .eachDate {
         font-size: 3vw;
@@ -149,5 +155,8 @@ td[date] {
     /* Create page END */
 
     /* Detail page START */
+    .detail-kw {
+        font-size: 4vw;
+    }
     /* Detail page END */
 }

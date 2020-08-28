@@ -202,9 +202,9 @@ def dansangUpdate(request, authuser_id, slug):
             # main에서 부제목 display -- subtitle OR first_sentence
             if len(instance.subtitle) >= 35:
                 instance.subtitle = instance.subtitle[0:35] + "..."
-            # Subtitle이 없다면 First Sentence로 대체
-            # PROBLEM : 첫문장이 짧고, 그 다음에 줄바꿈을 하면 그 줄바꿈(tag)이 그대로 subtitle에 반영된다.
-            # 즉, subtitle이 없는 경우 contents의 첫 부분을 가져오는데 문제는 html tag가 모두 포함된다는 것.
+            # Subtitle이 없다면 First Sentence로 대체하려 했으나...
+            # PROBLEM : 본문에서 첫문장이 짧고, 그 다음에 줄바꿈을 하면 그 줄바꿈(tag)이 그대로 subtitle에 반영된다.
+            # 즉, subtitle이 없는 경우 contents의 첫 부분을 가져오는데, 문제는 html tag가 모두 포함된다는 것.
             if instance.subtitle == "":
                 instance.subtitle = "&nbsp;"
 
@@ -229,6 +229,7 @@ def dansangDelete(request, authuser_id, slug):
     thisDansang.delete()
     return redirect('/dansang/dansangmain')
 
+# 각 '씨앗'의 클릭 수를 세는 view입니다. 지금은 중요하지 않아요!
 def add_click(request):
     thisId = request.GET.get("seedId", None)
     thisSeed = DansangSeed.objects.get(pk=thisId)
@@ -237,13 +238,7 @@ def add_click(request):
 
     return HttpResponse()   # 이건 솔직히 왜 해야하는지 모르겠음. 근데 아무것도 안해주면 it returned None instead라는 에러 뜸.
 
-def error404(request):
-    return render(request, "404.html", status=404)
-
-def error500(request):
-    return render(request, "500.html", status=500)
-
-
+########## 이건 뭐지...? ##########
 '''
 from django.http import (
     HttpResponseBadRequest,
