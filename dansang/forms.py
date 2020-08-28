@@ -4,6 +4,7 @@ from django.forms import ModelForm
 from .models import DansangInput
 from django.utils import timezone
 from crispy_forms.helper import FormHelper
+# 아래는 WYSIWYG 에디터인 django_summernote에 관련한 부분입니다.
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django_summernote.fields import SummernoteTextFormField, SummernoteTextField
 
