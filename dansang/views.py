@@ -142,8 +142,7 @@ def dansangMain(request):
 
 def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
-    if thisDansang.created == thisDansang.modified:
-        thisDansang.modified = '' 
+
     return render(request, 'dansang/dansang_detail.html', {'thisDansang' : thisDansang})
 
 # 이건 login_required 굳이 필요 없으려나?
