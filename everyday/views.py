@@ -11,7 +11,7 @@ from django_slugify_processor.text import slugify
 from time import strftime
 
 # 하루하루 기록장 Create page의 view입니다
-@login_required
+@login_required(login_url="/login")
 def everydayCreate(request):
     today = datetime.today()
     # setting initial user as current logged in user
@@ -54,7 +54,7 @@ def everydayCreate(request):
     return render(request,'everyday/everyday_create.html', context)
 
 # 하루하루 기록장 Main page의 view입니다
-@login_required
+@login_required(login_url="/login")
 def everydayMain(request):
     # 현재 로그인 되어있는 유저의 데이터만 query
     todays = NewEvent.objects.filter(authuser=request.user)
@@ -79,7 +79,7 @@ def everydayMain(request):
     return render(request,'everyday/everyday_main.html', context)
 
 # 하루하루 Detail page의 view입니다.
-@login_required
+@login_required(login_url="/login")
 def everydayDetail(request, authuser_id, slug):
     # 각 기록의 slug는 기록의 id처럼 씁니다.
     today = NewEvent.objects.get(slug=slug)
@@ -90,7 +90,7 @@ def everydayDetail(request, authuser_id, slug):
     return render(request, 'everyday/everyday_detail.html', context)
 
 # 하루하루의 기록을 수정하는 view입니다. Create view와 동일해요. comment처리한 부분만 다릅니다!
-@login_required
+@login_required(login_url="/login")
 def everydayUpdate(request, authuser_id, slug):
     getToday = NewEvent.objects.get(slug=slug)
     today = datetime.today()

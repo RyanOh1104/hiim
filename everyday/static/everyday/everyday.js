@@ -32,7 +32,7 @@ function progressBar() {
   var datesThisMonth = lastDate.getDate();
   
   var howManyThisMonth = parseInt(thisMonth); // 원래 string인 thisMonth를 integer로 바꿔줌
-  var progress = Math.ceil((howManyThisMonth / datesThisMonth)*100); // 소숫점 round up
+  var progress = Math.ceil((howManyThisMonth / datesThisMonth)*100); // 소숫점 올림
   document.getElementsByClassName('progress-bar')[0].setAttribute('aria-valuenow', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('style', `width: ${progress}%;`);
 }

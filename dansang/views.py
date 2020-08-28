@@ -11,7 +11,7 @@ from django.utils.html import strip_tags
 from mvp.korengtrans import trans
 
 # 끄적끄적의 Create view
-@login_required
+@login_required(login_url="/login")
 def dansangCreate(request):
     today = timezone.now()
     # setting initial user as current logged in user
@@ -86,7 +86,7 @@ def dansangCreate(request):
     return render(request,'dansang/dansang_create.html', context)
 
 # '끄적끄적'의 Main view입니다.
-@login_required
+@login_required(login_url="/login")
 def dansangMain(request):
     dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')  # 최신 글이 상단에
     # how_many = dansangs.count()
@@ -128,7 +128,7 @@ def dansangMain(request):
     return render(request, 'dansang/dansang_main.html', context)
 
 # '끄적끄적'의 Detail view입니다.
-@login_required
+@login_required(login_url="/login")
 def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
 
@@ -138,7 +138,7 @@ def dansangDetail(request, authuser_id, slug):
     return render(request, 'dansang/dansang_detail.html', context)
 
 # '끄적끄적'의 Update view입니다. Create view와 거의 비슷해요! 주석처리 한 부분만 다릅니다.
-@login_required
+@login_required(login_url="/login")
 def dansangUpdate(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
 
