@@ -85,18 +85,14 @@ def dansangCreate(request):
     }
     return render(request,'dansang/dansang_create.html', context)
 
+# '끄적끄적'의 Main view입니다.
 @login_required
 def dansangMain(request):
-    dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')
-    how_many = dansangs.count()
+    dansangs = DansangInput.objects.filter(authuser=request.user).order_by('-created')  # 최신 글이 상단에
+    # how_many = dansangs.count()
 
+    ########## 역시 사용자가 입력한 카테고리를 다루는 부분인데, 일단 패스합니다! ##########
     categoryList = list(DansangInput.objects.filter(authuser=request.user).values_list('category', flat=True).distinct())
-    
-    # 요 부분은 임시적으로! 태건이 끝나면 바로 제거
-    # categoryEngList = []
-    # for k in range(0,len(categoryList)):
-    #     categoryEngList.append(trans(categoryList[k]))
-    
     categoryEngList = list(DansangInput.objects.filter(authuser=request.user).values_list('categoryEng', flat=True).distinct())
     indexList = [*range(1, len(categoryList)+1, 1)] # range 앞에 *을 붙이는 이유는, 저걸 없애면 range()를 알아먹지 못한다.
     
@@ -111,39 +107,35 @@ def dansangMain(request):
         catDict = {}
         catDict[indexList[i]] = categoryList[i]
         categories.append(catDict)
-    
-    '''
-    categories = []
-    for i in range(0, len(categoryList)):
-        catDict = {}
-        catDict[categoryEngList[i]] = categoryList[i]
-        categories.append(catDict)
-    '''
-    # pagination
+    #################################################################################################
+
+    # Pagination (특정 갯수만큼 페이지를 나누는 작업)
     dansangPaginator = Paginator(dansangs, 7)
     page = request.GET.get('page')
     posts = dansangPaginator.get_page(page)
 
     context = {
         'dansangs': dansangs,
-        'how_many': how_many,
-        # 'today': today,
         'posts':posts,
-        'categoryList':categoryList,
+        # 이 아래는 모두 카테고리와 관련한 것들입니다
         'categories':categories,
         'categoryList':categoryList,
         'categoryEngList': categoryEngList,
         'indexList': indexList,
         'indexLengthRange':range(1, indexLength+1),
-
     }
 
     return render(request, 'dansang/dansang_main.html', context)
 
+# '끄적끄적'의 Detail view입니다
+@login_required
 def dansangDetail(request, authuser_id, slug):
     thisDansang = DansangInput.objects.get(slug=slug)
 
-    return render(request, 'dansang/dansang_detail.html', {'thisDansang' : thisDansang})
+    context = {
+        'thisDansang' : thisDansang,
+    }
+    return render(request, 'dansang/dansang_detail.html', context)
 
 # 이건 login_required 굳이 필요 없으려나?
 def seed(request):
