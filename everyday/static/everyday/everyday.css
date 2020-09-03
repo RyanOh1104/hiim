@@ -1,7 +1,7 @@
 /* Main page START */
 table {
     width: 100%;
-    border-collapse : separate;
+    border-collapse : separate; /* 이거 하면 각 요일의 셀들의 border가 둥글어진다 */
 }
 td{
     text-align: center;
@@ -55,7 +55,6 @@ td[date] {
 .keywords {
     font-size: 13px;
     color: #9300d3;
-    font-weight: 400;
 }
 .empty {
     color: #f6f5f1;
