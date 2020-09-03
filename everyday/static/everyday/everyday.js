@@ -35,6 +35,7 @@ function progressBar() {
   var progress = Math.ceil((howManyThisMonth / datesThisMonth)*100); // 소숫점 올림
   document.getElementsByClassName('progress-bar')[0].setAttribute('aria-valuenow', progress);
   document.getElementsByClassName('progress-bar')[0].setAttribute('style', `width: ${progress}%;`);
+  console.log('percentage is', progress);
 }
 
 function buildCalendar(){//현재 달 달력 만들기

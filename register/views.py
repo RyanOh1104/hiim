@@ -4,15 +4,13 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User, auth    
-from time import sleep 
 
-# Create your views here. 
 def register(response):
     if response.method == 'POST':
         form = RegisterForm(response.POST)
         if form.is_valid:
             form.save()
-            # 아래는 auto login을 위한 code
+            ########## 아래는 자동로그인을 위한 코드입니다 ##########
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             newUser =  authenticate(response, username=username, password=password)
@@ -21,6 +19,7 @@ def register(response):
                 return redirect('/inputuserinfo')
             else:
                 return redirect('/register')
+            #######################################################
 
     else:
         form = RegisterForm()
@@ -40,4 +39,7 @@ def register(response):
         d.label = "비밀번호 확인"
         d.help_text = "실수하지 말고(!) 한번 더😉" 
 
-    return render(response, 'register/register.html', {'form' : form}) 
+    context = {
+        'form' : form,
+    }
+    return render(response, 'register/register.html', context) 

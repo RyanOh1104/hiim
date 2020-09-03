@@ -10,12 +10,17 @@ from datetime import datetime, date
 from time import strftime
 from django.core.paginator import Paginator
 
-###### 중요!!! 유저가 가장 처음에 즉문즉답 기록장을 하면, main페이지가 아닌 첫번째 질문을 던져주자!!!! #####
-@login_required
+##############################################################################################################
+########### 중요! 유저가 하루 중 처음에 즉문즉답 기록장을 클릭하면, main페이지가 아닌 질문을 던져줍니다! ##########
+##############################################################################################################
+
+# 즉문즉답의 Create view입니다.
+@login_required(login_url="/register")
 def qandaCreate(request): 
     today = date.today()
 
-    # 0. Very first 질문은 query를 하면 empty queryset이 나오므로 별도로 처리
+    # 원래는, 사용자가 처음에 즉문즉답 기록장을 클릭하면 현재 이 사용자의 답변들을 보고 Create view를 가져올지 Main view를 가져올지 판단해요.
+    # 하지만, 처음 가입한 사용자의 경우, 아직 답변한 질문이 없기 때문에 query를 하면 empty queryset이 나오므로 별도로 처리해야 합니다.
     if not Answer.objects.filter(authuser=request.user):
         AnswerFormSet = modelformset_factory(Answer, form=AnswerForm, extra=1)
         formset = AnswerFormSet(queryset=Answer.objects.filter(authuser = request.user, questionNumber=1))
