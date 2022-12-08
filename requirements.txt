@@ -5,7 +5,7 @@ awsebcli==3.18.1
 beautifulsoup4==4.9.0
 botocore==1.17.7
 cement==2.8.2
-certifi==2020.6.20
+certifi==2022.12.7
 chardet==3.0.4
 colorama==0.4.3
 cssutils==1.0.2
